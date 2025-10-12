@@ -1,0 +1,397 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Kállita Design — Portfolio</title>
+
+<!-- Fonts (substitua se quiser outra fonte) -->
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --red-dark:#6b0f0f;       /* vermelho escuro (ajustável) */
+    --black:#0b0b0b;         /* preto profundo */
+    --beige:#f6e7d2;         /* off-white amarelado */
+    --muted:#bdb0a4;
+    --radius-lg:28px;
+    --radius-md:14px;
+    --maxw:1200px;
+  }
+
+  /* Reset / base */
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{height:100%}
+  body{font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; background:var(--black); color:var(--beige); -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale; line-height:1.45}
+  a{color:inherit;text-decoration:none}
+  .container{max-width:var(--maxw);margin:0 auto;padding:0 20px}
+
+  /* HEADER */
+  header.site-header{position:sticky;top:0;z-index:80;background:rgba(11,11,11,0.95);backdrop-filter:saturate(120%) blur(4px);border-bottom:1px solid rgba(255,255,255,0.02)}
+  .header-inner{height:74px;display:flex;align-items:center;justify-content:space-between;max-width:var(--maxw);margin:0 auto;padding:0 20px}
+  .brand{display:flex;align-items:center;gap:18px}
+  /* Logo area (substitua a imagem dentro da div .logo-img) */
+  .logo-img{width:150px;height:40px;display:flex;align-items:center}
+  .logo-img img{max-height:40px;max-width:150px;object-fit:contain;display:block}
+  nav.main-nav{display:flex;gap:22px;align-items:center}
+  nav.main-nav a{color:var(--beige);font-weight:500;font-size:14px;padding:8px 12px;border-radius:10px;opacity:0.95}
+  nav.main-nav a:hover{background:rgba(255,255,255,0.02);color:var(--beige)}
+  .cta-contact{background:var(--red-dark);color:var(--beige);padding:8px 14px;border-radius:20px;font-weight:700}
+  /* hamburger */
+  .hamburger{display:none;background:none;border:0;color:var(--beige);font-size:24px;cursor:pointer}
+
+  /* HERO */
+  .hero{background:var(--red-dark);padding:72px 0 84px 0}
+  .hero .hero-inner{display:grid;grid-template-columns:1fr 460px;gap:48px;align-items:center;max-width:var(--maxw);margin:0 auto;padding:0 20px}
+  .hero h1{font-family:'Playfair Display', serif;font-size:44px;line-height:1.02;color:var(--beige);margin-bottom:18px}
+  .hero p.lead{color:rgba(246,231,210,0.92);max-width:520px;margin-bottom:20px}
+  .hero .btn-cta{display:inline-block;padding:12px 20px;border-radius:24px;background:var(--beige);color:var(--black);font-weight:700;box-shadow:0 8px 24px rgba(0,0,0,0.25)}
+  .hero .img-wrap{background:rgba(0,0,0,0.06);padding:12px;border-radius:16px;display:flex;align-items:center;justify-content:center}
+  .hero .img-wrap .hero-img{width:100%;height:360px;object-fit:cover;border-radius:12px;background:linear-gradient(90deg,rgba(0,0,0,0.2),transparent)}
+
+  /* STATS pill */
+  .stats-pill{max-width:var(--maxw);margin: -36px auto 40px auto;padding:22px;border-radius:40px;background:var(--black);display:flex;gap:16px;justify-content:center;align-items:center;box-shadow:0 18px 40px rgba(0,0,0,0.6)}
+  .stat{flex:1;text-align:center;padding:8px 18px}
+  .stat .num{font-family:'Playfair Display',serif;font-size:20px;color:var(--beige);font-weight:700}
+  .stat .label{color:var(--muted);font-size:13px;margin-top:6px}
+
+  /* MAIN content sections */
+  main{padding:18px 0 60px}
+  section{max-width:var(--maxw);margin:0 auto;padding:28px 20px}
+  .section-title{font-family:'Playfair Display',serif;color:var(--beige);font-size:22px;margin-bottom:10px}
+  .muted{color:var(--muted);font-size:15px}
+
+  /* ABOUT with image left */
+  .about{display:grid;grid-template-columns:360px 1fr;gap:30px;align-items:center}
+  .about .about-img{width:100%;height:220px;border-radius:26px;background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent);display:flex;align-items:center;justify-content:center;overflow:hidden}
+  .about .about-img img{width:100%;height:100%;object-fit:cover}
+  .about .about-text p{color:var(--muted);margin-bottom:14px}
+
+  /* SERVICES cards */
+  .services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:12px}
+  .service-card{background:transparent;border:1px solid rgba(255,255,255,0.06);padding:18px;border-radius:20px;min-height:200px}
+  .service-card h4{font-family:'Playfair Display',serif;margin-bottom:8px}
+
+  /* PORTFOLIO */
+  .portfolio-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:10px}
+  .project{background:linear-gradient(180deg,rgba(255,255,255,0.01),transparent);border-radius:12px;padding:16px;min-height:220px;display:flex;flex-direction:column;justify-content:flex-end}
+  .project .p-img{height:160px;border-radius:8px;background:#222;overflow:hidden;margin-bottom:12px}
+  .p-img img{width:100%;height:100%;object-fit:cover}
+
+  /* TESTIMONIALS */
+  .testimonials{margin-top:20px;display:flex;flex-direction:column;gap:14px}
+  .test-card{background:transparent;border:1px solid rgba(255,255,255,0.06);padding:14px;border-radius:28px;display:flex;gap:12px;align-items:center}
+  .test-card .avatar{width:56px;height:56px;border-radius:50%;background:#222;overflow:hidden}
+  .test-card .avatar img{width:100%;height:100%;object-fit:cover}
+  .test-card .txt small{color:var(--muted);display:block;margin-top:6px}
+
+  /* CONTACT card cream */
+  .contact-wrap{background:var(--beige);color:var(--black);padding:28px;border-radius:26px;display:grid;grid-template-columns:1fr 420px;gap:22px}
+  .contact-wrap .contact-info p{color:var(--black);margin-bottom:10px}
+  .contact-wrap input,.contact-wrap textarea{width:100%;padding:10px;border-radius:10px;border:1px solid rgba(0,0,0,0.08);margin-bottom:10px}
+  .contact-wrap .btn{background:var(--red-dark);color:var(--beige);padding:10px 14px;border-radius:20px;font-weight:700}
+
+  /* FOOTER */
+  footer.site-footer{background:var(--red-dark);padding:28px 0;margin-top:36px;color:var(--beige)}
+  .footer-inner{max-width:var(--maxw);margin:0 auto;padding:0 20px;display:flex;justify-content:space-between;gap:20px;align-items:flex-start}
+  .footer-col{flex:1}
+  .footer-logo img{height:44px;display:block;margin-bottom:8px}
+
+  /* Utilities */
+  .center{text-align:center}
+  .btn-outline{border:1px solid rgba(255,255,255,0.12);padding:8px 12px;border-radius:20px;color:var(--beige);display:inline-block}
+
+  /* Responsive */
+  @media (max-width:1100px){
+    .hero .hero-inner{grid-template-columns:1fr 360px;gap:28px}
+    .about{grid-template-columns:1fr; text-align:left}
+    .contact-wrap{grid-template-columns:1fr}
+  }
+  @media (max-width:760px){
+    .header-inner{padding:0 14px}
+    nav.main-nav{display:none}
+    .hamburger{display:block}
+    .hero .hero-inner{grid-template-columns:1fr;gap:18px;padding:0 14px}
+    .hero h1{font-size:32px}
+    .stats-pill{margin:12px 20px}
+    .services-grid{grid-template-columns:1fr}
+    .portfolio-grid{grid-template-columns:1fr}
+    .testimonials{gap:10px}
+    .footer-inner{flex-direction:column;align-items:center;text-align:center}
+  }
+
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="site-header" role="banner">
+  <div class="header-inner container">
+    <div class="brand">
+      <!-- LOGO (substitua a imagem dentro desta div) -->
+      <div class="logo-img">
+        <!-- COLE AQUI SUA LOGO: substitua o src pelo link da sua imagem -->
+        <img src="[img]https://i.imgur.com/cLgRexT.png" alt="Logo Kállita">
+      </div>
+
+      <!-- Mini-title (opcional) -->
+      <div style="color:var(--beige);font-weight:700;font-family:'Playfair Display',serif"></div>
+    </div>
+
+    <!-- NAV -->
+    <nav class="main-nav" role="navigation" aria-label="Main">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#portfolio">Portfolio</a>
+      <a class="cta-contact" href="#contact">Contact</a>
+    </nav>
+
+    <!-- HAMBURGER (aparece mobile) -->
+    <button class="hamburger" aria-label="Abrir menu" onclick="toggleMobileMenu()">☰</button>
+  </div>
+
+  <!-- MOBILE MENU (hidden by default) -->
+  <div id="mobileMenu" style="display:none;background:rgba(11,11,11,0.98);padding:14px;border-top:1px solid rgba(255,255,255,0.02)">
+    <div class="container" style="display:flex;flex-direction:column;gap:10px">
+      <a href="#home" style="color:var(--beige)">Home</a>
+      <a href="#about" style="color:var(--beige)">About</a>
+      <a href="#services" style="color:var(--beige)">Services</a>
+      <a href="#portfolio" style="color:var(--beige)">Portfolio</a>
+      <a href="#contact" style="color:var(--beige)">Contact</a>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section id="home" class="hero" aria-label="Hero">
+  <div class="hero-inner">
+    <div>
+      <span class="btn-outline" style="margin-bottom:18px;display:inline-block">Lorem Ipsum</span>
+      <h1>Professional Business Consultant</h1>
+      <p class="lead muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
+      <div style="margin-top:18px">
+        <a class="hero-cta btn-cta" href="#portfolio">Lorem Ipsum</a>
+      </div>
+    </div>
+
+    <!-- HERO IMAGE: substitua a imagem abaixo -->
+    <div class="img-wrap">
+      <div class="hero-img">
+        <img src="https://via.placeholder.com/720x420?text=Banner+Principal" alt="Banner" style="width:100%;height:100%;object-fit:cover;border-radius:10px">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="stats-pill" role="region" aria-label="Estatísticas">
+  <div class="stat">
+    <div class="num">10.000</div>
+    <div class="label muted">Total Clients</div>
+  </div>
+  <div class="stat">
+    <div class="num">90%</div>
+    <div class="label muted">Business Growth</div>
+  </div>
+  <div class="stat">
+    <div class="num">4.9/5</div>
+    <div class="label muted">Client Satisfaction</div>
+  </div>
+</div>
+
+<main>
+
+  <!-- ABOUT -->
+  <section id="about" class="about">
+    <div class="about-img">
+      <!-- SUBSTITUIR: imagem Sobre (coloque o link da sua foto aqui) -->
+      <img src="https://via.placeholder.com/520x360?text=Sobre+Mim" alt="Sobre">
+    </div>
+    <div class="about-text">
+      <h2 class="section-title">About Us</h2>
+      <p class="muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit.</p>
+      <a class="btn-outline" href="#contact">Learn More →</a>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="services">
+    <div style="text-align:center">
+      <h2 class="section-title">Our Services</h2>
+      <p class="muted">We Provide Business Consulting in Over 10 Years</p>
+    </div>
+
+    <div class="services-grid">
+      <div class="service-card">
+        <h4>Financial Planning</h4>
+        <p class="muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed diam nonummy nibh euismod tincidunt.</p>
+      </div>
+      <div class="service-card">
+        <h4>Training Services</h4>
+        <p class="muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed diam nonummy nibh euismod tincidunt.</p>
+      </div>
+      <div class="service-card">
+        <h4>Marketing Services</h4>
+        <p class="muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed diam nonummy nibh euismod tincidunt.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PORTFOLIO -->
+  <section id="portfolio">
+    <h2 class="section-title">Our Latest Project</h2>
+    <div style="display:flex;justify-content:space-between;align-items:center;max-width:var(--maxw);margin:0 auto;padding:0 20px 12px">
+      <p class="muted">Lorem ipsum</p>
+      <a class="btn-outline" href="#portfolio">View Project</a>
+    </div>
+
+    <div class="portfolio-grid" style="padding:0 20px;">
+      <div class="project">
+        <div class="p-img">
+          <!-- SUBSTITUIR: projeto 1 -->
+          <img src="https://via.placeholder.com/520x360?text=Projeto+1" alt="Projeto 1">
+        </div>
+        <div>
+          <div style="color:var(--muted);font-size:14px">Lorem ipsum</div>
+          <h4 style="font-family:'Playfair Display',serif;margin-top:6px">Projeto 1</h4>
+        </div>
+      </div>
+
+      <div class="project">
+        <div class="p-img">
+          <!-- SUBSTITUIR: projeto 2 -->
+          <img src="https://via.placeholder.com/520x360?text=Projeto+2" alt="Projeto 2">
+        </div>
+        <div>
+          <div style="color:var(--muted);font-size:14px">Lorem ipsum</div>
+          <h4 style="font-family:'Playfair Display',serif;margin-top:6px">Projeto 2</h4>
+        </div>
+      </div>
+
+      <div class="project">
+        <div class="p-img">
+          <!-- SUBSTITUIR: projeto 3 -->
+          <img src="https://via.placeholder.com/520x360?text=Projeto+3" alt="Projeto 3">
+        </div>
+        <div>
+          <div style="color:var(--muted);font-size:14px">Lorem ipsum</div>
+          <h4 style="font-family:'Playfair Display',serif;margin-top:6px">Projeto 3</h4>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section id="testimonials">
+    <h2 class="section-title center">Client's Review</h2>
+
+    <div class="testimonials container" style="max-width:var(--maxw)">
+      <div class="test-card">
+        <div class="avatar">
+          <!-- SUBSTITUIR: avatar do cliente -->
+          <img src="https://via.placeholder.com/120?text=Avatar" alt="Cliente">
+        </div>
+        <div class="txt">
+          <strong>Joana ipsum</strong>
+          <small class="muted">"Trabalho impecável, entrega rápida e atendimento excelente."</small>
+        </div>
+      </div>
+
+      <div class="test-card">
+        <div class="avatar">
+          <img src="https://via.placeholder.com/120?text=Avatar" alt="Cliente2">
+        </div>
+        <div class="txt">
+          <strong>Marcos</strong>
+          <small class="muted">"Minha marca ganhou identidade e falei com o público certo."</small>
+        </div>
+      </div>
+
+      <div class="test-card">
+        <div class="avatar">
+          <img src="https://via.placeholder.com/120?text=Avatar" alt="Cliente3">
+        </div>
+        <div class="txt">
+          <strong>Laura</strong>
+          <small class="muted">"Recomendo demais. Profissional dedicada e criativa."</small>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" style="padding-bottom:40px">
+    <div class="contact-wrap container" style="max-width:var(--maxw);">
+      <div class="Contato">
+        <h3>Contact & Info</h3>
+        <p class="muted">Duvidas ou orçamento..</p>
+        <p><strong>Address</strong><br>Rio Claro, São Paulo</p>
+        <p><strong>Phone</strong><br>+55 (19) 99900-95784</p>
+        <p><strong>E-mail</strong><br><a href="akallitaprado@gmail.com">akallitaprado@gmail.com</a></p>
+      </div>
+
+      <div>
+        <form onsubmit="event.preventDefault(); alert('Formulário de exemplo — configure envio no backend')">
+          <input type="text" placeholder="Name" required>
+          <input type="email" placeholder="Email" required>
+          <textarea placeholder="Message" required rows="6"></textarea>
+          <div style="text-align:right"><button class="btn">View Project</button></div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="site-footer" role="contentinfo">
+  <div class="footer-inner">
+    <div class="footer-col footer-logo">
+      <!-- SUBSTITUIR: logo do rodapé -->
+      <img src="https://via.placeholder.com/220x80?text=Logo+Footer" alt="Logo Rodapé">
+      <p class="muted" style="margin-top:6px">© 2025 Kállita Design — Todos os direitos reservados</p>
+    </div>
+
+    <div class="footer-col">
+      <h4 style="font-family:'Playfair Display',serif;margin-bottom:12px">Menu</h4>
+      <nav style="display:flex;flex-direction:column;gap:8px">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+
+    <div class="footer-col">
+      <h4 style="font-family:'Playfair Display',serif;margin-bottom:12px">Office</h4>
+      <p class="muted">Rua Exemplo, 123<br>Palermo — IT</p>
+      <div style="margin-top:12px">
+        <a class="muted" href="#">Instagram</a> &nbsp;•&nbsp;
+        <a class="muted" href="#">Behance</a> &nbsp;•&nbsp;
+        <a class="muted" href="#">WhatsApp</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  /* Mobile menu toggle */
+  function toggleMobileMenu(){
+    var el = document.getElementById('mobileMenu');
+    if(!el) return;
+    el.style.display = (el.style.display === 'none' || el.style.display === '') ? 'block' : 'none';
+  }
+
+  /* Close mobile menu when click a link */
+  document.addEventListener('click', function(e){
+    if(!e.target.closest('#mobileMenu') && !e.target.closest('.hamburger')) {
+      var el = document.getElementById('mobileMenu');
+      if(el) el.style.display = 'none';
+    }
+  });
+</script>
+
+</body>
+</html>
