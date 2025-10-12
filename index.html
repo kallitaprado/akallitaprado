@@ -1,254 +1,198 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Kállita Design</title>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
 :root {
-  --red-dark: #6b0f0f;
-  --black: #0b0b0b;
-  --beige: #f6e7d2;
+  --vermelho: #6b0f0f;
+  --preto: #0b0b0b;
+  --bege: #f6e7d2;
   --muted: #bdb0a4;
-  --radius-lg: 28px;
-  --radius-md: 14px;
-  --maxw: 1200px;
 }
-
-* { box-sizing: border-box; margin: 0; padding: 0; }
+* { margin:0; padding:0; box-sizing:border-box; scroll-behavior:smooth; }
 body {
+  background-color: var(--preto);
+  color: var(--bege);
   font-family: 'Inter', sans-serif;
-  background-color: var(--black);
-  color: var(--beige);
-  line-height: 1.6;
 }
 
-/* ======= HEADER ======= */
+/* HEADER */
 header {
-  background-color: var(--black);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 18px 5%;
-  position: sticky;
-  top: 0;
-  z-index: 100;
+  width:100%;
+  background-color: var(--preto);
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:15px 5%;
+  position:sticky;
+  top:0;
+  z-index:1000;
+  border-bottom:1px solid var(--vermelho);
 }
-header img.logo {
-  height: 55px;
-  width: auto;
+header img {
+  height:55px;
+  width:auto;
 }
 nav ul {
-  list-style: none;
-  display: flex;
-  gap: 28px;
+  list-style:none;
+  display:flex;
+  gap:25px;
 }
 nav ul li a {
-  color: var(--beige);
-  text-decoration: none;
-  font-weight: 600;
-  transition: color 0.3s;
+  color:var(--bege);
+  text-decoration:none;
+  font-weight:600;
+  transition:0.3s;
 }
 nav ul li a:hover {
-  color: var(--red-dark);
+  color:var(--vermelho);
 }
 
-/* ======= BANNER ======= */
+/* BANNER */
 .banner {
-  background-image: url("URL_DO_SEU_BANNER_AQUI");
-  background-size: cover;
-  background-position: center;
-  height: 450px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 0 5%;
+  width:100%;
+  height:450px;
+  background:url("URL_DO_SEU_BANNER_AQUI") center/cover no-repeat;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  padding:0 5%;
 }
 .banner h1 {
-  font-family: 'Playfair Display', serif;
-  font-size: 2.5rem;
-  color: var(--beige);
-  text-shadow: 0 0 10px #000;
+  font-family:'Playfair Display',serif;
+  font-size:2.5rem;
+  color:var(--bege);
+  text-shadow:0 0 10px #000;
 }
 .banner button {
-  margin-top: 20px;
-  padding: 12px 28px;
-  background-color: var(--red-dark);
-  color: var(--beige);
-  border: none;
-  border-radius: var(--radius-md);
-  font-weight: 600;
-  cursor: pointer;
-  transition: background 0.3s;
+  margin-top:20px;
+  background:var(--vermelho);
+  color:var(--bege);
+  border:none;
+  border-radius:6px;
+  padding:12px 30px;
+  font-weight:600;
+  cursor:pointer;
+  transition:0.3s;
 }
-.banner button:hover {
-  background-color: #8f1616;
-}
+.banner button:hover { background:#8a1313; }
 
-/* ======= ESTATÍSTICAS ======= */
+/* ESTATÍSTICAS */
 .stats {
-  display: flex;
-  justify-content: space-around;
-  background-color: #111;
-  padding: 40px 5%;
-  text-align: center;
+  background:#111;
+  display:flex;
+  justify-content:space-around;
+  text-align:center;
+  padding:50px 5%;
 }
-.stat-box {
-  flex: 1;
-}
-.stat-box h3 {
-  font-size: 2rem;
-  color: var(--red-dark);
-}
-.stat-box p {
-  color: var(--muted);
-}
+.stat h3 { font-size:2rem; color:var(--vermelho); }
+.stat p { color:var(--muted); }
 
-/* ======= SERVIÇOS (PLANOS) ======= */
+/* SERVIÇOS */
+.servicos {
+  padding:70px 5%;
+  text-align:center;
+}
+.servicos h2 {
+  font-family:'Playfair Display',serif;
+  font-size:2rem;
+  margin-bottom:30px;
+}
 .planos {
-  background-color: var(--black);
-  padding: 60px 5%;
-  text-align: center;
-}
-.planos h2 {
-  font-family: 'Playfair Display', serif;
-  font-size: 2rem;
-  color: var(--beige);
-  margin-bottom: 30px;
-}
-.planos-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 20px;
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:20px;
 }
 .plano {
-  background-color: #111;
-  border-radius: var(--radius-md);
-  padding: 30px;
-  width: 300px;
-  transition: transform 0.3s;
+  background:#111;
+  padding:30px;
+  border-radius:10px;
+  width:300px;
+  transition:transform 0.3s;
 }
-.plano:hover {
-  transform: translateY(-5px);
-}
-.plano h3 {
-  color: var(--red-dark);
-  margin-bottom: 15px;
-}
-.plano p {
-  color: var(--muted);
-  margin-bottom: 20px;
-}
+.plano:hover { transform:translateY(-5px); }
+.plano h3 { color:var(--vermelho); margin-bottom:15px; }
+.plano p { color:var(--muted); margin-bottom:15px; }
 .plano button {
-  background-color: var(--red-dark);
-  color: var(--beige);
-  padding: 10px 20px;
-  border: none;
-  border-radius: var(--radius-md);
-  cursor: pointer;
-  transition: background 0.3s;
+  background:var(--vermelho);
+  color:var(--bege);
+  border:none;
+  border-radius:5px;
+  padding:10px 20px;
+  cursor:pointer;
+  font-weight:600;
+  transition:0.3s;
 }
-.plano button:hover {
-  background-color: #8f1616;
-}
+.plano button:hover { background:#8a1313; }
 
-/* ======= SOBRE MIM ======= */
+/* SOBRE */
 .sobre {
-  background-color: #181818;
-  padding: 80px 5%;
-  text-align: center;
+  background:#181818;
+  padding:80px 5%;
+  text-align:center;
 }
-.sobre h2 {
-  font-family: 'Playfair Display', serif;
-  color: var(--beige);
-  margin-bottom: 20px;
-}
-.sobre p {
-  max-width: 800px;
-  margin: auto;
-  color: var(--muted);
-}
+.sobre h2 { font-family:'Playfair Display',serif; margin-bottom:25px; }
+.sobre p { max-width:800px; margin:auto; color:var(--muted); }
 
-/* ======= PORTFÓLIO ======= */
+/* PORTFÓLIO */
 .portfolio {
-  background-color: var(--black);
-  padding: 60px 5%;
-  text-align: center;
+  padding:70px 5%;
+  text-align:center;
 }
-.portfolio h2 {
-  font-family: 'Playfair Display', serif;
-  margin-bottom: 30px;
-}
+.portfolio h2 { font-family:'Playfair Display',serif; margin-bottom:30px; }
 .projetos {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:20px;
 }
 .projeto img {
-  width: 100%;
-  border-radius: var(--radius-md);
+  width:100%;
+  border-radius:8px;
 }
 
-/* ======= DEPOIMENTOS ======= */
+/* DEPOIMENTOS */
 .depoimentos {
-  background-color: #181818;
-  padding: 80px 5%;
-  text-align: center;
+  background:#181818;
+  padding:80px 5%;
+  text-align:center;
 }
-.depoimentos h2 {
-  font-family: 'Playfair Display', serif;
-  margin-bottom: 40px;
-}
+.depoimentos h2 { font-family:'Playfair Display',serif; margin-bottom:40px; }
 .depoimento {
-  max-width: 800px;
-  margin: 20px auto;
-  font-style: italic;
-  color: var(--muted);
+  max-width:700px;
+  margin:20px auto;
+  font-style:italic;
+  color:var(--muted);
 }
 
-/* ======= RODAPÉ ======= */
+/* FOOTER */
 footer {
-  background-color: var(--black);
-  padding: 40px 5%;
-  text-align: center;
-  border-top: 1px solid var(--red-dark);
+  background:var(--preto);
+  padding:40px 5%;
+  text-align:center;
+  border-top:1px solid var(--vermelho);
 }
-footer img {
-  height: 50px;
-  width: auto;
-  margin-bottom: 15px;
-}
+footer img { height:45px; width:auto; margin-bottom:15px; }
 footer a {
-  color: var(--beige);
-  text-decoration: none;
-  font-weight: 600;
-  transition: color 0.3s;
+  color:var(--bege);
+  text-decoration:none;
+  font-weight:600;
+  transition:0.3s;
 }
-footer a:hover {
-  color: var(--red-dark);
-}
+footer a:hover { color:var(--vermelho); }
 
-/* ======= RESPONSIVIDADE ======= */
-@media (max-width: 768px) {
-  nav ul {
-    flex-direction: column;
-    gap: 10px;
-  }
-  .banner {
-    height: 350px;
-  }
-  .stats {
-    flex-direction: column;
-    gap: 20px;
-  }
-  .planos-container {
-    flex-direction: column;
-    align-items: center;
-  }
+/* MOBILE */
+@media (max-width:768px) {
+  nav ul { flex-direction:column; gap:10px; }
+  .banner { height:320px; padding:20px; }
+  .stats { flex-direction:column; gap:25px; }
+  .planos { flex-direction:column; }
 }
 </style>
 </head>
@@ -256,12 +200,12 @@ footer a:hover {
 <body>
 
 <header>
-  <img src="https://i.imgur.com/kallita-0FZOV6W.png" alt="Kállita Design" class="logo">
+  <img src="https://i.imgur.com/kallita-0FZOV6W.png" alt="Kállita Design">
   <nav>
     <ul>
       <li><a href="#inicio">Início</a></li>
-      <li><a href="#sobre">Sobre mim</a></li>
-      <li><a href="#planos">Serviços</a></li>
+      <li><a href="#sobre">Sobre Mim</a></li>
+      <li><a href="#servicos">Serviços</a></li>
       <li><a href="#portfolio">Portfólio</a></li>
       <li><a href="#depoimentos">Depoimentos</a></li>
       <li><a href="#contato">Contato</a></li>
@@ -277,66 +221,40 @@ footer a:hover {
 </section>
 
 <section class="stats">
-  <div class="stat-box">
-    <h3>+50</h3>
-    <p>Clientes Atendidos</p>
-  </div>
-  <div class="stat-box">
-    <h3>98%</h3>
-    <p>Satisfação</p>
-  </div>
-  <div class="stat-box">
-    <h3>+120</h3>
-    <p>Projetos Entregues</p>
-  </div>
+  <div class="stat"><h3>+50</h3><p>Clientes Atendidos</p></div>
+  <div class="stat"><h3>98%</h3><p>Satisfação</p></div>
+  <div class="stat"><h3>+120</h3><p>Projetos Entregues</p></div>
 </section>
 
-<section id="planos" class="planos">
+<section id="servicos" class="servicos">
   <h2>Planos de Serviço</h2>
-  <div class="planos-container">
+  <div class="planos">
     <div class="plano">
       <h3>Básico</h3>
-      <p>Ideal para quem está começando e quer uma presença visual marcante.</p>
-      <button>Saiba mais</button>
+      <p>Para quem está começando e quer uma identidade marcante.</p>
+      <button>Saiba Mais</button>
     </div>
     <div class="plano">
       <h3>Pro</h3>
-      <p>Perfeito para quem já tem uma marca e deseja elevar sua identidade.</p>
-      <button>Saiba mais</button>
+      <p>Para quem busca crescimento e posicionamento visual.</p>
+      <button>Saiba Mais</button>
     </div>
     <div class="plano">
       <h3>Plus</h3>
-      <p>Experiência completa com identidade visual, estratégia e branding.</p>
-      <button>Saiba mais</button>
+      <p>Para quem deseja estratégia, design e branding completos.</p>
+      <button>Saiba Mais</button>
     </div>
   </div>
 </section>
 
 <section id="sobre" class="sobre">
   <h2>Sobre Mim</h2>
-  <p>Sou Kállita Dionisio, designer e estrategista visual apaixonada por transformar marcas em experiências únicas. Meu trabalho une design e propósito, criando conexões reais entre marcas e pessoas.</p>
+  <p>Sou Kállita Dionisio, designer e estrategista visual apaixonada por dar vida a marcas autênticas e memoráveis. Cada projeto é uma nova história contada através do design.</p>
 </section>
 
 <section id="portfolio" class="portfolio">
   <h2>Últimos Projetos</h2>
   <div class="projetos">
-    <div class="projeto"><img src="URL_DO_PROJETO_1" alt="Projeto 1"></div>
-    <div class="projeto"><img src="URL_DO_PROJETO_2" alt="Projeto 2"></div>
-    <div class="projeto"><img src="URL_DO_PROJETO_3" alt="Projeto 3"></div>
-  </div>
-</section>
-
-<section id="depoimentos" class="depoimentos">
-  <h2>Depoimentos de Clientes</h2>
-  <div class="depoimento">"A Kállita transformou completamente minha marca, com uma identidade que realmente representa meu negócio!"</div>
-  <div class="depoimento">"Profissional talentosa, criativa e muito atenciosa. Recomendo demais!"</div>
-</section>
-
-<footer id="contato">
-  <img src="https://i.imgur.com/kallita-0FZOV6W.png" alt="Logo Kállita Design">
-  <p><a href="LINK_DO_SEU_WHATSAPP_AQUI" target="_blank">Fale comigo no WhatsApp</a></p>
-  <p>&copy; 2025 Kállita Design. Todos os direitos reservados.</p>
-</footer>
-
-</body>
-</html>
+    <div class="projeto"><img src="URL_PROJETO_1" alt="Projeto 1"></div>
+    <div class="projeto"><img src="URL_PROJETO_2" alt="Projeto 2"></div>
+    <d
