@@ -46,51 +46,51 @@
     .container {
       max-width: 1200px;
       margin: 0 auto;
-      padding: 0 2rem;
+      padding: 0 1.5rem;
     }
 
-    /* Header reorganizado */
+    /* Header compacto e eficiente */
     header {
       position: fixed;
       top: 0;
       width: 100%;
-      background: rgba(0, 0, 0, 0.95);
+      background: rgba(0, 0, 0, 0.98);
       backdrop-filter: blur(10px);
       z-index: 1000;
       transition: all 0.3s ease;
-      padding: 1rem 0;
+      padding: 0.8rem 0;
       border-bottom: 1px solid var(--border-light);
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
     }
 
     header.scrolled {
-      padding: 0.7rem 0;
-      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+      padding: 0.5rem 0;
     }
 
     .header-content {
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 1rem;
+      gap: 0.7rem;
     }
 
     .logo {
-      font-size: 1.5rem;
+      font-size: 1.3rem;
       font-weight: 600;
-      letter-spacing: 1px;
+      letter-spacing: 0.5px;
       color: var(--text-primary);
       text-align: center;
     }
 
     .social-icons {
       display: flex;
-      gap: 1.5rem;
+      gap: 1.2rem;
       justify-content: center;
     }
 
     .social-icons a {
       color: var(--primary-color);
-      font-size: 1.5rem;
+      font-size: 1.3rem;
       transition: all 0.3s ease;
       text-decoration: none;
     }
@@ -101,34 +101,36 @@
     }
 
     main {
-      padding-top: 10rem;
+      padding-top: 8.5rem;
       text-align: center;
     }
 
     .hero {
-      margin-bottom: 4rem;
+      margin-bottom: 3rem;
       animation: fadeIn 1s ease-out;
     }
 
     h2 {
       color: var(--primary-color);
-      font-size: 2.2rem;
+      font-size: 2rem;
       margin-bottom: 1rem;
       font-weight: 600;
+      line-height: 1.3;
     }
 
     .subtitle {
       color: var(--text-secondary);
-      font-size: 1.1rem;
+      font-size: 1.05rem;
       max-width: 800px;
-      margin: 0 auto 3rem;
-      line-height: 1.7;
+      margin: 0 auto 2.5rem;
+      line-height: 1.6;
     }
 
+    /* Layout de planos otimizado para desktop */
     .planos-container {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 2.5rem;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.8rem;
       justify-content: center;
       margin-bottom: 3rem;
     }
@@ -136,8 +138,8 @@
     .plano {
       background: var(--card-bg);
       border: 1px solid var(--border-light);
-      border-radius: 15px;
-      padding: 2.5rem 2rem;
+      border-radius: 12px;
+      padding: 2.2rem 1.8rem;
       transition: all 0.4s ease;
       position: relative;
       overflow: hidden;
@@ -147,34 +149,34 @@
     }
 
     .plano:hover {
-      transform: translateY(-8px);
+      transform: translateY(-5px);
       border-color: var(--primary-color);
-      box-shadow: 0 10px 25px rgba(255, 0, 0, 0.1);
+      box-shadow: 0 8px 20px rgba(255, 0, 0, 0.1);
     }
 
     .plano h3 {
       color: var(--primary-color);
-      font-size: 1.4rem;
+      font-size: 1.3rem;
       margin-bottom: 1rem;
       font-weight: 600;
     }
 
     .plano p {
       color: var(--text-secondary);
-      font-size: 0.95rem;
-      line-height: 1.7;
+      font-size: 0.92rem;
+      line-height: 1.6;
       margin-bottom: 1rem;
     }
 
-    /* ESTILOS MELHORADOS PARA OS PREÇOS - SEM SOMBRA */
+    /* Preços com destaque e proximidade melhorada */
     .price-container {
-      margin: 1.5rem 0;
-      padding: 1rem 0;
+      margin: 1.2rem 0;
+      padding: 0.8rem 0;
       position: relative;
     }
 
     .price {
-      font-size: 3.5rem;
+      font-size: 3rem;
       font-weight: 800;
       color: var(--primary-color);
       line-height: 1;
@@ -184,20 +186,20 @@
     }
 
     .price-small {
-      font-size: 2.5rem;
+      font-size: 2.2rem;
     }
 
     .pag-info {
-      font-size: 0.85rem;
+      font-size: 0.82rem;
       color: var(--text-muted);
-      margin-bottom: 1.5rem;
+      margin-bottom: 1.2rem;
     }
 
     .btn-whatsapp {
       display: inline-block;
       background: var(--primary-color);
       color: var(--secondary-color);
-      padding: 0.9rem 2rem;
+      padding: 0.85rem 1.8rem;
       border-radius: 30px;
       text-decoration: none;
       transition: all 0.3s ease;
@@ -206,6 +208,7 @@
       margin-top: auto;
       position: relative;
       overflow: hidden;
+      font-size: 0.95rem;
     }
 
     .btn-whatsapp:hover {
@@ -232,13 +235,13 @@
     footer {
       text-align: center;
       margin-top: 4rem;
-      padding: 2.5rem 0;
+      padding: 2rem 0;
       color: var(--text-muted);
-      font-size: 0.9rem;
+      font-size: 0.85rem;
       border-top: 1px solid var(--border-light);
     }
 
-    /* Animações */
+    /* Animações suaves */
     @keyframes fadeIn {
       from { opacity: 0; transform: translateY(20px); }
       to { opacity: 1; transform: translateY(0); }
@@ -269,60 +272,61 @@
       right: 0;
       background: var(--primary-color);
       color: white;
-      padding: 0.5rem 1rem;
-      font-size: 0.8rem;
+      padding: 0.4rem 0.9rem;
+      font-size: 0.75rem;
       font-weight: 600;
-      border-bottom-left-radius: 10px;
-      border-top-right-radius: 14px;
+      border-bottom-left-radius: 8px;
+      border-top-right-radius: 11px;
     }
 
-    /* Responsividade */
+    /* Melhorias de responsividade */
     @media (max-width: 768px) {
       .header-content {
-        gap: 0.8rem;
+        gap: 0.6rem;
       }
 
       .logo {
-        font-size: 1.3rem;
+        font-size: 1.2rem;
       }
 
       .social-icons {
-        gap: 1.2rem;
+        gap: 1rem;
       }
 
       .social-icons a {
-        font-size: 1.3rem;
+        font-size: 1.2rem;
       }
 
       main {
-        padding-top: 12rem;
+        padding-top: 9.5rem;
       }
 
       h2 {
-        font-size: 1.8rem;
+        font-size: 1.7rem;
       }
 
       .subtitle {
-        font-size: 1rem;
+        font-size: 0.95rem;
         padding: 0 1rem;
+        margin-bottom: 2rem;
       }
 
       .planos-container {
         grid-template-columns: 1fr;
         gap: 1.5rem;
-        padding: 0 1rem;
+        padding: 0 0.5rem;
       }
 
       .plano {
-        padding: 2rem 1.5rem;
+        padding: 1.8rem 1.5rem;
       }
 
       .price {
-        font-size: 2.8rem;
+        font-size: 2.6rem;
       }
       
       .price-small {
-        font-size: 2rem;
+        font-size: 1.9rem;
       }
       
       .plano.popular {
@@ -336,46 +340,80 @@
       }
 
       .logo {
-        font-size: 1.2rem;
+        font-size: 1.1rem;
       }
 
       .social-icons a {
-        font-size: 1.2rem;
+        font-size: 1.1rem;
       }
 
       h2 {
-        font-size: 1.6rem;
+        font-size: 1.5rem;
       }
 
       .price {
-        font-size: 2.5rem;
+        font-size: 2.3rem;
       }
       
       .price-small {
-        font-size: 1.8rem;
+        font-size: 1.7rem;
       }
 
       .btn-whatsapp {
-        padding: 0.8rem 1.5rem;
+        padding: 0.75rem 1.5rem;
         font-size: 0.9rem;
       }
     }
 
-    /* Layout Desktop Específico */
+    /* Layout Desktop Otimizado */
     @media (min-width: 769px) {
       .container {
-        padding: 0 3rem;
+        padding: 0 2rem;
       }
       
       .planos-container {
-        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-        gap: 2rem;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: 1.5rem; /* Reduzido para aproximar os blocos */
       }
       
       .plano {
         margin: 0 auto;
-        max-width: 380px;
+        max-width: 350px;
+        padding: 2rem 1.8rem;
       }
+    }
+
+    /* Layout para telas grandes */
+    @media (min-width: 1200px) {
+      .planos-container {
+        gap: 1.8rem;
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    /* Melhorias de performance e acessibilidade */
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+
+    /* Efeito de foco para acessibilidade */
+    .btn-whatsapp:focus,
+    .social-icons a:focus {
+      outline: 2px solid var(--primary-color);
+      outline-offset: 2px;
+    }
+
+    /* Otimizações de carregamento */
+    .plano {
+      will-change: transform;
     }
   </style>
 </head>
@@ -428,7 +466,7 @@
         <a class="btn-whatsapp" href="https://wa.me/5519999005784?text=Quero%20contratar%20o%20Plano%20Intermediário!" target="_blank" aria-label="Contratar Plano Intermediário">Contratar</a>
       </div>
 
-      <!-- PLANO PLUS -->
+      <!-- PLANO PLUS (MAIS POPULAR) -->
       <div class="plano popular">
         <h3>🌿 Plano Plus</h3>
         <p>📅 4 postagens por semana (16/mês)<br>🖋️ 3 posts + 1 carrossel<br>❌ Não inclui edição de vídeo.</p>
@@ -505,14 +543,20 @@
   </footer>
 
   <script>
-    // Header scroll effect
+    // Header scroll effect otimizado
     window.addEventListener('scroll', function() {
       const header = document.getElementById('mainHeader');
-      if (window.scrollY > 50) {
+      if (window.scrollY > 30) {
         header.classList.add('scrolled');
       } else {
         header.classList.remove('scrolled');
       }
+    });
+
+    // Performance: Carregamento otimizado de elementos
+    document.addEventListener('DOMContentLoaded', function() {
+      // Adiciona classe loaded para possíveis animações após carregamento
+      document.body.classList.add('loaded');
     });
   </script>
 
