@@ -57,7 +57,7 @@
       padding: 0 1.5rem;
     }
 
-    /* HEADER: AGORA FIXO E SÓLIDO (CORREÇÃO 1) */
+    /* HEADER: AGORA FIXO E SÓLIDO */
     header {
       position: fixed;
       top: 0;
@@ -70,22 +70,27 @@
       box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
     }
 
-    /* Removido o estilo .scrolled, não é mais necessário */
-
     .header-content {
       display: flex;
-      flex-direction: row; /* Alterado para linha no desktop */
+      flex-direction: row; 
       align-items: center;
-      justify-content: space-between; /* Espaço entre logo e ícones */
+      justify-content: space-between; 
       gap: 0;
     }
 
+    /* ATUALIZAÇÃO 1: Logo agora é um link */
     .logo {
       font-size: 1.4rem;
       font-weight: 700;
       letter-spacing: 1px;
       color: var(--text-primary);
       text-transform: uppercase;
+      text-decoration: none; /* Remove sublinhado do link */
+      transition: color 0.3s ease;
+    }
+    
+    .logo:hover {
+        color: var(--primary-color); /* Efeito hover */
     }
 
     .social-icons {
@@ -105,10 +110,9 @@
       transform: scale(1.1);
     }
 
-    /* CORREÇÃO UX: Ajuste do padding-top do MAIN no Desktop */
+    /* Ajuste do padding-top do MAIN */
     main {
-      /* Altura do cabeçalho no Desktop + um pequeno respiro */
-      padding-top: calc(var(--header-height-desktop) + 4rem); /* Aumentado o respiro superior */
+      padding-top: calc(var(--header-height-desktop) + 4rem); 
       text-align: center;
       padding-bottom: 4rem;
     }
@@ -125,7 +129,7 @@
         border-radius: 50px;
         text-align: center;
         font-size: 30px;
-        z-index: 1001; /* Acima de tudo */
+        z-index: 1001;
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
         display: flex;
         align-items: center;
@@ -142,24 +146,24 @@
         font-size: 0.9rem; 
         font-weight: 500;
         margin-bottom: 3rem;
-        display: block; /* Garante que ocupe a linha toda */
+        display: block;
     }
     
     /* Título da seção de Planos (H2) - EFEITO GRADIENTE */
     .planos-section-title {
-        color: var(--primary-color); /* Fallback */
+        color: var(--primary-color);
         background: linear-gradient(90deg, var(--primary-color), var(--primary-hot), var(--primary-color));
-        background-size: 200% auto; /* Para animação */
+        background-size: 200% auto;
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         background-clip: text;
         text-fill-color: transparent;
-        animation: gradient-flow 5s linear infinite; /* Animação */
+        animation: gradient-flow 5s linear infinite;
         
         font-size: 2.5rem;
         margin-top: 1rem;
         margin-bottom: 2.5rem;
-        font-weight: 800; /* Mais peso */
+        font-weight: 800;
         text-transform: uppercase;
         letter-spacing: 1.5px;
         position: relative;
@@ -183,20 +187,17 @@
     .plano { background: var(--card-bg); border: 1px solid var(--border-light); border-radius: 16px; padding: 2.5rem 2rem; transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94); position: relative; overflow: hidden; display: flex; flex-direction: column; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); }
     .plano:hover { transform: translateY(-8px) scale(1.02); border-color: var(--primary-color); box-shadow: 0 15px 30px rgba(214, 0, 255, 0.25), 0 4px 15px rgba(0, 0, 0, 0.5); }
     
-    /* Título do Card (H3) - (CORREÇÃO 2) */
     .plano h3 {
-        /* Estilos aplicados a TUDO (emoji e texto) */
-        color: var(--primary-color); /* Fallback para emoji */
+        color: var(--primary-color);
         font-size: 1.5rem;
         margin-bottom: 1.5rem;
         font-weight: 700;
         letter-spacing: 0.5px;
-        display: flex; /* Ajuda a alinhar o emoji e o span */
+        display: flex;
         align-items: center;
-        gap: 0.5rem; /* Espaço entre emoji e texto */
+        gap: 0.5rem;
     }
     
-    /* (CORREÇÃO 2) - Aplica gradiente SÓ NO TEXTO */
     .plano h3 .gradient-text {
         background: linear-gradient(90deg, var(--primary-color), var(--primary-hot));
         -webkit-background-clip: text;
@@ -209,7 +210,19 @@
     .price-container { margin: 1.5rem 0 0.5rem; padding: 0.8rem 0; position: relative; }
     .price { font-size: 3.5rem; font-weight: 800; color: var(--primary-color); line-height: 1; margin: 0; display: inline-block; text-shadow: 0 0 8px rgba(214, 0, 255, 0.4); }
     .price-small { font-size: 2.4rem; }
-    .pag-info { font-size: 0.8rem; color: var(--text-secondary); margin-bottom: 0.5rem; font-style: normal; text-transform: uppercase; font-weight: 600; letter-spacing: 0.5px; }
+    
+    /* ATUALIZAÇÃO 2: Centralizado */
+    .pag-info { 
+        font-size: 0.8rem; 
+        color: var(--text-secondary); 
+        margin-bottom: 0.5rem; 
+        font-style: normal; 
+        text-transform: uppercase; 
+        font-weight: 600; 
+        letter-spacing: 0.5px;
+        text-align: center; /* Centraliza o texto */
+    }
+    
     .price-note { color: var(--text-muted); font-size: 0.85rem; margin-bottom: 1.5rem; }
     
     /* BOTÃO WHATSAPP - EFEITO GRADIENTE */
@@ -217,24 +230,24 @@
         display: inline-block; 
         background: linear-gradient(90deg, var(--primary-color) 0%, var(--primary-hot) 100%);
         background-size: 100% auto;
-        color: var(--secondary-color); /* Texto branco para melhor contraste */
+        color: var(--secondary-color);
         padding: 0.9rem 2.2rem; 
         border-radius: 30px; 
         text-decoration: none; 
         transition: all 0.4s ease; 
         font-weight: 700; 
-        border: none; /* Removido border, o gradiente é suficiente */
+        border: none;
         margin-top: auto; 
         position: relative; 
         overflow: hidden; 
         font-size: 1rem; 
-        box-shadow: 0 4px 20px rgba(214, 0, 255, 0.4); /* Sombra mais forte */
+        box-shadow: 0 4px 20px rgba(214, 0, 255, 0.4);
     }
     .btn-whatsapp:hover { 
-        background-position: right center; /* Move o gradiente no hover */
+        background-position: right center;
         color: var(--secondary-color);
-        transform: translateY(-3px); /* Efeito de "levantar" */
-        box-shadow: 0 8px 25px rgba(255, 0, 160, 0.5); /* Sombra rosa/quente */
+        transform: translateY(-3px);
+        box-shadow: 0 8px 25px rgba(255, 0, 160, 0.5);
     }
     
     /* CARD POPULAR - MAIS DESTAQUE */
@@ -242,7 +255,6 @@
         border: 2px solid var(--primary-color); 
         transform: scale(1.05); 
         background: #242440; 
-        /* Glow mais forte */
         box-shadow: 0 0 30px rgba(214, 0, 255, 0.5), 0 0 15px rgba(214, 0, 255, 0.3) inset;
     }
     .plano.popular:hover { 
@@ -264,13 +276,13 @@
         border-bottom-left-radius: 8px; 
         border-top-right-radius: 14px; 
         letter-spacing: 0.5px;
-        animation: pulse-badge 2s infinite; /* ANIMAÇÃO */
+        animation: pulse-badge 2s infinite;
     }
 
 
     /* MELHORIAS DE RESPONSIVIDADE */
     @media (min-width: 769px) { 
-        /* Sem estilos específicos de hero */
+        /* Sem estilos específicos */
     }
 
     @media (max-width: 768px) {
@@ -324,16 +336,16 @@
     
   </style>
 </head>
-<body>
+<body id="top">
 
-  <a href="https://wa.me/551999900578MUDAR" target="_blank" class="whatsapp-float" aria-label="WhatsApp Flutuante">
+  <a href="httpsE://wa.me/5519999005784" target="_blank" class="whatsapp-float" aria-label="WhatsApp Flutuante">
     <i class="fab fa-whatsapp"></i>
   </a>
 
   <header id="mainHeader">
     <div class="container">
       <div class="header-content">
-        <div class="logo">Kállita Prado — Social Media</div>
+        <a href="#top" class="logo">Kállita Prado — Social Media</a>
         <nav class="social-icons">
           <a href="https://www.instagram.com/akallitaprado/" target="_blank" title="Instagram" aria-label="Instagram">
             <i class="fab fa-instagram"></i>
@@ -359,7 +371,7 @@
         </div>
         <p class="pag-info">Pagamento Mensal</p>
         <p class="price-note">Ou até 3x no cartão*</p>
-        <p style="text-align: center;">⭐ Ideal para quem está começando e quer manter **presença constante** nas redes.</p>
+        <p style="text-align: center;">⭐ Ideal para quem está começando e quer manter <strong>presença constante</strong> nas redes.</p>
         <a class="btn-whatsapp" href="https://wa.me/5519999005784?text=Quero%20contratar%20o%20Plano%20Básico%20(R$200)!" target="_blank" aria-label="Contratar Plano Básico">CONTRATAR AGORA</a>
       </div>
 
@@ -371,7 +383,7 @@
         </div>
         <p class="pag-info">Pagamento Mensal</p>
         <p class="price-note">Ou até 3x no cartão*</p>
-        <p style="text-align: center;">🔥 Perfeito para aumentar o **engajamento e fortalecer** o posicionamento da marca.</p>
+        <p style="text-align: center;">🔥 Perfeito para aumentar o <strong>engajamento e fortalecer</strong> o posicionamento da marca.</p>
         <a class="btn-whatsapp" href="https://wa.me/5519999005784?text=Quero%20contratar%20o%20Plano%20Intermediário%20(R$270)!" target="_blank" aria-label="Contratar Plano Intermediário">CONTRATAR AGORA</a>
       </div>
       
@@ -383,7 +395,7 @@
         </div>
         <p class="pag-info">Pagamento Mensal</p>
         <p class="price-note">Ou até 3x no cartão*</p>
-        <p style="text-align: center;">🥇 Conteúdo narrativo e estratégico para **posicionar sua marca** com consistência.</p>
+        <p style="text-align: center;">🥇 Conteúdo narrativo e estratégico para <strong>posicionar sua marca</strong> com consistência.</p>
         <a class="btn-whatsapp" href="https://wa.me/5519999005784?text=Quero%20contratar%20o%20Plano%20Plus%20(R$320)!" target="_blank" aria-label="Contratar Plano Plus">CONTRATAR AGORA</a>
       </div>
 
@@ -395,7 +407,7 @@
         </div>
         <p class="pag-info">Pagamento Mensal</p>
         <p class="price-note">Ou até 3x no cartão*</p>
-        <p style="text-align: center;">✨ Conteúdo completo e estratégico, com **suporte na criação** de vídeos (sem edição).</p>
+        <p style="text-align: center;">✨ Conteúdo completo e estratégico, com <strong>suporte na criação</strong> de vídeos (sem edição).</p>
         <a class="btn-whatsapp" href="https://wa.me/5519999005784?text=Quero%20contratar%20o%20Plano%20Premium%20(R$389)!" target="_blank" aria-label="Contratar Plano Premium">CONTRATAR AGORA</a>
       </div>
 
@@ -407,7 +419,7 @@
         </div>
         <p class="pag-info">Pagamento Mensal</p>
         <p class="price-note">Ou até 3x no cartão*</p>
-        <p style="text-align: center;">🚀 Gerenciamento completo! Você envia os vídeos gravados e recebe **prontos e legendados**.</p>
+        <p style="text-align: center;">🚀 Gerenciamento completo! Você envia os vídeos gravados e recebe <strong>prontos e legendados</strong>.</p>
         <a class="btn-whatsapp" href="https://wa.me/5519999005784?text=Quero%20contratar%20o%20Plano%20Premium%20%2B%20Vídeos%20(R$489)!" target="_blank" aria-label="Contratar Plano Premium + Vídeos">CONTRATAR AGORA</a>
       </div>
     </div>
@@ -418,19 +430,19 @@
 
       <div class="plano">
         <h3>🎨 <span class="gradient-text">Identidade Visual</span></h3>
-        <p>Criação de **Logotipo Profissional e Marca D'água**.<br>Arquivos vetorizados, JPEG, PNG e PDF.<br>Tipografia, paleta de cores e **Arte do Cartão de Visitas**.</p>
+        <p>Criação de <strong>Logotipo Profissional e Marca D'água</strong>.<br>Arquivos vetorizados, JPEG, PNG e PDF.<br>Tipografia, paleta de cores e <strong>Arte do Cartão de Visitas</strong>.</p>
         <div class="price-container">
           <div class="price">R$ 390</div>
         </div>
         <p class="pag-info">Pagamento Único</p>
         <p class="price-note">Ou até 3x no cartão*</p>
-        <p style="text-align: center;">🖼️ Pacote completo para construir uma marca **profissional, coesa e memorável**.</p>
+        <p style="text-align: center;">🖼️ Pacote completo para construir uma marca <strong>profissional, coesa e memorável</strong>.</p>
         <a class="btn-whatsapp" href="https://wa.me/5519999005784?text=Quero%20solicitar%20uma%20Identidade%20Visual%20Completa!" target="_blank" aria-label="Solicitar Identidade Visual">CONTRATAR AGORA</a>
       </div>
       
       <div class="plano">
         <h3>🖼️ <span class="gradient-text">Arte Avulsa</span></h3>
-        <p>Criação pontual de **Post Estático ou Carrossel**.<br>Ideal para quem precisa de uma arte pontual sem plano mensal.</p>
+        <p>Criação pontual de <strong>Post Estático ou Carrossel</strong>.<br>Ideal para quem precisa de uma arte pontual sem plano mensal.</p>
         <div class="price-container">
           <div class="price price-small">R$ 40-80</div>
         </div>
@@ -463,8 +475,6 @@
   </footer>
 
   <script>
-    /* (CORREÇÃO 1) - Removido o script de scroll do header */
-
     // Scroll Reveal Animation
     document.addEventListener('DOMContentLoaded', function() {
       const observer = new IntersectionObserver((entries) => {
@@ -474,7 +484,7 @@
           }
         });
       }, {
-        threshold: 0.1 // O elemento se torna visível quando 10% dele entra na viewport
+        threshold: 0.1 
       });
 
       document.querySelectorAll('.scroll-reveal').forEach(element => {
