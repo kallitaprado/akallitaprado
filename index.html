@@ -3,35 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Kállita Prado - Social Media. Planos de gerenciamento de redes sociais, criação de conteúdo e identidade visual.">
-  <title>Kállita Prado | Planos e Serviços - Social Media</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <title>Kallita Design — Pacotes Personalizados</title>
   <style>
-    :root {
-      /* CORES ELEGANTES E PROFISSIONAIS */
-      --primary-color: #D600FF; /* Púrpura/Magenta: Elegante e chamativo */
-      --primary-hot: #FF00A0;  /* NOVO: Pink para gradientes */
-      --primary-dark: #9E00C0; /* Tom mais escuro do púrpura */
-      --secondary-color: #fff;
-      
-      /* Tons de cinza escuro mais suaves */
-      --background-dark: #0F0F1A;
-      --background-light: #1A1A2E;
-      --card-bg: #1F1F35;
-      
-      --text-primary: #f0f0f0;
-      --text-secondary: #C0C0D0;
-      --text-muted: #8A8A99;
-      --border-color: rgba(214, 0, 255, 0.4);
-      --border-light: rgba(255, 255, 255, 0.08);
-      
-      /* Variáveis para a altura do cabeçalho fixo */
-      --header-height-desktop: 5.625rem; /* ~90px */
-      --header-height-mobile: 9.25rem; /* ~148px (Empilhado) */
-    }
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap');
 
     * {
       margin: 0;
@@ -39,459 +13,226 @@
       box-sizing: border-box;
     }
 
-    html {
-      scroll-behavior: smooth;
-    }
-
     body {
-      font-family: "Poppins", sans-serif;
-      background: linear-gradient(180deg, var(--background-dark) 0%, var(--background-light) 100%);
-      color: var(--text-primary);
-      overflow-x: hidden;
-      line-height: 1.6;
+      font-family: 'Montserrat', sans-serif;
+      background: #fdfaf8;
+      color: #333;
     }
 
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 1.5rem;
-    }
-
-    /* HEADER: AGORA FIXO E SÓLIDO */
     header {
       position: fixed;
       top: 0;
+      left: 0;
       width: 100%;
-      background: rgba(15, 15, 26, 0.95); /* Fundo escuro permanente */
-      backdrop-filter: blur(12px); /* Efeito de vidro */
+      background: #fff;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      padding: 20px 0;
       z-index: 1000;
-      padding: 0.5rem 0; /* Padding único */
-      border-bottom: 1px solid var(--border-light);
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
     }
 
-    .header-content {
+    nav {
       display: flex;
-      flex-direction: row; 
+      justify-content: center;
       align-items: center;
-      justify-content: space-between; 
-      gap: 0;
+      gap: 40px;
     }
 
-    /* ATUALIZAÇÃO 1: Logo agora é um link */
-    .logo {
-      font-size: 1.4rem;
-      font-weight: 700;
-      letter-spacing: 1px;
-      color: var(--text-primary);
-      text-transform: uppercase;
-      text-decoration: none; /* Remove sublinhado do link */
-      transition: color 0.3s ease;
-    }
-    
-    .logo:hover {
-        color: var(--primary-color); /* Efeito hover */
-    }
-
-    .social-icons {
-      display: flex;
-      gap: 1.5rem;
-    }
-
-    .social-icons a {
-      color: var(--primary-color);
-      font-size: 1.4rem;
-      transition: color 0.3s ease, transform 0.3s ease;
+    nav a {
+      color: #333;
       text-decoration: none;
+      font-weight: 600;
+      transition: color 0.3s;
     }
 
-    .social-icons a:hover {
-      color: var(--secondary-color);
+    nav a:hover {
+      color: #c26b3f;
+    }
+
+    main {
+      padding-top: 120px;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 2.8rem;
+      color: #c26b3f;
+      margin-bottom: 1rem;
+    }
+
+    p.subtitle {
+      font-size: 1.2rem;
+      color: #666;
+      margin-bottom: 3rem;
+    }
+
+    .packages {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 2rem;
+      padding: 2rem;
+    }
+
+    .package {
+      background: #fff;
+      border-radius: 20px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      padding: 2rem;
+      width: 320px;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .package:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    }
+
+    .package h2 {
+      color: #c26b3f;
+      font-size: 1.8rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .package p {
+      color: #555;
+      line-height: 1.6;
+    }
+
+    /* 💸 DESTAQUE DOS PREÇOS EM VERMELHO */
+    .price {
+      font-size: 3.5rem;
+      font-weight: 800;
+      background: linear-gradient(90deg, #ff3b3b, #ff006a);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow: 0 0 12px rgba(255, 0, 100, 0.4);
+      line-height: 1;
+      margin: 0.5rem 0;
+      display: inline-block;
+    }
+
+    .price-small {
+      font-size: 2.4rem;
+      background: linear-gradient(90deg, #ff3b3b, #ff006a);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow: 0 0 12px rgba(255, 0, 100, 0.4);
+      font-weight: 800;
+    }
+
+    .package ul {
+      text-align: left;
+      margin: 1rem 0;
+      padding-left: 1.2rem;
+    }
+
+    .package ul li {
+      margin: 0.5rem 0;
+    }
+
+    .btn {
+      background: #c26b3f;
+      color: #fff;
+      padding: 0.8rem 1.5rem;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background 0.3s;
+      font-weight: 600;
+    }
+
+    .btn:hover {
+      background: #a75833;
+    }
+
+    /* Botão flutuante WhatsApp */
+    .whatsapp-btn {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #25d366;
+      color: #fff;
+      border-radius: 50%;
+      padding: 15px;
+      font-size: 28px;
+      text-decoration: none;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      transition: transform 0.3s;
+    }
+
+    .whatsapp-btn:hover {
       transform: scale(1.1);
     }
 
-    /* Ajuste do padding-top do MAIN */
-    main {
-      padding-top: calc(var(--header-height-desktop) + 4rem); 
-      text-align: center;
-      padding-bottom: 4rem;
-    }
-
-    /* WhatsApp FLUTUANTE */
-    .whatsapp-float {
-        position: fixed;
-        width: 60px;
-        height: 60px;
-        bottom: 30px;
-        right: 30px;
-        background-color: #25D366;
-        color: #FFF;
-        border-radius: 50px;
-        text-align: center;
-        font-size: 30px;
-        z-index: 1001;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        transition: transform 0.3s ease;
-    }
-
-    .whatsapp-float:hover {
-        transform: scale(1.1) rotate(5deg);
-    }
-    
-    .payment-info-general {
-        color: var(--text-muted); 
-        font-size: 0.9rem; 
-        font-weight: 500;
-        margin-bottom: 3rem;
-        display: block;
-    }
-    
-    /* Título da seção de Planos (H2) - EFEITO GRADIENTE */
-    .planos-section-title {
-        color: var(--primary-color);
-        background: linear-gradient(90deg, var(--primary-color), var(--primary-hot), var(--primary-color));
-        background-size: 200% auto;
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-        text-fill-color: transparent;
-        animation: gradient-flow 5s linear infinite;
-        
-        font-size: 2.5rem;
-        margin-top: 1rem;
-        margin-bottom: 2.5rem;
-        font-weight: 800;
-        text-transform: uppercase;
-        letter-spacing: 1.5px;
-        position: relative;
-        display: inline-block;
-    }
-    
-    .planos-section-title::after {
-        content: '';
-        position: absolute;
-        left: 50%;
-        transform: translateX(-50%);
-        bottom: -10px;
-        width: 80px;
-        height: 4px;
-        background: var(--primary-color);
-        border-radius: 2px;
-    }
-
-    /* ESTILOS DE PLANOS E PREÇOS */
-    .planos-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; justify-content: center; margin-bottom: 3rem; }
-    .plano { background: var(--card-bg); border: 1px solid var(--border-light); border-radius: 16px; padding: 2.5rem 2rem; transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94); position: relative; overflow: hidden; display: flex; flex-direction: column; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); }
-    .plano:hover { transform: translateY(-8px) scale(1.02); border-color: var(--primary-color); box-shadow: 0 15px 30px rgba(214, 0, 255, 0.25), 0 4px 15px rgba(0, 0, 0, 0.5); }
-    
-    .plano h3 {
-        color: var(--primary-color);
-        font-size: 1.5rem;
-        margin-bottom: 1.5rem;
-        font-weight: 700;
-        letter-spacing: 0.5px;
-        display: flex;
-        align-items: center;
-        gap: 0.5rem;
-    }
-    
-    .plano h3 .gradient-text {
-        background: linear-gradient(90deg, var(--primary-color), var(--primary-hot));
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-        text-fill-color: transparent;
-    }
-    
-    .plano p { color: var(--text-secondary); font-size: 0.95rem; line-height: 1.7; margin-bottom: 1rem; text-align: left; }
-    .price-container { margin: 1.5rem 0 0.5rem; padding: 0.8rem 0; position: relative; }
-    .price { font-size: 3.5rem; font-weight: 800; color: var(--primary-color); line-height: 1; margin: 0; display: inline-block; text-shadow: 0 0 8px rgba(214, 0, 255, 0.4); }
-    .price-small { font-size: 2.4rem; }
-    
-    /* ATUALIZAÇÃO 2: Centralizado */
-    .pag-info { 
-        font-size: 0.8rem; 
-        color: var(--text-secondary); 
-        margin-bottom: 0.5rem; 
-        font-style: normal; 
-        text-transform: uppercase; 
-        font-weight: 600; 
-        letter-spacing: 0.5px;
-        text-align: center; /* Centraliza o texto */
-    }
-    
-    .price-note { color: var(--text-muted); font-size: 0.85rem; margin-bottom: 1.5rem; }
-    
-    /* BOTÃO WHATSAPP - EFEITO GRADIENTE */
-    .btn-whatsapp { 
-        display: inline-block; 
-        background: linear-gradient(90deg, var(--primary-color) 0%, var(--primary-hot) 100%);
-        background-size: 100% auto;
-        color: var(--secondary-color);
-        padding: 0.9rem 2.2rem; 
-        border-radius: 30px; 
-        text-decoration: none; 
-        transition: all 0.4s ease; 
-        font-weight: 700; 
-        border: none;
-        margin-top: auto; 
-        position: relative; 
-        overflow: hidden; 
-        font-size: 1rem; 
-        box-shadow: 0 4px 20px rgba(214, 0, 255, 0.4);
-    }
-    .btn-whatsapp:hover { 
-        background-position: right center;
-        color: var(--secondary-color);
-        transform: translateY(-3px);
-        box-shadow: 0 8px 25px rgba(255, 0, 160, 0.5);
-    }
-    
-    /* CARD POPULAR - MAIS DESTAQUE */
-    .plano.popular { 
-        border: 2px solid var(--primary-color); 
-        transform: scale(1.05); 
-        background: #242440; 
-        box-shadow: 0 0 30px rgba(214, 0, 255, 0.5), 0 0 15px rgba(214, 0, 255, 0.3) inset;
-    }
-    .plano.popular:hover { 
-        transform: translateY(-8px) scale(1.07); 
-        box-shadow: 0 0 45px rgba(214, 0, 255, 0.7), 0 0 20px rgba(214, 0, 255, 0.4) inset;
-    }
-    
-    /* BADGE POPULAR - ANIMAÇÃO PULSE */
-    .plano.popular::before { 
-        content: '✨ MAIS POPULAR ✨'; 
-        position: absolute; 
-        top: 0; 
-        right: 0; 
-        background: var(--primary-color); 
-        color: var(--background-dark); 
-        padding: 0.4rem 1rem; 
-        font-size: 0.8rem; 
-        font-weight: 700; 
-        border-bottom-left-radius: 8px; 
-        border-top-right-radius: 14px; 
-        letter-spacing: 0.5px;
-        animation: pulse-badge 2s infinite;
-    }
-
-
-    /* MELHORIAS DE RESPONSIVIDADE */
-    @media (min-width: 769px) { 
-        /* Sem estilos específicos */
-    }
-
     @media (max-width: 768px) {
-      /* Ajuste do cabeçalho para mobile (mantendo em duas linhas) */
-      .header-content {
-          flex-direction: column;
-          gap: 0.6rem;
+      .packages {
+        flex-direction: column;
+        align-items: center;
       }
-        
-      /* CORREÇÃO UX: Ajuste do padding-top do MAIN no Mobile */
-      main {
-        padding-top: calc(var(--header-height-mobile) + 1.5rem); 
-      }
-      
-      .plano.popular { transform: scale(1.02); } 
-      .plano.popular:hover { transform: scale(1.05); }
-      
-      .whatsapp-float {
-        width: 50px;
-        height: 50px;
-        font-size: 25px;
-        bottom: 20px;
-        right: 20px;
-      }
-    }
-    
-    /* ANIMAÇÕES DE SCROLL-REVEAL */
-    .scroll-reveal {
-      opacity: 0;
-      transform: translateY(20px);
-      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-    }
 
-    .scroll-reveal.active {
-      opacity: 1;
-      transform: translateY(0);
+      .price {
+        font-size: 3rem;
+      }
+
+      .price-small {
+        font-size: 2.1rem;
+      }
     }
-    
-    /* KEYFRAMES DAS ANIMAÇÕES */
-    @keyframes pulse-badge {
-      0% { transform: scale(1); box-shadow: 0 0 5px rgba(214, 0, 255, 0.5); }
-      50% { transform: scale(1.05); box-shadow: 0 0 15px rgba(214, 0, 255, 0.8); }
-      100% { transform: scale(1); box-shadow: 0 0 5px rgba(214, 0, 255, 0.5); }
-    }
-    
-    @keyframes gradient-flow {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
-    }
-    
   </style>
 </head>
-<body id="top">
+<body>
 
-  <a href="httpsE://wa.me/5519999005784" target="_blank" class="whatsapp-float" aria-label="WhatsApp Flutuante">
-    <i class="fab fa-whatsapp"></i>
-  </a>
-
-  <header id="mainHeader">
-    <div class="container">
-      <div class="header-content">
-        <a href="#top" class="logo">Kállita Prado — Social Media</a>
-        <nav class="social-icons">
-          <a href="https://www.instagram.com/akallitaprado/" target="_blank" title="Instagram" aria-label="Instagram">
-            <i class="fab fa-instagram"></i>
-          </a>
-        </nav>
-      </div>
-    </div>
+  <header>
+    <nav>
+      <a href="#">Início</a>
+      <a href="#">Serviços</a>
+      <a href="#">Portfólio</a>
+      <a href="#">Contato</a>
+    </nav>
   </header>
 
-  <main class="container">
+  <main>
+    <h1>Pacotes Personalizados</h1>
+    <p class="subtitle">Escolha o plano ideal para o seu negócio ✨</p>
 
-    <h2 class="planos-section-title scroll-reveal">Gerenciamento de Redes Sociais</h2>
-    <p class="payment-info-general scroll-reveal">
-        💳 Formas de Pagamento: Pix, Boleto ou Cartão de Crédito (até 3x com juros).
-    </p>
-
-    <div class="planos-container scroll-reveal">
-      <div class="plano">
-        <h3>🚀 <span class="gradient-text">Plano Básico</span></h3>
-        <p>📅 2 postagens por semana (8/mês)<br>🖋️ Posts estáticos de conteúdo.<br>❌ Não inclui carrossel ou edição de vídeo.</p>
-        <div class="price-container">
-          <div class="price">R$ 200</div>
-        </div>
-        <p class="pag-info">Pagamento Mensal</p>
-        <p class="price-note">Ou até 3x no cartão*</p>
-        <p style="text-align: center;">⭐ Ideal para quem está começando e quer manter <strong>presença constante</strong> nas redes.</p>
-        <a class="btn-whatsapp" href="https://wa.me/5519999005784?text=Quero%20contratar%20o%20Plano%20Básico%20(R$200)!" target="_blank" aria-label="Contratar Plano Básico">CONTRATAR AGORA</a>
+    <div class="packages">
+      <div class="package">
+        <h2>BÁSICO</h2>
+        <p class="price-small">R$ 249</p>
+        <ul>
+          <li>3 posts por semana</li>
+          <li>Gestão de legenda e hashtags</li>
+          <li>Relatórios mensais</li>
+        </ul>
+        <button class="btn">Quero esse!</button>
       </div>
 
-      <div class="plano">
-        <h3>📈 <span class="gradient-text">Plano Intermediário</span></h3>
-        <p>📅 3 postagens por semana (12/mês)<br>🖋️ Posts táticos e estratégicos.<br>❌ Não inclui carrossel ou edição de vídeo.</p>
-        <div class="price-container">
-          <div class="price">R$ 270</div>
-        </div>
-        <p class="pag-info">Pagamento Mensal</p>
-        <p class="price-note">Ou até 3x no cartão*</p>
-        <p style="text-align: center;">🔥 Perfeito para aumentar o <strong>engajamento e fortalecer</strong> o posicionamento da marca.</p>
-        <a class="btn-whatsapp" href="https://wa.me/5519999005784?text=Quero%20contratar%20o%20Plano%20Intermediário%20(R$270)!" target="_blank" aria-label="Contratar Plano Intermediário">CONTRATAR AGORA</a>
-      </div>
-      
-      <div class="plano">
-        <h3>💎 <span class="gradient-text">Plano Plus</span></h3>
-        <p>📅 4 postagens por semana (16/mês)<br>🖋️ 3 posts estáticos + 1 **Carrossel** por semana.<br>❌ Não inclui edição de vídeo.</p>
-        <div class="price-container">
-          <div class="price">R$ 320</div>
-        </div>
-        <p class="pag-info">Pagamento Mensal</p>
-        <p class="price-note">Ou até 3x no cartão*</p>
-        <p style="text-align: center;">🥇 Conteúdo narrativo e estratégico para <strong>posicionar sua marca</strong> com consistência.</p>
-        <a class="btn-whatsapp" href="https://wa.me/5519999005784?text=Quero%20contratar%20o%20Plano%20Plus%20(R$320)!" target="_blank" aria-label="Contratar Plano Plus">CONTRATAR AGORA</a>
+      <div class="package">
+        <h2>INTERMEDIÁRIO</h2>
+        <p class="price">R$ 359</p>
+        <ul>
+          <li>5 posts por semana</li>
+          <li>Criação de stories</li>
+          <li>Relatórios detalhados</li>
+        </ul>
+        <button class="btn">Escolher plano</button>
       </div>
 
-      <div class="plano popular">
-        <h3>👑 <span class="gradient-text">Plano Premium</span></h3>
-        <p>📅 4 postagens por semana (16/mês)<br>🖋️ 2 posts estáticos + 2 **Carrosséis** por semana.<br>💡 Roteiro personalizado para vídeos.</p>
-        <div class="price-container">
-          <div class="price">R$ 389</div>
-        </div>
-        <p class="pag-info">Pagamento Mensal</p>
-        <p class="price-note">Ou até 3x no cartão*</p>
-        <p style="text-align: center;">✨ Conteúdo completo e estratégico, com <strong>suporte na criação</strong> de vídeos (sem edição).</p>
-        <a class="btn-whatsapp" href="https://wa.me/5519999005784?text=Quero%20contratar%20o%20Plano%20Premium%20(R$389)!" target="_blank" aria-label="Contratar Plano Premium">CONTRATAR AGORA</a>
-      </div>
-
-      <div class="plano popular">
-        <h3>🎬 <span class="gradient-text">Premium + Vídeos</span></h3>
-        <p>📅 4 postagens por semana (16/mês)<br>🖋️ 2 posts + 2 **Carrosséis** por semana.<br>✅ Roteiro estratégico + **Edição inclusa**.</p>
-        <div class="price-container">
-          <div class="price">R$ 489</div>
-        </div>
-        <p class="pag-info">Pagamento Mensal</p>
-        <p class="price-note">Ou até 3x no cartão*</p>
-        <p style="text-align: center;">🚀 Gerenciamento completo! Você envia os vídeos gravados e recebe <strong>prontos e legendados</strong>.</p>
-        <a class="btn-whatsapp" href="https://wa.me/5519999005784?text=Quero%20contratar%20o%20Plano%20Premium%20%2B%20Vídeos%20(R$489)!" target="_blank" aria-label="Contratar Plano Premium + Vídeos">CONTRATAR AGORA</a>
+      <div class="package">
+        <h2>PREMIUM</h2>
+        <p class="price">R$ 499</p>
+        <ul>
+          <li>Conteúdo diário</li>
+          <li>Gestão completa</li>
+          <li>Atendimento personalizado</li>
+        </ul>
+        <button class="btn">Quero o Premium!</button>
       </div>
     </div>
-    
-    <h2 class="planos-section-title scroll-reveal">Serviços Avulsos</h2>
-
-    <div class="planos-container scroll-reveal">
-
-      <div class="plano">
-        <h3>🎨 <span class="gradient-text">Identidade Visual</span></h3>
-        <p>Criação de <strong>Logotipo Profissional e Marca D'água</strong>.<br>Arquivos vetorizados, JPEG, PNG e PDF.<br>Tipografia, paleta de cores e <strong>Arte do Cartão de Visitas</strong>.</p>
-        <div class="price-container">
-          <div class="price">R$ 390</div>
-        </div>
-        <p class="pag-info">Pagamento Único</p>
-        <p class="price-note">Ou até 3x no cartão*</p>
-        <p style="text-align: center;">🖼️ Pacote completo para construir uma marca <strong>profissional, coesa e memorável</strong>.</p>
-        <a class="btn-whatsapp" href="https://wa.me/5519999005784?text=Quero%20solicitar%20uma%20Identidade%20Visual%20Completa!" target="_blank" aria-label="Solicitar Identidade Visual">CONTRATAR AGORA</a>
-      </div>
-      
-      <div class="plano">
-        <h3>🖼️ <span class="gradient-text">Arte Avulsa</span></h3>
-        <p>Criação pontual de <strong>Post Estático ou Carrossel</strong>.<br>Ideal para quem precisa de uma arte pontual sem plano mensal.</p>
-        <div class="price-container">
-          <div class="price price-small">R$ 40-80</div>
-        </div>
-        <p class="pag-info">VALOR POR ARTE</p>
-        <p class="price-note">Varia conforme a complexidade do briefing.</p>
-        <a class="btn-whatsapp" href="https://wa.me/5519999005784?text=Quero%20solicitar%20uma%20Arte%20Avulsa!" target="_blank" aria-label="Solicitar Arte Avulsa">SOLICITAR ORÇAMENTO</a>
-      </div>
-      
-      <div class="plano">
-        <h3>🎬 <span class="gradient-text">Edição de Vídeo Avulsa</span></h3>
-        <p>Inclui legenda, cortes, ajustes de cor e montagem final, a partir do material enviado pelo cliente.</p>
-        <div class="price-container">
-          <div class="price price-small">R$ 80-150</div>
-        </div>
-        <p class="pag-info">VALOR POR VÍDEO</p>
-        <p class="price-note">Depende da duração e nível de edição.</p>
-        <a class="btn-whatsapp" href="https://wa.me/5519999005784?text=Quero%20solicitar%20uma%20Edição%20de%20Vídeo%20Avulsa!" target="_blank" aria-label="Solicitar Edição de Vídeo Avulsa">SOLICITAR ORÇAMENTO</a>
-      </div>
-
-    </div>
-    
-    <p style="color: var(--text-muted); font-size: 0.75rem; text-align: center; margin-top: 1rem; margin-bottom: 2rem;">
-        * O parcelamento no cartão de crédito está sujeito à taxa de juros da operadora (Mercado Pago).
-    </p>
-    
   </main>
 
-  <footer class="container">
-    <p>© 2025 Kállita Prado | Social Media Estratégica</p>
-  </footer>
-
-  <script>
-    // Scroll Reveal Animation
-    document.addEventListener('DOMContentLoaded', function() {
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('active');
-          }
-        });
-      }, {
-        threshold: 0.1 
-      });
-
-      document.querySelectorAll('.scroll-reveal').forEach(element => {
-        observer.observe(element);
-      });
-    });
-  </script>
+  <!-- ✅ CORRIGIDO: Link do WhatsApp -->
+  <a href="https://wa.me/5519999005784" class="whatsapp-btn" target="_blank">💬</a>
 
 </body>
 </html>
