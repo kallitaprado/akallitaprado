@@ -1,314 +1,224 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Kállita Prado - Social Media | Planos</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kállita Prado | Social Media</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <style>
-    /* ===== RESET ===== */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Poppins', sans-serif;
-    }
-
+    /* ======== ESTILO GERAL ======== */
     body {
-      background: linear-gradient(160deg, #0d0d0d 0%, #1a1a1a 50%, #240000 100%);
+      margin: 0;
+      font-family: "Poppins", sans-serif;
+      background: linear-gradient(180deg, #0d0d0d, #1a1a1a);
       color: #fff;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: flex-start;
       overflow-x: hidden;
     }
 
-    /* ===== HEADER ===== */
     header {
       position: fixed;
       top: 0;
       width: 100%;
-      background: rgba(15, 15, 15, 0.8);
+      background: rgba(0, 0, 0, 0.7);
       backdrop-filter: blur(10px);
       display: flex;
-      align-items: center;
       justify-content: space-between;
+      align-items: center;
       padding: 1rem 2rem;
-      z-index: 10;
+      z-index: 1000;
     }
 
     header h1 {
       font-size: 1.3rem;
-      color: #fff;
       letter-spacing: 1px;
+      color: #fff;
     }
 
-    .social-links {
+    .social-icons {
       display: flex;
       gap: 1rem;
     }
 
-    .social-links a {
-      color: #ff1a1a;
+    .social-icons a {
+      color: #ff4040;
       font-size: 1.4rem;
       transition: 0.3s;
-      text-decoration: none;
     }
 
-    .social-links a:hover {
+    .social-icons a:hover {
       color: #fff;
       transform: scale(1.2);
     }
 
-    /* ===== TITLE ===== */
-    .page-title {
-      margin-top: 7rem;
+    main {
+      padding-top: 7rem;
       text-align: center;
-      font-size: 2.2rem;
-      font-weight: 600;
-      color: #ff1a1a;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      animation: fadeIn 1s ease-in;
+      max-width: 1200px;
+      margin: 0 auto;
     }
 
-    /* ===== PLANOS ===== */
-    .plans-container {
+    h2 {
+      color: #ff4040;
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    p.subtitle {
+      color: #ccc;
+      margin-bottom: 3rem;
+    }
+
+    /* ======== PLANOS ======== */
+    .planos-container {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 2rem;
-      width: 90%;
-      max-width: 1000px;
-      margin: 3rem auto;
-      animation: fadeUp 1.2s ease;
+      justify-content: center;
+      padding: 0 2rem;
     }
 
-    .plan-card {
-      background: rgba(25, 25, 25, 0.9);
-      border: 1px solid rgba(255, 26, 26, 0.3);
-      border-radius: 20px;
+    .plano {
+      background: #111;
+      border: 1px solid rgba(255, 64, 64, 0.3);
+      border-radius: 15px;
       padding: 2rem;
-      text-align: center;
-      box-shadow: 0 0 15px rgba(255, 0, 0, 0.15);
-      transition: 0.4s;
+      transition: 0.4s ease;
+      box-shadow: 0 0 15px rgba(255, 64, 64, 0.1);
     }
 
-    .plan-card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 0 25px rgba(255, 0, 0, 0.35);
+    .plano:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 0 25px rgba(255, 64, 64, 0.3);
     }
 
-    .plan-card h2 {
-      font-size: 1.5rem;
-      color: #ff1a1a;
-      margin-bottom: 1rem;
-      text-transform: uppercase;
+    .plano h3 {
+      color: #ff4040;
+      font-size: 1.4rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .plano p {
+      color: #ccc;
+      font-size: 0.95rem;
+      line-height: 1.6;
     }
 
     .price {
-      font-size: 1.4rem;
-      margin-bottom: 0.5rem;
-      font-weight: 600;
+      font-size: 1.5rem;
+      font-weight: bold;
       color: #fff;
+      margin: 1rem 0;
     }
 
-    .desc {
-      font-size: 0.95rem;
-      color: #ccc;
-      margin-bottom: 1.5rem;
-    }
-
-    ul {
-      list-style: none;
-      text-align: left;
-      margin-bottom: 1.5rem;
-    }
-
-    ul li {
-      margin: 0.4rem 0;
-      font-size: 0.95rem;
-    }
-
-    .whatsapp-btn {
-      background: linear-gradient(90deg, #ff1a1a, #cc0000);
+    .btn-whatsapp {
+      display: inline-block;
+      background: #ff4040;
       color: #fff;
       padding: 0.8rem 1.5rem;
       border-radius: 30px;
-      font-weight: 600;
       text-decoration: none;
       transition: 0.3s;
-      display: inline-block;
-      box-shadow: 0 0 10px rgba(255, 0, 0, 0.4);
+      font-weight: 600;
     }
 
-    .whatsapp-btn:hover {
-      background: linear-gradient(90deg, #fff, #ff1a1a);
-      color: #240000;
+    .btn-whatsapp:hover {
+      background: #fff;
+      color: #ff4040;
       transform: scale(1.05);
-      box-shadow: 0 0 20px rgba(255, 0, 0, 0.7);
     }
 
-    /* ===== SECTION TITLE ===== */
-    .section-title {
-      font-size: 1.8rem;
-      color: #ff1a1a;
+    /* ======== RODAPÉ ======== */
+    footer {
       text-align: center;
-      margin-top: 2rem;
-      margin-bottom: 1rem;
-      text-transform: uppercase;
-      letter-spacing: 1px;
+      margin-top: 4rem;
+      padding: 2rem 0;
+      color: #888;
+      font-size: 0.9rem;
     }
 
-    /* ===== ANIMAÇÕES ===== */
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(-20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(30px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    /* ===== RESPONSIVE ===== */
+    /* ======== RESPONSIVIDADE ======== */
     @media (max-width: 768px) {
-      .page-title {
-        font-size: 1.8rem;
+      header {
+        flex-direction: column;
+        gap: 1rem;
       }
 
-      .plan-card {
-        padding: 1.5rem;
+      .planos-container {
+        grid-template-columns: 1fr;
+      }
+
+      h2 {
+        font-size: 1.6rem;
       }
     }
   </style>
 </head>
 <body>
+
   <header>
-    <h1>Kállita Prado - Social Media</h1>
-    <div class="social-links">
-      <a href="https://wa.me/5519999005784" target="_blank" title="WhatsApp">💬</a>
-      <a href="https://www.instagram.com/akallitaprado/" target="_blank" title="Instagram">📷</a>
+    <h1>Kállita Prado — Social Media</h1>
+    <div class="social-icons">
+      <a href="https://wa.me/5519999005784" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+      <a href="https://www.instagram.com/akallitaprado/" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
     </div>
   </header>
 
-  <h2 class="page-title">Planos de Gerenciamento de Redes Sociais</h2>
+  <main>
+    <h2>🌿 Planos de Gerenciamento de Redes Sociais 🌿</h2>
+    <p class="subtitle">Todos os planos incluem análise completa do perfil, definição de paleta de cores e tipografia, e planejamento estratégico mensal.</p>
 
-  <div class="plans-container">
+    <div class="planos-container">
+      <div class="plano">
+        <h3>💫 Plano Básico</h3>
+        <p>📅 2 postagens por semana (8/mês)<br>🖋️ Posts estáticos<br>❌ Não inclui carrossel nem edição de vídeo.</p>
+        <p class="price">R$ 200</p>
+        <p>🌱 Ideal pra quem está começando e quer manter presença constante.</p>
+        <a class="btn-whatsapp" href="https://wa.me/5519999005784?text=Quero%20contratar%20o%20Plano%20Básico!" target="_blank">Contratar</a>
+      </div>
 
-    <!-- PLANO BÁSICO -->
-    <div class="plan-card">
-      <h2>Plano Básico</h2>
-      <p class="price">R$ 200/mês</p>
-      <p class="desc">🌱 Ideal pra quem está começando e quer manter presença constante nas redes.</p>
-      <ul>
-        <li>📅 2 postagens por semana (8 posts/mês)</li>
-        <li>🖋️ Posts estáticos</li>
-        <li>❌ Não inclui carrossel</li>
-        <li>❌ Não inclui edição de vídeo</li>
-      </ul>
-      <a class="whatsapp-btn" href="https://wa.me/5519999005784?text=Olá!%20Quero%20contratar%20o%20Plano%20Básico!" target="_blank">💬 Contratar no WhatsApp</a>
+      <div class="plano">
+        <h3>🌼 Plano Intermediário</h3>
+        <p>📅 3 postagens por semana (12/mês)<br>🖋️ Posts táticos e estratégicos<br>❌ Sem carrossel e sem edição de vídeo.</p>
+        <p class="price">R$ 270</p>
+        <p>✨ Perfeito pra quem quer aumentar engajamento e fortalecer o posicionamento.</p>
+        <a class="btn-whatsapp" href="https://wa.me/5519999005784?text=Quero%20contratar%20o%20Plano%20Intermediário!" target="_blank">Contratar</a>
+      </div>
+
+      <div class="plano">
+        <h3>🌿 Plano Plus</h3>
+        <p>📅 4 postagens por semana (16/mês)<br>🖋️ 3 posts + 1 carrossel<br>❌ Não inclui edição de vídeo.</p>
+        <p class="price">R$ 320</p>
+        <p>🌾 Focado em conteúdos narrativos e estratégicos pra posicionar sua marca com consistência.</p>
+        <a class="btn-whatsapp" href="https://wa.me/5519999005784?text=Quero%20contratar%20o%20Plano%20Plus!" target="_blank">Contratar</a>
+      </div>
+
+      <div class="plano">
+        <h3>🌺 Plano Premium</h3>
+        <p>📅 4 postagens por semana (16/mês)<br>🖋️ 2 posts + 2 carrosséis<br>📑 Roteiro personalizado para vídeos<br>❌ Não inclui edição.</p>
+        <p class="price">R$ 389</p>
+        <p>🌸 Ideal pra quem busca um conteúdo completo e estratégico, com suporte de roteiro.</p>
+        <a class="btn-whatsapp" href="https://wa.me/5519999005784?text=Quero%20contratar%20o%20Plano%20Premium!" target="_blank">Contratar</a>
+      </div>
+
+      <div class="plano">
+        <h3>🌻 Plano Premium + Vídeos</h3>
+        <p>📅 4 postagens por semana (16/mês)<br>🖋️ 2 posts + 2 carrosséis<br>🎬 Edição completa de vídeos (cliente envia cortes)</p>
+        <p class="price">R$ 489</p>
+        <p>💫 Gerenciamento completo e profissional, com vídeos prontos e legendados.</p>
+        <a class="btn-whatsapp" href="https://wa.me/5519999005784?text=Quero%20contratar%20o%20Plano%20Premium%20+%20Vídeos!" target="_blank">Contratar</a>
+      </div>
+
+      <div class="plano">
+        <h3>🎨 Serviços Avulsos</h3>
+        <p>✨ Arte avulsa (post ou carrossel): R$ 40–80<br>🎬 Edição avulsa de vídeo: R$ 80–150<br>💼 Identidade Visual Completa — R$ 300<br>• Logotipo personalizado<br>• Arquivos vetorizáveis e editáveis<br>• Formatos JPEG e PNG</p>
+        <a class="btn-whatsapp" href="https://wa.me/5519999005784?text=Quero%20solicitar%20um%20serviço%20avulso!" target="_blank">Contratar</a>
+      </div>
     </div>
+  </main>
 
-    <!-- PLANO INTERMEDIÁRIO -->
-    <div class="plan-card">
-      <h2>Plano Intermediário</h2>
-      <p class="price">R$ 270/mês</p>
-      <p class="desc">✨ Perfeito pra quem quer aumentar o engajamento e fortalecer o posicionamento.</p>
-      <ul>
-        <li>📅 3 postagens por semana (12 posts/mês)</li>
-        <li>🖋️ Posts táticos e estratégicos</li>
-        <li>❌ Não inclui carrossel</li>
-        <li>❌ Não inclui edição de vídeo</li>
-      </ul>
-      <a class="whatsapp-btn" href="https://wa.me/5519999005784?text=Olá!%20Quero%20contratar%20o%20Plano%20Intermediário!" target="_blank">💬 Contratar no WhatsApp</a>
-    </div>
+  <footer>
+    <p>© 2025 Kállita Prado | Social Media 🌹</p>
+  </footer>
 
-    <!-- PLANO PLUS -->
-    <div class="plan-card">
-      <h2>Plano Plus</h2>
-      <p class="price">R$ 320/mês</p>
-      <p class="desc">🌾 Focado em conteúdos narrativos e estratégicos pra posicionar sua marca com consistência.</p>
-      <ul>
-        <li>📅 4 postagens por semana (16 posts/mês)</li>
-        <li>🖋️ 3 posts + 1 carrossel por semana</li>
-        <li>✅ Inclui carrossel</li>
-        <li>❌ Não inclui edição de vídeo</li>
-      </ul>
-      <a class="whatsapp-btn" href="https://wa.me/5519999005784?text=Olá!%20Quero%20contratar%20o%20Plano%20Plus!" target="_blank">💬 Contratar no WhatsApp</a>
-    </div>
-
-    <!-- PLANO PREMIUM -->
-    <div class="plan-card">
-      <h2>Plano Premium</h2>
-      <p class="price">R$ 389/mês</p>
-      <p class="desc">🌸 Ideal pra quem busca um conteúdo completo e estratégico, com suporte pra vídeos.</p>
-      <ul>
-        <li>📅 4 postagens por semana (16 posts/mês)</li>
-        <li>🖋️ 2 posts + 2 carrosséis por semana</li>
-        <li>✅ Inclui carrossel</li>
-        <li>📑 Roteiro para gravação de vídeos</li>
-        <li>❌ Não inclui edição de vídeo</li>
-      </ul>
-      <a class="whatsapp-btn" href="https://wa.me/5519999005784?text=Olá!%20Quero%20contratar%20o%20Plano%20Premium!" target="_blank">💬 Contratar no WhatsApp</a>
-    </div>
-
-    <!-- PLANO PREMIUM + VÍDEOS -->
-    <div class="plan-card">
-      <h2>Premium + Vídeos</h2>
-      <p class="price">R$ 489/mês</p>
-      <p class="desc">💫 Para quem quer um gerenciamento completo, com vídeos prontos e legendados.</p>
-      <ul>
-        <li>📅 4 postagens por semana (16 posts/mês)</li>
-        <li>🖋️ 2 posts + 2 carrosséis por semana</li>
-        <li>🎬 Edição de vídeos inclusa</li>
-        <li>📑 Roteiro estratégico + legendagem</li>
-        <li>✅ Cliente envia os cortes gravados</li>
-      </ul>
-      <a class="whatsapp-btn" href="https://wa.me/5519999005784?text=Olá!%20Quero%20contratar%20o%20Plano%20Premium%20+%20Vídeos!" target="_blank">💬 Contratar no WhatsApp</a>
-    </div>
-
-  </div>
-
-  <!-- ===== SERVIÇOS AVULSOS ===== -->
-  <h2 class="section-title">Serviços Avulsos</h2>
-
-  <div class="plans-container">
-
-    <div class="plan-card">
-      <h2>🎨 Arte Avulsa</h2>
-      <p class="price">R$ 40 a R$ 80</p>
-      <p class="desc">Ideal pra quem precisa de uma arte pontual sem plano mensal.</p>
-      <ul>
-        <li>📸 Post estático ou carrossel</li>
-        <li>💡 Criação personalizada</li>
-        <li>⏳ Entrega rápida</li>
-      </ul>
-    </div>
-
-    <div class="plan-card">
-      <h2>🎬 Edição de Vídeo Avulsa</h2>
-      <p class="price">R$ 80 a R$ 150</p>
-      <p class="desc">Edição completa com legenda, cortes e montagem final.</p>
-      <ul>
-        <li>🎥 Material enviado pelo cliente</li>
-        <li>🔤 Legendas automáticas e revisadas</li>
-        <li>🎨 Ajuste de cor e ritmo</li>
-      </ul>
-    </div>
-
-    <div class="plan-card">
-      <h2>🖋️ Identidade Visual Completa</h2>
-      <p class="price">R$ 300</p>
-      <p class="desc">Criação completa da identidade visual da marca.</p>
-      <ul>
-        <li>🎨 Logotipo personalizado</li>
-        <li>📁 Arquivos vetorizados e editáveis</li>
-        <li>💳 Modelo de cartão de visita</li>
-        <li>🖨️ Pré-impressão</li>
-      </ul>
-    </div>
-
-  </div>
 </body>
 </html>
