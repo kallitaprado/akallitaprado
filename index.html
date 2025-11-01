@@ -27,8 +27,6 @@
       --text-muted: #8A8A99;
       --border-color: rgba(214, 0, 255, 0.4);
       --border-light: rgba(255, 255, 255, 0.08);
-      
-      /* Variáveis de altura removidas para corrigir o bug de sobreposição */
     }
 
     * {
@@ -107,9 +105,9 @@
       transform: scale(1.1);
     }
 
-    /* ATUALIZAÇÃO DE CORREÇÃO (DESKTOP) */
+    /* Correção do espaçamento do topo (Desktop) */
     main {
-      padding-top: 7.5rem; /* Altura do header (aprox 3.5rem) + 4rem de respiro */
+      padding-top: 7.5rem; 
       text-align: center;
       padding-bottom: 4rem;
     }
@@ -132,6 +130,7 @@
         align-items: center;
         justify-content: center;
         transition: transform 0.3s ease;
+        text-decoration: none; /* ATUALIZAÇÃO: Remove sublinhado do link */
     }
 
     .whatsapp-float:hover {
@@ -282,9 +281,9 @@
           gap: 0.6rem;
       }
         
-      /* ATUALIZAÇÃO DE CORREÇÃO (MOBILE) */
+      /* Correção do espaçamento do topo (Mobile) */
       main {
-        padding-top: 9.5rem; /* Altura do header (aprox 8rem) + 1.5rem de respiro */
+        padding-top: 9.5rem; 
       }
       
       .plano.popular { transform: scale(1.02); } 
@@ -390,19 +389,22 @@
 
       <div class="plano popular">
         <h3>👑 <span class="gradient-text">Plano Premium</span></h3>
-        <p>📅 4 postagens por semana (16/mês)<br>🖋️ 2 posts estáticos + 2 **Carrosséis** por semana.<br>💡 Roteiro personalizado para vídeos.</p>
+        <p>📅 4 postagens por semana (16/mês)<br>
+           🖋️ 2 posts estáticos + 2 **Carrosséis** por semana.<br>
+           💡 Envio de <strong>roteiros e ideias</strong> para Reels.<br>
+           ❌ <strong>Não inclui edição de vídeo</strong>.</p>
         <div class="price-container">
           <div class="price">R$ 389</div>
         </div>
         <p class="pag-info">Pagamento Mensal</p>
         <p class="price-note">Ou até 3x no cartão*</p>
-        <p style="text-align: center;">✨ Conteúdo completo e estratégico, com <strong>suporte na criação</strong> de vídeos (sem edição).</p>
+        <p style="text-align: center;">✨ Conteúdo completo! Envio <strong>roteiros estratégicos</strong> com ideias para você gravar seus Reels. (A edição não está inclusa).</p>
         <a class="btn-whatsapp" href="https://wa.me/5519999005784?text=Quero%20contratar%20o%20Plano%20Premium%20(R$389)!" target="_blank" aria-label="Contratar Plano Premium">CONTRATAR AGORA</a>
       </div>
 
       <div class="plano popular">
         <h3>🎬 <span class="gradient-text">Premium + Vídeos</span></h3>
-        <p>📅 4 postagens por semana (16/mês)<br>🖋️ 2 posts + 2 **Carrosséis** por semana.<br>✅ Roteiro estratégico + **Edição inclusa**.</p>
+        <p>📅 4 postagens por semana (16/mês)<br>🖋️ 2 posts + 2 **Carrosséis** por semana.<br>✅ Roteiro estratégico + <strong>Edição inclusa</strong>.</p>
         <div class="price-container">
           <div class="price">R$ 489</div>
         </div>
@@ -484,4 +486,3 @@
 
 </body>
 </html>
- 
