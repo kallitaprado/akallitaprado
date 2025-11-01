@@ -3,284 +3,518 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Kállita Prado | Social Media</title>
+  <meta name="description" content="Kállita Prado - Social Media. Planos de gerenciamento de redes sociais, criação de conteúdo e identidade visual.">
+  <title>Kállita Prado | Social Media e Gestão de Redes Sociais</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
-    body {
-      margin: 0;
-      font-family: "Poppins", sans-serif;
-      background: linear-gradient(180deg, #0d0d0d, #1a1a1a);
-      color: #fff;
-      overflow-x: hidden;
+    :root {
+      --primary-color: #ff0000;
+      --primary-dark: #cc0000;
+      --secondary-color: #fff;
+      --background-dark: #0d0d0d;
+      --background-light: #1a1a1a;
+      --card-bg: #111;
+      --text-primary: #fff;
+      --text-secondary: #ccc;
+      --text-muted: #aaa;
+      --border-color: rgba(255, 0, 0, 0.3);
+      --border-light: rgba(255, 255, 255, 0.1);
     }
 
-    /* ===== HEADER ===== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Poppins", sans-serif;
+      background: linear-gradient(180deg, var(--background-dark), var(--background-light));
+      color: var(--text-primary);
+      overflow-x: hidden;
+      line-height: 1.6;
+    }
+
+    /* Container principal para centralização */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    /* Header reorganizado */
     header {
       position: fixed;
       top: 0;
       width: 100%;
-      background: rgba(0, 0, 0, 0.85);
+      background: rgba(0, 0, 0, 0.95);
       backdrop-filter: blur(10px);
+      z-index: 1000;
+      transition: all 0.3s ease;
+      padding: 1rem 0;
+      border-bottom: 1px solid var(--border-light);
+    }
+
+    header.scrolled {
+      padding: 0.7rem 0;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .header-content {
       display: flex;
       flex-direction: column;
       align-items: center;
-      padding: 1rem 2rem;
-      z-index: 1000;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+      gap: 1rem;
     }
 
-    header h1 {
-      font-size: 1.4rem;
+    .logo {
+      font-size: 1.5rem;
+      font-weight: 600;
       letter-spacing: 1px;
-      color: #fff;
-      margin: 0.3rem 0;
+      color: var(--text-primary);
       text-align: center;
     }
 
     .social-icons {
       display: flex;
-      justify-content: center;
       gap: 1.5rem;
-      margin-top: 0.5rem;
+      justify-content: center;
     }
 
     .social-icons a {
-      color: #ff4040;
-      font-size: 1.8rem;
-      transition: 0.3s ease;
+      color: var(--primary-color);
+      font-size: 1.5rem;
+      transition: all 0.3s ease;
+      text-decoration: none;
     }
 
     .social-icons a:hover {
-      color: #fff;
-      transform: scale(1.2);
+      color: var(--secondary-color);
+      transform: translateY(-2px);
     }
 
-    /* ===== MAIN ===== */
     main {
-      padding-top: 11rem;
+      padding-top: 10rem;
       text-align: center;
-      max-width: 80%;
-      margin: 0 auto;
-      padding-bottom: 4rem;
+    }
+
+    .hero {
+      margin-bottom: 4rem;
+      animation: fadeIn 1s ease-out;
     }
 
     h2 {
-      color: #ff4040;
+      color: var(--primary-color);
       font-size: 2.2rem;
-      margin-bottom: 0.5rem;
+      margin-bottom: 1rem;
+      font-weight: 600;
     }
 
-    p.subtitle {
-      color: #ccc;
-      margin-bottom: 3rem;
-      font-size: 1rem;
+    .subtitle {
+      color: var(--text-secondary);
+      font-size: 1.1rem;
+      max-width: 800px;
+      margin: 0 auto 3rem;
+      line-height: 1.7;
     }
 
-    /* ===== PLANOS ===== */
     .planos-container {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 2rem;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 2.5rem;
       justify-content: center;
-      max-width: 80%;
-      margin: 0 auto;
+      margin-bottom: 3rem;
     }
 
     .plano {
-      background: #111;
-      border: 1px solid rgba(255, 64, 64, 0.3);
-      border-radius: 18px;
-      padding: 2rem 1.5rem;
-      transition: 0.4s ease;
-      box-shadow: 0 0 15px rgba(255, 64, 64, 0.1);
+      background: var(--card-bg);
+      border: 1px solid var(--border-light);
+      border-radius: 15px;
+      padding: 2.5rem 2rem;
+      transition: all 0.4s ease;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     }
 
     .plano:hover {
       transform: translateY(-8px);
-      box-shadow: 0 0 30px rgba(255, 64, 64, 0.4);
+      border-color: var(--primary-color);
+      box-shadow: 0 10px 25px rgba(255, 0, 0, 0.1);
     }
 
     .plano h3 {
-      color: #ff4040;
+      color: var(--primary-color);
       font-size: 1.4rem;
-      margin-bottom: 0.5rem;
+      margin-bottom: 1rem;
+      font-weight: 600;
     }
 
     .plano p {
-      color: #ccc;
+      color: var(--text-secondary);
       font-size: 0.95rem;
-      line-height: 1.6;
-    }
-
-    /* ===== PRICE HIGHLIGHT ===== */
-    .price {
-  font-size: 2.85rem; /* 3x maior que o texto normal */
-  font-weight: 900;
-  color: #ff0000; /* vermelho puro */
-  margin: 1.2rem 0 0.5rem 0;
-}
-
-    .pag-info {
-      font-size: 0.85rem;
-      color: #aaa;
+      line-height: 1.7;
       margin-bottom: 1rem;
     }
 
-    /* ===== BUTTON ===== */
+    /* ESTILOS MELHORADOS PARA OS PREÇOS - SEM SOMBRA */
+    .price-container {
+      margin: 1.5rem 0;
+      padding: 1rem 0;
+      position: relative;
+    }
+
+    .price {
+      font-size: 3.5rem;
+      font-weight: 800;
+      color: var(--primary-color);
+      line-height: 1;
+      margin: 0;
+      position: relative;
+      display: inline-block;
+    }
+
+    .price-small {
+      font-size: 2.5rem;
+    }
+
+    .pag-info {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-bottom: 1.5rem;
+    }
+
     .btn-whatsapp {
       display: inline-block;
-      background: #ff4040;
-      color: #fff;
-      padding: 0.9rem 1.7rem;
+      background: var(--primary-color);
+      color: var(--secondary-color);
+      padding: 0.9rem 2rem;
       border-radius: 30px;
       text-decoration: none;
-      transition: 0.3s ease;
+      transition: all 0.3s ease;
       font-weight: 600;
-      font-size: 0.95rem;
-      margin-top: 0.5rem;
+      border: 2px solid var(--primary-color);
+      margin-top: auto;
+      position: relative;
+      overflow: hidden;
     }
 
     .btn-whatsapp:hover {
-      background: #fff;
-      color: #ff4040;
-      transform: scale(1.08);
-      box-shadow: 0 0 10px rgba(255, 64, 64, 0.6);
+      background: transparent;
+      color: var(--primary-color);
+      transform: translateY(-2px);
     }
 
-    /* ===== FOOTER ===== */
+    .btn-whatsapp::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+      transition: left 0.5s;
+    }
+
+    .btn-whatsapp:hover::before {
+      left: 100%;
+    }
+
     footer {
       text-align: center;
       margin-top: 4rem;
-      padding: 2rem 0;
-      color: #888;
+      padding: 2.5rem 0;
+      color: var(--text-muted);
       font-size: 0.9rem;
-      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      border-top: 1px solid var(--border-light);
     }
 
-    /* ===== RESPONSIVE ===== */
+    /* Animações */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .plano {
+      animation: fadeIn 0.6s ease-out;
+    }
+
+    .plano:nth-child(2) { animation-delay: 0.1s; }
+    .plano:nth-child(3) { animation-delay: 0.2s; }
+    .plano:nth-child(4) { animation-delay: 0.3s; }
+    .plano:nth-child(5) { animation-delay: 0.4s; }
+    .plano:nth-child(6) { animation-delay: 0.5s; }
+    .plano:nth-child(7) { animation-delay: 0.6s; }
+    .plano:nth-child(8) { animation-delay: 0.7s; }
+
+    /* Destaque para plano mais popular */
+    .plano.popular {
+      border: 1px solid var(--primary-color);
+      transform: scale(1.02);
+    }
+
+    .plano.popular::before {
+      content: 'Mais Popular';
+      position: absolute;
+      top: 0;
+      right: 0;
+      background: var(--primary-color);
+      color: white;
+      padding: 0.5rem 1rem;
+      font-size: 0.8rem;
+      font-weight: 600;
+      border-bottom-left-radius: 10px;
+      border-top-right-radius: 14px;
+    }
+
+    /* Responsividade */
     @media (max-width: 768px) {
-      header {
-        padding: 1rem 1.5rem;
+      .header-content {
+        gap: 0.8rem;
       }
 
-      header h1 {
-        font-size: 1.1rem;
+      .logo {
+        font-size: 1.3rem;
+      }
+
+      .social-icons {
+        gap: 1.2rem;
+      }
+
+      .social-icons a {
+        font-size: 1.3rem;
+      }
+
+      main {
+        padding-top: 12rem;
+      }
+
+      h2 {
+        font-size: 1.8rem;
+      }
+
+      .subtitle {
+        font-size: 1rem;
+        padding: 0 1rem;
       }
 
       .planos-container {
         grid-template-columns: 1fr;
-        max-width: 95%;
-        padding: 0 1.5rem;
+        gap: 1.5rem;
+        padding: 0 1rem;
       }
 
-      h2 {
-        font-size: 1.7rem;
+      .plano {
+        padding: 2rem 1.5rem;
       }
 
       .price {
-        font-size: 2.2rem;
+        font-size: 2.8rem;
+      }
+      
+      .price-small {
+        font-size: 2rem;
+      }
+      
+      .plano.popular {
+        transform: none;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .container {
+        padding: 0 1rem;
+      }
+
+      .logo {
+        font-size: 1.2rem;
+      }
+
+      .social-icons a {
+        font-size: 1.2rem;
+      }
+
+      h2 {
+        font-size: 1.6rem;
+      }
+
+      .price {
+        font-size: 2.5rem;
+      }
+      
+      .price-small {
+        font-size: 1.8rem;
+      }
+
+      .btn-whatsapp {
+        padding: 0.8rem 1.5rem;
+        font-size: 0.9rem;
+      }
+    }
+
+    /* Layout Desktop Específico */
+    @media (min-width: 769px) {
+      .container {
+        padding: 0 3rem;
+      }
+      
+      .planos-container {
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        gap: 2rem;
+      }
+      
+      .plano {
+        margin: 0 auto;
+        max-width: 380px;
       }
     }
   </style>
 </head>
 <body>
 
-  <header>
-    <h1>Kállita Prado — Social Media</h1>
-    <div class="social-icons">
-      <a href="https://wa.me/5519999005784" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-      <a href="https://www.instagram.com/akallitaprado/" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+  <header id="mainHeader">
+    <div class="container">
+      <div class="header-content">
+        <div class="logo">Kállita Prado — Social Media</div>
+        <nav class="social-icons">
+          <a href="https://wa.me/5519999005784" target="_blank" title="WhatsApp" aria-label="WhatsApp">
+            <i class="fab fa-whatsapp"></i>
+          </a>
+          <a href="https://www.instagram.com/akallitaprado/" target="_blank" title="Instagram" aria-label="Instagram">
+            <i class="fab fa-instagram"></i>
+          </a>
+        </nav>
+      </div>
     </div>
   </header>
 
-  <main>
-    <h2>🌿 Planos de Gerenciamento de Redes Sociais 🌿</h2>
-    <p class="subtitle">Todos os planos incluem análise completa do perfil, definição de paleta de cores e tipografia, e planejamento estratégico mensal.</p>
+  <main class="container">
+    <section class="hero">
+      <h2>🌿 Planos de Gerenciamento de Redes Sociais 🌿</h2>
+      <p class="subtitle">Todos os planos incluem análise completa do perfil, definição de paleta de cores e tipografia, e planejamento estratégico mensal.</p>
+    </section>
 
     <div class="planos-container">
       <!-- PLANO BÁSICO -->
       <div class="plano">
         <h3>💫 Plano Básico</h3>
         <p>📅 2 postagens por semana (8/mês)<br>🖋️ Posts estáticos<br>❌ Não inclui carrossel nem edição de vídeo.</p>
-        <p class="price">R$ 200</p>
+        <div class="price-container">
+          <div class="price">R$ 200</div>
+        </div>
         <p class="pag-info">💳 Aceita cartão e Pix<br>💸 Até 2x com juros</p>
         <p>🌱 Ideal pra quem está começando e quer manter presença constante.</p>
-        <a class="btn-whatsapp" href="https://wa.me/5519999005784?text=Quero%20contratar%20o%20Plano%20Básico!" target="_blank">Contratar</a>
+        <a class="btn-whatsapp" href="https://wa.me/5519999005784?text=Quero%20contratar%20o%20Plano%20Básico!" target="_blank" aria-label="Contratar Plano Básico">Contratar</a>
       </div>
 
       <!-- PLANO INTERMEDIÁRIO -->
       <div class="plano">
         <h3>🌼 Plano Intermediário</h3>
         <p>📅 3 postagens por semana (12/mês)<br>🖋️ Posts táticos e estratégicos<br>❌ Sem carrossel e sem edição de vídeo.</p>
-        <p class="price">R$ 270</p>
+        <div class="price-container">
+          <div class="price">R$ 270</div>
+        </div>
         <p class="pag-info">💳 Aceita cartão e Pix<br>💸 Até 2x com juros</p>
         <p>✨ Perfeito pra quem quer aumentar engajamento e fortalecer o posicionamento.</p>
-        <a class="btn-whatsapp" href="https://wa.me/5519999005784?text=Quero%20contratar%20o%20Plano%20Intermediário!" target="_blank">Contratar</a>
+        <a class="btn-whatsapp" href="https://wa.me/5519999005784?text=Quero%20contratar%20o%20Plano%20Intermediário!" target="_blank" aria-label="Contratar Plano Intermediário">Contratar</a>
       </div>
 
       <!-- PLANO PLUS -->
-      <div class="plano">
+      <div class="plano popular">
         <h3>🌿 Plano Plus</h3>
         <p>📅 4 postagens por semana (16/mês)<br>🖋️ 3 posts + 1 carrossel<br>❌ Não inclui edição de vídeo.</p>
-        <p class="price">R$ 320</p>
+        <div class="price-container">
+          <div class="price">R$ 320</div>
+        </div>
         <p class="pag-info">💳 Aceita cartão e Pix<br>💸 Até 2x com juros</p>
         <p>🌾 Focado em conteúdos narrativos e estratégicos pra posicionar sua marca com consistência.</p>
-        <a class="btn-whatsapp" href="https://wa.me/5519999005784?text=Quero%20contratar%20o%20Plano%20Plus!" target="_blank">Contratar</a>
+        <a class="btn-whatsapp" href="https://wa.me/5519999005784?text=Quero%20contratar%20o%20Plano%20Plus!" target="_blank" aria-label="Contratar Plano Plus">Contratar</a>
       </div>
 
       <!-- PLANO PREMIUM -->
       <div class="plano">
         <h3>🌺 Plano Premium</h3>
         <p>📅 4 postagens por semana (16/mês)<br>🖋️ 2 posts + 2 carrosséis<br>📑 Roteiro personalizado para vídeos<br>❌ Não inclui edição.</p>
-        <p class="price">R$ 389</p>
+        <div class="price-container">
+          <div class="price">R$ 389</div>
+        </div>
         <p class="pag-info">💳 Aceita cartão e Pix<br>💸 Até 2x com juros</p>
         <p>🌸 Ideal pra quem busca um conteúdo completo e estratégico, com suporte de roteiro.</p>
-        <a class="btn-whatsapp" href="https://wa.me/5519999005784?text=Quero%20contratar%20o%20Plano%20Premium!" target="_blank">Contratar</a>
+        <a class="btn-whatsapp" href="https://wa.me/5519999005784?text=Quero%20contratar%20o%20Plano%20Premium!" target="_blank" aria-label="Contratar Plano Premium">Contratar</a>
       </div>
 
       <!-- PLANO PREMIUM + VÍDEOS -->
       <div class="plano">
         <h3>🌻 Plano Premium + Vídeos</h3>
         <p>📅 4 postagens por semana (16/mês)<br>🖋️ 2 posts + 2 carrosséis<br>🎬 Edição completa de vídeos (cliente envia cortes)</p>
-        <p class="price">R$ 489</p>
+        <div class="price-container">
+          <div class="price">R$ 489</div>
+        </div>
         <p class="pag-info">💳 Aceita cartão e Pix<br>💸 Até 2x com juros</p>
         <p>💫 Gerenciamento completo e profissional, com vídeos prontos e legendados.</p>
-        <a class="btn-whatsapp" href="https://wa.me/5519999005784?text=Quero%20contratar%20o%20Plano%20Premium%20+%20Vídeos!" target="_blank">Contratar</a>
+        <a class="btn-whatsapp" href="https://wa.me/5519999005784?text=Quero%20contratar%20o%20Plano%20Premium%20+%20Vídeos!" target="_blank" aria-label="Contratar Plano Premium + Vídeos">Contratar</a>
       </div>
 
-      <!-- ARTE AVULSA -->
+      <!-- SERVIÇOS AVULSOS -->
       <div class="plano">
         <h3>🎨 Arte Avulsa</h3>
         <p>Post Estático ou Carrossel<br>💰 R$ 40 a R$ 80 (conforme complexidade)</p>
+        <div class="price-container">
+          <div class="price price-small">R$ 40-80</div>
+        </div>
         <p class="pag-info">💳 Aceita cartão e Pix</p>
         <p>Ideal pra quem precisa de uma arte pontual sem plano mensal.</p>
-        <a class="btn-whatsapp" href="https://wa.me/5519999005784?text=Quero%20solicitar%20uma%20Arte%20Avulsa!" target="_blank">Solicitar</a>
+        <a class="btn-whatsapp" href="https://wa.me/5519999005784?text=Quero%20solicitar%20uma%20Arte%20Avulsa!" target="_blank" aria-label="Solicitar Arte Avulsa">Solicitar</a>
       </div>
 
-      <!-- EDIÇÃO DE VÍDEO AVULSA -->
       <div class="plano">
         <h3>🎬 Edição de Vídeo Avulsa</h3>
         <p>Edição de vídeos curtos ou longos<br>💰 R$ 80 a R$ 150 (dependendo da duração)</p>
+        <div class="price-container">
+          <div class="price price-small">R$ 80-150</div>
+        </div>
         <p class="pag-info">💳 Aceita cartão e Pix</p>
         <p>Inclui cortes, legendas, ajustes de cor e montagem final.</p>
-        <a class="btn-whatsapp" href="https://wa.me/5519999005784?text=Quero%20solicitar%20uma%20Edição%20de%20Vídeo!" target="_blank">Solicitar</a>
+        <a class="btn-whatsapp" href="https://wa.me/5519999005784?text=Quero%20solicitar%20uma%20Edição%20de%20Vídeo!" target="_blank" aria-label="Solicitar Edição de Vídeo">Solicitar</a>
       </div>
 
-      <!-- IDENTIDADE VISUAL -->
       <div class="plano">
         <h3>💼 Identidade Visual Completa</h3>
         <p>Criação de logotipo profissional<br>Arquivos vetorizáveis e editáveis<br>Formatos JPEG e PNG</p>
-        <p class="price">R$ 300</p>
+        <div class="price-container">
+          <div class="price">R$ 300</div>
+        </div>
         <p class="pag-info">💳 Aceita cartão e Pix<br>💸 Até 2x com juros</p>
         <p>Pacote completo para construir ou renovar a identidade visual da sua marca.</p>
-        <a class="btn-whatsapp" href="https://wa.me/5519999005784?text=Quero%20solicitar%20uma%20Identidade%20Visual%20Completa!" target="_blank">Solicitar</a>
+        <a class="btn-whatsapp" href="https://wa.me/5519999005784?text=Quero%20solicitar%20uma%20Identidade%20Visual%20Completa!" target="_blank" aria-label="Solicitar Identidade Visual">Solicitar</a>
       </div>
     </div>
   </main>
 
-  <footer>
+  <footer class="container">
     <p>© 2025 Kállita Prado | Social Media 🌹</p>
   </footer>
+
+  <script>
+    // Header scroll effect
+    window.addEventListener('scroll', function() {
+      const header = document.getElementById('mainHeader');
+      if (window.scrollY > 50) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+    });
+  </script>
 
 </body>
 </html>
