@@ -6,7 +6,6 @@
   <title>Kállita Prado | Social Media</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <style>
-    /* ======== ESTILO GERAL ======== */
     body {
       margin: 0;
       font-family: "Poppins", sans-serif;
@@ -19,7 +18,7 @@
       position: fixed;
       top: 0;
       width: 100%;
-      background: rgba(0, 0, 0, 0.7);
+      background: rgba(0, 0, 0, 0.8);
       backdrop-filter: blur(10px);
       display: flex;
       justify-content: space-between;
@@ -41,7 +40,7 @@
 
     .social-icons a {
       color: #ff4040;
-      font-size: 1.4rem;
+      font-size: 1.5rem;
       transition: 0.3s;
     }
 
@@ -51,7 +50,7 @@
     }
 
     main {
-      padding-top: 7rem;
+      padding-top: 8rem;
       text-align: center;
       max-width: 1200px;
       margin: 0 auto;
@@ -66,9 +65,9 @@
     p.subtitle {
       color: #ccc;
       margin-bottom: 3rem;
+      font-size: 1rem;
     }
 
-    /* ======== PLANOS ======== */
     .planos-container {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -93,21 +92,27 @@
 
     .plano h3 {
       color: #ff4040;
-      font-size: 1.4rem;
+      font-size: 1.3rem;
       margin-bottom: 0.5rem;
     }
 
     .plano p {
       color: #ccc;
-      font-size: 0.95rem;
+      font-size: 0.9rem;
       line-height: 1.6;
     }
 
     .price {
-      font-size: 1.5rem;
+      font-size: 2rem;
       font-weight: bold;
-      color: #fff;
-      margin: 1rem 0;
+      color: #ff4040;
+      margin: 1rem 0 0.2rem 0;
+    }
+
+    .pag-info {
+      font-size: 0.8rem;
+      color: #aaa;
+      margin-bottom: 1rem;
     }
 
     .btn-whatsapp {
@@ -127,7 +132,6 @@
       transform: scale(1.05);
     }
 
-    /* ======== RODAPÉ ======== */
     footer {
       text-align: center;
       margin-top: 4rem;
@@ -136,7 +140,6 @@
       font-size: 0.9rem;
     }
 
-    /* ======== RESPONSIVIDADE ======== */
     @media (max-width: 768px) {
       header {
         flex-direction: column;
@@ -149,6 +152,10 @@
 
       h2 {
         font-size: 1.6rem;
+      }
+
+      .price {
+        font-size: 1.7rem;
       }
     }
   </style>
@@ -168,50 +175,80 @@
     <p class="subtitle">Todos os planos incluem análise completa do perfil, definição de paleta de cores e tipografia, e planejamento estratégico mensal.</p>
 
     <div class="planos-container">
+      <!-- PLANO BÁSICO -->
       <div class="plano">
         <h3>💫 Plano Básico</h3>
         <p>📅 2 postagens por semana (8/mês)<br>🖋️ Posts estáticos<br>❌ Não inclui carrossel nem edição de vídeo.</p>
         <p class="price">R$ 200</p>
+        <p class="pag-info">💳 Aceita cartão e Pix<br>💸 Até 2x com juros</p>
         <p>🌱 Ideal pra quem está começando e quer manter presença constante.</p>
         <a class="btn-whatsapp" href="https://wa.me/5519999005784?text=Quero%20contratar%20o%20Plano%20Básico!" target="_blank">Contratar</a>
       </div>
 
+      <!-- PLANO INTERMEDIÁRIO -->
       <div class="plano">
         <h3>🌼 Plano Intermediário</h3>
         <p>📅 3 postagens por semana (12/mês)<br>🖋️ Posts táticos e estratégicos<br>❌ Sem carrossel e sem edição de vídeo.</p>
         <p class="price">R$ 270</p>
+        <p class="pag-info">💳 Aceita cartão e Pix<br>💸 Até 2x com juros</p>
         <p>✨ Perfeito pra quem quer aumentar engajamento e fortalecer o posicionamento.</p>
         <a class="btn-whatsapp" href="https://wa.me/5519999005784?text=Quero%20contratar%20o%20Plano%20Intermediário!" target="_blank">Contratar</a>
       </div>
 
+      <!-- PLANO PLUS -->
       <div class="plano">
         <h3>🌿 Plano Plus</h3>
         <p>📅 4 postagens por semana (16/mês)<br>🖋️ 3 posts + 1 carrossel<br>❌ Não inclui edição de vídeo.</p>
         <p class="price">R$ 320</p>
+        <p class="pag-info">💳 Aceita cartão e Pix<br>💸 Até 2x com juros</p>
         <p>🌾 Focado em conteúdos narrativos e estratégicos pra posicionar sua marca com consistência.</p>
         <a class="btn-whatsapp" href="https://wa.me/5519999005784?text=Quero%20contratar%20o%20Plano%20Plus!" target="_blank">Contratar</a>
       </div>
 
+      <!-- PLANO PREMIUM -->
       <div class="plano">
         <h3>🌺 Plano Premium</h3>
         <p>📅 4 postagens por semana (16/mês)<br>🖋️ 2 posts + 2 carrosséis<br>📑 Roteiro personalizado para vídeos<br>❌ Não inclui edição.</p>
         <p class="price">R$ 389</p>
+        <p class="pag-info">💳 Aceita cartão e Pix<br>💸 Até 2x com juros</p>
         <p>🌸 Ideal pra quem busca um conteúdo completo e estratégico, com suporte de roteiro.</p>
         <a class="btn-whatsapp" href="https://wa.me/5519999005784?text=Quero%20contratar%20o%20Plano%20Premium!" target="_blank">Contratar</a>
       </div>
 
+      <!-- PLANO PREMIUM + VÍDEOS -->
       <div class="plano">
         <h3>🌻 Plano Premium + Vídeos</h3>
         <p>📅 4 postagens por semana (16/mês)<br>🖋️ 2 posts + 2 carrosséis<br>🎬 Edição completa de vídeos (cliente envia cortes)</p>
         <p class="price">R$ 489</p>
+        <p class="pag-info">💳 Aceita cartão e Pix<br>💸 Até 2x com juros</p>
         <p>💫 Gerenciamento completo e profissional, com vídeos prontos e legendados.</p>
         <a class="btn-whatsapp" href="https://wa.me/5519999005784?text=Quero%20contratar%20o%20Plano%20Premium%20+%20Vídeos!" target="_blank">Contratar</a>
       </div>
 
+      <!-- SERVIÇOS AVULSOS -->
       <div class="plano">
-        <h3>🎨 Serviços Avulsos</h3>
-        <p>✨ Arte avulsa (post ou carrossel): R$ 40–80<br>🎬 Edição avulsa de vídeo: R$ 80–150<br>💼 Identidade Visual Completa — R$ 300<br>• Logotipo personalizado<br>• Arquivos vetorizáveis e editáveis<br>• Formatos JPEG e PNG</p>
-        <a class="btn-whatsapp" href="https://wa.me/5519999005784?text=Quero%20solicitar%20um%20serviço%20avulso!" target="_blank">Contratar</a>
+        <h3>🎨 Arte Avulsa</h3>
+        <p>Post Estático ou Carrossel<br>💰 R$ 40 a R$ 80 (conforme complexidade)</p>
+        <p class="pag-info">💳 Aceita cartão e Pix</p>
+        <p>Ideal pra quem precisa de uma arte pontual sem plano mensal.</p>
+        <a class="btn-whatsapp" href="https://wa.me/5519999005784?text=Quero%20solicitar%20uma%20Arte%20Avulsa!" target="_blank">Solicitar</a>
+      </div>
+
+      <div class="plano">
+        <h3>🎬 Edição de Vídeo Avulsa</h3>
+        <p>Edição de vídeos curtos ou longos<br>💰 R$ 80 a R$ 150 (dependendo da duração)</p>
+        <p class="pag-info">💳 Aceita cartão e Pix</p>
+        <p>Inclui cortes, legendas, ajustes de cor e montagem final.</p>
+        <a class="btn-whatsapp" href="https://wa.me/5519999005784?text=Quero%20solicitar%20uma%20Edição%20de%20Vídeo!" target="_blank">Solicitar</a>
+      </div>
+
+      <div class="plano">
+        <h3>💼 Identidade Visual Completa</h3>
+        <p>Criação de logotipo profissional<br>Arquivos vetorizáveis e editáveis<br>Formatos JPEG e PNG</p>
+        <p class="price">R$ 300</p>
+        <p class="pag-info">💳 Aceita cartão e Pix<br>💸 Até 2x com juros</p>
+        <p>Pacote completo para construir ou renovar a identidade visual da sua marca.</p>
+        <a class="btn-whatsapp" href="https://wa.me/5519999005784?text=Quero%20solicitar%20uma%20Identidade%20Visual%20Completa!" target="_blank">Solicitar</a>
       </div>
     </div>
   </main>
