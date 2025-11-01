@@ -1,54 +1,48 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Kállita Prado - Social Media</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
-  <script src="https://kit.fontawesome.com/a2d9d5c5c5.js" crossorigin="anonymous"></script>
   <style>
+    /* ===== RESET ===== */
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-      font-family: 'Poppins', sans-serif;
     }
 
     body {
-      background: linear-gradient(180deg, #0e0e0e, #1a1a1a);
+      font-family: "Poppins", sans-serif;
+      background: linear-gradient(160deg, #0d0d0d, #1a1a1a);
       color: #fff;
-      text-align: center;
+      overflow-x: hidden;
     }
 
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* ===== HEADER ===== */
     header {
-      position: sticky;
-      top: 0;
-      background-color: rgba(15, 15, 15, 0.95);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 15px 0;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-      z-index: 10;
-    }
-
-    .header-content {
+      width: 100%;
+      padding: 20px 40px;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      width: 90%;
-      max-width: 1100px;
+      background: rgba(0, 0, 0, 0.7);
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 1000;
+      backdrop-filter: blur(10px);
     }
 
     header h1 {
+      font-size: 1.5rem;
+      color: #fff;
       font-weight: 600;
-      font-size: 1.4rem;
-    }
-
-    header span {
-      color: #e63946;
-      font-weight: 700;
     }
 
     .social-icons {
@@ -56,287 +50,227 @@
       gap: 15px;
     }
 
-    .icon {
-      font-size: 1.5rem;
-      background: #fff;
-      border-radius: 50%;
-      width: 42px;
-      height: 42px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: 0.3s;
+    .social-icons a img {
+      width: 32px;
+      height: 32px;
+      transition: transform 0.3s ease, opacity 0.3s ease;
     }
 
-    .icon.whatsapp i {
-      color: #25d366;
-    }
-
-    .icon.instagram i {
-      color: #e4405f;
-    }
-
-    .icon:hover {
+    .social-icons a:hover img {
       transform: scale(1.1);
-      box-shadow: 0 0 15px #e63946;
+      opacity: 0.8;
     }
 
-    .intro {
-      padding: 60px 20px 40px;
+    /* ===== HERO ===== */
+    .hero {
+      margin-top: 100px;
+      text-align: center;
+      padding: 60px 20px 20px;
+      color: #fff;
     }
 
-    .intro h2 {
-      color: #e63946;
-      margin-bottom: 15px;
-      font-size: 1.8rem;
+    .hero h2 {
+      font-size: 2rem;
+      margin-bottom: 10px;
+      color: #e74c3c;
     }
 
-    .intro ul {
-      list-style: none;
-      margin-top: 10px;
+    .hero p {
+      font-size: 1.1rem;
+      color: #ccc;
     }
 
-    .intro li {
-      margin: 5px 0;
-    }
-
-    .plans {
+    /* ===== PLANOS ===== */
+    .planos {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 25px;
-      justify-items: center;
-      padding: 20px;
-      max-width: 1200px;
-      margin: auto;
+      padding: 50px 8%;
     }
 
-    .plan-card {
-      background: rgba(255, 255, 255, 0.05);
-      border-radius: 20px;
-      padding: 25px;
-      max-width: 350px;
-      transition: transform 0.3s, box-shadow 0.3s;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
+    .plano {
+      background: rgba(30, 30, 30, 0.95);
+      border: 1px solid #e74c3c;
+      border-radius: 15px;
+      padding: 30px 20px;
+      text-align: justify;
+      box-shadow: 0 0 10px rgba(231, 76, 60, 0.2);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
-    .plan-card:hover {
+    .plano:hover {
       transform: translateY(-5px);
-      box-shadow: 0 0 20px rgba(230, 57, 70, 0.5);
+      box-shadow: 0 0 25px rgba(231, 76, 60, 0.5);
     }
 
-    .plan-card h3 {
-      color: #e63946;
-      margin-bottom: 10px;
+    .plano h3 {
+      color: #e74c3c;
+      font-size: 1.4rem;
+      margin-bottom: 15px;
+      text-align: center;
     }
 
-    .plan-card .price {
+    .plano .preco {
       font-size: 2rem;
-      font-weight: 700;
-      color: #e63946;
-      margin: 15px 0 5px;
+      color: #e74c3c;
+      text-align: center;
+      font-weight: bold;
+      margin: 10px 0 20px;
     }
 
-    .plan-card .payment {
-      font-size: 0.9rem;
+    .plano p {
+      color: #ddd;
+      font-size: 0.95rem;
+      line-height: 1.6;
+      text-align: justify;
+    }
+
+    .aviso {
+      color: #e74c3c;
+      font-weight: 500;
+    }
+
+    .pagamento {
+      font-size: 0.85rem;
       color: #bbb;
-      margin-bottom: 10px;
-    }
-
-    .btn-whatsapp {
-      background-color: #25d366;
-      color: #fff;
-      text-decoration: none;
-      padding: 10px 15px;
-      border-radius: 8px;
-      font-weight: 600;
+      text-align: center;
       margin-top: 10px;
-      transition: 0.3s;
-      display: inline-block;
     }
 
-    .btn-whatsapp:hover {
-      background-color: #20b857;
+    .btn-contratar {
+      display: block;
+      width: fit-content;
+      margin: 20px auto 0;
+      padding: 10px 25px;
+      border-radius: 30px;
+      background: #e74c3c;
+      color: #fff;
+      font-weight: 600;
+      transition: background 0.3s ease, transform 0.2s ease;
+    }
+
+    .btn-contratar:hover {
+      background: #ff5c5c;
       transform: scale(1.05);
     }
 
-    .extra-services {
-      padding: 60px 20px;
-    }
-
-    .extra-services h2 {
-      color: #e63946;
-      margin-bottom: 30px;
-      font-size: 1.8rem;
-    }
-
-    .extra-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 25px;
-      justify-items: center;
-      margin-top: 30px;
-    }
-
-    .extra-card {
-      background: rgba(255, 255, 255, 0.05);
-      border-radius: 20px;
-      padding: 25px;
-      max-width: 350px;
-      transition: transform 0.3s, box-shadow 0.3s;
-    }
-
-    .extra-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 0 20px rgba(230, 57, 70, 0.5);
-    }
-
-    .extra-card .price {
-      font-size: 1.8rem;
-      font-weight: 700;
-      color: #e63946;
-      margin: 15px 0;
-    }
-
-    .extra-card .payment {
-      font-size: 0.9rem;
-      color: #bbb;
-    }
-
-    footer {
-      padding: 20px;
-      background: #0f0f0f;
-      color: #777;
-      font-size: 0.9rem;
-    }
-
-    @media (max-width: 600px) {
-      header h1 {
-        font-size: 1.1rem;
+    /* ===== RESPONSIVO ===== */
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        gap: 10px;
       }
 
-      .intro h2 {
-        font-size: 1.4rem;
-      }
-
-      .plan-card, .extra-card {
-        max-width: 100%;
+      .hero h2 {
+        font-size: 1.5rem;
       }
     }
   </style>
 </head>
-
 <body>
   <header>
-    <div class="header-content">
-      <h1>Kállita Prado <span>Social Media</span></h1>
-      <div class="social-icons">
-        <a href="https://wa.me/5519999005784" target="_blank" class="icon whatsapp"><i class="fab fa-whatsapp"></i></a>
-        <a href="https://www.instagram.com/akallitaprado/" target="_blank" class="icon instagram"><i class="fab fa-instagram"></i></a>
-      </div>
+    <h1>Kállita Prado • Social Media</h1>
+    <div class="social-icons">
+      <a href="https://wa.me/5519999005784" target="_blank">
+        <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp">
+      </a>
+      <a href="https://www.instagram.com/akallitaprado/" target="_blank">
+        <img src="https://cdn-icons-png.flaticon.com/512/1384/1384063.png" alt="Instagram">
+      </a>
     </div>
   </header>
 
-  <main>
-    <section class="intro">
-      <h2>🌿✨ Planos de Gerenciamento de Redes Sociais ✨🌿</h2>
-      <p>Todos os planos incluem:</p>
-      <ul>
-        <li>📊 Análise completa do perfil</li>
-        <li>🎨 Definição de paleta de cores e tipografia</li>
-        <li>🗓️ Planejamento estratégico mensal de conteúdo</li>
-      </ul>
-    </section>
+  <section class="hero">
+    <h2>🌿✨ Planos de Gerenciamento de Redes Sociais ✨🌿</h2>
+    <p>Todos os planos incluem: análise completa do perfil, definição de paleta de cores, tipografia e planejamento estratégico mensal.</p>
+  </section>
 
-    <section class="plans">
-      <div class="plan-card">
-        <h3>💫 Plano Básico</h3>
-        <p>📅 2 postagens por semana (8 posts/mês)</p>
-        <p>🖋️ Criação de posts estáticos</p>
-        <p class="price">R$ 200</p>
-        <p class="payment">💳 Aceita cartão e Pix | Até 3x com juros</p>
-        <p>🌱 Ideal pra quem está começando e quer manter presença constante nas redes.</p>
-        <small>(Não inclui carrossel nem edição de vídeo)</small>
-        <a href="https://wa.me/5519999005784?text=Olá%20Kállita!%20Gostaria%20de%20contratar%20o%20Plano%20Básico." class="btn-whatsapp" target="_blank">Contratar agora</a>
-      </div>
+  <section class="planos">
 
-      <div class="plan-card">
-        <h3>🌼 Plano Intermediário</h3>
-        <p>📅 3 postagens por semana (12 posts/mês)</p>
-        <p>🖋️ Criação de posts táticos e estratégicos</p>
-        <p class="price">R$ 270</p>
-        <p class="payment">💳 Aceita cartão e Pix | Até 3x com juros</p>
-        <p>✨ Perfeito pra quem quer aumentar o engajamento e fortalecer o posicionamento da marca.</p>
-        <small>(Não inclui carrossel nem edição de vídeo)</small>
-        <a href="https://wa.me/5519999005784?text=Olá%20Kállita!%20Gostaria%20de%20contratar%20o%20Plano%20Intermediário." class="btn-whatsapp" target="_blank">Contratar agora</a>
-      </div>
+    <!-- Plano Básico -->
+    <div class="plano">
+      <h3>💫 Plano Básico</h3>
+      <div class="preco">R$ 200</div>
+      <p>📅 2 postagens por semana (8 posts/mês)<br>
+      🖋️ Criação de posts estáticos<br>
+      🌱 Ideal pra quem está começando e quer manter presença constante.</p>
+      <p class="aviso">(Não inclui carrossel. Não inclui edição de vídeo.)</p>
+      <p class="pagamento">Aceita cartão e Pix | Até 3x com juros</p>
+      <a href="https://wa.me/5519999005784" target="_blank" class="btn-contratar">Contratar</a>
+    </div>
 
-      <div class="plan-card">
-        <h3>🌿 Plano Plus</h3>
-        <p>📅 4 postagens por semana (16 posts/mês)</p>
-        <p>🖋️ Criação de 3 posts + 1 carrossel por semana</p>
-        <p class="price">R$ 320</p>
-        <p class="payment">💳 Aceita cartão e Pix | Até 3x com juros</p>
-        <p>🌾 Focado em conteúdos narrativos e estratégicos pra posicionar sua marca com consistência.</p>
-        <small>(Não inclui edição de vídeo)</small>
-        <a href="https://wa.me/5519999005784?text=Olá%20Kállita!%20Gostaria%20de%20contratar%20o%20Plano%20Plus." class="btn-whatsapp" target="_blank">Contratar agora</a>
-      </div>
+    <!-- Plano Intermediário -->
+    <div class="plano">
+      <h3>🌼 Plano Intermediário</h3>
+      <div class="preco">R$ 270</div>
+      <p>📅 3 postagens por semana (12 posts/mês)<br>
+      🖋️ Criação de posts táticos e estratégicos (sem carrossel)<br>
+      ✨ Perfeito pra quem quer aumentar o engajamento e fortalecer o posicionamento.</p>
+      <p class="aviso">(Não inclui carrossel. Não inclui edição de vídeo.)</p>
+      <p class="pagamento">Aceita cartão e Pix | Até 3x com juros</p>
+      <a href="https://wa.me/5519999005784" target="_blank" class="btn-contratar">Contratar</a>
+    </div>
 
-      <div class="plan-card">
-        <h3>🌺 Plano Premium</h3>
-        <p>📅 4 postagens por semana (16 posts/mês)</p>
-        <p>🖋️ Criação de 2 posts + 2 carrosséis por semana</p>
-        <p>📑 Roteiro personalizado para gravação de vídeos</p>
-        <p class="price">R$ 389</p>
-        <p class="payment">💳 Aceita cartão e Pix | Até 3x com juros</p>
-        <p>🌸 Ideal pra quem busca um conteúdo completo e estratégico, com suporte na criação de vídeos.</p>
-        <small>(Não inclui edição de vídeo)</small>
-        <a href="https://wa.me/5519999005784?text=Olá%20Kállita!%20Gostaria%20de%20contratar%20o%20Plano%20Premium." class="btn-whatsapp" target="_blank">Contratar agora</a>
-      </div>
+    <!-- Plano Plus -->
+    <div class="plano">
+      <h3>🌿 Plano Plus</h3>
+      <div class="preco">R$ 320</div>
+      <p>📅 4 postagens por semana (16 posts/mês)<br>
+      🖋️ Criação de 3 posts + 1 carrossel por semana<br>
+      🌾 Focado em conteúdos narrativos e estratégicos pra posicionar sua marca.</p>
+      <p class="aviso">(Não inclui edição de vídeo.)</p>
+      <p class="pagamento">Aceita cartão e Pix | Até 3x com juros</p>
+      <a href="https://wa.me/5519999005784" target="_blank" class="btn-contratar">Contratar</a>
+    </div>
 
-      <div class="plan-card">
-        <h3>🌻 Plano Premium + Vídeos</h3>
-        <p>📅 4 postagens por semana (16 posts/mês)</p>
-        <p>🖋️ Criação de 2 posts + 2 carrosséis por semana</p>
-        <p>🎬 Roteiro estratégico + edição de vídeos inclusa</p>
-        <p class="price">R$ 489</p>
-        <p class="payment">💳 Aceita cartão e Pix | Até 3x com juros</p>
-        <p>💫 Perfeito pra quem quer um gerenciamento completo e profissional, com vídeos prontos pra postagem.</p>
-        <a href="https://wa.me/5519999005784?text=Olá%20Kállita!%20Gostaria%20de%20contratar%20o%20Plano%20Premium%20+%20Vídeos." class="btn-whatsapp" target="_blank">Contratar agora</a>
-      </div>
-    </section>
+    <!-- Plano Premium -->
+    <div class="plano">
+      <h3>🌺 Plano Premium</h3>
+      <div class="preco">R$ 389</div>
+      <p>📅 4 postagens por semana (16 posts/mês)<br>
+      🖋️ Criação de 2 posts + 2 carrosséis por semana<br>
+      📑 Roteiro personalizado para gravação de vídeos<br>
+      🌸 Ideal pra quem busca um conteúdo completo e estratégico.</p>
+      <p class="aviso">(Não inclui edição de vídeo.)</p>
+      <p class="pagamento">Aceita cartão e Pix | Até 3x com juros</p>
+      <a href="https://wa.me/5519999005784" target="_blank" class="btn-contratar">Contratar</a>
+    </div>
 
-    <section class="extra-services">
-      <h2>🎨 Serviços Avulsos</h2>
-      <div class="extra-grid">
-        <div class="extra-card">
-          <h3>✨ Arte Avulsa</h3>
-          <p>Post estático ou carrossel sob demanda.</p>
-          <p class="price">R$ 40 a R$ 80</p>
-          <p class="payment">💳 Aceita cartão e Pix | Até 3x com juros</p>
-        </div>
+    <!-- Plano Premium + Vídeos -->
+    <div class="plano">
+      <h3>🌻 Plano Premium + Vídeos</h3>
+      <div class="preco">R$ 489</div>
+      <p>📅 4 postagens por semana (16 posts/mês)<br>
+      🖋️ Criação de 2 posts + 2 carrosséis por semana<br>
+      🎬 Edição completa de vídeos com legenda e montagem final.<br>
+      💫 Gerenciamento completo e profissional.</p>
+      <p class="pagamento">Aceita cartão e Pix | Até 3x com juros</p>
+      <a href="https://wa.me/5519999005784" target="_blank" class="btn-contratar">Contratar</a>
+    </div>
 
-        <div class="extra-card">
-          <h3>🎬 Edição de Vídeo Avulsa</h3>
-          <p>Inclui legenda, cortes, ajustes de cor e montagem final.</p>
-          <p class="price">R$ 80 a R$ 150</p>
-          <p class="payment">💳 Aceita cartão e Pix | Até 3x com juros</p>
-        </div>
+    <!-- Serviços Avulsos -->
+    <div class="plano">
+      <h3>🎨 Arte Avulsa</h3>
+      <div class="preco">R$ 40 a R$ 80</div>
+      <p>Criação de post estático ou carrossel, ideal pra quem precisa de uma arte pontual sem plano mensal.</p>
+      <p class="pagamento">Aceita cartão e Pix | Até 3x com juros</p>
+    </div>
 
-        <div class="extra-card">
-          <h3>🌺 Identidade Visual Completa</h3>
-          <p>Logotipo personalizado</p>
-          <p>Arquivos vetorizáveis e editáveis (JPEG, PNG)</p>
-          <p class="price">R$ 300</p>
-          <p class="payment">💳 Aceita cartão e Pix | Até 3x com juros</p>
-        </div>
-      </div>
-    </section>
-  </main>
+    <div class="plano">
+      <h3>🎬 Edição de Vídeo Avulsa</h3>
+      <div class="preco">R$ 80 a R$ 150</div>
+      <p>Inclui legenda, cortes, ajustes de cor e montagem final a partir do material enviado pelo cliente.</p>
+      <p class="pagamento">Aceita cartão e Pix | Até 3x com juros</p>
+    </div>
 
-  <footer>
-    <p>© 2025 Kállita Prado - Social Media</p>
-  </footer>
+    <div class="plano">
+      <h3>🖌️ Identidade Visual Completa</h3>
+      <div class="preco">R$ 300</div>
+      <p>Criação de logotipo personalizado<br>
+      Arquivos vetorizáveis e editáveis<br>
+      Entregas em JPEG e PNG.</p>
+      <p class="pagamento">Aceita cartão e Pix | Até 3x com juros</p>
+    </div>
+  </section>
 </body>
 </html>
