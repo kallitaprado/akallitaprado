@@ -16,18 +16,18 @@
       --primary-dark: #9E00C0; /* Tom mais escuro do púrpura */
       --secondary-color: #fff;
       
-      /* Tons de cinza escuro mais suaves (melhor para fadiga visual) */
-      --background-dark: #0F0F1A; /* Fundo escuro com leve toque de azul/roxo */
-      --background-light: #1A1A2E; /* Gradiente levemente mais claro */
-      --card-bg: #1F1F35; /* Fundo do card mais claro para criar profundidade */
+      /* Tons de cinza escuro mais suaves */
+      --background-dark: #0F0F1A;
+      --background-light: #1A1A2E;
+      --card-bg: #1F1F35;
       
-      --text-primary: #f0f0f0; /* Branco suave para legibilidade */
+      --text-primary: #f0f0f0;
       --text-secondary: #C0C0D0;
       --text-muted: #8A8A99;
-      --border-color: rgba(214, 0, 255, 0.4); /* Borda com a cor primária */
+      --border-color: rgba(214, 0, 255, 0.4);
       --border-light: rgba(255, 255, 255, 0.08);
       
-      /* Variáveis para a altura do cabeçalho fixo para uso no calc() */
+      /* Variáveis para a altura do cabeçalho fixo */
       --header-height-desktop: 5.625rem; /* ~90px */
       --header-height-mobile: 9.25rem; /* ~148px (Empilhado) */
     }
@@ -44,59 +44,59 @@
 
     body {
       font-family: "Poppins", sans-serif;
-      /* Ajuste do gradiente para ser mais suave */
       background: linear-gradient(180deg, var(--background-dark) 0%, var(--background-light) 100%);
       color: var(--text-primary);
       overflow-x: hidden;
       line-height: 1.6;
     }
 
-    /* Container principal para centralização */
     .container {
       max-width: 1200px;
       margin: 0 auto;
       padding: 0 1.5rem;
     }
 
-    /* Header compacto e eficiente */
+    /* HEADER: TRANSPARENTE E COM FUNDO APÓS SCROLL */
     header {
       position: fixed;
       top: 0;
       width: 100%;
-      /* Cor de fundo mais discreta e blur mais acentuado para efeito "glass" */
-      background: rgba(15, 15, 26, 0.95);
-      backdrop-filter: blur(12px);
+      background: rgba(15, 15, 26, 0.0); 
+      backdrop-filter: blur(0px);
       z-index: 1000;
-      transition: all 0.3s ease;
+      transition: all 0.4s ease;
       padding: 0.8rem 0;
-      border-bottom: 1px solid var(--border-light);
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); /* Sombra mais forte */
+      border-bottom: 1px solid transparent;
+      box-shadow: none;
     }
 
     header.scrolled {
+      background: rgba(15, 15, 26, 0.95); 
+      backdrop-filter: blur(12px);
       padding: 0.5rem 0;
+      border-bottom: 1px solid var(--border-light);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
     }
 
     .header-content {
       display: flex;
-      flex-direction: column;
+      flex-direction: row; /* Alterado para linha no desktop */
       align-items: center;
-      gap: 0.7rem;
+      justify-content: space-between; /* Espaço entre logo e ícones */
+      gap: 0;
     }
 
     .logo {
-      font-size: 1.4rem; /* Um pouco maior */
-      font-weight: 700; /* Mais destaque */
+      font-size: 1.4rem;
+      font-weight: 700;
       letter-spacing: 1px;
       color: var(--text-primary);
-      text-align: center;
       text-transform: uppercase;
     }
 
     .social-icons {
       display: flex;
-      gap: 1.5rem; /* Mais espaçamento */
-      justify-content: center;
+      gap: 1.5rem;
     }
 
     .social-icons a {
@@ -108,39 +108,95 @@
 
     .social-icons a:hover {
       color: var(--secondary-color);
-      transform: scale(1.1); /* Micro-interação suave */
+      transform: scale(1.1);
     }
 
     /* CORREÇÃO UX: Ajuste do padding-top do MAIN no Desktop */
     main {
-      /* Altura do cabeçalho no Desktop + um pequeno respiro (90px + ~32px) */
+      /* Altura do cabeçalho no Desktop + um pequeno respiro */
       padding-top: calc(var(--header-height-desktop) + 2rem); 
       text-align: center;
       padding-bottom: 4rem;
     }
 
+    /* WhatsApp FLUTUANTE */
+    .whatsapp-float {
+        position: fixed;
+        width: 60px;
+        height: 60px;
+        bottom: 30px;
+        right: 30px;
+        background-color: #25D366;
+        color: #FFF;
+        border-radius: 50px;
+        text-align: center;
+        font-size: 30px;
+        z-index: 1001; /* Acima de tudo */
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: transform 0.3s ease;
+    }
+
+    .whatsapp-float:hover {
+        transform: scale(1.1) rotate(5deg);
+    }
+
+    /* HERO SECTION COM IMAGEM */
     .hero {
-      margin-bottom: 4rem; /* Mais espaço após o herói */
-      animation: fadeIn 1s ease-out;
+      display: flex;
+      flex-direction: column; /* Padrão: coluna, para mobile */
+      align-items: center;
+      justify-content: center;
+      gap: 2rem; /* Espaçamento entre imagem e texto */
+      padding: 3rem 0;
+      margin-bottom: 4rem;
+      text-align: center;
     }
 
-    h2 {
-      color: var(--primary-color);
-      font-size: 2.2rem; /* Mais destaque */
+    .hero-image-wrapper {
+        width: 180px; /* Tamanho da imagem */
+        height: 180px;
+        border-radius: 50%;
+        overflow: hidden;
+        border: 4px solid var(--primary-color); /* Borda destacada */
+        box-shadow: 0 0 20px rgba(214, 0, 255, 0.5); /* Brilho sutil */
+        transition: all 0.3s ease;
+    }
+
+    .hero-image-wrapper:hover {
+        transform: scale(1.05);
+        box-shadow: 0 0 25px rgba(214, 0, 255, 0.7);
+    }
+
+    .hero-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover; /* Garante que a imagem preencha o círculo */
+        object-position: center;
+    }
+
+    .hero-content {
+        max-width: 700px;
+    }
+
+    h1 { /* Alterado de h2 para h1 para semântica do título principal */
+      color: var(--text-primary); /* Slogan principal em branco para contraste */
+      font-size: 2.8rem; 
       margin-bottom: 1rem;
-      font-weight: 700;
-      line-height: 1.3;
-      text-transform: uppercase;
+      font-weight: 800;
+      line-height: 1.2;
       letter-spacing: 1px;
+      text-shadow: 0 0 10px rgba(0,0,0,0.5);
     }
-
-    .subtitle {
-      color: var(--text-secondary);
-      font-size: 1.1rem;
-      max-width: 900px;
-      margin: 0 auto 1.5rem; /* Reduzido para dar espaço à info de pagamento */
-      line-height: 1.8;
-      font-weight: 300;
+    
+    .hero .subtitle { /* O subtítulo agora é parte do hero */
+        font-size: 1.2rem;
+        font-weight: 300;
+        color: var(--text-secondary);
+        max-width: 600px;
+        margin: 0 auto;
     }
     
     .payment-info-general {
@@ -151,205 +207,157 @@
         display: block; /* Garante que ocupe a linha toda */
     }
 
-    /* Layout de planos */
-    .planos-container {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 2rem;
-      justify-content: center;
-      margin-bottom: 3rem;
+    /* SEÇÃO DE PORTFÓLIO (AGORA PREPARADA PARA O WIDGET) */
+    .portfolio-section {
+        margin-top: 5rem;
+        margin-bottom: 5rem;
     }
 
-    /* ELEGÂNCIA E INTERAÇÃO NO CARD */
-    .plano {
-      background: var(--card-bg);
-      border: 1px solid var(--border-light);
-      border-radius: 16px; /* Borda mais suave */
-      padding: 2.5rem 2rem;
-      transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94); /* Curva de transição mais dinâmica */
-      position: relative;
-      overflow: hidden;
-      display: flex;
-      flex-direction: column;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    .portfolio-section h2 {
+        color: var(--primary-color);
+        font-size: 2.5rem;
+        margin-bottom: 2.5rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+        position: relative;
+        display: inline-block;
     }
 
-    .plano:hover {
-      transform: translateY(-8px) scale(1.02); /* Efeito "Pop" mais acentuado */
-      border-color: var(--primary-color);
-      box-shadow: 0 15px 30px rgba(214, 0, 255, 0.25), 0 4px 15px rgba(0, 0, 0, 0.5); /* Sombra neon sutil */
-    }
-
-    .plano h3 {
-      color: var(--primary-color);
-      font-size: 1.45rem;
-      margin-bottom: 1.5rem;
-      font-weight: 700;
-      letter-spacing: 0.5px;
-    }
-
-    .plano p {
-      color: var(--text-secondary);
-      font-size: 0.95rem;
-      line-height: 1.7;
-      margin-bottom: 1rem;
-      text-align: left; /* Alinhamento mais profissional no conteúdo */
-    }
-
-    /* Preços com destaque */
-    .price-container {
-      margin: 1.5rem 0 0.5rem;
-      padding: 0.8rem 0;
-      position: relative;
-    }
-
-    .price {
-      font-size: 3.5rem; /* Mais impacto */
-      font-weight: 800;
-      color: var(--primary-color);
-      line-height: 1;
-      margin: 0;
-      display: inline-block;
-      text-shadow: 0 0 8px rgba(214, 0, 255, 0.4); /* Efeito de brilho/neon */
-    }
-
-    .price-small {
-      font-size: 2.4rem;
-    }
-
-    .pag-info {
-      font-size: 0.8rem;
-      color: var(--text-secondary); /* Cor principal para destaque */
-      margin-bottom: 0.5rem;
-      font-style: normal;
-      text-transform: uppercase;
-      font-weight: 600;
-      letter-spacing: 0.5px;
-    }
-
-    .price-note {
-        color: var(--text-muted); 
-        font-size: 0.85rem; 
-        margin-bottom: 1.5rem;
-    }
-
-    .btn-whatsapp {
-      display: inline-block;
-      background: var(--primary-color);
-      color: var(--background-dark); /* Cor de texto que contrasta com o botão */
-      padding: 0.9rem 2.2rem;
-      border-radius: 30px;
-      text-decoration: none;
-      transition: all 0.3s ease;
-      font-weight: 700;
-      border: 2px solid var(--primary-color);
-      margin-top: auto; /* Empurra o botão para baixo para alinhar no grid */
-      position: relative;
-      overflow: hidden;
-      font-size: 1rem;
-      box-shadow: 0 4px 15px rgba(214, 0, 255, 0.3);
-    }
-
-    .btn-whatsapp:hover {
-      background: var(--primary-dark);
-      color: var(--secondary-color);
-      border-color: var(--primary-dark);
-      transform: translateY(-2px);
-      box-shadow: 0 6px 20px rgba(214, 0, 255, 0.5);
-    }
-
-    /* Destaque para plano mais popular (AUMENTADO) */
-    .plano.popular {
-      border: 2px solid var(--primary-color); /* Borda mais grossa */
-      transform: scale(1.05); /* Mais destaque visual */
-      background: #242440; /* Fundo ligeiramente diferente */
-      box-shadow: 0 15px 30px rgba(214, 0, 255, 0.4), 0 4px 15px rgba(0, 0, 0, 0.5); 
+    .portfolio-section h2::after {
+        content: '';
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: -10px;
+        width: 80px;
+        height: 4px;
+        background: var(--primary-color);
+        border-radius: 2px;
     }
     
-    .plano.popular:hover {
-        transform: translateY(-8px) scale(1.07);
+    .lightwidget-placeholder {
+        padding: 2rem; 
+        border: 2px dashed var(--primary-color); 
+        border-radius: 8px;
+        background-color: rgba(31, 31, 53, 0.5);
+    }
+    
+    .lightwidget-placeholder p {
+        color: var(--text-secondary); 
+        font-size: 1rem;
+        line-height: 1.7;
+    }
+    
+    /* Título da seção de Planos */
+    .planos-section-title {
+        color: var(--primary-color);
+        font-size: 2.5rem;
+        margin-top: 5rem;
+        margin-bottom: 2.5rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+        position: relative;
+        display: inline-block;
+    }
+    
+    .planos-section-title::after {
+        content: '';
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: -10px;
+        width: 80px;
+        height: 4px;
+        background: var(--primary-color);
+        border-radius: 2px;
     }
 
-    .plano.popular::before {
-      content: '✨ MAIS POPULAR ✨';
-      position: absolute;
-      top: 0;
-      right: 0;
-      background: var(--primary-color);
-      color: var(--background-dark);
-      padding: 0.4rem 1rem;
-      font-size: 0.8rem;
-      font-weight: 700;
-      border-bottom-left-radius: 8px;
-      border-top-right-radius: 14px;
-      letter-spacing: 0.5px;
+
+    /* ESTILOS DE PLANOS E PREÇOS */
+    .planos-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; justify-content: center; margin-bottom: 3rem; }
+    .plano { background: var(--card-bg); border: 1px solid var(--border-light); border-radius: 16px; padding: 2.5rem 2rem; transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94); position: relative; overflow: hidden; display: flex; flex-direction: column; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); }
+    .plano:hover { transform: translateY(-8px) scale(1.02); border-color: var(--primary-color); box-shadow: 0 15px 30px rgba(214, 0, 255, 0.25), 0 4px 15px rgba(0, 0, 0, 0.5); }
+    .plano h3 { color: var(--primary-color); font-size: 1.45rem; margin-bottom: 1.5rem; font-weight: 700; letter-spacing: 0.5px; }
+    .plano p { color: var(--text-secondary); font-size: 0.95rem; line-height: 1.7; margin-bottom: 1rem; text-align: left; }
+    .price-container { margin: 1.5rem 0 0.5rem; padding: 0.8rem 0; position: relative; }
+    .price { font-size: 3.5rem; font-weight: 800; color: var(--primary-color); line-height: 1; margin: 0; display: inline-block; text-shadow: 0 0 8px rgba(214, 0, 255, 0.4); }
+    .price-small { font-size: 2.4rem; }
+    .pag-info { font-size: 0.8rem; color: var(--text-secondary); margin-bottom: 0.5rem; font-style: normal; text-transform: uppercase; font-weight: 600; letter-spacing: 0.5px; }
+    .price-note { color: var(--text-muted); font-size: 0.85rem; margin-bottom: 1.5rem; }
+    .btn-whatsapp { display: inline-block; background: var(--primary-color); color: var(--background-dark); padding: 0.9rem 2.2rem; border-radius: 30px; text-decoration: none; transition: all 0.3s ease; font-weight: 700; border: 2px solid var(--primary-color); margin-top: auto; position: relative; overflow: hidden; font-size: 1rem; box-shadow: 0 4px 15px rgba(214, 0, 255, 0.3); }
+    .btn-whatsapp:hover { background: var(--primary-dark); color: var(--secondary-color); border-color: var(--primary-dark); transform: translateY(-2px); box-shadow: 0 6px 20px rgba(214, 0, 255, 0.5); }
+    .plano.popular { border: 2px solid var(--primary-color); transform: scale(1.05); background: #242440; box-shadow: 0 15px 30px rgba(214, 0, 255, 0.4), 0 4px 15px rgba(0, 0, 0, 0.5); }
+    .plano.popular:hover { transform: translateY(-8px) scale(1.07); }
+    .plano.popular::before { content: '✨ MAIS POPULAR ✨'; position: absolute; top: 0; right: 0; background: var(--primary-color); color: var(--background-dark); padding: 0.4rem 1rem; font-size: 0.8rem; font-weight: 700; border-bottom-left-radius: 8px; border-top-right-radius: 14px; letter-spacing: 0.5px; }
+
+
+    /* MELHORIAS DE RESPONSIVIDADE */
+    @media (min-width: 769px) { /* Para desktop */
+        .hero {
+            flex-direction: row; /* Imagem e texto lado a lado */
+            text-align: left;
+            padding: 5rem 0; /* Mais padding no desktop */
+        }
+        .hero-content {
+            padding-left: 2rem;
+        }
     }
 
-    /* Melhorias de responsividade */
     @media (max-width: 768px) {
+      /* Ajuste do cabeçalho para mobile (mantendo em duas linhas) */
+      .header-content {
+          flex-direction: column;
+          gap: 0.6rem;
+      }
+        
       /* CORREÇÃO UX: Ajuste do padding-top do MAIN no Mobile */
       main {
-        /* Altura do cabeçalho empilhado no mobile + um respiro (148px + ~24px) */
         padding-top: calc(var(--header-height-mobile) + 1.5rem); 
       }
       
-      .header-content {
-        gap: 0.6rem;
-      }
+      h1 { font-size: 2.2rem; }
+      .hero .subtitle { font-size: 1rem; }
+      .hero-image-wrapper { width: 150px; height: 150px; }
 
-      .logo {
-        font-size: 1.3rem;
-      }
-
-      h2 {
-        font-size: 1.8rem;
-      }
-
-      .subtitle {
-        font-size: 1rem;
-        padding: 0 0.5rem;
-      }
-
-      .planos-container {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-        padding: 0 0.5rem;
-      }
-
-      .plano {
-        padding: 2rem 1.5rem;
-      }
-
-      .price {
-        font-size: 3rem;
-      }
+      .plano.popular { transform: scale(1.02); } 
+      .plano.popular:hover { transform: scale(1.05); }
       
-      .plano.popular {
-        transform: scale(1.02); /* Mantém um pouco de destaque, mas menor */
-      }
-      
-      .plano.popular:hover {
-        transform: scale(1.05);
+      .whatsapp-float {
+        width: 50px;
+        height: 50px;
+        font-size: 25px;
+        bottom: 20px;
+        right: 20px;
       }
     }
     
-    /* Otimizações de performance e acessibilidade */
-    .plano, .btn-whatsapp {
-      will-change: transform, box-shadow; /* Otimização de GPU para animações */
+    /* ANIMAÇÕES DE SCROLL-REVEAL */
+    .scroll-reveal {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+
+    .scroll-reveal.active {
+      opacity: 1;
+      transform: translateY(0);
     }
     
   </style>
 </head>
 <body>
 
+  <a href="https://wa.me/5519999005784" target="_blank" class="whatsapp-float" aria-label="WhatsApp Flutuante">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
   <header id="mainHeader">
     <div class="container">
       <div class="header-content">
         <div class="logo">Kállita Prado — Social Media</div>
         <nav class="social-icons">
-          <a href="https://wa.me/5519999005784" target="_blank" title="WhatsApp" aria-label="WhatsApp">
-            <i class="fab fa-whatsapp"></i>
-          </a>
           <a href="https://www.instagram.com/akallitaprado/" target="_blank" title="Instagram" aria-label="Instagram">
             <i class="fab fa-instagram"></i>
           </a>
@@ -359,17 +367,34 @@
   </header>
 
   <main class="container">
-    <section class="hero">
-      <h2>✨ Estratégias Digitais que Transformam ✨</h2>
-      <p class="subtitle">Todos os planos de gerenciamento incluem análise completa de perfil, definição de **Identidade Visual (Paleta e Tipografia)** e planejamento estratégico mensal focado em resultados.</p>
-      
-      <p class="payment-info-general">
-          💳 Formas de Pagamento: Pix, Boleto ou Cartão de Crédito (até 2x).
-      </p>
-      
+    <section class="hero scroll-reveal">
+      <div class="hero-image-wrapper">
+        <img src="1000145817.jpg" alt="Kállita Prado - Social Media Expert" class="hero-image">
+      </div>
+      <div class="hero-content">
+        <h1>Sua Presença Digital, Elevada ao Próximo Nível.</h1>
+        <p class="subtitle">Com Kállita Prado, sua marca ganha voz, estratégia e resultados no universo digital. Transformo sua visão em conexão real com seu público.</p>
+      </div>
     </section>
 
-    <div class="planos-container">
+    <p class="payment-info-general scroll-reveal">
+        💳 Formas de Pagamento: Pix, Boleto ou Cartão de Crédito (até 2x).
+    </p>
+
+    
+    <section class="portfolio-section scroll-reveal">
+        <h2>Meu Portfólio Vivo</h2>
+        
+        <div class="lightwidget-placeholder">
+            <p><strong>INSTRUÇÃO PARA VOCÊ:</strong><br>
+                Este bloco pontilhado é onde seu feed do Instagram vai aparecer. 
+                Acesse o site <strong>lightwidget.com</strong>, gere seu código de widget gratuito e cole ele aqui no HTML, substituindo toda esta `div`.</p>
+        </div>
+    </section>
+
+    <h2 class="planos-section-title scroll-reveal">Meus Planos e Serviços</h2>
+
+    <div class="planos-container scroll-reveal">
       <div class="plano">
         <h3>🚀 Plano Essencial</h3>
         <p>📅 2 postagens por semana (8/mês)<br>🖋️ Posts estáticos de conteúdo informativo.<br>💡 Suporte básico via WhatsApp.</p>
@@ -386,7 +411,7 @@
         <h3>📈 Plano Evolução</h3>
         <p>📅 3 postagens por semana (12/mês)<br>🖋️ Posts táticos e estratégicos de engajamento.<br>❌ Sem carrossel e sem edição de vídeo.</p>
         <div class="price-container">
-          <div class="price">R$ 270</div>
+          <div class="price">R$ 319</div>
         </div>
         <p class="pag-info">Pagamento Mensal</p>
         <p class="price-note">Ou 2x no cartão*</p>
@@ -398,7 +423,7 @@
         <h3>💎 Plano Premium</h3>
         <p>📅 4 postagens por semana (16/mês)<br>🖋️ 3 posts estáticos + 1 **Carrossel Educacional** por semana.<br>🌾 Focado em conteúdos de autoridade e valor.</p>
         <div class="price-container">
-          <div class="price">R$ 320</div>
+          <div class="price">R$ 379</div>
         </div>
         <p class="pag-info">Pagamento Mensal</p>
         <p class="price-note">Ou 2x no cartão*</p>
@@ -406,6 +431,18 @@
         <a class="btn-whatsapp" href="https://wa.me/5519999005784?text=Quero%20contratar%20o%20Plano%20Premium!" target="_blank" aria-label="Contratar Plano Premium">CONTRATAR AGORA</a>
       </div>
       
+      <div class="plano">
+        <h3>🎨 Identidade Visual (Branding)</h3>
+        <p>Criação de **Logotipo Profissional e Marca D'água**.<br>Arquivos vetorizados, JPEG, PNG e PDF.<br>Tipografia, paleta de cores e **Arte do Cartão de Visitas**.</p>
+        <div class="price-container">
+          <div class="price">R$ 390</div>
+        </div>
+        <p class="pag-info">Pagamento Único</p>
+        <p class="price-note">Ou 2x no cartão*</p>
+        <p style="text-align: center;">🖼️ Pacote completo para construir uma marca **profissional, coesa e memorável** desde o início.</p>
+        <a class="btn-whatsapp" href="https://wa.me/5519999005784?text=Quero%20solicitar%20uma%20Identidade%20Visual%20Completa!" target="_blank" aria-label="Solicitar Identidade Visual">CONTRATAR AGORA</a>
+      </div>
+
       <div class="plano">
         <h3>🎬 Edição de Vídeos Avulsa</h3>
         <p>Cortes, legendas sincronizadas, ajustes de cor e montagem final.</p>
@@ -416,18 +453,6 @@
         <p class="price-note">Varia conforme a duração e complexidade.</p>
         <p style="text-align: center;">✅ Ideal para transformar seus vídeos brutos em **conteúdo pronto e legendado** para Reels/TikTok/YouTube.</p>
         <a class="btn-whatsapp" href="https://wa.me/5519999005784?text=Quero%20solicitar%20uma%20Edição%20de%20Vídeo%20Avulsa!" target="_blank" aria-label="Solicitar Edição de Vídeo Avulsa">SOLICITAR ORÇAMENTO</a>
-      </div>
-
-      <div class="plano">
-        <h3>🎨 Identidade Visual (Branding)</h3>
-        <p>Criação de Logotipo, Paleta de Cores e Tipografia.<br>Arquivos vetorizáveis e manuais de uso.</p>
-        <div class="price-container">
-          <div class="price">R$ 300</div>
-        </div>
-        <p class="pag-info">Pagamento Único</p>
-        <p class="price-note">Ou 2x no cartão*</p>
-        <p style="text-align: center;">🖼️ Pacote completo para construir uma marca **profissional, coesa e memorável** desde o início.</p>
-        <a class="btn-whatsapp" href="https://wa.me/5519999005784?text=Quero%20solicitar%20uma%20Identidade%20Visual%20Completa!" target="_blank" aria-label="Solicitar Identidade Visual">CONTRATAR AGORA</a>
       </div>
 
       <div class="plano">
@@ -454,7 +479,7 @@
   </footer>
 
   <script>
-    // Header scroll effect otimizado
+    // Header scroll effect
     window.addEventListener('scroll', function() {
       const header = document.getElementById('mainHeader');
       if (window.scrollY > 30) {
@@ -464,9 +489,21 @@
       }
     });
 
-    // Performance: Carregamento otimizado de elementos
+    // Scroll Reveal Animation
     document.addEventListener('DOMContentLoaded', function() {
-      document.body.classList.add('loaded');
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('active');
+          }
+        });
+      }, {
+        threshold: 0.1 // O elemento se torna visível quando 10% dele entra na viewport
+      });
+
+      document.querySelectorAll('.scroll-reveal').forEach(element => {
+        observer.observe(element);
+      });
     });
   </script>
 
