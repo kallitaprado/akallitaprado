@@ -195,7 +195,7 @@
     }
     
     .plano h3 .gradient-text {
-        background: linear-gradient(90deg, var(--primary-color), var(--primary-hot));
+        background: linear-gradient(90deg, var(--primary-hot), var(--primary-color));
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         background-clip: text;
@@ -204,8 +204,20 @@
     
     .plano p { color: var(--text-secondary); font-size: 0.95rem; line-height: 1.7; margin-bottom: 1rem; text-align: left; }
     .price-container { margin: 1.5rem 0 0.5rem; padding: 0.8rem 0; position: relative; }
-    .price { font-size: 3.5rem; font-weight: 800; color: var(--primary-color); line-height: 1; margin: 0; display: inline-block; text-shadow: 0 0 8px rgba(214, 0, 255, 0.4); }
-    .price-small { font-size: 2.4rem; }
+    
+    .price { 
+        font-size: 3.5rem; /* Aplicado ao preço padrão (avulsos) */
+        font-weight: 800;
+        color: var(--primary-color);
+        line-height: 1; 
+        margin: 0;
+        text-shadow: 0 0 8px rgba(214, 0, 255, 0.4);
+    }
+    
+    .price-small { 
+        font-size: 2.4rem; /* Aplicado ao preço padrão (avulsos) */
+        line-height: 1.2;
+    }
     
     .pag-info { 
         font-size: 0.8rem; 
@@ -281,7 +293,6 @@
           gap: 0.6rem;
       }
         
-      /* Correção do espaçamento do topo (Mobile) */
       main {
         padding-top: 9.5rem; 
       }
@@ -322,6 +333,64 @@
       100% { background-position: 0% 50%; }
     }
     
+    /* -------------------------------------------------
+    NOVOS ESTILOS (CONTADOR E PREÇO DE/POR)
+    -------------------------------------------------
+    */
+    
+    /* ESTILO DO CONTADOR REGRESSIVO */
+    #countdown-timer {
+      font-size: 2.3rem;
+      font-weight: bold;
+      color: #FF00A0; 
+      text-align: center;
+      background-color: rgba(31, 31, 53, 0.7); 
+      padding: 20px;
+      border-radius: 10px;
+      border: 2px dashed var(--primary-color);
+      margin: 20px 0;
+      backdrop-filter: blur(5px);
+    }
+
+    #countdown-timer span {
+      padding: 0 8px;
+      color: var(--text-primary); 
+    }
+    
+    /* ESTILOS DO PREÇO "DE/POR" */
+    .preco-antigo {
+      font-size: 1.5rem; 
+      color: var(--text-muted); 
+      text-decoration: line-through; 
+      display: block; 
+      font-weight: 400;
+    }
+
+    .preco-novo {
+      font-size: 3.2rem; 
+      font-weight: 800;
+      color: var(--primary-color);
+      text-shadow: 0 0 8px rgba(214, 0, 255, 0.4);
+      display: block; 
+    }
+    
+    /* Ajuste para o .price-small (quando ele é DE/POR) */
+    .price-small .preco-antigo {
+        font-size: 1.3rem;
+    }
+    .price-small .preco-novo {
+        font-size: 2.2rem; 
+    }
+
+    .economia-aviso {
+      font-size: 1rem; 
+      font-weight: 700;
+      color: var(--primary-hot); /* COR MUDADA PARA PINK */
+      display: block;
+      margin-top: -0.2rem;
+      margin-bottom: 1rem;
+    }
+    
   </style>
 </head>
 <body id="top">
@@ -344,18 +413,41 @@
   </header>
 
   <main class="container">
-
+  
+    <div style="text-align: center; margin-bottom: 4rem;" class="scroll-reveal">
+        <h2 style="font-size: 2.2rem; color: var(--primary-color); font-weight: 800; margin-bottom: 0.5rem; text-transform: uppercase; letter-spacing: 1px;">
+          🚨 A CONTAGEM REGRESSIVA COMEÇOU! 🚨
+        </h2>
+        <p style="font-size: 1.2rem; color: var(--text-secondary); margin-bottom: 1.5rem;">
+          Esses são os <strong>ÚLTIMOS DIAS</strong> para garantir seu pacote com <strong>DESCONTOS IMPERDÍVEIS</strong>.<br>Em 1º de Janeiro, os preços serão reajustados!
+        </p>
+        
+        <div id="countdown-timer">
+          <span id="days"></span> Dias
+          <span id="hours"></span> Horas
+          <span id="minutes"></span> Minutos
+          <span id="seconds"></span> Segundos
+        </div>
+        
+        <p style="font-size: 1.1rem; color: var(--text-primary); font-weight: 500; margin-top: 1.5rem;">
+          Não comece 2026 pagando mais caro. <strong>Trave seu desconto AGORA!</strong>
+        </p>
+    </div>
     <h2 class="planos-section-title scroll-reveal">Gerenciamento de Redes Sociais</h2>
     <p class="payment-info-general scroll-reveal">
         💳 Formas de Pagamento: Pix, Boleto ou Cartão de Crédito (até 3x com juros).
     </p>
 
     <div class="planos-container scroll-reveal">
+      
       <div class="plano">
         <h3>🚀 <span class="gradient-text">Plano Básico</span></h3>
         <p>📅 2 postagens por semana (8/mês)<br>🖋️ Posts estáticos de conteúdo.<br>❌ Não inclui carrossel ou edição de vídeo.</p>
         <div class="price-container">
-          <div class="price">R$ 200</div>
+          <div class="price"> <span class="preco-antigo">DE R$ 279,00/mês</span>
+            <span class="preco-novo">POR R$ 200,00/mês</span>
+          </div>
+          <span class="economia-aviso">Aprox. 28% OFF!</span>
         </div>
         <p class="pag-info">Pagamento Mensal</p>
         <p class="price-note">Ou até 3x no cartão*</p>
@@ -367,7 +459,11 @@
         <h3>📈 <span class="gradient-text">Plano Intermediário</span></h3>
         <p>📅 3 postagens por semana (12/mês)<br>🖋️ Posts táticos e estratégicos.<br>❌ Não inclui carrossel ou edição de vídeo.</p>
         <div class="price-container">
-          <div class="price">R$ 270</div>
+          <div class="price">
+            <span class="preco-antigo">DE R$ 320,00/mês</span>
+            <span class="preco-novo">POR R$ 270,00/mês</span>
+          </div>
+          <span class="economia-aviso">Aprox. 16% OFF!</span>
         </div>
         <p class="pag-info">Pagamento Mensal</p>
         <p class="price-note">Ou até 3x no cartão*</p>
@@ -379,7 +475,11 @@
         <h3>💎 <span class="gradient-text">Plano Plus</span></h3>
         <p>📅 4 postagens por semana (16/mês)<br>🖋️ 3 posts estáticos + 1 <strong>Carrossel</strong> por semana.<br>❌ Não inclui edição de vídeo.</p>
         <div class="price-container">
-          <div class="price">R$ 320</div>
+          <div class="price">
+            <span class="preco-antigo">DE R$ 398,00/mês</span>
+            <span class="preco-novo">POR R$ 320,00/mês</span>
+          </div>
+          <span class="economia-aviso">Aprox. 20% OFF!</span>
         </div>
         <p class="pag-info">Pagamento Mensal</p>
         <p class="price-note">Ou até 3x no cartão*</p>
@@ -394,7 +494,11 @@
            💡 Envio de <strong>roteiros e ideias</strong> para Reels.<br>
            ❌ <strong>Não inclui edição de vídeo</strong>.</p>
         <div class="price-container">
-          <div class="price">R$ 389</div>
+          <div class="price">
+            <span class="preco-antigo">DE R$ 437,00/mês</span>
+            <span class="preco-novo">POR R$ 389,00/mês</span>
+          </div>
+          <span class="economia-aviso">Aprox. 11% OFF!</span>
         </div>
         <p class="pag-info">Pagamento Mensal</p>
         <p class="price-note">Ou até 3x no cartão*</p>
@@ -406,7 +510,11 @@
         <h3>🎬 <span class="gradient-text">Premium + Vídeos</span></h3>
         <p>📅 4 postagens por semana (16/mês)<br>🖋️ 2 posts + 2 <strong>Carrosséis</strong> por semana.<br>✅ Roteiro estratégico + <strong>Edição inclusa</strong>.</p>
         <div class="price-container">
-          <div class="price">R$ 489</div>
+          <div class="price">
+            <span class="preco-antigo">DE R$ 573,00/mês</span>
+            <span class="preco-novo">POR R$ 489,00/mês</span>
+          </div>
+          <span class="economia-aviso">Aprox. 15% OFF!</span>
         </div>
         <p class="pag-info">Pagamento Mensal</p>
         <p class="price-note">Ou até 3x no cartão*</p>
@@ -423,8 +531,7 @@
         <h3>🎨 <span class="gradient-text">Identidade Visual</span></h3>
         <p>Criação de <strong>Logotipo Profissional e Marca D'água</strong>.<br>Arquivos vetorizados, JPEG, PNG e PDF.<br>Tipografia, paleta de cores e <strong>Arte do Cartão de Visitas</strong>.</p>
         <div class="price-container">
-          <div class="price">R$ 390</div>
-        </div>
+          <div class="price">R$ 390</div> </div>
         <p class="pag-info">Pagamento Único</p>
         <p class="price-note">Ou até 3x no cartão*</p>
         <p style="text-align: center;">🖼️ Pacote completo para construir uma marca <strong>profissional, coesa e memorável</strong>.</p>
@@ -435,54 +542,7 @@
         <h3>🖼️ <span class="gradient-text">Arte Avulsa</span></h3>
         <p>Criação pontual de <strong>Post Estático ou Carrossel</strong>.<br>Ideal para quem precisa de uma arte pontual sem plano mensal.</p>
         <div class="price-container">
-          <div class="price price-small">R$ 40-80</div>
-        </div>
+          <div class="price price-small">R$ 40-80</div> </div>
         <p class="pag-info">VALOR POR ARTE</p>
         <p class="price-note">Varia conforme a complexidade do briefing.</p>
-        <a class="btn-whatsapp" href="https://wa.me/5519999005784?text=Quero%20solicitar%20uma%20Arte%20Avulsa!" target="_blank" aria-label="Solicitar Arte Avulsa">SOLICITAR ORÇAMENTO</a>
-      </div>
-      
-      <div class="plano">
-        <h3>🎬 <span class="gradient-text">Edição de Vídeo Avulsa</span></h3>
-        <p>Inclui legenda, cortes, ajustes de cor e montagem final, a partir do material enviado pelo cliente.</p>
-        <div class="price-container">
-          <div class="price price-small">R$ 80-150</div>
-        </div>
-        <p class="pag-info">VALOR POR VÍDEO</p>
-        <p class="price-note">Depende da duração e nível de edição.</p>
-        <a class="btn-whatsapp" href="https://wa.me/5519999005784?text=Quero%20solicitar%20uma%20Edição%20de%20Vídeo%20Avulsa!" target="_blank" aria-label="Solicitar Edição de Vídeo Avulsa">SOLICITAR ORÇAMENTO</a>
-      </div>
-
-    </div>
-    
-    <p style="color: var(--text-muted); font-size: 0.75rem; text-align: center; margin-top: 1rem; margin-bottom: 2rem;">
-        * O parcelamento no cartão de crédito está sujeito à taxa de juros da operadora (Mercado Pago).
-    </p>
-    
-  </main>
-
-  <footer class="container">
-    <p>© 2025 Kállita Prado | Social Media Estratégica</p>
-  </footer>
-
-  <script>
-    // Scroll Reveal Animation
-    document.addEventListener('DOMContentLoaded', function() {
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('active');
-          }
-        });
-      }, {
-        threshold: 0.1 
-      });
-
-      document.querySelectorAll('.scroll-reveal').forEach(element => {
-        observer.observe(element);
-      });
-    });
-  </script>
-
-</body>
-</html>
+        <a c
