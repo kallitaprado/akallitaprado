@@ -148,6 +148,7 @@
             text-align: center;
             box-shadow: 0 4px 10px rgba(0,0,0,0.2);
             transition: transform 0.3s ease;
+            position: relative; /* Para a badge flutuar */
         }
         .plano-card:hover {
             transform: translateY(-5px);
@@ -158,6 +159,37 @@
             color: var(--cor-texto-secundaria);
             min-height: 40px; 
         }
+        /* Ajuste para o novo número de planos */
+        .plano-card.diamante {
+            border: 3px solid var(--cor-destaque);
+            background-color: #2f2533; 
+            order: 4; /* Garante que ele fique no final ou no centro, se for o único */
+        }
+        
+        .planos-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+        }
+        /* Para que 4 planos se ajustem melhor em duas linhas */
+        .planos-wrapper .plano-card {
+            flex-basis: calc(50% - 15px);
+            max-width: 450px;
+        }
+        @media (min-width: 900px) {
+             .planos-wrapper .plano-card {
+                flex-basis: calc(25% - 22.5px);
+                max-width: 280px;
+            }
+        }
+        @media (max-width: 768px) {
+            .planos-wrapper .plano-card {
+                flex-basis: 100%;
+                max-width: 450px;
+            }
+        }
+
 
         .plano-card ul {
             list-style: none;
@@ -205,6 +237,9 @@
         .plano-card.destaque:hover {
              transform: scale(1.07);
         }
+        .plano-card.destaque .badge {
+            background-color: var(--cor-destaque); 
+        }
 
         .badge {
             display: inline-block;
@@ -219,18 +254,17 @@
 
         /* --- [ URGÊNCIA (DEGRADÊ E QUADRO PERSONALIZADO) ] --- */
         .urgencia {
-            padding: 30px 0; /* Padding vertical para o container da seção */
+            padding: 30px 0;
         }
         
         .urgencia-card {
-            /* Degradê Roxo Refinado */
             background: linear-gradient(140deg, var(--cor-destaque-hover) 0%, var(--cor-destaque) 70%, var(--cor-destaque-vibrante) 100%);
             border-radius: 12px;
             text-align: center;
             box-shadow: 0 10px 30px rgba(155, 89, 182, 0.4);
-            padding: 40px 30px; /* Espaçamento interno do quadro */
-            margin: 0 auto; /* Centraliza o card */
-            max-width: 800px; /* Limita a largura para melhor visualização */
+            padding: 40px 30px;
+            margin: 0 auto;
+            max-width: 800px;
         }
 
         .urgencia-card h2 {
@@ -283,7 +317,7 @@
             font-size: 1.3rem;
         }
         
-        /* --- [ SEÇÃO: NOVO MÉTODO DE TRABALHO ] --- */
+        /* --- [ SEÇÃO: MÉTODO DE TRABALHO ] --- */
         .metodo {
             background-color: var(--cor-fundo-principal); 
         }
@@ -294,7 +328,6 @@
             justify-content: center;
             margin-top: 40px;
         }
-        /* Ajuste para que 2 fiquem em cima e 3 embaixo, ou todos em colunas no mobile */
         .metodo-passo {
             flex-basis: calc(33.33% - 20px);
             min-width: 280px;
@@ -321,34 +354,52 @@
             color: var(--cor-texto-secundaria);
             margin-bottom: 0;
         }
+        @media (max-width: 600px) {
+            .metodo-passo {
+                flex-basis: 100%;
+            }
+        }
 
-        /* --- [ SEÇÃO: AVULSOS ] --- */
+        /* --- [ SEÇÃO: AVULSOS - ATUALIZADO ] --- */
         .avulsos {
             text-align: center;
         }
-        .avulsos ul {
-            list-style: none;
-            display: inline-block;
-            text-align: left;
+        .avulsos-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
             margin-top: 30px;
+        }
+        .avulsos-item {
             background-color: var(--cor-fundo-card);
             border: 1px solid #333;
-            padding: 30px;
+            padding: 25px;
             border-radius: 10px;
+            margin-bottom: 20px;
+            max-width: 600px;
+            text-align: left;
+            width: 100%;
         }
-        .avulsos li {
-            font-size: 1.2rem;
-            margin-bottom: 15px;
-            color: var(--cor-texto-secundaria);
+        .avulsos-item h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-style: normal;
+            font-size: 1.3rem;
+            color: var(--cor-destaque);
+            margin-bottom: 10px;
         }
-        .avulsos li strong {
+        .avulsos-item .preco-avulso {
+            font-size: 1.5rem;
+            font-weight: 900;
             color: var(--cor-texto-principal);
+            margin-bottom: 10px;
+            display: block;
         }
-        .avulsos .nota {
+        .avulsos-item .nota {
             font-style: italic;
             font-size: 0.9rem;
             color: #777;
-            margin-top: 30px;
+            display: block;
+            margin-top: 15px;
         }
 
         /* --- [ SEÇÃO DEPOIMENTOS ] --- */
@@ -406,7 +457,7 @@
             color: var(--cor-texto-secundaria);
         }
 
-        /* Animação Pulsante */
+        /* Animação Pulsante (Mantida) */
         @keyframes pulse {
             0% {
                 transform: scale(1);
@@ -487,13 +538,6 @@
             height: 32px;
             fill: #fff; 
         }
-        
-        /* Ajuste para mobile (garantir que os passos do método fiquem em colunas no mobile) */
-        @media (max-width: 600px) {
-            .metodo-passo {
-                flex-basis: 100%;
-            }
-        }
 
     </style>
 </head>
@@ -507,46 +551,61 @@
     </header>
 
     <section class="planos container">
-        <h2>Escolha o Plano que vai Mudar seu Jogo</h2>
-        <p style="text-align: center; max-width: 700px; margin: -20px auto 40px auto;">Eu estruturei 3 níveis de serviço para sua marca decolar. Todos incluem planejamento de conteúdo, design profissional e textos persuasivos.</p>
+        <h2>Escolha o Plano de Gerenciamento que vai Mudar seu Jogo</h2>
+        <p style="text-align: center; max-width: 700px; margin: -20px auto 40px auto;">Eu estruturei 4 níveis de serviço para sua marca decolar. Todos incluem planejamento de conteúdo, design profissional e textos persuasivos.</p>
 
-        <div class="planos-container">
+        <div class="planos-wrapper">
             <div class="plano-card">
                 <h3>🟤 PLANO BRONZE</h3>
-                <p>A presença digital que você precisa para começar.</p>
+                <p>A presença digital básica para iniciar sua constância.</p>
                 <ul>
                     <li><strong>8 Posts/Mês</strong> (2 por semana)</li>
-                    <li><strong>Formato:</strong> Posts Fixos</li>
-                    <li><strong>Ideal para:</strong> Manter a constância e construir base.</li>
+                    <li><strong>Formato:</strong> Apenas Posts Estáticos</li>
+                    <li><strong>Ideal para:</strong> Marcas que precisam manter a base de conteúdo.</li>
                 </ul>
                 <div class="preco">R$ 200,00 <span>/mês</span></div>
+                <p class="plano-nota" style="font-size: 0.8rem; color: #777;">*Não inclui carrossel nem edição de vídeo.</p>
                 <a href="https://api.whatsapp.com/send?phone=5519999005784&text=Ol%C3%A1%2C%20tenho%20interesse%20no%20Plano%20Bronze!" target="_blank" class="btn btn-padrao">Quero o Plano Bronze</a>
             </div>
 
-            <div class="plano-card destaque">
-                <span class="badge">💎 O MAIS VENDIDO E RECOMENDADO</span>
+            <div class="plano-card">
                 <h3>⚪ PLANO PRATA</h3>
-                <p>O equilíbrio perfeito entre volume, estratégia e variedade.</p>
+                <p>O equilíbrio perfeito entre volume e conteúdo estratégico.</p>
                 <ul>
                     <li><strong>12 Posts/Mês</strong> (3 por semana)</li>
-                    <li><strong>Formato:</strong> 8 Fixos + 4 Carrosséis</li>
+                    <li><strong>Formato:</strong> 10 Estáticos + 2 Carrosséis (5 slides)</li>
                     <li><strong>Ideal para:</strong> Gerar engajamento e educar sua audiência.</li>
-                    <li><strong>Bônus:</strong> 1 Vídeo Reels por mês</li>
                 </ul>
-                <div class="preco">R$ 390,00 <span>/mês</span></div>
-                <a href="https://api.whatsapp.com/send?phone=5519999005784&text=Ol%C3%A1%2C%20tenho%20interesse%20no%20Plano%20Prata%20(o%20mais%20vendido)!" target="_blank" class="btn btn-principal">Sim, Quero o Plano Mais Vendido!</a>
+                <div class="preco">R$ 250,00 <span>/mês</span></div>
+                <p class="plano-nota" style="font-size: 0.8rem; color: #777;">*Não inclui edição de vídeo.</p>
+                <a href="https://api.whatsapp.com/send?phone=5519999005784&text=Ol%C3%A1%2C%20tenho%20interesse%20no%20Plano%20Prata!" target="_blank" class="btn btn-padrao">Quero o Plano Prata</a>
             </div>
 
             <div class="plano-card">
                 <h3>🟡 PLANO OURO</h3>
-                <p>A estratégia completa para dominar seu nicho.</p>
+                <p>Estratégia completa com foco em dominar o feed e o engajamento.</p>
                 <ul>
                     <li><strong>16 Posts/Mês</strong> (4 por semana)</li>
-                    <li><strong>Formato:</strong> 8 Fixos + 8 Carrosséis</li>
-                    <li><strong>Bônus:</strong> 2 Vídeos Reels por mês</li>
+                    <li><strong>Formato:</strong> 8 Estáticos + 8 Carrosséis (5 slides)</li>
+                    <li><strong>Ideal para:</strong> Alta frequência e educação aprofundada da audiência.</li>
                 </ul>
-                <div class="preco">R$ 580,00 <span>/mês</span></div>
+                <div class="preco">R$ 320,00 <span>/mês</span></div>
+                <p class="plano-nota" style="font-size: 0.8rem; color: #777;">*Não inclui edição de vídeo.</p>
                 <a href="https://api.whatsapp.com/send?phone=5519999005784&text=Ol%C3%A1%2C%20tenho%20interesse%20no%20Plano%20Ouro!" target="_blank" class="btn btn-padrao">Quero o Plano Ouro</a>
+            </div>
+            
+            <div class="plano-card destaque diamante">
+                <span class="badge">💎 EXPERIÊNCIA COMPLETA EM VÍDEO</span>
+                <h3>🟣 PLANO DIAMANTE</h3>
+                <p>A solução mais completa para quem busca autoridade com Reels.</p>
+                <ul>
+                    <li><strong>18 Posts/Mês</strong> (4 por semana + 2 Reels)</li>
+                    <li><strong>Formato:</strong> 8 Estáticos + 8 Carrosséis + 2 Reels</li>
+                    <li><strong>Bônus:</strong> Roteiro Estratégico + Edição de Vídeos Inclusa!</li>
+                </ul>
+                <div class="preco">R$ 489,00 <span>/mês</span></div>
+                <p style="font-size: 0.8rem; color: var(--cor-texto-principal); margin-bottom: 0;">*O cliente envia os cortes gravados; eu realizo toda a edição, legendagem e montagem final.</p>
+                <a href="https://api.whatsapp.com/send?phone=5519999005784&text=Sim%2C%20quero%20o%20Plano%20Diamante%20com%20Reels%20e%20edi%C3%A7%C3%A3o%20inclusa!" target="_blank" class="btn btn-principal">SIM, Quero o Plano Diamante!</a>
             </div>
 
         </div>
@@ -585,4 +644,107 @@
             <p>Sem problemas. Se, por qualquer motivo, você decidir não seguir, basta não realizar o segundo pagamento (50% restantes). O serviço é interrompido automaticamente, <strong>sem multas ou burocracia.</strong></p>
             
             <h3 style="margin-top: 20px;">💳 Formas de Pagamento</h3>
-            <p style="margin-bottom: 0;">PIX (Pagament
+            <p style="margin-bottom: 0;">PIX (Pagamento à vista)<br>
+               Cartão de Crédito (em até 3x pelo Mercado Pago, com juros da operadora)</p>
+        </div>
+    </section>
+    
+    <section class="metodo container">
+        <h2>Meu Método de Trabalho</h2>
+        <p style="text-align: center; max-width: 700px; margin: -20px auto 0 auto;">Meu planejamento é feito em etapas organizadas para garantir coerência visual e estratégica, do briefing à publicação.</p>
+        <div class="metodo-container">
+            <div class="metodo-passo">
+                <h3>1. Briefing e Alinhamento</h3>
+                <p>Entendemos seu posicionamento, público e objetivos para alinhar o tom, os temas e a estética do seu perfil.</p>
+            </div>
+            <div class="metodo-passo">
+                <h3>2. Planejamento e Cronograma</h3>
+                <p>Montamos o calendário de postagens com datas, formatos e temas focados nos seus objetivos do mês.</p>
+            </div>
+            <div class="metodo-passo">
+                <h3>3. Criação de Conteúdo</h3>
+                <p>Desenvolvemos as artes e legendas seguindo a identidade visual e a estratégia que definimos.</p>
+            </div>
+            <div class="metodo-passo">
+                <h3>4. Revisão e Aprovação</h3>
+                <p>Todo o conteúdo é enviado para sua revisão antes de ir ao ar, garantindo 100% de alinhamento.</p>
+            </div>
+            <div class="metodo-passo">
+                <h3>5. Publicação e Análise</h3>
+                <p>Após aprovado, o conteúdo é programado e eu acompanho o desempenho para otimizar as futuras estratégias.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="avulsos container">
+        <h2>Serviços Avulsos para Projetos Pontuais</h2>
+        <p>Se um plano mensal ainda não é para você, posso ajudar com artes e edições avulsas.</p>
+        
+        <div class="avulsos-container">
+            <div class="avulsos-item">
+                <h3>✨ Arte Avulsa (Post Estático ou Carrossel)</h3>
+                <span class="preco-avulso">R$ 40 a R$ 80</span>
+                <p style="color: var(--cor-texto-secundaria);">O valor é definido conforme a complexidade do design. Ideal para quem precisa de uma arte pontual sem plano mensal.</p>
+                <span class="nota">*A prioridade de atendimento é sempre dos clientes com planos mensais.</span>
+            </div>
+            
+            <div class="avulsos-item">
+                <h3>🎬 Edição de Vídeo Avulsa (Reels)</h3>
+                <span class="preco-avulso">R$ 80 a R$ 150</span>
+                <p style="color: var(--cor-texto-secundaria);">Depende da duração e do nível de edição. Inclui legenda, cortes, ajustes de cor e montagem final, a partir do material enviado por você.</p>
+            </div>
+        </div>
+    </section>
+    
+    <section class="depoimentos container">
+        <h2>O que meus clientes dizem</h2>
+        <div class="depoimentos-container">
+            <div class="depoimento-card">
+                <p>"Todos os meus amigos estão elogiando meu perfil, está ficando incrível. Antes eu não tinha profissionalismo nenhum."</p>
+                <cite>Camila L., Empreendedora</cite>
+            </div>
+            <div class="depoimento-card">
+                <p>"A Kállita conseguiu extrair exatamente a essência que eu procurava, meu feed está incrível e finalmente atrai os clientes certos."</p>
+                <cite>Juliana P., Terapeuta</cite>
+            </div>
+            <div class="depoimento-card">
+                <p>"Uma profissional criativa e com um olhar incrível para as tendências. Meu engajamento mudou completamente."</p>
+                <cite>Bruno G., Mentor</cite>
+            </div>
+        </div>
+    </section>
+
+    <section class="final-cta container">
+        <h2>O que você vai fazer agora?</h2>
+        <ol>
+            <li>Ignorar esta página e continuar com um feed que te frustra e não traz clientes.</li>
+            <li>Gastar mais tempo e energia no Canva, tentando "acertar" o design, enquanto deveria estar vendendo.</li>
+            <li>Clicar no botão abaixo, <strong>garantir o preço de 2025</strong>, e ter o feed premium que seu serviço merece.</li>
+        </ol>
+        <p style="color: var(--cor-texto-principal); font-weight: 700;">Estou a um clique de distância.</p>
+        
+        <a href="https://api.whatsapp.com/send?phone=5519999005784&text=Ol%C3%A1%2C%20quero%20transformar%20meu%20feed%20e%20garantir%20o%20pre%C3%A7o%20de%202025!" target="_blank" class="btn btn-mestre">
+            SIM, QUERO UM FEED PREMIUM (E TRAVAR O PREÇO!)
+        </a>
+    </section>
+
+    <footer>
+        <p>
+            <a href="mailto:akallitaprado@gmail.com">akallitaprado@gmail.com</a>
+        </p>
+        <p>
+            <a href="https://www.instagram.com/akallitaprado" target="_blank">@akallitaprado</a>
+        </p>
+        <p style="margin-top: 20px;">
+            © 2025 Todos os direitos reservados. Kállita Prado | Social Media
+        </p>
+    </footer>
+
+    <a href="https://api.whatsapp.com/send?phone=5519999005784&text=Ol%C3%A1%2C%20tenho%20interesse%20nos%20seus%20servi%C3%A7os!" target="_blank" class="floating-wa-btn">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+            <path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.8 0-66-10.9-93.2-30.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-19.5-31.1-30.8-67.6-30.8-105.7 0-109.4 89-198.4 198.4-198.4 53 0 102.6 20.8 139.9 58.1 37.3 37.3 58.1 86.9 58.1 139.9-.1 109.4-89.1 198.4-198.5 198.4zm108.2-131.3c-.6-3.1-2.1-5.6-4.5-8.1-2.4-2.4-5.2-3.9-8.1-4.5-2.9-.6-6.1-.9-9.5-.9-3.3 0-6.4 .3-9.5 .9-3.1 .6-5.6 2.1-8.1 4.5-2.4 2.4-3.9 5.2-4.5 8.1-.6 2.9-.9 6.1-.9 9.5 0 3.3 .3 6.4 .9 9.5 .6 3.1 2.1 5.6 4.5 8.1 2.4 2.4 5.2 3.9 8.1 4.5 2.9 .6 6.1 .9 9.5 .9h.1c3.3 0 6.4-.3 9.5-.9 3.1-.6 5.6-2.1 8.1-4.5 2.4-2.4 3.9-5.2 4.5-8.1 .6-2.9 .9-6.1 .9-9.5s-.3-6.4-.9-9.5zm-52.1 45c-2.9 .6-6.1 .9-9.5 .9-3.3 0-6.4-.3-9.5-.9-3.1-.6-5.6-2.1-8.1-4.5-2.4-2.4-3.9-5.2-4.5-8.1-.6-2.9-.9-6.1-.9-9.5 0-3.3 .3-6.4 .9-9.5 .6-3.1 2.1-5.6 4.5-8.1 2.4-2.4 5.2-3.9 8.1-4.5 2.9-.6 6.1-.9 9.5-.9 3.3 0 6.4 .3 9.5 .9 3.1 .6 5.6 2.1 8.1 4.5 2.4 2.4 3.9 5.2 4.5 8.1 .6 2.9 .9 6.1 .9 9.5 0 3.3-.3 6.4-.9 9.5-.6 3.1-2.1 5.6-4.5 8.1-2.4 2.4-5.2 3.9-8.1 4.5z"/>
+        </svg>
+    </a>
+
+</body>
+</html>
