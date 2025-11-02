@@ -10,21 +10,21 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Playfair+Display:ital,wght@0,700;0,900;1,700;1,900&display=swap" rel="stylesheet">
     
     <style>
-        /* --- [ CONFIGURAÇÕES GLOBAIS - TEMA "ROXO PREMIUM" ] --- */
+        /* --- [ CONFIGURAÇÕES GLOBAIS - TEMA "ROXO PREMIUM" V2 ] --- */
         :root {
-            /* ATUALIZADO: Paleta Roxo & Premium */
             --cor-destaque: #9B59B6; /* Roxo (Ametista) */
             --cor-destaque-hover: #8E44AD; /* Roxo mais escuro */
+            --cor-destaque-vibrante: #AF7AC5; /* Roxo mais claro para o degradê */
             --cor-fundo-principal: #0D0D0D; 
             --cor-fundo-secao: #1A1A1A;   
             --cor-fundo-card: #222222;   
             --cor-texto-principal: #F5F5F5;  
             --cor-texto-secundaria: #AAAAAA; 
-            --cor-texto-cta: #F5F5F5; /* Alterado para branco, melhor contraste com roxo */
+            --cor-texto-cta: #F5F5F5; 
             
-            /* ATUALIZADO: Cores de Alerta (Urgência) */
-            --cor-fundo-urgencia: #2f2533;
-            --cor-texto-urgencia: #E8D9F3;
+            /* ATUALIZADO: Cor do WhatsApp */
+            --cor-whatsapp: #25D366;
+            --cor-whatsapp-hover: #1EBE57;
         }
 
         * {
@@ -34,7 +34,6 @@
         }
 
         body {
-            /* ATUALIZADO: Fonte padrão para texto */
             font-family: 'Montserrat', sans-serif;
             line-height: 1.7;
             color: var(--cor-texto-principal);
@@ -47,30 +46,29 @@
             padding: 70px 20px;
         }
 
-        /* ATUALIZADO: Tipografia de Títulos */
         h1, h2, h3 {
             font-family: 'Playfair Display', serif;
-            font-style: italic; /* Pedido da cliente */
+            font-style: italic; 
             margin-bottom: 20px;
         }
 
         h1 {
             font-size: 2.8rem;
-            font-weight: 900; /* Bold */
+            font-weight: 900; 
             text-align: center;
             line-height: 1.3;
         }
 
         h2 {
             font-size: 2.2rem;
-            font-weight: 900; /* Bold */
+            font-weight: 900; 
             text-align: center;
             margin-bottom: 40px;
         }
 
         h3 {
             font-size: 1.5rem;
-            font-weight: 700; /* Bold */
+            font-weight: 700; 
         }
 
         p {
@@ -110,7 +108,7 @@
 
         .btn-principal {
             background-color: var(--cor-destaque);
-            color: var(--cor-texto-cta); /* ATUALIZADO */
+            color: var(--cor-texto-cta); 
             font-weight: 900;
             transform: scale(1.05); 
         }
@@ -178,7 +176,7 @@
         
         .plano-card ul li::before {
             content: '✔';
-            color: var(--cor-destaque); /* ATUALIZADO: Roxo */
+            color: var(--cor-destaque); 
             position: absolute;
             left: 0;
             font-weight: 700;
@@ -200,10 +198,9 @@
             color: var(--cor-texto-secundaria);
         }
         
-        /* ATUALIZADO: Destaque com Roxo */
         .plano-card.destaque {
             border: 3px solid var(--cor-destaque);
-            background-color: var(--cor-fundo-urgencia); /* Reutilizando a cor */
+            background-color: #2f2533; 
             transform: scale(1.05);
             z-index: 10;
         }
@@ -214,7 +211,7 @@
         .badge {
             display: inline-block;
             background-color: var(--cor-destaque);
-            color: var(--cor-texto-cta); /* ATUALIZADO */
+            color: var(--cor-texto-cta); 
             font-size: 0.8rem;
             font-weight: 700;
             padding: 5px 15px;
@@ -222,20 +219,23 @@
             margin-bottom: 15px;
         }
 
-        /* ATUALIZADO: Urgência com Roxo */
+        /* --- [ ATUALIZADO: URGÊNCIA (DEGRADÊ) ] --- */
         .urgencia {
-            background-color: var(--cor-fundo-urgencia);
-            border: 2px solid var(--cor-destaque);
+            /* O Degradê Roxo */
+            background: linear-gradient(140deg, var(--cor-destaque-hover) 0%, var(--cor-destaque) 70%, var(--cor-destaque-vibrante) 100%);
             border-radius: 10px;
             text-align: center;
+            box-shadow: 0 10px 30px rgba(155, 89, 182, 0.2);
         }
         .urgencia h2 {
-            color: var(--cor-destaque);
+            /* Título com Texto Branco */
+            color: var(--cor-texto-principal);
         }
         .urgencia p {
             font-size: 1.15rem;
             font-weight: 700;
-            color: var(--cor-texto-urgencia);
+            /* Texto com Texto Branco */
+            color: var(--cor-texto-principal);
             max-width: 800px;
             margin-left: auto;
             margin-right: auto;
@@ -256,7 +256,7 @@
             min-width: 280px;
         }
         .fase h3 {
-            border-bottom: 3px solid var(--cor-destaque); /* ATUALIZADO: Roxo */
+            border-bottom: 3px solid var(--cor-destaque); 
             padding-bottom: 10px;
             display: inline-block;
         }
@@ -274,8 +274,41 @@
             border: 1px solid #333;
         }
         .garantia-extra h3 {
-            color: var(--cor-destaque); /* ATUALIZADO: Roxo */
+            color: var(--cor-destaque); 
             font-size: 1.3rem;
+        }
+        
+        /* --- [ NOVO: SEÇÃO MÉTODO DE TRABALHO ] --- */
+        .metodo {
+            background-color: var(--cor-fundo-principal); /* Fundo principal para destacar */
+        }
+        .metodo-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            justify-content: center;
+            margin-top: 40px;
+        }
+        .metodo-passo {
+            flex: 1;
+            min-width: 280px;
+            max-width: 350px;
+            background-color: var(--cor-fundo-card);
+            padding: 30px;
+            border-radius: 10px;
+            border-top: 4px solid var(--cor-destaque);
+        }
+        .metodo-passo h3 {
+            font-size: 1.3rem;
+            font-style: italic;
+            font-weight: 700;
+            color: var(--cor-destaque);
+            margin-bottom: 15px;
+        }
+        .metodo-passo p {
+            font-size: 1rem;
+            color: var(--cor-texto-secundaria);
+            margin-bottom: 0;
         }
 
         /* --- [ SEÇÃO: AVULSOS ] --- */
@@ -307,7 +340,7 @@
             margin-top: 30px;
         }
 
-        /* --- [ NOVO: SEÇÃO DEPOIMENTOS ] --- */
+        /* --- [ SEÇÃO DEPOIMENTOS ] --- */
         .depoimentos {
             background-color: var(--cor-fundo-secao);
         }
@@ -324,7 +357,7 @@
             max-width: 320px;
             background-color: var(--cor-fundo-card);
             border: 1px solid #333;
-            border-top: 4px solid var(--cor-destaque); /* Destaque Roxo */
+            border-top: 4px solid var(--cor-destaque); 
             padding: 30px;
             border-radius: 8px;
         }
@@ -344,7 +377,7 @@
         
         /* --- [ SEÇÃO: FINAL CTA ] --- */
         .final-cta {
-            background-color: var(--cor-fundo-principal); /* Alterado para fundo principal */
+            background-color: var(--cor-fundo-principal);
             text-align: center;
         }
         .final-cta h2 {
@@ -362,15 +395,15 @@
             color: var(--cor-texto-secundaria);
         }
 
-        /* ATUALIZADO: Animação Pulsante */
+        /* Animação Pulsante */
         @keyframes pulse {
             0% {
                 transform: scale(1);
-                box-shadow: 0 0 0 0 rgba(155, 89, 182, 0.4); /* Roxo */
+                box-shadow: 0 0 0 0 rgba(155, 89, 182, 0.4); 
             }
             70% {
                 transform: scale(1.03);
-                box-shadow: 0 0 0 10px rgba(155, 89, 182, 0); /* Roxo */
+                box-shadow: 0 0 0 10px rgba(155, 89, 182, 0); 
             }
             100% {
                 transform: scale(1);
@@ -380,35 +413,50 @@
 
         .btn-mestre {
             background-color: var(--cor-destaque);
-            color: var(--cor-texto-cta); /* ATUALIZADO */
+            color: var(--cor-texto-cta); 
             font-size: 1.3rem;
             font-weight: 900;
             padding: 20px 40px;
             margin-top: 30px;
-            box-shadow: 0 5px 15px rgba(155, 89, 182, 0.2); /* Sombra Roxa */
-            animation: pulse 2s infinite; /* Animação Aplicada */
+            box-shadow: 0 5px 15px rgba(155, 89, 182, 0.2); 
+            animation: pulse 2s infinite; 
         }
         .btn-mestre:hover {
             background-color: var(--cor-destaque-hover);
             transform: scale(1.03);
-            animation: none; /* Pausa a animação no hover */
+            animation: none; 
         }
         
-        /* --- [ RODAPÉ ] --- */
+        /* --- [ ATUALIZADO: RODAPÉ ] --- */
         footer {
             text-align: center;
-            padding: 30px;
+            padding: 40px 20px;
             background-color: #000;
             color: #777;
             font-size: 0.9rem;
+            line-height: 1.8;
+        }
+        footer p {
+            font-size: 0.9rem;
+            color: #777;
+            margin-bottom: 15px;
+        }
+        footer a {
+            color: #ccc;
+            text-decoration: none;
+            font-weight: 700;
+            transition: color 0.3s ease;
+        }
+        footer a:hover {
+            color: var(--cor-destaque);
         }
         
-        /* --- [ NOVO: BOTÃO FLUTUANTE INSTAGRAM ] --- */
-        .floating-ig-btn {
+        /* --- [ ATUALIZADO: BOTÃO FLUTUANTE WHATSAPP ] --- */
+        .floating-wa-btn {
             position: fixed;
             bottom: 30px;
             right: 30px;
-            background-color: var(--cor-destaque);
+            background-color: var(--cor-whatsapp); /* Cor do WhatsApp */
             width: 60px;
             height: 60px;
             border-radius: 50%;
@@ -419,14 +467,14 @@
             z-index: 1000;
             transition: all 0.3s ease;
         }
-        .floating-ig-btn:hover {
-            background-color: var(--cor-destaque-hover);
+        .floating-wa-btn:hover {
+            background-color: var(--cor-whatsapp-hover);
             transform: scale(1.1);
         }
-        .floating-ig-btn svg {
+        .floating-wa-btn svg {
             width: 32px;
             height: 32px;
-            fill: var(--cor-texto-cta); /* Ícone Branco */
+            fill: #fff; /* Ícone Branco */
         }
 
     </style>
@@ -521,38 +569,13 @@
                Cartão de Crédito (em até 3x pelo Mercado Pago, com juros da operadora)</p>
         </div>
     </section>
-
-    <section class="avulsos container">
-        <h2>Comece com um projeto pontual</h2>
-        <p>Se você ainda não está pronto para um plano mensal, podemos começar com artes avulsas.</p>
-        <ul>
-            <li><strong>Post Fixo Simples:</strong> R$ 40,00</li>
-            <li><strong>Carrossel (até 5 slides):</strong> R$ 65,00</li>
-            <li><strong>Edição de Vídeo (Reels):</strong> R$ 60,00</li>
-        </ul>
-        <p class="nota">*Nota: Clientes dos planos mensais têm prioridade total na agenda.*</p>
-    </section>
     
-    <section class="depoimentos container">
-        <h2>O que meus clientes dizem</h2>
-        <div class="depoimentos-container">
-            <div class="depoimento-card">
-                <p>"Todos os meus amigos estão elogiando meu perfil, está ficando incrível. Antes eu não tinha profissionalismo nenhum."</p>
-                <cite>Camila L., Empreendedora</cite>
+    <section class="metodo container">
+        <h2>Meu Método de Trabalho</h2>
+        <p style="text-align: center; max-width: 700px; margin: -20px auto 0 auto;">Meu planejamento é feito em etapas organizadas para garantir coerência visual e estratégica, do briefing à publicação.</p>
+        <div class="metodo-container">
+            <div class="metodo-passo">
+                <h3>1. Briefing e Alinhamento</h3>
+                <p>Entendemos seu posicionamento, público e objetivos para alinhar o tom, os temas e a estética do seu perfil.</p>
             </div>
-            <div class="depoimento-card">
-                <p>"A Kállita conseguiu extrair exatamente a essência que eu procurava, meu feed está incrível e finalmente atrai os clientes certos."</p>
-                <cite>Juliana P., Terapeuta</cite>
-            </div>
-            <div class="depoimento-card">
-                <p>"Uma profissional criativa e com um olhar incrível para as tendências. Meu engajamento mudou completamente."</p>
-                <cite>Bruno G., Mentor</cite>
-            </div>
-        </div>
-    </section>
-
-    <section class="final-cta container">
-        <h2>O que você vai fazer agora?</h2>
-        <ol>
-            <li>Ignorar esta página e continuar com um feed que te frustra e não traz clientes.</li>
-  
+            <di
