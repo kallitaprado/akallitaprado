@@ -1,286 +1,588 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Kállita Prado | Social Media — Transforme seu Instagram</title>
-  <meta name="description" content="Kállita Prado - Social Media. Estratégia, conteúdo e identidade visual para Instagram. Pacotes, planejamento e criação." />
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;900&family=Playfair+Display:ital,wght@0,700;0,900;1,700;1,900&display=swap" rel="stylesheet">
-  <!-- Font Awesome for icons -->
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kállita Prado | Social Media - Transforme seu Instagram</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Playfair+Display:ital,wght@0,700;0,900;1,700;1,900&display=swap" rel="stylesheet">
+    
+    <style>
+        /* --- [ CONFIGURAÇÕES GLOBAIS - TEMA "ROXO PREMIUM" V3 ] --- */
+        :root {
+            --cor-destaque: #9B59B6; /* Roxo (Ametista) */
+            --cor-destaque-hover: #8E44AD; /* Roxo mais escuro */
+            --cor-destaque-vibrante: #AF7AC5; /* Roxo mais claro para o degradê */
+            --cor-fundo-principal: #0D0D0D; 
+            --cor-fundo-secao: #1A1A1A;   
+            --cor-fundo-card: #222222;   
+            --cor-texto-principal: #F5F5F5;  
+            --cor-texto-secundaria: #AAAAAA; 
+            --cor-texto-cta: #F5F5F5; 
+            --cor-whatsapp: #25D366;
+            --cor-whatsapp-hover: #1EBE57;
+        }
 
-  <style>
-    /* ==========================
-       DESIGN SYSTEM & VARIÁVEIS
-       ========================== */
-    :root{
-      --bg-900: #070607;
-      --bg-800: #0f0b14;
-      --glass: rgba(255,255,255,0.04);
-      --accent: #9b59b6; /* ametista */
-      --accent-2: #d982ff;
-      --accent-dark: #6c3483;
-      --text: #f5f5f7;
-      --muted: #bfb7c8;
-      --success: #25D366;
-      --danger: #e74c3c;
-      --card-bg: rgba(255,255,255,0.03);
-      --glass-2: rgba(255,255,255,0.02);
-      --max-width: 1200px;
-      --radius-lg: 18px;
-      --radius-md: 12px;
-      --gap: 26px;
-    }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    /* Reset moderno */
-    *{box-sizing:border-box}
-    html,body{height:100%}
-    body{
-      margin:0;
-      font-family: "Montserrat", sans-serif;
-      background: linear-gradient(120deg, #060406 0%, #0b0710 40%, #100720 100%);
-      color:var(--text);
-      -webkit-font-smoothing:antialiased;
-      -moz-osx-font-smoothing:grayscale;
-      line-height:1.6;
-      overflow-y: auto;
-    }
+        body {
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1.7;
+            color: var(--cor-texto-principal);
+            background-color: var(--cor-fundo-principal);
+        }
 
-    /* Subtle animated gradient overlay for luxury effect */
-    body::before{
-      content:"";
-      position:fixed;
-      inset:0;
-      background: radial-gradient(600px 300px at 10% 10%, rgba(155,89,182,0.08), transparent 10%),
-                  radial-gradient(800px 400px at 90% 80%, rgba(217,130,255,0.05), transparent 10%);
-      pointer-events:none;
-      z-index:0;
-      animation: drift 14s ease-in-out infinite alternate;
-      mix-blend-mode: screen;
-    }
-    @keyframes drift{
-      from{transform:translateY(0) translateX(0)}
-      to{transform:translateY(-30px) translateX(40px)}
-    }
+        .container {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 70px 20px;
+        }
 
-    /* Utility containers */
-    .wrap{max-width:var(--max-width);margin:0 auto;padding:28px;position:relative;z-index:2}
-    .container{max-width:1000px;margin:0 auto;padding:32px 20px;z-index:2}
-    .center{text-align:center}
-    a{color:inherit}
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+            font-style: italic; 
+            margin-bottom: 20px;
+        }
 
-    /* Skip link for accessibility */
-    .skip-link{
-      position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;
-    }
-    .skip-link:focus{position:static;width:auto;height:auto;padding:8px 12px;background:#fff;color:#111;border-radius:6px;left:20px;top:20px;z-index:9999}
+        h1 {
+            font-size: 2.8rem;
+            font-weight: 900; 
+            text-align: center;
+            line-height: 1.3;
+        }
 
-    /* ==========================
-       HEADER / NAV
-       ========================== */
-    header.site-header{
-      position:sticky;
-      top:0;
-      z-index:999;
-      backdrop-filter: blur(6px);
-      background: linear-gradient(180deg, rgba(10,6,12,0.55), rgba(10,6,12,0.45));
-      border-bottom: 1px solid rgba(255,255,255,0.03);
-    }
-    .nav{
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:20px;
-      padding:16px 20px;
-      max-width:var(--max-width);
-      margin:0 auto;
-    }
-    .brand{
-      display:flex;
-      align-items:center;
-      gap:12px;
-      text-decoration:none;
-      color:var(--text);
-    }
-    .brand .logo{
-      width:46px;height:46px;border-radius:10px;background:linear-gradient(135deg,var(--accent),var(--accent-2));
-      display:flex;align-items:center;justify-content:center;font-weight:900;color:white;font-family:'Playfair Display',serif;
-      box-shadow:0 6px 18px rgba(155,89,182,0.18);
-    }
-    .brand span{font-weight:700;font-size:0.95rem;letter-spacing:0.2px}
-    nav.menu{display:flex;gap:18px;align-items:center}
-    nav.menu a{color:var(--muted);text-decoration:none;font-weight:600;padding:8px 10px;border-radius:8px;transition:all .18s}
-    nav.menu a:hover, nav.menu a:focus{color:var(--text);background:linear-gradient(90deg, rgba(155,89,182,0.12), rgba(217,130,255,0.06));outline:none}
+        h2 {
+            font-size: 2.2rem;
+            font-weight: 900; 
+            text-align: center;
+            margin-bottom: 40px;
+        }
 
-    /* Mobile menu button */
-    .menu-toggle{display:none;background:transparent;border:0;color:var(--text);font-size:20px;padding:6px;border-radius:8px}
-    .menu-toggle:focus{outline:2px solid rgba(155,89,182,0.25)}
+        h3 {
+            font-size: 1.5rem;
+            font-weight: 700; 
+        }
 
-    /* ==========================
-       HERO
-       ========================== */
-    .hero{
-      margin-top:18px;
-      padding:70px 24px;
-      border-radius:var(--radius-lg);
-      background:linear-gradient(180deg, rgba(155,89,182,0.12), rgba(95,39,205,0.06));
-      box-shadow:0 10px 40px rgba(16,6,35,0.6), inset 0 -1px 0 rgba(255,255,255,0.02);
-      text-align:center;
-    }
-    .hero h1{
-      font-family: 'Playfair Display', serif;
-      font-style: italic;
-      font-size:2.6rem;
-      line-height:1.05;
-      margin-bottom:12px;
-      background: linear-gradient(90deg, var(--accent-2), var(--accent));
-      -webkit-background-clip:text;-webkit-text-fill-color:transparent;
-    }
-    .hero p.lead{
-      color:var(--muted);
-      max-width:820px;margin:0 auto 18px;font-size:1.06rem;
-    }
-    .hero .cta-row{display:flex;gap:14px;justify-content:center;margin-top:18px;flex-wrap:wrap}
-    .btn{
-      display:inline-flex;align-items:center;gap:10px;justify-content:center;
-      padding:12px 18px;border-radius:999px;border:0;cursor:pointer;font-weight:800;text-decoration:none;
-      transition:transform .16s ease, box-shadow .16s ease;
-      box-shadow:0 6px 20px rgba(0,0,0,0.25);
-      color:white;background:linear-gradient(90deg,var(--accent),var(--accent-2));
-    }
-    .btn:active{transform:translateY(2px)}
-    .btn.secondary{
-      background:transparent;color:var(--text);border:1px solid rgba(255,255,255,0.06);font-weight:700;
-    }
-    .btn.ghost{background:transparent;border:1px dashed rgba(255,255,255,0.04);color:var(--muted)}
+        p {
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+            color: var(--cor-texto-secundaria);
+        }
+        
+        strong {
+            color: var(--cor-destaque);
+        }
 
-    /* ==========================
-       PLANS / CARDS
-       ========================== */
-    .section{
-      margin-top:40px;
-      padding:36px 18px;
-      border-radius:14px;
-    }
-    .plans-grid{
-      display:grid;
-      grid-template-columns:repeat(3,1fr);
-      gap:var(--gap);
-      align-items:start;
-      margin-top:22px;
-    }
-    .card{
-      background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
-      border:1px solid rgba(255,255,255,0.04);
-      border-radius:14px;
-      padding:20px;
-      position:relative;
-      overflow:hidden;
-      transition:transform .22s ease, box-shadow .22s ease;
-    }
-    .card:hover{transform:translateY(-8px);box-shadow:0 20px 50px rgba(155,89,182,0.08)}
-    .card .badge{
-      display:inline-block;padding:8px 12px;border-radius:999px;font-weight:800;font-size:0.85rem;
-      background:linear-gradient(90deg,var(--accent),var(--accent-2));color:white;box-shadow:0 6px 18px rgba(155,89,182,0.15);
-      position:absolute;right:16px;top:16px;
-    }
-    .card h3{font-size:1.15rem;margin-bottom:8px;color:var(--text)}
-    .card p.sub{color:var(--muted);font-size:0.95rem;margin-bottom:14px}
-    .features{list-style:none;padding:0;margin:0 0 16px 0;color:var(--muted)}
-    .features li{padding:8px 0;border-top:1px dashed rgba(255,255,255,0.02);display:flex;gap:10px;align-items:center}
-    .features li strong{color:var(--text);font-weight:700}
-    .price{
-      font-weight:900;font-size:1.9rem;color:var(--text);margin:12px 0;
-    }
-    .price small{display:block;font-size:0.9rem;color:var(--muted);font-weight:600}
+        /* --- [ BOTÕES ] --- */
+        .btn {
+            display: inline-block;
+            width: 100%;
+            padding: 15px 30px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            text-align: center;
+            text-decoration: none;
+            text-transform: uppercase;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
 
-    .card .card-footer{display:flex;gap:10px;flex-direction:column}
-    .card .card-footer .btn{width:100%;padding:12px;border-radius:12px;font-weight:900}
-    .card .card-footer .btn.secondary{background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--text)}
+        .btn-padrao {
+            background-color: #333;
+            color: var(--cor-texto-principal);
+            border: 1px solid #555;
+        }
+        .btn-padrao:hover {
+            background-color: #444;
+        }
 
-    /* destaque */
-    .card.featured{
-      border:2px solid rgba(155,89,182,0.25);
-      transform:translateY(-4px);
-      box-shadow:0 22px 60px rgba(155,89,182,0.12);
-    }
+        .btn-principal {
+            background-color: var(--cor-destaque);
+            color: var(--cor-texto-cta); 
+            font-weight: 900;
+            transform: scale(1.05); 
+        }
+        .btn-principal:hover {
+            background-color: var(--cor-destaque-hover);
+            transform: scale(1.08);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+        }
 
-    /* ==========================
-       PLANEJAMENTO (resumido - UX friendly)
-       ========================== */
-    .plan-section{
-      margin-top:40px;
-      padding:34px;
-      border-radius:14px;
-      background:linear-gradient(180deg, rgba(155,89,182,0.03), rgba(95,39,205,0.02));
-      border:1px solid rgba(255,255,255,0.02);
-    }
-    .steps{
-      display:grid;
-      grid-template-columns:repeat(3,1fr);
-      gap:18px;
-      margin-top:18px;
-    }
-    .step{
-      background:var(--card-bg);
-      border-radius:12px;padding:16px;
-      min-height:110px;display:flex;flex-direction:column;gap:8px;justify-content:flex-start;
-      border:1px solid rgba(255,255,255,0.02);
-    }
-    .step .num{font-weight:900;color:var(--accent);background:rgba(155,89,182,0.08);width:36px;height:36px;border-radius:10px;display:flex;align-items:center;justify-content:center}
-    .step h4{margin:0;font-size:1rem;color:var(--text)}
-    .step p{margin:0;color:var(--muted);font-size:0.95rem}
+        /* --- [ SEÇÃO: HERO (ABERTURA) ] --- */
+        .hero {
+            background-color: var(--cor-fundo-secao);
+            text-align: center;
+        }
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
 
-    /* ==========================
-       PROCESSO / GARANTIA / AVULSOS
-       ========================== */
-    .process{
-      margin-top:34px;padding:28px;border-radius:12px;background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.005));border:1px solid rgba(255,255,255,0.02)
-    }
-    .process .cols{display:grid;grid-template-columns:1fr 1fr;gap:18px}
-    .note{background:var(--glass);padding:18px;border-radius:12px;color:var(--muted)}
-    .avulsos list{display:block}
+        /* --- [ SEÇÃO: PLANOS ] --- */
+        .planos-container {
+            display: flex;
+            justify-content: center;
+            align-items: stretch;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
 
-    /* ==========================
-       DEPOIMENTOS
-       ========================== */
-    .testimonials{
-      margin-top:36px;display:grid;grid-template-columns:repeat(3,1fr);gap:18px;
-    }
-    .tcard{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:18px;border-radius:12px;border:1px solid rgba(255,255,255,0.02)}
-    .tcard p{font-style:italic;color:var(--muted);margin-bottom:12px}
-    .tcard cite{font-weight:800;color:var(--accent-2);display:block}
+        .plano-card {
+            flex: 1;
+            min-width: 280px;
+            max-width: 320px;
+            background-color: var(--cor-fundo-card);
+            border: 2px solid #333;
+            border-radius: 10px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            transition: transform 0.3s ease;
+        }
+        .plano-card:hover {
+            transform: translateY(-5px);
+        }
 
-    /* ==========================
-       ÚLTIMA CHAMADA (NEON HIGHLIGHT)
-       ========================== */
-    .lastcall{
-      margin-top:40px;padding:36px;border-radius:16px;text-align:center;
-      background:linear-gradient(90deg, rgba(155,89,182,0.16), rgba(217,130,255,0.06));
-      box-shadow:0 10px 40px rgba(155,89,182,0.12);
-      border:1px solid rgba(155,89,182,0.08);
-    }
-    .neon{
-      display:inline-block;padding:12px 20px;border-radius:999px;font-weight:900;
-      background:linear-gradient(90deg,var(--accent-2),var(--accent));
-      color:white;box-shadow:0 6px 28px rgba(155,89,182,0.22);
-      transform:translateZ(0);
-    }
-    .lastcall p{color:var(--muted);max-width:760px;margin:18px auto 0}
+        .plano-card p {
+            font-size: 0.9rem;
+            color: var(--cor-texto-secundaria);
+            min-height: 40px; 
+        }
 
-    /* ==========================
-       RODAPÉ
-       ========================== */
-    footer.site-footer{
-      margin-top:60px;padding:28px;border-radius:12px;background:linear-gradient(90deg,#2b032b 0%, #6b1bb3 100%);
-      color:white;text-align:center;border:1px solid rgba(255,255,255,0.04)
-    }
-    footer .contacts{margin-top:10px;color:rgba(255,255,255,0.9)}
-    footer a{color:inherit;text-decoration:underline;font-weight:700}
+        .plano-card ul {
+            list-style: none;
+            text-align: left;
+            margin: 25px 0;
+            color: var(--cor-texto-secundaria);
+        }
+        
+        .plano-card ul li {
+            margin-bottom: 10px;
+            padding-left: 25px;
+            position: relative;
+        }
+        
+        .plano-card ul li::before {
+            content: '✔';
+            color: var(--cor-destaque); 
+            position: absolute;
+            left: 0;
+            font-weight: 700;
+        }
+        
+        .plano-card ul strong {
+             color: var(--cor-texto-principal);
+        }
 
-    /* floating buttons */
-    .float-whatsapp, .float-ig{
-      position:fixed;right:22px;width:64px;height:64px;border-radius:50%;display:flex;align-items:center;justify-content:center;z
+        .plano-card .preco {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 25px;
+            color: var(--cor-texto-principal);
+        }
+        .plano-card .preco span {
+            font-size: 1rem;
+            font-weight: 400;
+            color: var(--cor-texto-secundaria);
+        }
+        
+        .plano-card.destaque {
+            border: 3px solid var(--cor-destaque);
+            background-color: #2f2533; 
+            transform: scale(1.05);
+            z-index: 10;
+        }
+        .plano-card.destaque:hover {
+             transform: scale(1.07);
+        }
+
+        .badge {
+            display: inline-block;
+            background-color: var(--cor-destaque);
+            color: var(--cor-texto-cta); 
+            font-size: 0.8rem;
+            font-weight: 700;
+            padding: 5px 15px;
+            border-radius: 20px;
+            margin-bottom: 15px;
+        }
+
+        /* --- [ URGÊNCIA (DEGRADÊ E QUADRO PERSONALIZADO) ] --- */
+        .urgencia {
+            padding: 30px 0; /* Padding vertical para o container da seção */
+        }
+        
+        .urgencia-card {
+            /* Degradê Roxo Refinado */
+            background: linear-gradient(140deg, var(--cor-destaque-hover) 0%, var(--cor-destaque) 70%, var(--cor-destaque-vibrante) 100%);
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(155, 89, 182, 0.4);
+            padding: 40px 30px; /* Espaçamento interno do quadro */
+            margin: 0 auto; /* Centraliza o card */
+            max-width: 800px; /* Limita a largura para melhor visualização */
+        }
+
+        .urgencia-card h2 {
+            color: var(--cor-texto-principal);
+            margin-top: 0;
+        }
+        .urgencia-card p {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--cor-texto-principal);
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* --- [ SEÇÃO: PROCESSO (RISCO ZERO) ] --- */
+        .processo {
+            background-color: var(--cor-fundo-secao);
+        }
+        .fases-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            margin-top: 40px;
+        }
+        .fase {
+            flex: 1;
+            min-width: 280px;
+        }
+        .fase h3 {
+            border-bottom: 3px solid var(--cor-destaque); 
+            padding-bottom: 10px;
+            display: inline-block;
+        }
+        .fase ul {
+            list-style-position: inside;
+            padding-left: 10px;
+            margin-top: 15px;
+        }
+        
+        .garantia-extra {
+            margin-top: 40px;
+            background-color: var(--cor-fundo-card);
+            padding: 30px;
+            border-radius: 10px;
+            border: 1px solid #333;
+        }
+        .garantia-extra h3 {
+            color: var(--cor-destaque); 
+            font-size: 1.3rem;
+        }
+        
+        /* --- [ SEÇÃO: NOVO MÉTODO DE TRABALHO ] --- */
+        .metodo {
+            background-color: var(--cor-fundo-principal); 
+        }
+        .metodo-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            justify-content: center;
+            margin-top: 40px;
+        }
+        /* Ajuste para que 2 fiquem em cima e 3 embaixo, ou todos em colunas no mobile */
+        .metodo-passo {
+            flex-basis: calc(33.33% - 20px);
+            min-width: 280px;
+            max-width: 350px;
+            background-color: var(--cor-fundo-card);
+            padding: 30px;
+            border-radius: 10px;
+            border-top: 4px solid var(--cor-destaque);
+            transition: transform 0.3s ease;
+        }
+        .metodo-passo:hover {
+            transform: translateY(-5px);
+        }
+        .metodo-passo h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-style: normal;
+            font-size: 1.2rem;
+            font-weight: 900;
+            color: var(--cor-destaque);
+            margin-bottom: 15px;
+        }
+        .metodo-passo p {
+            font-size: 1rem;
+            color: var(--cor-texto-secundaria);
+            margin-bottom: 0;
+        }
+
+        /* --- [ SEÇÃO: AVULSOS ] --- */
+        .avulsos {
+            text-align: center;
+        }
+        .avulsos ul {
+            list-style: none;
+            display: inline-block;
+            text-align: left;
+            margin-top: 30px;
+            background-color: var(--cor-fundo-card);
+            border: 1px solid #333;
+            padding: 30px;
+            border-radius: 10px;
+        }
+        .avulsos li {
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+            color: var(--cor-texto-secundaria);
+        }
+        .avulsos li strong {
+            color: var(--cor-texto-principal);
+        }
+        .avulsos .nota {
+            font-style: italic;
+            font-size: 0.9rem;
+            color: #777;
+            margin-top: 30px;
+        }
+
+        /* --- [ SEÇÃO DEPOIMENTOS ] --- */
+        .depoimentos {
+            background-color: var(--cor-fundo-secao);
+        }
+        .depoimentos-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            justify-content: center;
+            margin-top: 40px;
+        }
+        .depoimento-card {
+            flex: 1;
+            min-width: 260px;
+            max-width: 320px;
+            background-color: var(--cor-fundo-card);
+            border: 1px solid #333;
+            border-top: 4px solid var(--cor-destaque); 
+            padding: 30px;
+            border-radius: 8px;
+        }
+        .depoimento-card p {
+            font-style: italic;
+            color: var(--cor-texto-secundaria);
+            margin-bottom: 20px;
+            font-size: 1.05rem;
+        }
+        .depoimento-card cite {
+            font-family: 'Montserrat', sans-serif;
+            font-style: normal;
+            font-weight: 700;
+            color: var(--cor-texto-principal);
+            display: block;
+        }
+        
+        /* --- [ SEÇÃO: FINAL CTA ] --- */
+        .final-cta {
+            background-color: var(--cor-fundo-principal);
+            text-align: center;
+        }
+        .final-cta h2 {
+            color: var(--cor-texto-principal);
+        }
+        .final-cta ol {
+            max-width: 600px;
+            margin: 30px auto;
+            text-align: left;
+            font-size: 1.1rem;
+        }
+        .final-cta li {
+            margin-bottom: 15px;
+            margin-left: 20px;
+            color: var(--cor-texto-secundaria);
+        }
+
+        /* Animação Pulsante */
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+                box-shadow: 0 0 0 0 rgba(155, 89, 182, 0.4); 
+            }
+            70% {
+                transform: scale(1.03);
+                box-shadow: 0 0 0 10px rgba(155, 89, 182, 0); 
+            }
+            100% {
+                transform: scale(1);
+                box-shadow: 0 0 0 0 rgba(155, 89, 182, 0);
+            }
+        }
+
+        .btn-mestre {
+            background-color: var(--cor-destaque);
+            color: var(--cor-texto-cta); 
+            font-size: 1.3rem;
+            font-weight: 900;
+            padding: 20px 40px;
+            margin-top: 30px;
+            box-shadow: 0 5px 15px rgba(155, 89, 182, 0.2); 
+            animation: pulse 2s infinite; 
+        }
+        .btn-mestre:hover {
+            background-color: var(--cor-destaque-hover);
+            transform: scale(1.03);
+            animation: none; 
+        }
+        
+        /* --- [ RODAPÉ ] --- */
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            background-color: #000;
+            color: #777;
+            font-size: 0.9rem;
+            line-height: 1.8;
+        }
+        footer p {
+            font-size: 0.9rem;
+            color: #777;
+            margin-bottom: 15px;
+        }
+        footer a {
+            color: #ccc;
+            text-decoration: none;
+            font-weight: 700;
+            transition: color 0.3s ease;
+        }
+        footer a:hover {
+            color: var(--cor-destaque);
+        }
+        
+        /* --- [ BOTÃO FLUTUANTE WHATSAPP ] --- */
+        .floating-wa-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: var(--cor-whatsapp); 
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+        .floating-wa-btn:hover {
+            background-color: var(--cor-whatsapp-hover);
+            transform: scale(1.1);
+        }
+        .floating-wa-btn svg {
+            width: 32px;
+            height: 32px;
+            fill: #fff; 
+        }
+        
+        /* Ajuste para mobile (garantir que os passos do método fiquem em colunas no mobile) */
+        @media (max-width: 600px) {
+            .metodo-passo {
+                flex-basis: 100%;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <header class="hero container">
+        <h1>Seu feed não vende? A culpa pode ser dele.</h1>
+        <p>Você tem um serviço premium, mas seu Instagram parece amador. Posta sem estratégia, se frustra com o Canva e não vê resultado.</p>
+        <p><strong>Vamos ser diretos:</strong> Um feed fraco não atrai clientes. Ele os repele.</p>
+        <p style="color: var(--cor-texto-principal);">Chegou a hora de transformar seu Instagram em uma máquina de <strong>autoridade</strong> e <strong>desejo</strong>. Eu cuido da estratégia e do design; você foca no que faz de melhor: fechar vendas.</p>
+    </header>
+
+    <section class="planos container">
+        <h2>Escolha o Plano que vai Mudar seu Jogo</h2>
+        <p style="text-align: center; max-width: 700px; margin: -20px auto 40px auto;">Eu estruturei 3 níveis de serviço para sua marca decolar. Todos incluem planejamento de conteúdo, design profissional e textos persuasivos.</p>
+
+        <div class="planos-container">
+            <div class="plano-card">
+                <h3>🟤 PLANO BRONZE</h3>
+                <p>A presença digital que você precisa para começar.</p>
+                <ul>
+                    <li><strong>8 Posts/Mês</strong> (2 por semana)</li>
+                    <li><strong>Formato:</strong> Posts Fixos</li>
+                    <li><strong>Ideal para:</strong> Manter a constância e construir base.</li>
+                </ul>
+                <div class="preco">R$ 200,00 <span>/mês</span></div>
+                <a href="https://api.whatsapp.com/send?phone=5519999005784&text=Ol%C3%A1%2C%20tenho%20interesse%20no%20Plano%20Bronze!" target="_blank" class="btn btn-padrao">Quero o Plano Bronze</a>
+            </div>
+
+            <div class="plano-card destaque">
+                <span class="badge">💎 O MAIS VENDIDO E RECOMENDADO</span>
+                <h3>⚪ PLANO PRATA</h3>
+                <p>O equilíbrio perfeito entre volume, estratégia e variedade.</p>
+                <ul>
+                    <li><strong>12 Posts/Mês</strong> (3 por semana)</li>
+                    <li><strong>Formato:</strong> 8 Fixos + 4 Carrosséis</li>
+                    <li><strong>Ideal para:</strong> Gerar engajamento e educar sua audiência.</li>
+                    <li><strong>Bônus:</strong> 1 Vídeo Reels por mês</li>
+                </ul>
+                <div class="preco">R$ 390,00 <span>/mês</span></div>
+                <a href="https://api.whatsapp.com/send?phone=5519999005784&text=Ol%C3%A1%2C%20tenho%20interesse%20no%20Plano%20Prata%20(o%20mais%20vendido)!" target="_blank" class="btn btn-principal">Sim, Quero o Plano Mais Vendido!</a>
+            </div>
+
+            <div class="plano-card">
+                <h3>🟡 PLANO OURO</h3>
+                <p>A estratégia completa para dominar seu nicho.</p>
+                <ul>
+                    <li><strong>16 Posts/Mês</strong> (4 por semana)</li>
+                    <li><strong>Formato:</strong> 8 Fixos + 8 Carrosséis</li>
+                    <li><strong>Bônus:</strong> 2 Vídeos Reels por mês</li>
+                </ul>
+                <div class="preco">R$ 580,00 <span>/mês</span></div>
+                <a href="https://api.whatsapp.com/send?phone=5519999005784&text=Ol%C3%A1%2C%20tenho%20interesse%20no%20Plano%20Ouro!" target="_blank" class="btn btn-padrao">Quero o Plano Ouro</a>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="urgencia container">
+        <div class="urgencia-card">
+            <h2>⚠️ ÚLTIMA CHAMADA: PREÇOS DE 2025</h2>
+            <p>Devido à alta demanda, minha agenda para 2026 está quase lotada.</p>
+            <p>A tabela de preços será <strong>reajustada em 1º de Janeiro de 2026.</strong></p>
+            <p><strong>Garanta seu plano agora</strong> e trave o valor de 2025 por tempo indeterminado. É sua única chance.</p>
+        </div>
+    </section>
+
+    <section class="processo container">
+        <h2>🔒 Seu Risco é ABSOLUTAMENTE ZERO.</h2>
+        <p style="text-align: center; max-width: 700px; margin: -20px auto 0 auto;">Confiança é tudo. Por isso, meu processo é 100% transparente e focado na sua segurança.</p>
+
+        <div class="fases-container">
+            <div class="fase">
+                <h3>✨ 1. Fase de Teste (Primeiro Mês)</h3>
+                <p>Esta é a sua oportunidade de conhecer meu trabalho, avaliar o estilo e decidir se é o ideal para você. Para sua segurança, o pagamento é dividido:</p>
+                <ul>
+                    <li><strong>Sinal (50%):</strong> Na contratação, para eu iniciar todo o planejamento e criação.</li>
+                    <li><strong>Pagamento Restante (50%):</strong> 15 dias após o sinal, para a conclusão do mês.</li>
+                </ul>
+            </div>
+            <div class="fase">
+                <h3>✨ 2. Fase Contínua (A Parceria)</h3>
+                <p>Com a confiança firmada, o pagamento passa a ser integral (100%), realizado antecipadamente (até o dia 5 de cada mês), garantindo a continuidade da estratégia e sua vaga na agenda.</p>
+            </div>
+        </div>
+
+        <div class="garantia-extra">
+            <h3>💬 E se eu não quiser continuar após o teste?</h3>
+            <p>Sem problemas. Se, por qualquer motivo, você decidir não seguir, basta não realizar o segundo pagamento (50% restantes). O serviço é interrompido automaticamente, <strong>sem multas ou burocracia.</strong></p>
+            
+            <h3 style="margin-top: 20px;">💳 Formas de Pagamento</h3>
+            <p style="margin-bottom: 0;">PIX (Pagament
