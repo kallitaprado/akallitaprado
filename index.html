@@ -8,8 +8,10 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <style>
-        /* --- [ CONFIGURAÇÕES GLOBAIS - TEMA "ROXO LUXO" V6 - REVISÃO UI/UX ] --- */
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> 
+    
+    <style>
+        /* --- [ CONFIGURAÇÕES GLOBAIS - TEMA "ROXO LUXO" V7 - REVISÃO UI/UX E ANIMAÇÃO ] --- */
         :root {
             --cor-destaque: #A349F5; /* Roxo vibrante */
             --cor-destaque-hover: #8E30DD; /* Roxo mais escuro para hover */
@@ -60,6 +62,21 @@
             line-height: 1.2;
             text-align: center;
             letter-spacing: -1.5px; /* Levemente mais apertado */
+            position: relative; /* Para a animação do brilho */
+            display: inline-block; /* Necessário para aplicar o background-clip */
+            padding: 0 10px; /* Pequeno padding para o efeito */
+            background: linear-gradient(90deg, var(--cor-destaque-claro) 0%, var(--cor-destaque) 50%, var(--cor-destaque-claro) 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-size: 200% auto; /* Para a animação se mover */
+            animation: gradient-shine 3s linear infinite; /* Animação de brilho */
+        }
+
+        @keyframes gradient-shine {
+            to {
+                background-position: 200% center; /* Move o degradê */
+            }
         }
 
         h2 {
@@ -96,7 +113,7 @@
         
         strong {
             color: var(--cor-destaque-claro); /* Strong em uma cor mais suave, mas visível */
-            font-weight: 700;
+            font-weight: 700; /* Garantir negrito */
         }
 
         /* --- [ BOTÕES ] --- */
@@ -379,7 +396,7 @@
         }
         .urgencia-card p strong {
             color: var(--cor-texto-claro); /* Garante que strong seja branco também */
-            font-weight: 800;
+            font-weight: 800; /* Super negrito */
         }
         /* Icone de Alerta Flutuante */
         .urgencia-card i.fa-triangle-exclamation {
@@ -452,6 +469,10 @@
             top: 2px;
             font-size: 0.95rem;
         }
+        .fase ul strong {
+            font-weight: 700; /* Negrito nos strongs da lista */
+            color: var(--cor-texto-claro);
+        }
         
         .garantia-extra {
             margin-top: 60px;
@@ -471,6 +492,10 @@
             font-size: 1.1rem;
             margin-bottom: 15px;
             color: var(--cor-texto-secundaria);
+        }
+        .garantia-extra p strong { /* Strong dentro da garantia extra */
+            color: var(--cor-destaque);
+            font-weight: 700;
         }
         
         /* --- [ SEÇÃO: MÉTODO DE TRABALHO ] --- */
@@ -723,10 +748,14 @@
             margin-top: 50px;
             box-shadow: 0 8px 30px rgba(163, 73, 245, 0.5); 
             animation: pulse 2s infinite; 
+            /* Correção para o botão mestre final */
+            background: linear-gradient(90deg, var(--cor-destaque-hover) 0%, var(--cor-destaque) 100%); 
+            color: var(--cor-texto-claro); 
         }
         .btn-mestre:hover {
             transform: scale(1.06);
             animation: none; 
+            background: linear-gradient(90deg, var(--cor-destaque) 0%, var(--cor-destaque-hover) 100%);
         }
         
         /* --- [ RODAPÉ ] --- */
@@ -794,6 +823,10 @@
             }
             h1 {
                 font-size: 2.5rem;
+                padding: 0; /* Remove padding extra em mobile */
+                display: block; /* Ocupa a largura total */
+                background-size: 200% auto; /* Ajuste para animação */
+                animation: gradient-shine 3s linear infinite; /* Garante que a animação funcione */
             }
             h2 {
                 font-size: 2rem;
@@ -903,7 +936,7 @@
                 <a href="https://api.whatsapp.com/send?phone=5519999005784&text=Ol%C3%A1%2C%20K%C3%A1llita%2C%20tenho%20interesse%20no%20Plano%20Prata!" target="_blank" class="btn btn-padrao">Quero o Plano Prata</a>
             </div>
 
-            <div class="plano-card">
+            <div class="plano-card destaque"> <span class="badge">✨ MAIS VENDIDO!</span>
                 <h3>🟡 PLANO OURO</h3>
                 <p>Estratégia avançada para dominar seu nicho e gerar valor.</p>
                 <ul>
@@ -913,12 +946,10 @@
                 </ul>
                 <div class="preco">R$ 320,00 <span>/mês</span></div>
                 <p class="plano-nota">*Não inclui edição de vídeo.</p>
-                <a href="https://api.whatsapp.com/send?phone=5519999005784&text=Ol%C3%A1%2C%20K%C3%A1llita%2C%20tenho%20interesse%20no%20Plano%20Ouro!" target="_blank" class="btn btn-padrao">Quero o Plano Ouro</a>
+                <a href="https://api.whatsapp.com/send?phone=5519999005784&text=Ol%C3%A1%2C%20K%C3%A1llita%2C%20tenho%20interesse%20no%20Plano%20Ouro!" target="_blank" class="btn btn-principal">Quero o Plano Ouro</a>
             </div>
             
-            <div class="plano-card destaque diamante">
-                <span class="badge">✨ MAIS VENDIDO!</span>
-                <h3>🟣 PLANO DIAMANTE</h3>
+            <div class="plano-card"> <h3>🟣 PLANO DIAMANTE</h3>
                 <p>A experiência completa para se destacar com vídeos e estratégia de ponta.</p>
                 <ul>
                     <li><strong>18 Posts/Mês</strong> (4 por semana + 2 Reels)</li>
@@ -927,7 +958,7 @@
                 </ul>
                 <div class="preco">R$ 489,00 <span>/mês</span></div>
                 <p class="plano-nota">*Você envia os cortes gravados; eu cuido da edição, legendagem e montagem final.</p>
-                <a href="https://api.whatsapp.com/send?phone=5519999005784&text=Sim%2C%20K%C3%A1llita%2C%20quero%20o%20Plano%20Diamante%20com%20Reels%20e%20edi%C3%A7%C3%A3o%20inclusa!" target="_blank" class="btn btn-principal">SIM, Quero o Plano Diamante!</a>
+                <a href="https://api.whatsapp.com/send?phone=5519999005784&text=Sim%2C%20K%C3%A1llita%2C%20quero%20o%20Plano%20Diamante%20com%20Reels%20e%20edi%C3%A7%C3%A3o%20inclusa!" target="_blank" class="btn btn-padrao">SIM, Quero o Plano Diamante!</a>
             </div>
 
         </div>
@@ -960,8 +991,8 @@
                 <h3>🤝 Fase Contínua (Parceria Consolidada)</h3>
                 <p>Com a confiança estabelecida, seguimos a parceria para o sucesso.</p>
                 <ul>
-                    <li><i class="fas fa-check-circle"></i> Pagamento integral (100%) até o dia 5 de cada mês.</li>
-                    <li><i class="fas fa-check-circle"></i> Garante continuidade da estratégia e sua vaga prioritária.</li>
+                    <li><i class="fas fa-check-circle"></i> <strong>Pagamento integral (100%)</strong> até o dia 5 de cada mês.</li>
+                    <li><i class="fas fa-check-circle"></i> <strong>Garante continuidade</strong> da estratégia e sua vaga prioritária.</li>
                 </ul>
             </div>
         </div>
@@ -969,11 +1000,11 @@
         <div class="garantia-extra">
             <h3>💬 Preocupado(a) em não querer continuar?</h3>
             <p>Sua satisfação é primordial. Se, por qualquer motivo, você decidir não prosseguir após a fase de teste, basta não realizar o segundo pagamento.</p>
-            <p style="color: var(--cor-destaque); font-weight: 700;">O serviço é interrompido automaticamente, sem multas ou burocracia. Simples assim.</p>
+            <p style="color: var(--cor-destaque); font-weight: 700;">O serviço é interrompido automaticamente, <strong>sem multas ou burocracia.</strong> Simples assim.</p>
             
             <h3 style="margin-top: 30px;">💳 Métodos de Pagamento Flexíveis</h3>
-            <p style="margin-bottom: 0;">PIX (Pagamento à vista) <br>
-               Cartão de Crédito (em até 3x pelo Mercado Pago, com juros da operadora)</p>
+            <p style="margin-bottom: 0;"><strong>PIX</strong> (Pagamento à vista) <br>
+               <strong>Cartão de Crédito</strong> (em até 3x pelo Mercado Pago, com juros da operadora)</p>
         </div>
     </section>
     
@@ -1018,13 +1049,13 @@
                 <h3>✨ Arte Avulsa (Post Estático ou Carrossel)</h3>
                 <span class="preco-avulso">R$ 40 a R$ 80</span>
                 <p style="color: var(--cor-texto-secundaria);">Criação de designs impactantes para posts estáticos ou carrosséis (até 5 slides), com valor ajustado à complexidade.</p>
-                <span class="nota"><i class="fas fa-info-circle"></i> Prioridade de atendimento para clientes com planos mensais.</span>
+                <span class="nota"><i class="fas fa-info-circle"></i> <strong>Prioridade de atendimento</strong> para clientes com planos mensais.</span>
             </div>
             
             <div class="avulsos-item">
                 <h3>🎬 Edição de Vídeo Avulsa (Reels)</h3>
                 <span class="preco-avulso">R$ 80 a R$ 150</span>
-                <p style="color: var(--cor-texto-secundaria);">Edição completa de Reels, incluindo cortes, legendagem dinâmica, ajustes de cor e montagem final, a partir do seu material bruto.</p>
+                <p style="color: var(--cor-texto-secundaria);">Edição completa de Reels, incluindo <strong>cortes, legendagem dinâmica, ajustes de cor</strong> e montagem final, a partir do seu material bruto.</p>
             </div>
         </div>
     </section>
@@ -1033,16 +1064,16 @@
         <h2>Resultados Reais, Clientes Satisfeitos.</h2>
         <div class="depoimentos-container">
             <div class="depoimento-card">
-                <p>"Meus amigos estão chocados com a qualidade do meu perfil. Antes não tinha profissionalismo, agora meu Instagram é outra coisa!" <i class="fas fa-star" style="color: gold;"></i><i class="fas fa-star" style="color: gold;"></i><i class="fas fa-star" style="color: gold;"></i><i class="fas fa-star" style="color: gold;"></i><i class="fas fa-star" style="color: gold;"></i></p>
-                <cite>Camila L., Empreendedora de Sucesso</cite>
+                <p>"Meus amigos estão chocados com a qualidade do meu perfil. Antes eu não tinha profissionalismo nenhum, agora meu Instagram é outra coisa!" <i class="fas fa-star" style="color: gold;"></i><i class="fas fa-star" style="color: gold;"></i><i class="fas fa-star" style="color: gold;"></i><i class="fas fa-star" style="color: gold;"></i><i class="fas fa-star" style="color: gold;"></i></p>
+                <cite><strong>Camila L.</strong>, Empreendedora de Sucesso</cite>
             </div>
             <div class="depoimento-card">
                 <p>"A Kállita capturou a essência exata do meu trabalho. Meu feed, antes perdido, agora atrai os clientes ideais. Profissionalismo impecável!" <i class="fas fa-star" style="color: gold;"></i><i class="fas fa-star" style="color: gold;"></i><i class="fas fa-star" style="color: gold;"></i><i class="fas fa-star" style="color: gold;"></i><i class="fas fa-star" style="color: gold;"></i></p>
-                <cite>Juliana P., Terapeuta Holística</cite>
+                <cite><strong>Juliana P.</strong>, Terapeuta Holística</cite>
             </div>
             <div class="depoimento-card">
                 <p>"Criatividade e um olhar apurado para as tendências. A Kállita revolucionou meu engajamento e me posicionou como autoridade no meu setor." <i class="fas fa-star" style="color: gold;"></i><i class="fas fa-star" style="color: gold;"></i><i class="fas fa-star" style="color: gold;"></i><i class="fas fa-star" style="color: gold;"></i><i class="fas fa-star-half-alt" style="color: gold;"></i></p>
-                <cite>Bruno G., Mentor de Negócios</cite>
+                <cite><strong>Bruno G.</strong>, Mentor de Negócios</cite>
             </div>
         </div>
     </section>
