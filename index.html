@@ -16,6 +16,7 @@
       --primary-hot: #FF00A0;  /* Pink para gradientes */
       --primary-dark: #9E00C0; /* Tom mais escuro do púrpura */
       --secondary-color: #fff;
+      --success-color: #25D366; /* Verde do WhatsApp */
       
       /* Tons de cinza escuro mais suaves */
       --background-dark: #0F0F1A;
@@ -53,10 +54,7 @@
       padding: 0 1.5rem;
     }
 
-    /* HEADER REMOVIDO 
-    */
-
-    /* Espaçamento do topo AJUSTADO (já que não tem header) */
+    /* Espaçamento do topo AJUSTADO */
     main {
       padding-top: 3rem; 
       text-align: center;
@@ -70,7 +68,7 @@
         height: 60px;
         bottom: 30px;
         right: 30px;
-        background-color: #25D366;
+        background-color: var(--success-color);
         color: #FFF;
         border-radius: 50px;
         text-align: center;
@@ -128,6 +126,122 @@
         background: var(--primary-color);
         border-radius: 2px;
     }
+    
+    /* -----------------------------------
+       NOVOS ESTILOS (UX/UI)
+    ----------------------------------- */
+    
+    /* 1. ESTILO DO HERO SECTION */
+    .hero-section {
+        text-align: center;
+        margin-bottom: 3rem;
+        padding: 2rem 0;
+    }
+    .hero-section .logo-text {
+        font-size: 2.5rem;
+        font-weight: 800;
+        color: var(--text-primary);
+        line-height: 1.2;
+    }
+    .hero-section .logo-text span {
+        background: linear-gradient(90deg, var(--primary-color), var(--primary-hot));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        text-fill-color: transparent;
+    }
+    .hero-section .tagline {
+        font-size: 1.25rem;
+        color: var(--text-secondary);
+        font-weight: 400;
+        margin-top: 0.5rem;
+    }
+
+    /* 2. ESTILO DA CAIXA DE ESCASSEZ */
+    .scarcity-box {
+        text-align: center; 
+        margin-bottom: 4rem; 
+        border: 2px dashed var(--primary-color); 
+        padding: 1.5rem; 
+        border-radius: 10px; 
+        background-color: rgba(31, 31, 53, 0.7);
+    }
+    .scarcity-box h2 {
+        font-size: 2rem; 
+        color: var(--primary-color); 
+        font-weight: 700; 
+        margin-bottom: 0.5rem; 
+        text-transform: uppercase; 
+        letter-spacing: 1px;
+    }
+    .scarcity-box p {
+        font-size: 1.1rem; 
+        color: var(--text-secondary); 
+        margin-bottom: 0; /* Removido margin-bottom */
+    }
+    .scarcity-box .highlight {
+        font-size: 1.1rem; 
+        color: var(--text-primary); 
+        font-weight: 500; 
+        margin-top: 1rem; /* Adicionado margin-top */
+    }
+
+    /* 3. ESTILO DA LISTA DE BENEFÍCIOS */
+    .features-list {
+        list-style: none;
+        padding-left: 0;
+        text-align: left;
+        margin-top: 1.5rem;
+        margin-bottom: 1.5rem;
+        min-height: 140px; /* Ajuda a alinhar os botões */
+    }
+    .features-list li {
+        position: relative;
+        padding-left: 1.8em; /* Espaço para o ícone */
+        margin-bottom: 0.8rem; /* Mais espaçamento */
+        font-size: 0.95rem;
+        color: var(--text-secondary);
+        line-height: 1.5;
+    }
+    .features-list li::before {
+        content: '✔'; /* Check padrão */
+        position: absolute;
+        left: 0;
+        top: 0;
+        color: var(--success-color); /* Verde */
+        font-weight: bold;
+        font-size: 1.1em;
+    }
+    .features-list li.negative::before {
+        content: '✖';
+        color: var(--primary-hot); /* Pink/Vermelho */
+    }
+    
+    /* 4. SEÇÃO "SOBRE MIM" */
+    .about-section {
+        text-align: center;
+        padding: 3rem 1rem;
+        background: var(--card-bg);
+        border-radius: 16px;
+        margin-top: 4rem;
+        border: 1px solid var(--border-light);
+    }
+    .about-section h2 {
+        font-size: 2rem;
+        font-weight: 700;
+        color: var(--primary-color);
+        margin-bottom: 1rem;
+    }
+    .about-section p {
+        font-size: 1.1rem;
+        color: var(--text-secondary);
+        max-width: 650px;
+        margin: 0 auto 1.5rem auto;
+    }
+    /* -----------------------------------
+       FIM DOS NOVOS ESTILOS
+    ----------------------------------- */
+
 
     /* ESTILOS DE PLANOS E PREÇOS */
     .planos-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; justify-content: center; margin-bottom: 3rem; }
@@ -137,7 +251,7 @@
     .plano h3 {
         color: var(--primary-color);
         font-size: 1.5rem;
-        margin-bottom: 1.5rem;
+        margin-bottom: 1rem; /* Diminuído */
         font-weight: 700;
         letter-spacing: 0.5px;
         display: flex;
@@ -153,7 +267,8 @@
         text-fill-color: transparent;
     }
     
-    .plano p { color: var(--text-secondary); font-size: 0.95rem; line-height: 1.7; margin-bottom: 1rem; text-align: left; }
+    /* .plano p (agora é a descrição final) */
+    .plano p { color: var(--text-secondary); font-size: 0.95rem; line-height: 1.7; margin-bottom: 1rem; text-align: center; } 
     .price-container { margin: 1.5rem 0 0.5rem; padding: 0.8rem 0; position: relative; }
     
     .price { 
@@ -183,9 +298,13 @@
     
     .price-note { color: var(--text-muted); font-size: 0.85rem; margin-bottom: 1.5rem; }
     
-    /* BOTÃO WHATSAPP */
+    /* BOTÃO WHATSAPP (AJUSTADO COM ÍCONE) */
     .btn-whatsapp { 
-        display: inline-block; 
+        display: inline-flex; /* MUDADO */
+        align-items: center;  /* NOVO */
+        justify-content: center; /* NOVO */
+        gap: 0.75rem; /* NOVO (espaço entre ícone e texto) */
+        
         background: linear-gradient(90deg, var(--primary-color) 0%, var(--primary-hot) 100%);
         background-size: 100% auto;
         color: var(--secondary-color);
@@ -204,8 +323,12 @@
     .btn-whatsapp:hover { 
         background-position: right center;
         color: var(--secondary-color);
-        transform: translateY(-3px);
+        transform: translateY(-3px) scale(1.02); /* NOVO (scale) */
         box-shadow: 0 8px 25px rgba(255, 0, 160, 0.5);
+        letter-spacing: 0.5px; /* NOVO */
+    }
+    .btn-whatsapp i {
+        font-size: 1.2rem; /* Tamanho do ícone */
     }
     
     /* CARD POPULAR */
@@ -239,13 +362,18 @@
 
     /* RESPONSIVIDADE (MOBILE) */
     @media (max-width: 768px) {
-      /* Padding do topo AJUSTADO */
       main {
         padding-top: 2rem; 
       }
-      
+      .hero-section .logo-text { font-size: 2rem; }
+      .hero-section .tagline { font-size: 1.1rem; }
+      .scarcity-box h2 { font-size: 1.5rem; }
+      .scarcity-box p, .scarcity-box .highlight { font-size: 1rem; }
+
       .plano.popular { transform: scale(1.02); } 
       .plano.popular:hover { transform: scale(1.05); }
+      
+      .features-list { min-height: auto; } /* Remove altura fixa no mobile */
       
       .whatsapp-float {
         width: 50px;
@@ -268,11 +396,6 @@
       50% { background-position: 100% 50%; }
       100% { background-position: 0% 50%; }
     }
-    
-    /* -------------------------------------------------
-    ESTILOS DO CONTADOR (REMOVIDOS)
-    -------------------------------------------------
-    */
     
     /* ESTILOS DO PREÇO "DE/POR" */
     .preco-antigo {
@@ -317,18 +440,18 @@
 
   <main class="container">
   
-    <div style="text-align: center; margin-bottom: 4rem; border: 2px dashed var(--primary-color); padding: 1.5rem; border-radius: 10px; background-color: rgba(31, 31, 53, 0.7);">
-        <h2 style="font-size: 2.2rem; color: var(--primary-color); font-weight: 800; margin-bottom: 0.5rem; text-transform: uppercase; letter-spacing: 1px;">
-          🚨 ÚLTIMOS MESES! 🚨
-        </h2>
-        <p style="font-size: 1.2rem; color: var(--text-secondary); margin-bottom: 1.5rem;">
-          Esses são os <strong>ÚLTIMOS MESES</strong> para garantir seu pacote com <strong>DESCONTOS IMPERDÍVEIS</strong>.<br>Em 1º de Janeiro, os preços serão reajustados!
-        </p>
-        
-        <p style="font-size: 1.1rem; color: var(--text-primary); font-weight: 500; margin-top: 1.5rem;">
-          Não comece 2026 pagando mais caro. <strong>Trave seu desconto AGORA!</strong>
-        </p>
+    <section class="hero-section">
+      <h1 class="logo-text">Kállita Prado<br><span>Social Media</span></h1>
+      <p class="tagline">Transformando sua presença online com estratégia e design.</p>
+    </section>
+    
+    <div class="scarcity-box">
+        <h2>🚨 ÚLTIMOS MESES! 🚨</h2>
+        <p>Esses são os <strong>ÚLTIMOS MESES</strong> para garantir seu pacote com <strong>DESCONTOS IMPERDÍVEIS</strong>.<br>Em 1º de Janeiro, os preços serão reajustados!</p>
+        <p class="highlight">Não comece 2026 pagando mais caro. <strong>Trave seu desconto AGORA!</strong></p>
     </div>
+    
+    
     <h2 class="planos-section-title">Gerenciamento de Redes Sociais</h2>
     <p class="payment-info-general">
         💳 Formas de Pagamento: Pix, Boleto ou Cartão de Crédito (até 3x com juros).
@@ -338,7 +461,11 @@
       
       <div class="plano">
         <h3>🚀 <span class="gradient-text">Plano Básico</span></h3>
-        <p>📅 2 postagens por semana (8/mês)<br>🖋️ Posts estáticos de conteúdo.<br>❌ Não inclui carrossel ou edição de vídeo.</p>
+        <ul class="features-list">
+          <li>2 postagens por semana (8/mês)</li>
+          <li>Posts estáticos de conteúdo</li>
+          <li class="negative">Não inclui carrossel ou edição de vídeo</li>
+        </ul>
         <div class="price-container">
           <div class="price"> 
             <span class="preco-antigo">DE R$ 308,00/mês</span>
@@ -348,13 +475,19 @@
         </div>
         <p class="pag-info">Pagamento Mensal</p>
         <p class="price-note">Ou até 3x no cartão*</p>
-        <p style="text-align: center;">⭐ Ideal para quem está começando e quer manter <strong>presença constante</strong> nas redes.</p>
-        <a class="btn-whatsapp" href="https://wa.me/5519999005784?text=Quero%20contratar%20o%20Plano%20Básico%20(R$200)!" target="_blank" aria-label="Contratar Plano Básico">CONTRATAR AGORA</a>
+        <p>⭐ Ideal para quem está começando e quer manter <strong>presença constante</strong>.</p>
+        <a class="btn-whatsapp" href="https://wa.me/5519999005784?text=Quero%20contratar%20o%20Plano%20Básico%20(R$200)!" target="_blank" aria-label="Contratar Plano Básico">
+          <i class="fab fa-whatsapp"></i> CONTRATAR AGORA
+        </a>
       </div>
 
       <div class="plano">
         <h3>📈 <span class="gradient-text">Plano Intermediário</span></h3>
-        <p>📅 3 postagens por semana (12/mês)<br>🖋️ Posts táticos e estratégicos.<br>❌ Não inclui carrossel ou edição de vídeo.</p>
+        <ul class="features-list">
+          <li>3 postagens por semana (12/mês)</li>
+          <li>Posts táticos e estratégicos</li>
+          <li class="negative">Não inclui carrossel ou edição de vídeo</li>
+        </ul>
         <div class="price-container">
           <div class="price">
             <span class="preco-antigo">DE R$ 415,00/mês</span>
@@ -364,13 +497,19 @@
         </div>
         <p class="pag-info">Pagamento Mensal</p>
         <p class="price-note">Ou até 3x no cartão*</p>
-        <p style="text-align: center;">🔥 Perfeito para aumentar o <strong>engajamento e fortalecer</strong> o posicionamento da marca.</p>
-        <a class="btn-whatsapp" href="https://wa.me/5519999005784?text=Quero%20contratar%20o%20Plano%20Intermediário%20(R$270)!" target="_blank" aria-label="Contratar Plano Intermediário">CONTRATAR AGORA</a>
+        <p>🔥 Perfeito para aumentar o <strong>engajamento e fortalecer</strong> o posicionamento.</p>
+        <a class="btn-whatsapp" href="https://wa.me/5519999005784?text=Quero%20contratar%20o%20Plano%20Intermediário%20(R$270)!" target="_blank" aria-label="Contratar Plano Intermediário">
+          <i class="fab fa-whatsapp"></i> CONTRATAR AGORA
+        </a>
       </div>
       
       <div class="plano">
         <h3>💎 <span class="gradient-text">Plano Plus</span></h3>
-        <p>📅 4 postagens por semana (16/mês)<br>🖋️ 3 posts estáticos + 1 <strong>Carrossel</strong> por semana.<br>❌ Não inclui edição de vídeo.</p>
+        <ul class="features-list">
+          <li>4 postagens por semana (16/mês)</li>
+          <li>3 posts estáticos + 1 <strong>Carrossel</strong> por semana</li>
+          <li class="negative">Não inclui edição de vídeo</li>
+        </ul>
         <div class="price-container">
           <div class="price">
             <span class="preco-antigo">DE R$ 492,00/mês</span>
@@ -380,16 +519,20 @@
         </div>
         <p class="pag-info">Pagamento Mensal</p>
         <p class="price-note">Ou até 3x no cartão*</p>
-        <p style="text-align: center;">🥇 Conteúdo narrativo e estratégico para <strong>posicionar sua marca</strong> com consistência.</p>
-        <a class="btn-whatsapp" href="https://wa.me/5519999005784?text=Quero%20contratar%20o%20Plano%20Plus%20(R$320)!" target="_blank" aria-label="Contratar Plano Plus">CONTRATAR AGORA</a>
+        <p>🥇 Conteúdo narrativo para <strong>posicionar sua marca</strong> com consistência.</p>
+        <a class="btn-whatsapp" href="https://wa.me/5519999005784?text=Quero%20contratar%20o%20Plano%20Plus%20(R$320)!" target="_blank" aria-label="Contratar Plano Plus">
+          <i class="fab fa-whatsapp"></i> CONTRATAR AGORA
+        </a>
       </div>
 
       <div class="plano popular">
         <h3>👑 <span class="gradient-text">Plano Premium</span></h3>
-        <p>📅 4 postagens por semana (16/mês)<br>
-           🖋️ 2 posts estáticos + 2 <strong>Carrosséis</strong> por semana.<br>
-           💡 Envio de <strong>roteiros e ideias</strong> para Reels.<br>
-           ❌ <strong>Não inclui edição de vídeo</strong>.</p>
+        <ul class="features-list">
+          <li>4 postagens por semana (16/mês)</li>
+          <li>2 posts estáticos + 2 <strong>Carrosséis</strong> por semana</li>
+          <li>Envio de <strong>roteiros e ideias</strong> para Reels</li>
+          <li class="negative">Não inclui edição de vídeo</li>
+        </ul>
         <div class="price-container">
           <div class="price">
             <span class="preco-antigo">DE R$ 598,00/mês</span>
@@ -399,13 +542,19 @@
         </div>
         <p class="pag-info">Pagamento Mensal</p>
         <p class="price-note">Ou até 3x no cartão*</p>
-        <p style="text-align: center;">✨ Conteúdo completo! Envio <strong>roteiros estratégicos</strong> com ideias para você gravar seus Reels. (A edição não está inclusa).</p>
-        <a class="btn-whatsapp" href="https://wa.me/5519999005784?text=Quero%20contratar%20o%20Plano%20Premium%20(R$389)!" target="_blank" aria-label="Contratar Plano Premium">CONTRATAR AGORA</a>
+        <p>✨ Conteúdo completo! Envio <strong>roteiros estratégicos</strong> para você gravar seus Reels.</p>
+        <a class="btn-whatsapp" href="https://wa.me/5519999005784?text=Quero%20contratar%20o%20Plano%20Premium%20(R$389)!" target="_blank" aria-label="Contratar Plano Premium">
+          <i class="fab fa-whatsapp"></i> CONTRATAR AGORA
+        </a>
       </div>
 
       <div class="plano popular">
         <h3>🎬 <span class="gradient-text">Premium + Vídeos</span></h3>
-        <p>📅 4 postagens por semana (16/mês)<br>🖋️ 2 posts + 2 <strong>Carrosséis</strong> por semana.<br>✅ Roteiro estratégico + <strong>Edição inclusa</strong>.</p>
+        <ul class="features-list">
+          <li>4 postagens por semana (16/mês)</li>
+          <li>2 posts + 2 <strong>Carrosséis</strong> por semana</li>
+          <li>Roteiro estratégico + <strong>Edição inclusa</strong></li>
+        </ul>
         <div class="price-container">
           <div class="price">
             <span class="preco-antigo">DE R$ 752,00/mês</span>
@@ -415,8 +564,10 @@
         </div>
         <p class="pag-info">Pagamento Mensal</p>
         <p class="price-note">Ou até 3x no cartão*</p>
-        <p style="text-align: center;">🚀 Gerenciamento completo! Você envia os vídeos gravados e recebe <strong>prontos e legendados</strong>.</p>
-        <a class="btn-whatsapp" href="https://wa.me/5519999005784?text=Quero%20contratar%20o%20Plano%20Premium%20%2B%20Vídeos%20(R$489)!" target="_blank" aria-label="Contratar Plano Premium + Vídeos">CONTRATAR AGORA</a>
+        <p>🚀 Gerenciamento completo! Você envia os vídeos e recebe <strong>prontos e legendados</strong>.</p>
+        <a class="btn-whatsapp" href="https://wa.me/5519999005784?text=Quero%20contratar%20o%20Plano%20Premium%20%2B%20Vídeos%20(R$489)!" target="_blank" aria-label="Contratar Plano Premium + Vídeos">
+          <i class="fab fa-whatsapp"></i> CONTRATAR AGORA
+        </a>
       </div>
     </div>
     
@@ -425,50 +576,4 @@
     <div class="planos-container">
 
       <div class="plano">
-        <h3>🎨 <span class="gradient-text">Identidade Visual</span></h3>
-        <p>Criação de <strong>Logotipo Profissional e Marca D'água</strong>.<br>Arquivos vetorizados, JPEG, PNG e PDF.<br>Tipografia, paleta de cores e <strong>Arte do Cartão de Visitas</strong>.</p>
-        <div class="price-container">
-          <div class="price">R$ 390</div> 
-        </div>
-        <p class="pag-info">Pagamento Único</p>
-        <p class="price-note">Ou até 3x no cartão*</p>
-        <p style="text-align: center;">🖼️ Pacote completo para construir uma marca <strong>profissional, coesa e memorável</strong>.</p>
-        <a class="btn-whatsapp" href="https://wa.me/5519999005784?text=Quero%20solicitar%20uma%20Identidade%20Visual%20Completa!" target="_blank" aria-label="Solicitar Identidade Visual">CONTRATAR AGORA</a>
-      </div>
-      
-      <div class="plano">
-        <h3>🖼️ <span class="gradient-text">Arte Avulsa</span></h3>
-        <p>Criação pontual de <strong>Post Estático ou Carrossel</strong>.<br>Ideal para quem precisa de uma arte pontual sem plano mensal.</p>
-        <div class="price-container">
-          <div class="price price-small">R$ 40-80</div> 
-        </div>
-        <p class="pag-info">VALOR POR ARTE</p>
-        <p class="price-note">Varia conforme a complexidade do briefing.</p>
-        <a class="btn-whatsapp" href="https://wa.me/5519999005784?text=Quero%20solicitar%20uma%20Arte%20Avulsa!" target="_blank" aria-label="Solicitar Arte Avulsa">SOLICITAR ORÇAMENTO</a>
-      </div>
-      
-      <div class="plano">
-        <h3>🎬 <span class="gradient-text">Edição de Vídeo Avulsa</span></h3>
-        <p>Inclui legenda, cortes, ajustes de cor e montagem final, a partir do material enviado pelo cliente.</p>
-        <div class="price-container">
-          <div class="price price-small">R$ 80-150</div> 
-        </div>
-        <p class="pag-info">VALOR POR VÍDEO</p>
-        <p class="price-note">Depende da duração e nível de edição.</p>
-        <a class="btn-whatsapp" href="https://wa.me/5519999005784?text=Quero%20solicitar%20uma%20Edição%20de%20Vídeo%20Avulsa!" target="_blank" aria-label="Solicitar Edição de Vídeo Avulsa">SOLICITAR ORÇAMENTO</a>
-      </div>
-
-    </div>
-    
-    <p style="color: var(--text-muted); font-size: 0.75rem; text-align: center; margin-top: 1rem; margin-bottom: 2rem;">
-        * O parcelamento no cartão de crédito está sujeito à taxa de juros da operadora (Mercado Pago).
-    </p>
-    
-  </main>
-
-  <footer class="container">
-    <p>© 2025 Kállita Prado | Social Media Estratégica</p>
-  </footer>
-
-  </body>
-</html>
+        <h3>🎨 <span class="gradie
