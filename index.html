@@ -53,61 +53,12 @@
       padding: 0 1.5rem;
     }
 
-    /* HEADER: FIXO E SÓLIDO */
-    header {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      background: rgba(15, 15, 26, 0.95); 
-      backdrop-filter: blur(12px); 
-      z-index: 1000;
-      padding: 0.5rem 0; 
-      border-bottom: 1px solid var(--border-light);
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
-    }
+    /* HEADER REMOVIDO 
+    */
 
-    .header-content {
-      display: flex;
-      flex-direction: row; 
-      align-items: center;
-      justify-content: space-between; 
-      gap: 0;
-    }
-
-    .logo {
-      font-size: 1.4rem;
-      font-weight: 700;
-      letter-spacing: 1px;
-      color: var(--text-primary);
-      text-transform: uppercase;
-      text-decoration: none; 
-      transition: color 0.3s ease;
-    }
-    
-    .logo:hover {
-        color: var(--primary-color); 
-    }
-
-    .social-icons {
-      display: flex;
-      gap: 1.5rem;
-    }
-
-    .social-icons a {
-      color: var(--primary-color);
-      font-size: 1.4rem;
-      transition: color 0.3s ease, transform 0.3s ease;
-      text-decoration: none;
-    }
-
-    .social-icons a:hover {
-      color: var(--secondary-color);
-      transform: scale(1.1);
-    }
-
-    /* Correção do espaçamento do topo (Desktop) */
+    /* Espaçamento do topo AJUSTADO (já que não tem header) */
     main {
-      padding-top: 7.5rem; 
+      padding-top: 3rem; 
       text-align: center;
       padding-bottom: 4rem;
     }
@@ -206,7 +157,7 @@
     .price-container { margin: 1.5rem 0 0.5rem; padding: 0.8rem 0; position: relative; }
     
     .price { 
-        font-size: 3.5rem; /* Aplicado ao preço padrão (avulsos) */
+        font-size: 3.5rem; 
         font-weight: 800;
         color: var(--primary-color);
         line-height: 1; 
@@ -215,7 +166,7 @@
     }
     
     .price-small { 
-        font-size: 2.4rem; /* Aplicado ao preço padrão (avulsos) */
+        font-size: 2.4rem; 
         line-height: 1.2;
     }
     
@@ -288,13 +239,9 @@
 
     /* RESPONSIVIDADE (MOBILE) */
     @media (max-width: 768px) {
-      .header-content {
-          flex-direction: column;
-          gap: 0.6rem;
-      }
-        
+      /* Padding do topo AJUSTADO */
       main {
-        padding-top: 9.5rem; 
+        padding-top: 2rem; 
       }
       
       .plano.popular { transform: scale(1.02); } 
@@ -309,7 +256,7 @@
       }
     }
     
-    /* ANIMAÇÕES (REMOVIDO .scroll-reveal) */
+    /* ANIMAÇÕES */
     @keyframes pulse-badge {
       0% { transform: scale(1); box-shadow: 0 0 5px rgba(214, 0, 255, 0.5); }
       50% { transform: scale(1.05); box-shadow: 0 0 15px rgba(214, 0, 255, 0.8); }
@@ -323,28 +270,9 @@
     }
     
     /* -------------------------------------------------
-    NOVOS ESTILOS (CONTADOR E PREÇO DE/POR)
+    ESTILOS DO CONTADOR (REMOVIDOS)
     -------------------------------------------------
     */
-    
-    /* ESTILO DO CONTADOR REGRESSIVO */
-    #countdown-timer {
-      font-size: 2.3rem;
-      font-weight: bold;
-      color: #FF00A0; 
-      text-align: center;
-      background-color: rgba(31, 31, 53, 0.7); 
-      padding: 20px;
-      border-radius: 10px;
-      border: 2px dashed var(--primary-color);
-      margin: 20px 0;
-      backdrop-filter: blur(5px);
-    }
-
-    #countdown-timer span {
-      padding: 0 8px;
-      color: var(--text-primary); 
-    }
     
     /* ESTILOS DO PREÇO "DE/POR" */
     .preco-antigo {
@@ -387,35 +315,15 @@
     <i class="fab fa-whatsapp"></i>
   </a>
 
-  <header id="mainHeader">
-    <div class="container">
-      <div class="header-content">
-        <a href="#top" class="logo">Kállita Prado — Social Media</a>
-        <nav class="social-icons">
-          <a href="https://www.instagram.com/akallitaprado/" target="_blank" title="Instagram" aria-label="Instagram">
-            <i class="fab fa-instagram"></i>
-          </a>
-        </nav>
-      </div>
-    </div>
-  </header>
-
   <main class="container">
   
-    <div style="text-align: center; margin-bottom: 4rem;">
+    <div style="text-align: center; margin-bottom: 4rem; border: 2px dashed var(--primary-color); padding: 1.5rem; border-radius: 10px; background-color: rgba(31, 31, 53, 0.7);">
         <h2 style="font-size: 2.2rem; color: var(--primary-color); font-weight: 800; margin-bottom: 0.5rem; text-transform: uppercase; letter-spacing: 1px;">
-          🚨 A CONTAGEM REGRESSIVA COMEÇOU! 🚨
+          🚨 ÚLTIMOS MESES! 🚨
         </h2>
         <p style="font-size: 1.2rem; color: var(--text-secondary); margin-bottom: 1.5rem;">
-          Esses são os <strong>ÚLTIMOS DIAS</strong> para garantir seu pacote com <strong>DESCONTOS IMPERDÍVEIS</strong>.<br>Em 1º de Janeiro, os preços serão reajustados!
+          Esses são os <strong>ÚLTIMOS MESES</strong> para garantir seu pacote com <strong>DESCONTOS IMPERDÍVEIS</strong>.<br>Em 1º de Janeiro, os preços serão reajustados!
         </p>
-        
-        <div id="countdown-timer">
-          <span id="days"></span> Dias
-          <span id="hours"></span> Horas
-          <span id="minutes"></span> Minutos
-          <span id="seconds"></span> Segundos
-        </div>
         
         <p style="font-size: 1.1rem; color: var(--text-primary); font-weight: 500; margin-top: 1.5rem;">
           Não comece 2026 pagando mais caro. <strong>Trave seu desconto AGORA!</strong>
@@ -433,10 +341,10 @@
         <p>📅 2 postagens por semana (8/mês)<br>🖋️ Posts estáticos de conteúdo.<br>❌ Não inclui carrossel ou edição de vídeo.</p>
         <div class="price-container">
           <div class="price"> 
-            <span class="preco-antigo">DE R$ 279,00/mês</span>
+            <span class="preco-antigo">DE R$ 308,00/mês</span>
             <span class="preco-novo">POR R$ 200,00/mês</span>
           </div>
-          <span class="economia-aviso">Aprox. 28% OFF!</span>
+          <span class="economia-aviso">Aprox. 35% OFF!</span>
         </div>
         <p class="pag-info">Pagamento Mensal</p>
         <p class="price-note">Ou até 3x no cartão*</p>
@@ -449,10 +357,10 @@
         <p>📅 3 postagens por semana (12/mês)<br>🖋️ Posts táticos e estratégicos.<br>❌ Não inclui carrossel ou edição de vídeo.</p>
         <div class="price-container">
           <div class="price">
-            <span class="preco-antigo">DE R$ 320,00/mês</span>
+            <span class="preco-antigo">DE R$ 415,00/mês</span>
             <span class="preco-novo">POR R$ 270,00/mês</span>
           </div>
-          <span class="economia-aviso">Aprox. 16% OFF!</span>
+          <span class="economia-aviso">Aprox. 35% OFF!</span>
         </div>
         <p class="pag-info">Pagamento Mensal</p>
         <p class="price-note">Ou até 3x no cartão*</p>
@@ -465,10 +373,10 @@
         <p>📅 4 postagens por semana (16/mês)<br>🖋️ 3 posts estáticos + 1 <strong>Carrossel</strong> por semana.<br>❌ Não inclui edição de vídeo.</p>
         <div class="price-container">
           <div class="price">
-            <span class="preco-antigo">DE R$ 398,00/mês</span>
+            <span class="preco-antigo">DE R$ 492,00/mês</span>
             <span class="preco-novo">POR R$ 320,00/mês</span>
           </div>
-          <span class="economia-aviso">Aprox. 20% OFF!</span>
+          <span class="economia-aviso">Aprox. 35% OFF!</span>
         </div>
         <p class="pag-info">Pagamento Mensal</p>
         <p class="price-note">Ou até 3x no cartão*</p>
@@ -484,10 +392,10 @@
            ❌ <strong>Não inclui edição de vídeo</strong>.</p>
         <div class="price-container">
           <div class="price">
-            <span class="preco-antigo">DE R$ 437,00/mês</span>
+            <span class="preco-antigo">DE R$ 598,00/mês</span>
             <span class="preco-novo">POR R$ 389,00/mês</span>
           </div>
-          <span class="economia-aviso">Aprox. 11% OFF!</span>
+          <span class="economia-aviso">Aprox. 35% OFF!</span>
         </div>
         <p class="pag-info">Pagamento Mensal</p>
         <p class="price-note">Ou até 3x no cartão*</p>
@@ -500,10 +408,10 @@
         <p>📅 4 postagens por semana (16/mês)<br>🖋️ 2 posts + 2 <strong>Carrosséis</strong> por semana.<br>✅ Roteiro estratégico + <strong>Edição inclusa</strong>.</p>
         <div class="price-container">
           <div class="price">
-            <span class="preco-antigo">DE R$ 573,00/mês</span>
+            <span class="preco-antigo">DE R$ 752,00/mês</span>
             <span class="preco-novo">POR R$ 489,00/mês</span>
           </div>
-          <span class="economia-aviso">Aprox. 15% OFF!</span>
+          <span class="economia-aviso">Aprox. 35% OFF!</span>
         </div>
         <p class="pag-info">Pagamento Mensal</p>
         <p class="price-note">Ou até 3x no cartão*</p>
@@ -541,4 +449,26 @@
       
       <div class="plano">
         <h3>🎬 <span class="gradient-text">Edição de Vídeo Avulsa</span></h3>
-        <p>Inclui legenda, cortes, ajustes de cor e mont
+        <p>Inclui legenda, cortes, ajustes de cor e montagem final, a partir do material enviado pelo cliente.</p>
+        <div class="price-container">
+          <div class="price price-small">R$ 80-150</div> 
+        </div>
+        <p class="pag-info">VALOR POR VÍDEO</p>
+        <p class="price-note">Depende da duração e nível de edição.</p>
+        <a class="btn-whatsapp" href="https://wa.me/5519999005784?text=Quero%20solicitar%20uma%20Edição%20de%20Vídeo%20Avulsa!" target="_blank" aria-label="Solicitar Edição de Vídeo Avulsa">SOLICITAR ORÇAMENTO</a>
+      </div>
+
+    </div>
+    
+    <p style="color: var(--text-muted); font-size: 0.75rem; text-align: center; margin-top: 1rem; margin-bottom: 2rem;">
+        * O parcelamento no cartão de crédito está sujeito à taxa de juros da operadora (Mercado Pago).
+    </p>
+    
+  </main>
+
+  <footer class="container">
+    <p>© 2025 Kállita Prado | Social Media Estratégica</p>
+  </footer>
+
+  </body>
+</html>
