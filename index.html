@@ -7,24 +7,24 @@
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Playfair+Display:ital,wght@0,700;0,900;1,700;1,900&display=swap" rel="stylesheet">
     
     <style>
-        /* --- [ CONFIGURAÇÕES GLOBAIS - TEMA "PRETO CHIQUE" ] --- */
+        /* --- [ CONFIGURAÇÕES GLOBAIS - TEMA "ROXO PREMIUM" ] --- */
         :root {
-            /* Paleta Dark & Premium */
-            --cor-destaque: #D4AF37; /* Um dourado mais rico */
-            --cor-destaque-hover: #E6C200;
-            --cor-fundo-principal: #0D0D0D; /* Preto profundo */
-            --cor-fundo-secao: #1A1A1A;   /* Cinza escuro para seções */
-            --cor-fundo-card: #222222;   /* Fundo dos cards */
-            --cor-texto-principal: #F5F5F5;  /* Branco suave */
-            --cor-texto-secundaria: #AAAAAA; /* Cinza claro para descrições */
-            --cor-texto-cta: #0D0D0D;       /* Texto dos botões (preto) */
+            /* ATUALIZADO: Paleta Roxo & Premium */
+            --cor-destaque: #9B59B6; /* Roxo (Ametista) */
+            --cor-destaque-hover: #8E44AD; /* Roxo mais escuro */
+            --cor-fundo-principal: #0D0D0D; 
+            --cor-fundo-secao: #1A1A1A;   
+            --cor-fundo-card: #222222;   
+            --cor-texto-principal: #F5F5F5;  
+            --cor-texto-secundaria: #AAAAAA; 
+            --cor-texto-cta: #F5F5F5; /* Alterado para branco, melhor contraste com roxo */
             
-            /* Cores de Alerta (Urgência) */
-            --cor-fundo-urgencia: #2a2a1a;
-            --cor-texto-urgencia: #FFF3CD;
+            /* ATUALIZADO: Cores de Alerta (Urgência) */
+            --cor-fundo-urgencia: #2f2533;
+            --cor-texto-urgencia: #E8D9F3;
         }
 
         * {
@@ -34,6 +34,7 @@
         }
 
         body {
+            /* ATUALIZADO: Fonte padrão para texto */
             font-family: 'Montserrat', sans-serif;
             line-height: 1.7;
             color: var(--cor-texto-principal);
@@ -46,32 +47,40 @@
             padding: 70px 20px;
         }
 
+        /* ATUALIZADO: Tipografia de Títulos */
         h1, h2, h3 {
-            font-weight: 700;
+            font-family: 'Playfair Display', serif;
+            font-style: italic; /* Pedido da cliente */
             margin-bottom: 20px;
         }
 
         h1 {
             font-size: 2.8rem;
-            font-weight: 900;
+            font-weight: 900; /* Bold */
             text-align: center;
             line-height: 1.3;
         }
 
         h2 {
             font-size: 2.2rem;
+            font-weight: 900; /* Bold */
             text-align: center;
             margin-bottom: 40px;
         }
 
         h3 {
             font-size: 1.5rem;
+            font-weight: 700; /* Bold */
         }
 
         p {
             margin-bottom: 20px;
             font-size: 1.1rem;
             color: var(--cor-texto-secundaria);
+        }
+        
+        strong {
+            color: var(--cor-destaque);
         }
 
         /* --- [ BOTÕES ] --- */
@@ -101,9 +110,9 @@
 
         .btn-principal {
             background-color: var(--cor-destaque);
-            color: var(--cor-texto-cta);
+            color: var(--cor-texto-cta); /* ATUALIZADO */
             font-weight: 900;
-            transform: scale(1.05); /* Leve destaque */
+            transform: scale(1.05); 
         }
         .btn-principal:hover {
             background-color: var(--cor-destaque-hover);
@@ -122,15 +131,12 @@
             margin-left: auto;
             margin-right: auto;
         }
-        .hero strong {
-            color: var(--cor-destaque);
-        }
 
         /* --- [ SEÇÃO: PLANOS ] --- */
         .planos-container {
             display: flex;
             justify-content: center;
-            align-items: stretch; /* Faz os cards terem a mesma altura */
+            align-items: stretch;
             flex-wrap: wrap;
             gap: 30px;
         }
@@ -151,15 +157,10 @@
             transform: translateY(-5px);
         }
 
-        .plano-card h3 {
-            font-size: 1.3rem;
-            text-transform: uppercase;
-        }
-        
         .plano-card p {
             font-size: 0.9rem;
             color: var(--cor-texto-secundaria);
-            min-height: 40px; /* Alinha as descrições */
+            min-height: 40px; 
         }
 
         .plano-card ul {
@@ -177,7 +178,7 @@
         
         .plano-card ul li::before {
             content: '✔';
-            color: var(--cor-destaque);
+            color: var(--cor-destaque); /* ATUALIZADO: Roxo */
             position: absolute;
             left: 0;
             font-weight: 700;
@@ -199,10 +200,10 @@
             color: var(--cor-texto-secundaria);
         }
         
-        /* O Destaque do Plano Prata */
+        /* ATUALIZADO: Destaque com Roxo */
         .plano-card.destaque {
             border: 3px solid var(--cor-destaque);
-            background-color: #25221b; /* Fundo com leve tom dourado escuro */
+            background-color: var(--cor-fundo-urgencia); /* Reutilizando a cor */
             transform: scale(1.05);
             z-index: 10;
         }
@@ -213,7 +214,7 @@
         .badge {
             display: inline-block;
             background-color: var(--cor-destaque);
-            color: var(--cor-texto-cta);
+            color: var(--cor-texto-cta); /* ATUALIZADO */
             font-size: 0.8rem;
             font-weight: 700;
             padding: 5px 15px;
@@ -221,7 +222,7 @@
             margin-bottom: 15px;
         }
 
-        /* --- [ SEÇÃO: URGÊNCIA (AVISO) ] --- */
+        /* ATUALIZADO: Urgência com Roxo */
         .urgencia {
             background-color: var(--cor-fundo-urgencia);
             border: 2px solid var(--cor-destaque);
@@ -255,7 +256,7 @@
             min-width: 280px;
         }
         .fase h3 {
-            border-bottom: 3px solid var(--cor-destaque);
+            border-bottom: 3px solid var(--cor-destaque); /* ATUALIZADO: Roxo */
             padding-bottom: 10px;
             display: inline-block;
         }
@@ -273,7 +274,7 @@
             border: 1px solid #333;
         }
         .garantia-extra h3 {
-            color: var(--cor-destaque);
+            color: var(--cor-destaque); /* ATUALIZADO: Roxo */
             font-size: 1.3rem;
         }
 
@@ -305,10 +306,45 @@
             color: #777;
             margin-top: 30px;
         }
+
+        /* --- [ NOVO: SEÇÃO DEPOIMENTOS ] --- */
+        .depoimentos {
+            background-color: var(--cor-fundo-secao);
+        }
+        .depoimentos-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            justify-content: center;
+            margin-top: 40px;
+        }
+        .depoimento-card {
+            flex: 1;
+            min-width: 260px;
+            max-width: 320px;
+            background-color: var(--cor-fundo-card);
+            border: 1px solid #333;
+            border-top: 4px solid var(--cor-destaque); /* Destaque Roxo */
+            padding: 30px;
+            border-radius: 8px;
+        }
+        .depoimento-card p {
+            font-style: italic;
+            color: var(--cor-texto-secundaria);
+            margin-bottom: 20px;
+            font-size: 1.05rem;
+        }
+        .depoimento-card cite {
+            font-family: 'Montserrat', sans-serif;
+            font-style: normal;
+            font-weight: 700;
+            color: var(--cor-texto-principal);
+            display: block;
+        }
         
         /* --- [ SEÇÃO: FINAL CTA ] --- */
         .final-cta {
-            background-color: var(--cor-fundo-secao);
+            background-color: var(--cor-fundo-principal); /* Alterado para fundo principal */
             text-align: center;
         }
         .final-cta h2 {
@@ -326,18 +362,36 @@
             color: var(--cor-texto-secundaria);
         }
 
+        /* ATUALIZADO: Animação Pulsante */
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+                box-shadow: 0 0 0 0 rgba(155, 89, 182, 0.4); /* Roxo */
+            }
+            70% {
+                transform: scale(1.03);
+                box-shadow: 0 0 0 10px rgba(155, 89, 182, 0); /* Roxo */
+            }
+            100% {
+                transform: scale(1);
+                box-shadow: 0 0 0 0 rgba(155, 89, 182, 0);
+            }
+        }
+
         .btn-mestre {
             background-color: var(--cor-destaque);
-            color: var(--cor-texto-cta);
+            color: var(--cor-texto-cta); /* ATUALIZADO */
             font-size: 1.3rem;
             font-weight: 900;
             padding: 20px 40px;
             margin-top: 30px;
-            box-shadow: 0 5px 15px rgba(212, 175, 55, 0.2);
+            box-shadow: 0 5px 15px rgba(155, 89, 182, 0.2); /* Sombra Roxa */
+            animation: pulse 2s infinite; /* Animação Aplicada */
         }
         .btn-mestre:hover {
             background-color: var(--cor-destaque-hover);
             transform: scale(1.03);
+            animation: none; /* Pausa a animação no hover */
         }
         
         /* --- [ RODAPÉ ] --- */
@@ -347,6 +401,32 @@
             background-color: #000;
             color: #777;
             font-size: 0.9rem;
+        }
+        
+        /* --- [ NOVO: BOTÃO FLUTUANTE INSTAGRAM ] --- */
+        .floating-ig-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: var(--cor-destaque);
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+        .floating-ig-btn:hover {
+            background-color: var(--cor-destaque-hover);
+            transform: scale(1.1);
+        }
+        .floating-ig-btn svg {
+            width: 32px;
+            height: 32px;
+            fill: var(--cor-texto-cta); /* Ícone Branco */
         }
 
     </style>
@@ -452,24 +532,27 @@
         </ul>
         <p class="nota">*Nota: Clientes dos planos mensais têm prioridade total na agenda.*</p>
     </section>
+    
+    <section class="depoimentos container">
+        <h2>O que meus clientes dizem</h2>
+        <div class="depoimentos-container">
+            <div class="depoimento-card">
+                <p>"Todos os meus amigos estão elogiando meu perfil, está ficando incrível. Antes eu não tinha profissionalismo nenhum."</p>
+                <cite>Camila L., Empreendedora</cite>
+            </div>
+            <div class="depoimento-card">
+                <p>"A Kállita conseguiu extrair exatamente a essência que eu procurava, meu feed está incrível e finalmente atrai os clientes certos."</p>
+                <cite>Juliana P., Terapeuta</cite>
+            </div>
+            <div class="depoimento-card">
+                <p>"Uma profissional criativa e com um olhar incrível para as tendências. Meu engajamento mudou completamente."</p>
+                <cite>Bruno G., Mentor</cite>
+            </div>
+        </div>
+    </section>
 
     <section class="final-cta container">
         <h2>O que você vai fazer agora?</h2>
         <ol>
             <li>Ignorar esta página e continuar com um feed que te frustra e não traz clientes.</li>
-            <li>Gastar mais tempo e energia no Canva, tentando "acertar" o design, enquanto deveria estar vendendo.</li>
-            <li>Clicar no botão abaixo, <strong>garantir o preço de 2025</strong>, e ter o feed premium que seu serviço merece.</li>
-        </ol>
-        <p style="color: var(--cor-texto-principal); font-weight: 700;">Estou a um clique de distância.</p>
-        
-        <a href="https://api.whatsapp.com/send?phone=5519999005784&text=Ol%C3%A1%2C%20quero%20transformar%20meu%20feed%20e%20garantir%20o%20pre%C3%A7o%20de%202025!" target="_blank" class="btn btn-mestre">
-            SIM, QUERO UM FEED PREMIUM (E TRAVAR O PREÇO!)
-        </a>
-    </section>
-
-    <footer>
-        <p>© 2025 Kállita Prado | Social Media - Todos os direitos reservados.</p>
-    </footer>
-
-</body>
-</html>
+  
