@@ -3,437 +3,113 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kállita Design - Transforme seu Instagram</title>
+    <title>Social Media Designer - Portfólio</title>
+    
+    <link rel="stylesheet" href="style.css">
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
     
-    <style>
-        /* --- [ CONFIGURAÇÕES GLOBAIS ] --- */
-        :root {
-            --cor-principal: #FFD700; /* Dourado para destaques */
-            --cor-cta-principal: #28a745; /* Verde para o CTA final */
-            --cor-cta-hover: #218838;
-            --cor-texto-escuro: #333;
-            --cor-texto-claro: #f9f9f9;
-            --cor-fundo-claro: #ffffff;
-            --cor-fundo-destaque: #FFFBEA;
-            --cor-fundo-secao: #f7f7f7;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Montserrat', sans-serif;
-            line-height: 1.7;
-            color: var(--cor-texto-escuro);
-            background-color: var(--cor-fundo-claro);
-        }
-
-        .container {
-            max-width: 960px;
-            margin: 0 auto;
-            padding: 60px 20px;
-        }
-
-        h1, h2, h3 {
-            font-weight: 700;
-            margin-bottom: 20px;
-        }
-
-        h1 {
-            font-size: 2.8rem;
-            font-weight: 900;
-            text-align: center;
-            line-height: 1.3;
-        }
-
-        h2 {
-            font-size: 2.2rem;
-            text-align: center;
-            margin-bottom: 40px;
-        }
-
-        h3 {
-            font-size: 1.5rem;
-        }
-
-        p {
-            margin-bottom: 20px;
-            font-size: 1.1rem;
-        }
-
-        /* --- [ BOTÕES ] --- */
-        .btn {
-            display: inline-block;
-            width: 100%;
-            padding: 15px 30px;
-            font-size: 1.1rem;
-            font-weight: 700;
-            text-align: center;
-            text-decoration: none;
-            text-transform: uppercase;
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .btn-padrao {
-            background-color: #555;
-            color: #fff;
-        }
-        .btn-padrao:hover {
-            background-color: #333;
-        }
-
-        .btn-principal {
-            background-color: var(--cor-principal);
-            color: var(--cor-texto-escuro);
-            transform: scale(1.05); /* Leve destaque */
-        }
-        .btn-principal:hover {
-            background-color: #e6c200;
-            transform: scale(1.08);
-            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
-        }
-
-        /* --- [ SEÇÃO: HERO (ABERTURA) ] --- */
-        .hero {
-            background-color: var(--cor-fundo-secao);
-            text-align: center;
-        }
-        .hero p {
-            font-size: 1.2rem;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        /* --- [ SEÇÃO: PLANOS ] --- */
-        .planos-container {
-            display: flex;
-            justify-content: center;
-            align-items: stretch; /* Faz os cards terem a mesma altura */
-            flex-wrap: wrap;
-            gap: 30px;
-        }
-
-        .plano-card {
-            flex: 1;
-            min-width: 280px;
-            max-width: 320px;
-            background-color: var(--cor-fundo-claro);
-            border: 2px solid #eee;
-            border-radius: 10px;
-            padding: 30px;
-            text-align: center;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-            transition: transform 0.3s ease;
-        }
-        .plano-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .plano-card h3 {
-            font-size: 1.3rem;
-            text-transform: uppercase;
-        }
-        
-        .plano-card p {
-            font-size: 0.9rem;
-            color: #666;
-            min-height: 40px; /* Alinha as descrições */
-        }
-
-        .plano-card ul {
-            list-style: none;
-            text-align: left;
-            margin: 25px 0;
-            color: #555;
-        }
-        
-        .plano-card ul li {
-            margin-bottom: 10px;
-            padding-left: 25px;
-            position: relative;
-        }
-        
-        .plano-card ul li::before {
-            content: '✔';
-            color: var(--cor-cta-principal);
-            position: absolute;
-            left: 0;
-            font-weight: 700;
-        }
-
-        .plano-card .preco {
-            font-size: 2rem;
-            font-weight: 700;
-            margin-bottom: 25px;
-        }
-        .plano-card .preco span {
-            font-size: 1rem;
-            font-weight: 400;
-            color: #777;
-        }
-        
-        /* O Destaque do Plano Prata */
-        .plano-card.destaque {
-            border: 3px solid var(--cor-principal);
-            background-color: var(--cor-fundo-destaque);
-            transform: scale(1.05);
-            z-index: 10;
-        }
-        .plano-card.destaque:hover {
-             transform: scale(1.07);
-        }
-
-        .badge {
-            display: inline-block;
-            background-color: var(--cor-principal);
-            color: var(--cor-texto-escuro);
-            font-size: 0.8rem;
-            font-weight: 700;
-            padding: 5px 15px;
-            border-radius: 20px;
-            margin-bottom: 15px;
-        }
-
-        /* --- [ SEÇÃO: URGÊNCIA (AVISO) ] --- */
-        .urgencia {
-            background-color: #FFF3CD;
-            border: 2px solid #FFECB3;
-            border-radius: 10px;
-            text-align: center;
-        }
-        .urgencia h2 {
-            color: #856404;
-        }
-        .urgencia p {
-            font-size: 1.15rem;
-            font-weight: 700;
-            color: #664d03;
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        /* --- [ SEÇÃO: PROCESSO (RISCO ZERO) ] --- */
-        .processo {
-            background-color: var(--cor-fundo-secao);
-        }
-        .fases-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 40px;
-            margin-top: 40px;
-        }
-        .fase {
-            flex: 1;
-            min-width: 280px;
-        }
-        .fase h3 {
-            border-bottom: 3px solid var(--cor-principal);
-            padding-bottom: 10px;
-            display: inline-block;
-        }
-        .fase p strong {
-            font-size: 1rem;
-            color: #555;
-            display: block;
-            margin-top: 15px;
-        }
-
-        /* --- [ SEÇÃO: AVULSOS ] --- */
-        .avulsos {
-            text-align: center;
-        }
-        .avulsos ul {
-            list-style: none;
-            display: inline-block;
-            text-align: left;
-            margin-top: 30px;
-            border: 1px solid #eee;
-            padding: 30px;
-            border-radius: 10px;
-        }
-        .avulsos li {
-            font-size: 1.2rem;
-            margin-bottom: 15px;
-            color: #555;
-        }
-        .avulsos li strong {
-            color: var(--cor-texto-escuro);
-        }
-        .avulsos .nota {
-            font-style: italic;
-            font-size: 0.9rem;
-            color: #777;
-            margin-top: 30px;
-        }
-        
-        /* --- [ SEÇÃO: FINAL CTA ] --- */
-        .final-cta {
-            background-color: var(--cor-texto-escuro);
-            color: var(--cor-fundo-claro);
-            text-align: center;
-        }
-        .final-cta h2 {
-            color: var(--cor-fundo-claro);
-        }
-        .final-cta ol {
-            max-width: 600px;
-            margin: 30px auto;
-            text-align: left;
-            font-size: 1.1rem;
-        }
-        .final-cta li {
-            margin-bottom: 15px;
-            margin-left: 20px;
-        }
-
-        .btn-mestre {
-            background-color: var(--cor-cta-principal);
-            color: #fff;
-            font-size: 1.3rem;
-            font-weight: 900;
-            padding: 20px 40px;
-            margin-top: 30px;
-            box-shadow: 0 5px 15px rgba(40, 167, 69, 0.4);
-        }
-        .btn-mestre:hover {
-            background-color: var(--cor-cta-hover);
-            transform: scale(1.03);
-        }
-        
-        /* --- [ RODAPÉ ] --- */
-        footer {
-            text-align: center;
-            padding: 30px;
-            background-color: #222;
-            color: #aaa;
-            font-size: 0.9rem;
-        }
-
-    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
 
-    <header class="hero container">
-        <h1>Seu feed do Instagram te envergonha?</h1>
-        <p>Você sabe que tem um serviço incrível, mas seu feed grita "amador". Você passa horas no Canva, posta sem estratégia e o resultado é... frustrante.</p>
-        <p><strong>A verdade é:</strong> Um feed bagunçado não atrai clientes. Ele os espanta.</p>
-        <p>Chegou a hora de ter um feed que gera <strong>autoridade</strong>, <strong>desejo</strong> e <strong>vendas</strong>. Deixe o design estratégico comigo e foque no que você faz de melhor: cuidar do seu negócio.</p>
+    <header>
+        <h1>Social Media Designer</h1>
+        <p>Estratégia e design que elevam sua marca.</p>
     </header>
 
-    <section class="planos container">
-        <h2>Escolha o Plano que vai Mudar seu Jogo</h2>
-        <p style="text-align: center; max-width: 700px; margin: -20px auto 40px auto;">Eu estruturei 3 níveis de serviço para sua marca decolar. Todos incluem planejamento de conteúdo, design profissional e textos persuasivos.</p>
+    <main>
+        <section id="planos" class="content-section">
+            <h2>Planos Mensais</h2>
+            
+            <div class="card-container">
+                <div class="card">
+                    <h3>Plano Bronze</h3>
+                    <ul>
+                        <li><i class="fa-solid fa-check"></i> 2 posts fixos por semana</li>
+                        <li><i class="fa-solid fa-check"></i> Total de 8 posts no mês</li>
+                        <li><i class="fa-solid fa-check"></i> Planejamento estratégico</li>
+                    </ul>
+                    <a href="#cta" class="cta-button">Consultar Valor</a>
+                </div>
+                
+                <div class="card">
+                    <h3>Plano Prata</h3>
+                    <ul>
+                        <li><i class="fa-solid fa-check"></i> 3 posts por semana</li>
+                        <li><i class="fa-solid fa-check"></i> (2 posts fixos + 1 carrossel)</li>
+                        <li><i class="fa-solid fa-check"></i> Planejamento estratégico</li>
+                    </ul>
+                    <a href="#cta" class="cta-button">Consultar Valor</a>
+                </div>
+            </div>
+        </section>
 
-        <div class="planos-container">
+        <section id="avulso" class="content-section">
+            <h2>Serviços Avulsos</h2>
+            
+            <div class="card-container">
+                <div class="card small-card">
+                    <h3>Post Fixo</h3>
+                    <p class="price">R$ 40,00</p>
+                </div>
+                
+                <div class="card small-card">
+                    <h3>Carrossel</h3>
+                    <p>(Até 5 slides)</p>
+                    <p class="price">R$ 65,00</p>
+                </div>
+            </div>
+        </section>
 
-            <div class="plano-card">
-                <h3>🟤 PLANO BRONZE</h3>
-                <p>A presença digital que você precisa para começar.</p>
+        <section id="urgencia">
+            <p>Última chance! Valores válidos para 2025.</p>
+            <strong>A partir de 2026 haverá reajuste de preços.</strong>
+        </section>
+
+        <section id="processo" class="content-section">
+            <h2>Como Funciona</h2>
+            
+            <div class="process-step">
+                <h3><i class="fa-solid fa-flask"></i> 1. Fase de Teste (Primeiro Mês)</h3>
+                <p>Esta é a sua oportunidade de conhecer meu trabalho e avaliar se meu serviço é o ideal para você. O pagamento é dividido para sua segurança:</p>
                 <ul>
-                    <li><strong>8 Posts/Mês</strong> (2 por semana)</li>
-                    <li><strong>Formato:</strong> Posts Fixos</li>
-                    <li><strong>Ideal para:</strong> Manter a constância e construir base.</li>
+                    <li><strong>Sinal (50%):</strong> Realizado na contratação para início do planejamento.</li>
+                    <li><strong>Pagamento Restante (50%):</strong> Feito 15 dias após o sinal, para conclusão e entrega do mês.</li>
                 </ul>
-                <div class="preco">R$ 200,00 <span>/mês</span></div>
-                <a href="#" class="btn btn-padrao">Quero o Plano Bronze</a>
+            </div>
+            
+            <div class="process-step">
+                <h3><i class="fa-solid fa-handshake"></i> 2. Fase Contínua (A partir do 2º Mês)</h3>
+                <p>Com a parceria firmada, o pagamento passa a ser integral (100%), realizado antecipadamente até o dia 5 de cada mês, garantindo a continuidade do serviço.</p>
+                <p><strong>E se não quiser continuar?</strong> Sem problemas! Se decidir não seguir após o teste, basta não realizar o segundo pagamento (50% restantes). O serviço é interrompido sem multas.</p>
             </div>
 
-            <div class="plano-card destaque">
-                <span class="badge">💎 O MAIS VENDIDO E RECOMENDADO</span>
-                <h3>⚪ PLANO PRATA</h3>
-                <p>O equilíbrio perfeito entre volume, estratégia e variedade.</p>
-                <ul>
-                    <li><strong>12 Posts/Mês</strong> (3 por semana)</li>
-                    <li><strong>Formato:</strong> 8 Fixos + 4 Carrosséis</li>
-                    <li><strong>Ideal para:</strong> Gerar engajamento e educar sua audiência.</li>
-                </ul>
-                <div class="preco">R$ 390,00 <span>/mês</span></div>
-                <a href="#" class="btn btn-principal">Sim, Quero o Plano Mais Vendido!</a>
+            <div class="payment-methods">
+                <h4><i class="fa-solid fa-credit-card"></i> Formas de Pagamento:</h4>
+                <p>PIX (À vista) | Cartão de Crédito (em até 3x pelo Mercado Pago, com juros da operadora).</p>
             </div>
+        </section>
 
-            <div class="plano-card">
-                <h3>🟡 PLANO OURO</h3>
-                <p>A estratégia completa para dominar seu nicho.</p>
-                <ul>
-                    <li><strong>16 Posts/Mês</strong> (4 por semana)</li>
-                    <li><strong>Formato:</strong> 8 Fixos + 8 Carrosséis</li>
-                    <li><strong>Bônus:</strong> 1 Vídeo Reels por mês</li>
-                </ul>
-                <div class="preco">R$ 580,00 <span>/mês</span></div>
-                <a href="#" class="btn btn-padrao">Quero o Plano Ouro</a>
+        <section id="cta" class="content-section">
+            <h2>Vamos criar algo incrível?</h2>
+            <p>Entre em contato e veja como posso ajudar sua marca a crescer.</p>
+            
+            <div class="social-links">
+                <a href="https://instagram.com/akallitaprado" target="_blank" class="cta-button social-ig">
+                    <i class="fa-brands fa-instagram"></i> Veja meu Portfólio
+                </a>
+                <a href="https://wa.me/5519999005784" target="_blank" class="cta-button social-wpp">
+                    <i class="fa-brands fa-whatsapp"></i> Fale Comigo
+                </a>
             </div>
-
-        </div>
-    </section>
-
-    <section class="urgencia container">
-        <h2>⚠️ AVISO IMPORTANTE: PREÇOS DE 2025</h2>
-        <p>Estes são os <strong>últimos meses</strong> que você verá estes valores.</p>
-        <p>Minha agenda para 2026 está quase lotada e, devido à alta demanda, a tabela de preços será <strong>reajustada em 1º de Janeiro de 2026.</strong></p>
-        <p><strong>Esta é sua única chance de travar este valor.</strong> Ao fechar seu plano agora, você garante o preço de 2025 por todo o tempo da nossa parceria contínua.</p>
-    </section>
-
-    <section class="processo container">
-        <h2>🔒 Seu Risco é ABSOLUTAMENTE ZERO.</h2>
-        <p style="text-align: center; max-width: 700px; margin: -20px auto 0 auto;">Eu confio tanto no meu processo que criei uma "garantia" de 30 dias. Funciona assim:</p>
-
-        <div class="fases-container">
-            <div class="fase">
-                <h3>1. A Fase de Teste (Seu "Test Drive")</h3>
-                <p>O primeiro mês é sua chance de ver meu trabalho em ação. Para sua total segurança, o pagamento é facilitado:</p>
-                <ul>
-                    <li><strong>50% na Contratação:</strong> Para eu mergulhar no seu projeto e iniciar o planejamento.</li>
-                    <li><strong>50% após 15 dias:</strong> Para a entrega total do mês.</li>
-                </ul>
-                <p><strong>E se eu não gostar?</strong>
-                Simples: você não realiza o segundo pagamento. O serviço é interrompido. Sem perguntas, sem multas, sem burocracia.</p>
-            </div>
-            <div class="fase">
-                <h3>2. A Fase Contínua (Nossa Parceria)</h3>
-                <p>Após os 30 dias de teste, com a confiança estabelecida, o pagamento passa a ser 100% antecipado (via PIX ou Cartão de Crédito) com vencimento no dia 5 de cada mês, garantindo sua vaga na minha agenda.</p>
-            </div>
-        </div>
-    </section>
-
-    <section class="avulsos container">
-        <h2>Precisa de algo pontual?</h2>
-        <p>Se um plano mensal ainda não é para você, posso ajudar com artes avulsas.</p>
-        <ul>
-            <li><strong>Post Fixo Simples:</strong> R$ 40,00</li>
-            <li><strong>Carrossel (até 5 slides):</strong> R$ 65,00</li>
-            <li><strong>Edição de Vídeo (Reels):</strong> R$ 60,00</li>
-        </ul>
-        <p class="nota">*Nota: Clientes dos planos mensais têm prioridade total na agenda.*</p>
-    </section>
-
-    <section class="final-cta container">
-        <h2>Você tem 3 escolhas agora:</h2>
-        <ol>
-            <li><strong>Não fazer nada</strong> e continuar com um feed amador, perdendo clientes para concorrentes mais profissionais.</li>
-            <li><strong>Tentar fazer sozinho,</strong> gastando horas preciosas no Canva que você deveria estar usando para vender.</li>
-            <li><strong>Clicar no botão abaixo,</strong> garantir o preço de 2025 e ter, finalmente, o feed que sua marca merece.</li>
-        </ol>
-        <p>A decisão é sua.</p>
-        
-        <a href="#" class="btn btn-mestre">
-            SIM, QUERO TRANSFORMAR MEU FEED AGORA (E TRAVAR O PREÇO DE 2025)!
-        </a>
-    </section>
+        </section>
+    </main>
 
     <footer>
-        <p>© 2025 Kállita Design - Todos os direitos reservados.</p>
+        <p>&copy; 2025 - Todos os direitos reservados.</p>
     </footer>
 
 </body>
