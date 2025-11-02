@@ -1,581 +1,298 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kállita Prado | Social Media - Transforme seu Instagram</title>
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Playfair+Display:ital,wght@0,700;0,900;1,700;1,900&display=swap" rel="stylesheet">
-    
-    <style>
-        /* --- [ CONFIGURAÇÕES GLOBAIS - TEMA "ROXO PREMIUM" V2 ] --- */
-        :root {
-            --cor-destaque: #9B59B6; /* Roxo (Ametista) */
-            --cor-destaque-hover: #8E44AD; /* Roxo mais escuro */
-            --cor-destaque-vibrante: #AF7AC5; /* Roxo mais claro para o degradê */
-            --cor-fundo-principal: #0D0D0D; 
-            --cor-fundo-secao: #1A1A1A;   
-            --cor-fundo-card: #222222;   
-            --cor-texto-principal: #F5F5F5;  
-            --cor-texto-secundaria: #AAAAAA; 
-            --cor-texto-cta: #F5F5F5; 
-            
-            /* ATUALIZADO: Cor do WhatsApp */
-            --cor-whatsapp: #25D366;
-            --cor-whatsapp-hover: #1EBE57;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Kállita Prado - Social Media. Estratégia, conteúdo e identidade visual para redes sociais.">
+  <title>Kállita Prado | Social Media</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+      scroll-behavior: smooth;
+    }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+    body {
+      background-color: #fff;
+      color: #333;
+      overflow-x: hidden;
+    }
 
-        body {
-            font-family: 'Montserrat', sans-serif;
-            line-height: 1.7;
-            color: var(--cor-texto-principal);
-            background-color: var(--cor-fundo-principal);
-        }
+    header {
+      background: #fff;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
 
-        .container {
-            max-width: 960px;
-            margin: 0 auto;
-            padding: 70px 20px;
-        }
+    header nav ul {
+      display: flex;
+      list-style: none;
+      gap: 30px;
+    }
 
-        h1, h2, h3 {
-            font-family: 'Playfair Display', serif;
-            font-style: italic; 
-            margin-bottom: 20px;
-        }
+    header nav a {
+      text-decoration: none;
+      color: #4b0082;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
 
-        h1 {
-            font-size: 2.8rem;
-            font-weight: 900; 
-            text-align: center;
-            line-height: 1.3;
-        }
+    header nav a:hover {
+      color: #a855f7;
+    }
 
-        h2 {
-            font-size: 2.2rem;
-            font-weight: 900; 
-            text-align: center;
-            margin-bottom: 40px;
-        }
+    /* HERO */
+    .hero {
+      background: linear-gradient(90deg, #7b2ff7, #f107a3);
+      color: white;
+      text-align: center;
+      padding: 100px 20px;
+    }
 
-        h3 {
-            font-size: 1.5rem;
-            font-weight: 700; 
-        }
+    .hero h1 {
+      font-size: 2.5rem;
+      margin-bottom: 15px;
+    }
 
-        p {
-            margin-bottom: 20px;
-            font-size: 1.1rem;
-            color: var(--cor-texto-secundaria);
-        }
-        
-        strong {
-            color: var(--cor-destaque);
-        }
+    .hero p {
+      font-size: 1.1rem;
+      opacity: 0.9;
+      max-width: 600px;
+      margin: 0 auto;
+    }
 
-        /* --- [ BOTÕES ] --- */
-        .btn {
-            display: inline-block;
-            width: 100%;
-            padding: 15px 30px;
-            font-size: 1.1rem;
-            font-weight: 700;
-            text-align: center;
-            text-decoration: none;
-            text-transform: uppercase;
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
+    /* PLANEJAMENTO */
+    .planejamento {
+      padding: 80px 20px;
+      background: #f8f6fb;
+      text-align: center;
+    }
 
-        .btn-padrao {
-            background-color: #333;
-            color: var(--cor-texto-principal);
-            border: 1px solid #555;
-        }
-        .btn-padrao:hover {
-            background-color: #444;
-        }
+    .planejamento h2 {
+      font-size: 2rem;
+      color: #6a1b9a;
+      margin-bottom: 25px;
+    }
 
-        .btn-principal {
-            background-color: var(--cor-destaque);
-            color: var(--cor-texto-cta); 
-            font-weight: 900;
-            transform: scale(1.05); 
-        }
-        .btn-principal:hover {
-            background-color: var(--cor-destaque-hover);
-            transform: scale(1.08);
-            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
-        }
+    .planejamento p {
+      max-width: 700px;
+      margin: 0 auto 25px;
+      font-size: 1.05rem;
+      color: #444;
+    }
 
-        /* --- [ SEÇÃO: HERO (ABERTURA) ] --- */
-        .hero {
-            background-color: var(--cor-fundo-secao);
-            text-align: center;
-        }
-        .hero p {
-            font-size: 1.2rem;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
-        }
+    .planejamento ul {
+      list-style: none;
+      max-width: 700px;
+      margin: 0 auto;
+      padding: 0;
+      text-align: left;
+    }
 
-        /* --- [ SEÇÃO: PLANOS ] --- */
-        .planos-container {
-            display: flex;
-            justify-content: center;
-            align-items: stretch;
-            flex-wrap: wrap;
-            gap: 30px;
-        }
+    .planejamento li {
+      background: #fff;
+      margin: 10px 0;
+      padding: 15px 20px;
+      border-radius: 12px;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.05);
+      transition: transform 0.3s;
+    }
 
-        .plano-card {
-            flex: 1;
-            min-width: 280px;
-            max-width: 320px;
-            background-color: var(--cor-fundo-card);
-            border: 2px solid #333;
-            border-radius: 10px;
-            padding: 30px;
-            text-align: center;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-            transition: transform 0.3s ease;
-        }
-        .plano-card:hover {
-            transform: translateY(-5px);
-        }
+    .planejamento li:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 5px 15px rgba(140, 82, 255, 0.15);
+    }
 
-        .plano-card p {
-            font-size: 0.9rem;
-            color: var(--cor-texto-secundaria);
-            min-height: 40px; 
-        }
+    .planejamento strong {
+      color: #7b2ff7;
+    }
 
-        .plano-card ul {
-            list-style: none;
-            text-align: left;
-            margin: 25px 0;
-            color: var(--cor-texto-secundaria);
-        }
-        
-        .plano-card ul li {
-            margin-bottom: 10px;
-            padding-left: 25px;
-            position: relative;
-        }
-        
-        .plano-card ul li::before {
-            content: '✔';
-            color: var(--cor-destaque); 
-            position: absolute;
-            left: 0;
-            font-weight: 700;
-        }
-        
-        .plano-card ul strong {
-             color: var(--cor-texto-principal);
-        }
+    /* FEEDBACK */
+    .feedback {
+      padding: 80px 20px;
+      text-align: center;
+      background: #fff;
+    }
 
-        .plano-card .preco {
-            font-size: 2rem;
-            font-weight: 700;
-            margin-bottom: 25px;
-            color: var(--cor-texto-principal);
-        }
-        .plano-card .preco span {
-            font-size: 1rem;
-            font-weight: 400;
-            color: var(--cor-texto-secundaria);
-        }
-        
-        .plano-card.destaque {
-            border: 3px solid var(--cor-destaque);
-            background-color: #2f2533; 
-            transform: scale(1.05);
-            z-index: 10;
-        }
-        .plano-card.destaque:hover {
-             transform: scale(1.07);
-        }
+    .feedback h2 {
+      font-size: 2rem;
+      color: #6a1b9a;
+      margin-bottom: 20px;
+    }
 
-        .badge {
-            display: inline-block;
-            background-color: var(--cor-destaque);
-            color: var(--cor-texto-cta); 
-            font-size: 0.8rem;
-            font-weight: 700;
-            padding: 5px 15px;
-            border-radius: 20px;
-            margin-bottom: 15px;
-        }
+    /* ÚLTIMA CHAMADA */
+    .ultima-chamada {
+      text-align: center;
+      background: linear-gradient(90deg, #7b2ff7, #f107a3);
+      color: white;
+      padding: 80px 20px;
+      border-radius: 20px;
+      margin: 60px auto;
+      width: 85%;
+      box-shadow: 0 0 20px rgba(183, 0, 255, 0.5);
+      animation: glow 2s ease-in-out infinite alternate;
+    }
 
-        /* --- [ ATUALIZADO: URGÊNCIA (DEGRADÊ) ] --- */
-        .urgencia {
-            /* O Degradê Roxo */
-            background: linear-gradient(140deg, var(--cor-destaque-hover) 0%, var(--cor-destaque) 70%, var(--cor-destaque-vibrante) 100%);
-            border-radius: 10px;
-            text-align: center;
-            box-shadow: 0 10px 30px rgba(155, 89, 182, 0.2);
-        }
-        .urgencia h2 {
-            /* Título com Texto Branco */
-            color: var(--cor-texto-principal);
-        }
-        .urgencia p {
-            font-size: 1.15rem;
-            font-weight: 700;
-            /* Texto com Texto Branco */
-            color: var(--cor-texto-principal);
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
-        }
+    @keyframes glow {
+      from {
+        box-shadow: 0 0 10px #b066ff, 0 0 20px #b066ff, 0 0 30px #a855f7;
+      }
+      to {
+        box-shadow: 0 0 20px #d98bff, 0 0 40px #c084fc, 0 0 60px #b066ff;
+      }
+    }
 
-        /* --- [ SEÇÃO: PROCESSO (RISCO ZERO) ] --- */
-        .processo {
-            background-color: var(--cor-fundo-secao);
-        }
-        .fases-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 40px;
-            margin-top: 40px;
-        }
-        .fase {
-            flex: 1;
-            min-width: 280px;
-        }
-        .fase h3 {
-            border-bottom: 3px solid var(--cor-destaque); 
-            padding-bottom: 10px;
-            display: inline-block;
-        }
-        .fase ul {
-            list-style-position: inside;
-            padding-left: 10px;
-            margin-top: 15px;
-        }
-        
-        .garantia-extra {
-            margin-top: 40px;
-            background-color: var(--cor-fundo-card);
-            padding: 30px;
-            border-radius: 10px;
-            border: 1px solid #333;
-        }
-        .garantia-extra h3 {
-            color: var(--cor-destaque); 
-            font-size: 1.3rem;
-        }
-        
-        /* --- [ NOVO: SEÇÃO MÉTODO DE TRABALHO ] --- */
-        .metodo {
-            background-color: var(--cor-fundo-principal); /* Fundo principal para destacar */
-        }
-        .metodo-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 30px;
-            justify-content: center;
-            margin-top: 40px;
-        }
-        .metodo-passo {
-            flex: 1;
-            min-width: 280px;
-            max-width: 350px;
-            background-color: var(--cor-fundo-card);
-            padding: 30px;
-            border-radius: 10px;
-            border-top: 4px solid var(--cor-destaque);
-        }
-        .metodo-passo h3 {
-            font-size: 1.3rem;
-            font-style: italic;
-            font-weight: 700;
-            color: var(--cor-destaque);
-            margin-bottom: 15px;
-        }
-        .metodo-passo p {
-            font-size: 1rem;
-            color: var(--cor-texto-secundaria);
-            margin-bottom: 0;
-        }
+    .ultima-chamada h2 {
+      font-size: 2.2rem;
+      margin-bottom: 10px;
+    }
 
-        /* --- [ SEÇÃO: AVULSOS ] --- */
-        .avulsos {
-            text-align: center;
-        }
-        .avulsos ul {
-            list-style: none;
-            display: inline-block;
-            text-align: left;
-            margin-top: 30px;
-            background-color: var(--cor-fundo-card);
-            border: 1px solid #333;
-            padding: 30px;
-            border-radius: 10px;
-        }
-        .avulsos li {
-            font-size: 1.2rem;
-            margin-bottom: 15px;
-            color: var(--cor-texto-secundaria);
-        }
-        .avulsos li strong {
-            color: var(--cor-texto-principal);
-        }
-        .avulsos .nota {
-            font-style: italic;
-            font-size: 0.9rem;
-            color: #777;
-            margin-top: 30px;
-        }
+    .ultima-chamada p {
+      font-size: 1.1rem;
+      opacity: 0.9;
+      max-width: 600px;
+      margin: 0 auto 20px;
+    }
 
-        /* --- [ SEÇÃO DEPOIMENTOS ] --- */
-        .depoimentos {
-            background-color: var(--cor-fundo-secao);
-        }
-        .depoimentos-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 30px;
-            justify-content: center;
-            margin-top: 40px;
-        }
-        .depoimento-card {
-            flex: 1;
-            min-width: 260px;
-            max-width: 320px;
-            background-color: var(--cor-fundo-card);
-            border: 1px solid #333;
-            border-top: 4px solid var(--cor-destaque); 
-            padding: 30px;
-            border-radius: 8px;
-        }
-        .depoimento-card p {
-            font-style: italic;
-            color: var(--cor-texto-secundaria);
-            margin-bottom: 20px;
-            font-size: 1.05rem;
-        }
-        .depoimento-card cite {
-            font-family: 'Montserrat', sans-serif;
-            font-style: normal;
-            font-weight: 700;
-            color: var(--cor-texto-principal);
-            display: block;
-        }
-        
-        /* --- [ SEÇÃO: FINAL CTA ] --- */
-        .final-cta {
-            background-color: var(--cor-fundo-principal);
-            text-align: center;
-        }
-        .final-cta h2 {
-            color: var(--cor-texto-principal);
-        }
-        .final-cta ol {
-            max-width: 600px;
-            margin: 30px auto;
-            text-align: left;
-            font-size: 1.1rem;
-        }
-        .final-cta li {
-            margin-bottom: 15px;
-            margin-left: 20px;
-            color: var(--cor-texto-secundaria);
-        }
+    .ultima-chamada a {
+      display: inline-block;
+      background: white;
+      color: #7b2ff7;
+      font-weight: 600;
+      padding: 12px 30px;
+      border-radius: 50px;
+      text-decoration: none;
+      transition: all 0.3s;
+    }
 
-        /* Animação Pulsante */
-        @keyframes pulse {
-            0% {
-                transform: scale(1);
-                box-shadow: 0 0 0 0 rgba(155, 89, 182, 0.4); 
-            }
-            70% {
-                transform: scale(1.03);
-                box-shadow: 0 0 0 10px rgba(155, 89, 182, 0); 
-            }
-            100% {
-                transform: scale(1);
-                box-shadow: 0 0 0 0 rgba(155, 89, 182, 0);
-            }
-        }
+    .ultima-chamada a:hover {
+      background: #7b2ff7;
+      color: white;
+      box-shadow: 0 0 15px rgba(255,255,255,0.6);
+    }
 
-        .btn-mestre {
-            background-color: var(--cor-destaque);
-            color: var(--cor-texto-cta); 
-            font-size: 1.3rem;
-            font-weight: 900;
-            padding: 20px 40px;
-            margin-top: 30px;
-            box-shadow: 0 5px 15px rgba(155, 89, 182, 0.2); 
-            animation: pulse 2s infinite; 
-        }
-        .btn-mestre:hover {
-            background-color: var(--cor-destaque-hover);
-            transform: scale(1.03);
-            animation: none; 
-        }
-        
-        /* --- [ ATUALIZADO: RODAPÉ ] --- */
-        footer {
-            text-align: center;
-            padding: 40px 20px;
-            background-color: #000;
-            color: #777;
-            font-size: 0.9rem;
-            line-height: 1.8;
-        }
-        footer p {
-            font-size: 0.9rem;
-            color: #777;
-            margin-bottom: 15px;
-        }
-        footer a {
-            color: #ccc;
-            text-decoration: none;
-            font-weight: 700;
-            transition: color 0.3s ease;
-        }
-        footer a:hover {
-            color: var(--cor-destaque);
-        }
-        
-        /* --- [ ATUALIZADO: BOTÃO FLUTUANTE WHATSAPP ] --- */
-        .floating-wa-btn {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            background-color: var(--cor-whatsapp); /* Cor do WhatsApp */
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-            z-index: 1000;
-            transition: all 0.3s ease;
-        }
-        .floating-wa-btn:hover {
-            background-color: var(--cor-whatsapp-hover);
-            transform: scale(1.1);
-        }
-        .floating-wa-btn svg {
-            width: 32px;
-            height: 32px;
-            fill: #fff; /* Ícone Branco */
-        }
+    /* RODAPÉ */
+    footer {
+      background: linear-gradient(90deg, #4b0082, #b066ff);
+      color: white;
+      text-align: center;
+      padding: 25px;
+      font-size: 0.95rem;
+      letter-spacing: 0.5px;
+    }
 
-    </style>
+    footer a {
+      color: #fff;
+      text-decoration: underline;
+      font-weight: 500;
+    }
+
+    footer a:hover {
+      color: #ffe6ff;
+    }
+
+    /* WHATSAPP FLOAT */
+    .whatsapp-float {
+      position: fixed;
+      width: 60px;
+      height: 60px;
+      bottom: 25px;
+      right: 25px;
+      background-color: #25D366;
+      color: #fff;
+      border-radius: 50%;
+      text-align: center;
+      font-size: 32px;
+      z-index: 1000;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      animation: float 3s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-5px); }
+    }
+
+    .whatsapp-float i {
+      margin-top: 14px;
+    }
+
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 2rem;
+      }
+      .planejamento h2, .feedback h2 {
+        font-size: 1.8rem;
+      }
+      .ultima-chamada {
+        width: 90%;
+        padding: 60px 15px;
+      }
+    }
+  </style>
 </head>
 <body>
 
-    <header class="hero container">
-        <h1>Seu feed não vende? A culpa pode ser dele.</h1>
-        <p>Você tem um serviço premium, mas seu Instagram parece amador. Posta sem estratégia, se frustra com o Canva e não vê resultado.</p>
-        <p><strong>Vamos ser diretos:</strong> Um feed fraco não atrai clientes. Ele os repele.</p>
-        <p style="color: var(--cor-texto-principal);">Chegou a hora de transformar seu Instagram em uma máquina de <strong>autoridade</strong> e <strong>desejo</strong>. Eu cuido da estratégia e do design; você foca no que faz de melhor: fechar vendas.</p>
-    </header>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="#sobre">Sobre</a></li>
+        <li><a href="#servicos">Serviços</a></li>
+        <li><a href="#portfolio">Portfólio</a></li>
+        <li><a href="#contato">Contato</a></li>
+      </ul>
+    </nav>
+  </header>
 
-    <section class="planos container">
-        <h2>Escolha o Plano que vai Mudar seu Jogo</h2>
-        <p style="text-align: center; max-width: 700px; margin: -20px auto 40px auto;">Eu estruturei 3 níveis de serviço para sua marca decolar. Todos incluem planejamento de conteúdo, design profissional e textos persuasivos.</p>
+  <section class="hero">
+    <h1>Kállita Prado Social Media</h1>
+    <p>Transformando marcas em presenças digitais autênticas e estratégicas 💜</p>
+  </section>
 
-        <div class="planos-container">
-            <div class="plano-card">
-                <h3>🟤 PLANO BRONZE</h3>
-                <p>A presença digital que você precisa para começar.</p>
-                <ul>
-                    <li><strong>8 Posts/Mês</strong> (2 por semana)</li>
-                    <li><strong>Formato:</strong> Posts Fixos</li>
-                    <li><strong>Ideal para:</strong> Manter a constância e construir base.</li>
-                </ul>
-                <div class="preco">R$ 200,00 <span>/mês</span></div>
-                <a href="https://api.whatsapp.com/send?phone=5519999005784&text=Ol%C3%A1%2C%20tenho%20interesse%20no%20Plano%20Bronze!" target="_blank" class="btn btn-padrao">Quero o Plano Bronze</a>
-            </div>
+  <section class="planejamento" id="planejamento">
+    <h2>Etapas do Planejamento de Conteúdo</h2>
+    <p>O planejamento segue etapas estratégicas para garantir coerência visual e comunicacional.</p>
+    <ul>
+      <li><strong>1️⃣ Briefing:</strong> Entendemos sua marca, público e estilo.</li>
+      <li><strong>2️⃣ Cronograma:</strong> Montamos o calendário e temas de postagens.</li>
+      <li><strong>3️⃣ Criação:</strong> Produção de textos e artes com sua identidade.</li>
+      <li><strong>4️⃣ Aprovação:</strong> Tudo passa por você antes da publicação.</li>
+      <li><strong>5️⃣ Acompanhamento:</strong> Monitoramos resultados e ajustamos estratégias.</li>
+    </ul>
+  </section>
 
-            <div class="plano-card destaque">
-                <span class="badge">💎 O MAIS VENDIDO E RECOMENDADO</span>
-                <h3>⚪ PLANO PRATA</h3>
-                <p>O equilíbrio perfeito entre volume, estratégia e variedade.</p>
-                <ul>
-                    <li><strong>12 Posts/Mês</strong> (3 por semana)</li>
-                    <li><strong>Formato:</strong> 8 Fixos + 4 Carrosséis</li>
-                    <li><strong>Ideal para:</strong> Gerar engajamento e educar sua audiência.</li>
-                    <li><strong>Bônus:</strong> 1 Vídeo Reels por mês</li>
-                </ul>
-                <div class="preco">R$ 390,00 <span>/mês</span></div>
-                <a href="https://api.whatsapp.com/send?phone=5519999005784&text=Ol%C3%A1%2C%20tenho%20interesse%20no%20Plano%20Prata%20(o%20mais%20vendido)!" target="_blank" class="btn btn-principal">Sim, Quero o Plano Mais Vendido!</a>
-            </div>
+  <section class="feedback">
+    <h2>Feedback</h2>
+    <p>Veja o que meus clientes dizem sobre o processo e os resultados 🌟</p>
+  </section>
 
-            <div class="plano-card">
-                <h3>🟡 PLANO OURO</h3>
-                <p>A estratégia completa para dominar seu nicho.</p>
-                <ul>
-                    <li><strong>16 Posts/Mês</strong> (4 por semana)</li>
-                    <li><strong>Formato:</strong> 8 Fixos + 8 Carrosséis</li>
-                    <li><strong>Bônus:</strong> 2 Vídeos Reels por mês</li>
-                </ul>
-                <div class="preco">R$ 580,00 <span>/mês</span></div>
-                <a href="https://api.whatsapp.com/send?phone=5519999005784&text=Ol%C3%A1%2C%20tenho%20interesse%20no%20Plano%20Ouro!" target="_blank" class="btn btn-padrao">Quero o Plano Ouro</a>
-            </div>
+  <section class="ultima-chamada">
+    <h2>Última Chamada 💡</h2>
+    <p>Não deixe sua presença digital para depois — sua marca merece destaque agora.</p>
+    <a href="https://wa.me/5519999005784" target="_blank">Fale comigo no WhatsApp</a>
+  </section>
 
-        </div>
-    </section>
+  <footer>
+    <p>© 2025 Todos os direitos reservados • <strong>Kállita Prado Social Media</strong></p>
+    <p>
+      <a href="mailto:akallitaprado@gmail.com">akallitaprado@gmail.com</a> | 
+      <a href="https://instagram.com/kallitaprado" target="_blank">@kallitaprado</a>
+    </p>
+  </footer>
 
-    <section class="urgencia container">
-        <h2>⚠️ ÚLTIMA CHAMADA: PREÇOS DE 2025</h2>
-        <p>Devido à alta demanda, minha agenda para 2026 está quase lotada.</p>
-        <p>A tabela de preços será <strong>reajustada em 1º de Janeiro de 2026.</strong></p>
-        <p><strong>Garanta seu plano agora</strong> e trave o valor de 2025 por tempo indeterminado. É sua única chance.</p>
-    </section>
+  <!-- Botão flutuante do WhatsApp -->
+  <a href="https://wa.me/5519999005784" class="whatsapp-float" target="_blank" aria-label="WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+  </a>
 
-    <section class="processo container">
-        <h2>🔒 Seu Risco é ABSOLUTAMENTE ZERO.</h2>
-        <p style="text-align: center; max-width: 700px; margin: -20px auto 0 auto;">Confiança é tudo. Por isso, meu processo é 100% transparente e focado na sua segurança.</p>
-
-        <div class="fases-container">
-            <div class="fase">
-                <h3>✨ 1. Fase de Teste (Primeiro Mês)</h3>
-                <p>Esta é a sua oportunidade de conhecer meu trabalho, avaliar o estilo e decidir se é o ideal para você. Para sua segurança, o pagamento é dividido:</p>
-                <ul>
-                    <li><strong>Sinal (50%):</strong> Na contratação, para eu iniciar todo o planejamento e criação.</li>
-                    <li><strong>Pagamento Restante (50%):</strong> 15 dias após o sinal, para a conclusão do mês.</li>
-                </ul>
-            </div>
-            <div class="fase">
-                <h3>✨ 2. Fase Contínua (A Parceria)</h3>
-                <p>Com a confiança firmada, o pagamento passa a ser integral (100%), realizado antecipadamente (até o dia 5 de cada mês), garantindo a continuidade da estratégia e sua vaga na agenda.</p>
-            </div>
-        </div>
-
-        <div class="garantia-extra">
-            <h3>💬 E se eu não quiser continuar após o teste?</h3>
-            <p>Sem problemas. Se, por qualquer motivo, você decidir não seguir, basta não realizar o segundo pagamento (50% restantes). O serviço é interrompido automaticamente, <strong>sem multas ou burocracia.</strong></p>
-            
-            <h3 style="margin-top: 20px;">💳 Formas de Pagamento</h3>
-            <p style="margin-bottom: 0;">PIX (Pagamento à vista)<br>
-               Cartão de Crédito (em até 3x pelo Mercado Pago, com juros da operadora)</p>
-        </div>
-    </section>
-    
-    <section class="metodo container">
-        <h2>Meu Método de Trabalho</h2>
-        <p style="text-align: center; max-width: 700px; margin: -20px auto 0 auto;">Meu planejamento é feito em etapas organizadas para garantir coerência visual e estratégica, do briefing à publicação.</p>
-        <div class="metodo-container">
-            <div class="metodo-passo">
-                <h3>1. Briefing e Alinhamento</h3>
-                <p>Entendemos seu posicionamento, público e objetivos para alinhar o tom, os temas e a estética do seu perfil.</p>
-            </div>
-            <di
+</body>
+</html>
