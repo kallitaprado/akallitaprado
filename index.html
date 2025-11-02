@@ -309,18 +309,7 @@
       }
     }
     
-    /* ANIMAÇÕES */
-    .scroll-reveal {
-      opacity: 0;
-      transform: translateY(20px);
-      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-    }
-
-    .scroll-reveal.active {
-      opacity: 1;
-      transform: translateY(0);
-    }
-    
+    /* ANIMAÇÕES (REMOVIDO .scroll-reveal) */
     @keyframes pulse-badge {
       0% { transform: scale(1); box-shadow: 0 0 5px rgba(214, 0, 255, 0.5); }
       50% { transform: scale(1.05); box-shadow: 0 0 15px rgba(214, 0, 255, 0.8); }
@@ -374,7 +363,6 @@
       display: block; 
     }
     
-    /* Ajuste para o .price-small (quando ele é DE/POR) */
     .price-small .preco-antigo {
         font-size: 1.3rem;
     }
@@ -385,7 +373,7 @@
     .economia-aviso {
       font-size: 1rem; 
       font-weight: 700;
-      color: var(--primary-hot); /* COR MUDADA PARA PINK */
+      color: var(--primary-hot); 
       display: block;
       margin-top: -0.2rem;
       margin-bottom: 1rem;
@@ -414,7 +402,7 @@
 
   <main class="container">
   
-    <div style="text-align: center; margin-bottom: 4rem;" class="scroll-reveal">
+    <div style="text-align: center; margin-bottom: 4rem;">
         <h2 style="font-size: 2.2rem; color: var(--primary-color); font-weight: 800; margin-bottom: 0.5rem; text-transform: uppercase; letter-spacing: 1px;">
           🚨 A CONTAGEM REGRESSIVA COMEÇOU! 🚨
         </h2>
@@ -433,18 +421,19 @@
           Não comece 2026 pagando mais caro. <strong>Trave seu desconto AGORA!</strong>
         </p>
     </div>
-    <h2 class="planos-section-title scroll-reveal">Gerenciamento de Redes Sociais</h2>
-    <p class="payment-info-general scroll-reveal">
+    <h2 class="planos-section-title">Gerenciamento de Redes Sociais</h2>
+    <p class="payment-info-general">
         💳 Formas de Pagamento: Pix, Boleto ou Cartão de Crédito (até 3x com juros).
     </p>
 
-    <div class="planos-container scroll-reveal">
+    <div class="planos-container">
       
       <div class="plano">
         <h3>🚀 <span class="gradient-text">Plano Básico</span></h3>
         <p>📅 2 postagens por semana (8/mês)<br>🖋️ Posts estáticos de conteúdo.<br>❌ Não inclui carrossel ou edição de vídeo.</p>
         <div class="price-container">
-          <div class="price"> <span class="preco-antigo">DE R$ 279,00/mês</span>
+          <div class="price"> 
+            <span class="preco-antigo">DE R$ 279,00/mês</span>
             <span class="preco-novo">POR R$ 200,00/mês</span>
           </div>
           <span class="economia-aviso">Aprox. 28% OFF!</span>
@@ -523,15 +512,16 @@
       </div>
     </div>
     
-    <h2 class="planos-section-title scroll-reveal">Serviços Avulsos</h2>
+    <h2 class="planos-section-title">Serviços Avulsos</h2>
 
-    <div class="planos-container scroll-reveal">
+    <div class="planos-container">
 
       <div class="plano">
         <h3>🎨 <span class="gradient-text">Identidade Visual</span></h3>
         <p>Criação de <strong>Logotipo Profissional e Marca D'água</strong>.<br>Arquivos vetorizados, JPEG, PNG e PDF.<br>Tipografia, paleta de cores e <strong>Arte do Cartão de Visitas</strong>.</p>
         <div class="price-container">
-          <div class="price">R$ 390</div> </div>
+          <div class="price">R$ 390</div> 
+        </div>
         <p class="pag-info">Pagamento Único</p>
         <p class="price-note">Ou até 3x no cartão*</p>
         <p style="text-align: center;">🖼️ Pacote completo para construir uma marca <strong>profissional, coesa e memorável</strong>.</p>
@@ -542,7 +532,13 @@
         <h3>🖼️ <span class="gradient-text">Arte Avulsa</span></h3>
         <p>Criação pontual de <strong>Post Estático ou Carrossel</strong>.<br>Ideal para quem precisa de uma arte pontual sem plano mensal.</p>
         <div class="price-container">
-          <div class="price price-small">R$ 40-80</div> </div>
+          <div class="price price-small">R$ 40-80</div> 
+        </div>
         <p class="pag-info">VALOR POR ARTE</p>
         <p class="price-note">Varia conforme a complexidade do briefing.</p>
-        <a c
+        <a class="btn-whatsapp" href="https://wa.me/5519999005784?text=Quero%20solicitar%20uma%20Arte%20Avulsa!" target="_blank" aria-label="Solicitar Arte Avulsa">SOLICITAR ORÇAMENTO</a>
+      </div>
+      
+      <div class="plano">
+        <h3>🎬 <span class="gradient-text">Edição de Vídeo Avulsa</span></h3>
+        <p>Inclui legenda, cortes, ajustes de cor e mont
