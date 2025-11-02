@@ -4,21 +4,24 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Kállita Prado - Social Media. Planos de gerenciamento de redes sociais, criação de conteúdo e identidade visual.">
-  <title>Kállita Prado | Planos e Serviços - Social Media</title>
+  <title>Kállita Prado | Social Media Estratégica</title>
+  
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
   <style>
+    /* -----------------------------------
+       1. CONFIGURAÇÕES GLOBAIS E CORES
+    ----------------------------------- */
     :root {
-      /* CORES ELEGANTES E PROFISSIONAIS */
-      --primary-color: #D600FF; /* Púrpura/Magenta: Elegante e chamativo */
-      --primary-hot: #FF00A0;  /* Pink para gradientes */
-      --primary-dark: #9E00C0; /* Tom mais escuro do púrpura */
+      --primary-color: #D600FF; 
+      --primary-hot: #FF00A0;  
       --secondary-color: #fff;
-      --success-color: #25D366; /* Verde do WhatsApp */
+      --success-color: #25D366; 
       
-      /* Tons de cinza escuro mais suaves */
       --background-dark: #0F0F1A;
       --background-light: #1A1A2E;
       --card-bg: #1F1F35;
@@ -26,8 +29,10 @@
       --text-primary: #f0f0f0;
       --text-secondary: #C0C0D0;
       --text-muted: #8A8A99;
-      --border-color: rgba(214, 0, 255, 0.4);
       --border-light: rgba(255, 255, 255, 0.08);
+      
+      --gradient-text: linear-gradient(90deg, var(--primary-color), var(--primary-hot));
+      --gradient-button: linear-gradient(90deg, var(--primary-color) 0%, var(--primary-hot) 100%);
     }
 
     * {
@@ -53,15 +58,463 @@
       margin: 0 auto;
       padding: 0 1.5rem;
     }
-
-    /* Espaçamento do topo AJUSTADO */
+    
+    /* Removemos o padding-top de 'main' para dar controle total às seções */
     main {
-      padding-top: 3rem; 
       text-align: center;
       padding-bottom: 4rem;
     }
 
-    /* WhatsApp FLUTUANTE */
+    /* Títulos de Seção Padrão */
+    .section-title {
+        color: var(--primary-color);
+        background: var(--gradient-text);
+        background-size: 200% auto;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        text-fill-color: transparent;
+        animation: gradient-flow 5s linear infinite;
+        
+        font-size: 2.5rem;
+        margin-bottom: 3rem; /* Aumentado */
+        font-weight: 800;
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+        position: relative;
+        display: inline-block;
+    }
+    
+    .section-title::after {
+        content: '';
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: -10px;
+        width: 80px;
+        height: 4px;
+        background: var(--primary-color);
+        border-radius: 2px;
+    }
+    
+    /* Botões Padrão */
+    .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.75rem; 
+        padding: 0.9rem 2.2rem; 
+        border-radius: 30px; 
+        text-decoration: none; 
+        transition: all 0.4s ease; 
+        font-weight: 700; 
+        border: none;
+        font-size: 1rem; 
+        cursor: pointer;
+    }
+    
+    .btn-primary {
+        background: var(--gradient-button);
+        background-size: 100% auto;
+        color: var(--secondary-color);
+        box-shadow: 0 4px 20px rgba(214, 0, 255, 0.4);
+    }
+    .btn-primary:hover {
+        background-position: right center;
+        color: var(--secondary-color);
+        transform: translateY(-3px) scale(1.02);
+        box-shadow: 0 8px 25px rgba(255, 0, 160, 0.5);
+    }
+    
+    .btn-secondary {
+        background: transparent;
+        color: var(--primary-color);
+        border: 2px solid var(--primary-color);
+    }
+    .btn-secondary:hover {
+        background: var(--primary-color);
+        color: var(--secondary-color);
+        transform: translateY(-3px);
+    }
+
+    /* -----------------------------------
+       2. LAYOUT DAS SEÇÕES (O BLUEPRINT)
+    ----------------------------------- */
+
+    /* SEÇÃO 1: HERO */
+    .hero {
+      padding: 6rem 0 5rem 0; /* Mais respiro no topo */
+      text-align: center;
+    }
+    .hero h1 {
+      font-size: 3.5rem;
+      font-weight: 800;
+      color: var(--text-primary);
+      line-height: 1.2;
+      margin-bottom: 1rem;
+    }
+    .hero h1 span {
+      background: var(--gradient-text);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      text-fill-color: transparent;
+      display: block; /* "Social Media" fica embaixo */
+    }
+    .hero .tagline {
+      font-size: 1.3rem;
+      color: var(--text-secondary);
+      font-weight: 400;
+      margin-bottom: 2.5rem;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* SEÇÃO 2: "QUEM SOU EU?" (SOBRE) */
+    .about {
+      padding: 4rem 0;
+    }
+    .about-card {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 3rem;
+      background: var(--card-bg);
+      border-radius: 16px;
+      padding: 3rem;
+      border: 1px solid var(--border-light);
+    }
+    .about-image {
+      flex-basis: 250px;
+      height: 250px;
+      border-radius: 50%;
+      background: var(--background-light);
+      border: 3px solid var(--primary-color);
+      box-shadow: 0 0 25px rgba(214, 0, 255, 0.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 5rem;
+      color: var(--primary-color);
+      /* ADICIONE SUA FOTO AQUI */
+      /* background-image: url('URL_DA_SUA_FOTO_AQUI'); */
+      background-size: cover;
+      background-position: center;
+    }
+    .about-text {
+      flex: 1;
+      text-align: left;
+    }
+    .about-text h2 {
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 1rem;
+    }
+    .about-text .highlight {
+      color: var(--primary-color);
+      font-weight: 600;
+    }
+    .about-text p {
+      font-size: 1.1rem;
+      color: var(--text-secondary);
+      margin-bottom: 2rem;
+    }
+
+    /* SEÇÃO 3: "COMO FUNCIONA?" (PROCESSO) */
+    .process {
+      padding: 5rem 0;
+    }
+    .process-steps {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+    }
+    .step {
+      background: var(--card-bg);
+      padding: 2.5rem 2rem;
+      border-radius: 10px;
+      border: 1px solid var(--border-light);
+      border-bottom: 3px solid var(--primary-color);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .step:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    }
+    .step-icon {
+      font-size: 2.5rem;
+      color: var(--primary-color);
+      margin-bottom: 1.5rem;
+    }
+    .step h3 {
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-bottom: 0.5rem;
+    }
+    .step p {
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+    }
+
+    /* SEÇÃO 4: OFERTA PRINCIPAL (PLANOS) */
+    .main-offer {
+      padding-top: 5rem; /* Espaço para a âncora #planos */
+    }
+    .scarcity-box {
+      text-align: center; 
+      margin-bottom: 4rem; 
+      border: 2px dashed var(--primary-color); 
+      padding: 2rem; 
+      border-radius: 10px; 
+      background-color: rgba(31, 31, 53, 0.7);
+    }
+    .scarcity-box h2 {
+      font-size: 2rem; 
+      color: var(--primary-color); 
+      font-weight: 700; 
+      margin-bottom: 0.5rem; 
+      text-transform: uppercase; 
+      letter-spacing: 1px;
+    }
+    .scarcity-box p {
+      font-size: 1.1rem; 
+      color: var(--text-secondary); 
+      margin-bottom: 0;
+    }
+    .scarcity-box .highlight {
+      font-size: 1.1rem; 
+      color: var(--text-primary); 
+      font-weight: 500; 
+      margin-top: 1rem;
+    }
+
+    /* SEÇÃO 5: OFERTA SECUNDÁRIA (AVULSOS) */
+    .secondary-offer {
+      padding-top: 5rem;
+    }
+    
+    /* SEÇÃO 6: CTA FINAL (FECHAMENTO) */
+    .final-cta {
+      padding: 3.5rem;
+      margin-top: 5rem;
+      background: var(--card-bg);
+      border-radius: 16px;
+      border: 1px solid var(--border-light);
+      border-top: 4px solid var(--primary-color);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    }
+    .final-cta h2 {
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 0.5rem;
+    }
+    .final-cta p {
+      font-size: 1.1rem;
+      color: var(--text-secondary);
+      max-width: 600px;
+      margin: 0 auto 2rem auto;
+    }
+    
+    /* -----------------------------------
+       3. ESTILOS DOS CARDS (PLANOS)
+    ----------------------------------- */
+    
+    .planos-container { 
+      display: grid; 
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+      gap: 2rem; 
+      justify-content: center; 
+      margin-bottom: 3rem; 
+    }
+    
+    .plano { 
+      background: var(--card-bg); 
+      border: 1px solid var(--border-light); 
+      border-radius: 16px; 
+      padding: 2.5rem 2rem; 
+      transition: all 0.4s ease; 
+      position: relative; 
+      overflow: hidden; 
+      display: flex; 
+      flex-direction: column; 
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); 
+    }
+    .plano:hover { 
+      transform: translateY(-8px) scale(1.02); 
+      border-color: var(--primary-color); 
+      box-shadow: 0 15px 30px rgba(214, 0, 255, 0.25); 
+    }
+    
+    .plano h3 {
+      color: var(--primary-color);
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .plano h3 .gradient-text {
+      background: var(--gradient-text);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      text-fill-color: transparent;
+    }
+    
+    /* Lista de Benefícios (UX) */
+    .features-list {
+      list-style: none;
+      padding-left: 0;
+      text-align: left;
+      margin-top: 1.5rem;
+      margin-bottom: 1.5rem;
+      min-height: 140px; 
+      flex-grow: 1; /* Faz a lista crescer */
+    }
+    .features-list li {
+      position: relative;
+      padding-left: 1.8em; 
+      margin-bottom: 0.8rem;
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+      line-height: 1.5;
+    }
+    .features-list li::before {
+      content: '✔'; 
+      position: absolute;
+      left: 0;
+      top: 0;
+      color: var(--success-color); 
+      font-weight: bold;
+      font-size: 1.1em;
+    }
+    .features-list li.negative::before {
+      content: '✖';
+      color: var(--primary-hot); 
+    }
+    
+    .plano .description { 
+      color: var(--text-secondary); 
+      font-size: 0.95rem; 
+      line-height: 1.7; 
+      margin-bottom: 1rem; 
+      text-align: center; 
+      font-style: italic;
+    } 
+    
+    .price-container { 
+      margin: 1.5rem 0 0.5rem; 
+      padding: 0.8rem 0; 
+      position: relative; 
+    }
+    
+    .price { 
+      font-size: 3.5rem; 
+      font-weight: 800;
+      color: var(--primary-color);
+      line-height: 1; 
+      margin: 0;
+      text-shadow: 0 0 8px rgba(214, 0, 255, 0.4);
+    }
+    .price-small { 
+      font-size: 2.4rem; 
+      line-height: 1.2;
+    }
+    
+    .pag-info { 
+      font-size: 0.8rem; 
+      color: var(--text-secondary); 
+      margin-bottom: 0.5rem; 
+      font-style: normal; 
+      text-transform: uppercase; 
+      font-weight: 600; 
+      letter-spacing: 0.5px;
+      text-align: center; 
+    }
+    
+    .price-note { 
+      color: var(--text-muted); 
+      font-size: 0.85rem; 
+      margin-bottom: 1.5rem; 
+    }
+    
+    /* Preços "DE/POR" */
+    .preco-antigo {
+      font-size: 1.5rem; 
+      color: var(--text-muted); 
+      text-decoration: line-through; 
+      display: block; 
+      font-weight: 400;
+    }
+    .preco-novo {
+      font-size: 3.2rem; 
+      font-weight: 800;
+      color: var(--primary-color);
+      text-shadow: 0 0 8px rgba(214, 0, 255, 0.4);
+      display: block; 
+    }
+    .economia-aviso {
+      font-size: 1rem; 
+      font-weight: 700;
+      color: var(--primary-hot); 
+      display: block;
+      margin-top: -0.2rem;
+      margin-bottom: 1rem;
+    }
+    
+    /* Botão do Card (CTA) */
+    .btn-whatsapp { 
+      background: var(--gradient-button);
+      background-size: 100% auto;
+      color: var(--secondary-color);
+      box-shadow: 0 4px 20px rgba(214, 0, 255, 0.4);
+      margin-top: auto; /* Alinha o botão no fim do card */
+    }
+    .btn-whatsapp:hover {
+        background-position: right center;
+        color: var(--secondary-color);
+        transform: translateY(-3px) scale(1.02);
+        box-shadow: 0 8px 25px rgba(255, 0, 160, 0.5);
+    }
+    
+    /* Card Popular */
+    .plano.popular { 
+      border: 2px solid var(--primary-color); 
+      transform: scale(1.05); 
+      background: #242440; 
+      box-shadow: 0 0 30px rgba(214, 0, 255, 0.5);
+    }
+    .plano.popular:hover { 
+      transform: translateY(-8px) scale(1.07); 
+      box-shadow: 0 0 45px rgba(214, 0, 255, 0.7);
+    }
+    
+    .plano.popular::before { 
+      content: '✨ MAIS POPULAR ✨'; 
+      position: absolute; 
+      top: 0; 
+      right: 0; 
+      background: var(--primary-color); 
+      color: var(--background-dark); 
+      padding: 0.4rem 1rem; 
+      font-size: 0.8rem; 
+      font-weight: 700; 
+      border-bottom-left-radius: 8px; 
+      border-top-right-radius: 14px; 
+      letter-spacing: 0.5px;
+      animation: pulse-badge 2s infinite;
+    }
+
+    /* -----------------------------------
+       4. BOTÃO FLUTUANTE E RODAPÉ
+    ----------------------------------- */
+
     .whatsapp-float {
         position: fixed;
         width: 60px;
@@ -81,299 +534,50 @@
         transition: transform 0.3s ease;
         text-decoration: none; 
     }
-
     .whatsapp-float:hover {
         transform: scale(1.1) rotate(5deg);
     }
     
-    .payment-info-general {
-        color: var(--text-muted); 
-        font-size: 0.9rem; 
-        font-weight: 500;
-        margin-bottom: 3rem;
-        display: block;
-    }
-    
-    /* Título da seção de Planos (H2) */
-    .planos-section-title {
-        color: var(--primary-color);
-        background: linear-gradient(90deg, var(--primary-color), var(--primary-hot), var(--primary-color));
-        background-size: 200% auto;
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-        text-fill-color: transparent;
-        animation: gradient-flow 5s linear infinite;
-        
-        font-size: 2.5rem;
-        margin-top: 1rem;
-        margin-bottom: 2.5rem;
-        font-weight: 800;
-        text-transform: uppercase;
-        letter-spacing: 1.5px;
-        position: relative;
-        display: inline-block;
-    }
-    
-    .planos-section-title::after {
-        content: '';
-        position: absolute;
-        left: 50%;
-        transform: translateX(-50%);
-        bottom: -10px;
-        width: 80px;
-        height: 4px;
-        background: var(--primary-color);
-        border-radius: 2px;
-    }
-    
-    /* -----------------------------------
-       NOVOS ESTILOS (UX/UI)
-    ----------------------------------- */
-    
-    /* 1. ESTILO DO HERO SECTION */
-    .hero-section {
+    footer {
         text-align: center;
-        margin-bottom: 3rem;
-        padding: 2rem 0;
-    }
-    .hero-section .logo-text {
-        font-size: 2.5rem;
-        font-weight: 800;
-        color: var(--text-primary);
-        line-height: 1.2;
-    }
-    .hero-section .logo-text span {
-        background: linear-gradient(90deg, var(--primary-color), var(--primary-hot));
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-        text-fill-color: transparent;
-    }
-    .hero-section .tagline {
-        font-size: 1.25rem;
-        color: var(--text-secondary);
-        font-weight: 400;
-        margin-top: 0.5rem;
+        padding-top: 2rem;
+        margin-top: 2rem;
+        border-top: 1px solid var(--border-light);
+        color: var(--text-muted);
+        font-size: 0.9rem;
     }
 
-    /* 2. ESTILO DA CAIXA DE ESCASSEZ */
-    .scarcity-box {
-        text-align: center; 
-        margin-bottom: 4rem; 
-        border: 2px dashed var(--primary-color); 
-        padding: 1.5rem; 
-        border-radius: 10px; 
-        background-color: rgba(31, 31, 53, 0.7);
-    }
-    .scarcity-box h2 {
-        font-size: 2rem; 
-        color: var(--primary-color); 
-        font-weight: 700; 
-        margin-bottom: 0.5rem; 
-        text-transform: uppercase; 
-        letter-spacing: 1px;
-    }
-    .scarcity-box p {
-        font-size: 1.1rem; 
-        color: var(--text-secondary); 
-        margin-bottom: 0; /* Removido margin-bottom */
-    }
-    .scarcity-box .highlight {
-        font-size: 1.1rem; 
-        color: var(--text-primary); 
-        font-weight: 500; 
-        margin-top: 1rem; /* Adicionado margin-top */
-    }
-
-    /* 3. ESTILO DA LISTA DE BENEFÍCIOS */
-    .features-list {
-        list-style: none;
-        padding-left: 0;
-        text-align: left;
-        margin-top: 1.5rem;
-        margin-bottom: 1.5rem;
-        min-height: 140px; /* Ajuda a alinhar os botões */
-    }
-    .features-list li {
-        position: relative;
-        padding-left: 1.8em; /* Espaço para o ícone */
-        margin-bottom: 0.8rem; /* Mais espaçamento */
-        font-size: 0.95rem;
-        color: var(--text-secondary);
-        line-height: 1.5;
-    }
-    .features-list li::before {
-        content: '✔'; /* Check padrão */
-        position: absolute;
-        left: 0;
-        top: 0;
-        color: var(--success-color); /* Verde */
-        font-weight: bold;
-        font-size: 1.1em;
-    }
-    .features-list li.negative::before {
-        content: '✖';
-        color: var(--primary-hot); /* Pink/Vermelho */
-    }
-    
-    /* 4. SEÇÃO "SOBRE MIM" */
-    .about-section {
-        text-align: center;
-        padding: 3rem 1rem;
-        background: var(--card-bg);
-        border-radius: 16px;
-        margin-top: 4rem;
-        border: 1px solid var(--border-light);
-    }
-    .about-section h2 {
-        font-size: 2rem;
-        font-weight: 700;
-        color: var(--primary-color);
-        margin-bottom: 1rem;
-    }
-    .about-section p {
-        font-size: 1.1rem;
-        color: var(--text-secondary);
-        max-width: 650px;
-        margin: 0 auto 1.5rem auto;
-    }
     /* -----------------------------------
-       FIM DOS NOVOS ESTILOS
+       5. RESPONSIVIDADE (MOBILE)
     ----------------------------------- */
-
-
-    /* ESTILOS DE PLANOS E PREÇOS */
-    .planos-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; justify-content: center; margin-bottom: 3rem; }
-    .plano { background: var(--card-bg); border: 1px solid var(--border-light); border-radius: 16px; padding: 2.5rem 2rem; transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94); position: relative; overflow: hidden; display: flex; flex-direction: column; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); }
-    .plano:hover { transform: translateY(-8px) scale(1.02); border-color: var(--primary-color); box-shadow: 0 15px 30px rgba(214, 0, 255, 0.25), 0 4px 15px rgba(0, 0, 0, 0.5); }
-    
-    .plano h3 {
-        color: var(--primary-color);
-        font-size: 1.5rem;
-        margin-bottom: 1rem; /* Diminuído */
-        font-weight: 700;
-        letter-spacing: 0.5px;
-        display: flex;
-        align-items: center;
-        gap: 0.5rem;
-    }
-    
-    .plano h3 .gradient-text {
-        background: linear-gradient(90deg, var(--primary-hot), var(--primary-color));
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-        text-fill-color: transparent;
-    }
-    
-    /* .plano p (agora é a descrição final) */
-    .plano p { color: var(--text-secondary); font-size: 0.95rem; line-height: 1.7; margin-bottom: 1rem; text-align: center; } 
-    .price-container { margin: 1.5rem 0 0.5rem; padding: 0.8rem 0; position: relative; }
-    
-    .price { 
-        font-size: 3.5rem; 
-        font-weight: 800;
-        color: var(--primary-color);
-        line-height: 1; 
-        margin: 0;
-        text-shadow: 0 0 8px rgba(214, 0, 255, 0.4);
-    }
-    
-    .price-small { 
-        font-size: 2.4rem; 
-        line-height: 1.2;
-    }
-    
-    .pag-info { 
-        font-size: 0.8rem; 
-        color: var(--text-secondary); 
-        margin-bottom: 0.5rem; 
-        font-style: normal; 
-        text-transform: uppercase; 
-        font-weight: 600; 
-        letter-spacing: 0.5px;
-        text-align: center; 
-    }
-    
-    .price-note { color: var(--text-muted); font-size: 0.85rem; margin-bottom: 1.5rem; }
-    
-    /* BOTÃO WHATSAPP (AJUSTADO COM ÍCONE) */
-    .btn-whatsapp { 
-        display: inline-flex; /* MUDADO */
-        align-items: center;  /* NOVO */
-        justify-content: center; /* NOVO */
-        gap: 0.75rem; /* NOVO (espaço entre ícone e texto) */
-        
-        background: linear-gradient(90deg, var(--primary-color) 0%, var(--primary-hot) 100%);
-        background-size: 100% auto;
-        color: var(--secondary-color);
-        padding: 0.9rem 2.2rem; 
-        border-radius: 30px; 
-        text-decoration: none; 
-        transition: all 0.4s ease; 
-        font-weight: 700; 
-        border: none;
-        margin-top: auto; 
-        position: relative; 
-        overflow: hidden; 
-        font-size: 1rem; 
-        box-shadow: 0 4px 20px rgba(214, 0, 255, 0.4);
-    }
-    .btn-whatsapp:hover { 
-        background-position: right center;
-        color: var(--secondary-color);
-        transform: translateY(-3px) scale(1.02); /* NOVO (scale) */
-        box-shadow: 0 8px 25px rgba(255, 0, 160, 0.5);
-        letter-spacing: 0.5px; /* NOVO */
-    }
-    .btn-whatsapp i {
-        font-size: 1.2rem; /* Tamanho do ícone */
-    }
-    
-    /* CARD POPULAR */
-    .plano.popular { 
-        border: 2px solid var(--primary-color); 
-        transform: scale(1.05); 
-        background: #242440; 
-        box-shadow: 0 0 30px rgba(214, 0, 255, 0.5), 0 0 15px rgba(214, 0, 255, 0.3) inset;
-    }
-    .plano.popular:hover { 
-        transform: translateY(-8px) scale(1.07); 
-        box-shadow: 0 0 45px rgba(214, 0, 255, 0.7), 0 0 20px rgba(214, 0, 255, 0.4) inset;
-    }
-    
-    .plano.popular::before { 
-        content: '✨ MAIS POPULAR ✨'; 
-        position: absolute; 
-        top: 0; 
-        right: 0; 
-        background: var(--primary-color); 
-        color: var(--background-dark); 
-        padding: 0.4rem 1rem; 
-        font-size: 0.8rem; 
-        font-weight: 700; 
-        border-bottom-left-radius: 8px; 
-        border-top-right-radius: 14px; 
-        letter-spacing: 0.5px;
-        animation: pulse-badge 2s infinite;
-    }
-
-
-    /* RESPONSIVIDADE (MOBILE) */
     @media (max-width: 768px) {
-      main {
-        padding-top: 2rem; 
+      .hero { padding: 4rem 0 3rem 0; }
+      .hero h1 { font-size: 2.5rem; }
+      .hero .tagline { font-size: 1.1rem; }
+
+      .about-card {
+        flex-direction: column;
+        padding: 2rem;
+        gap: 2rem;
       }
-      .hero-section .logo-text { font-size: 2rem; }
-      .hero-section .tagline { font-size: 1.1rem; }
-      .scarcity-box h2 { font-size: 1.5rem; }
-      .scarcity-box p, .scarcity-box .highlight { font-size: 1rem; }
+      .about-image {
+        flex-basis: 200px;
+        width: 200px;
+        height: 200px;
+        font-size: 4rem;
+      }
+      .about-text { text-align: center; }
+
+      .process-steps { grid-template-columns: 1fr; }
 
       .plano.popular { transform: scale(1.02); } 
       .plano.popular:hover { transform: scale(1.05); }
       
-      .features-list { min-height: auto; } /* Remove altura fixa no mobile */
+      .features-list { min-height: auto; }
+      
+      .final-cta { padding: 2.5rem 1.5rem; }
+      .final-cta h2 { font-size: 1.5rem; }
+      .final-cta p { font-size: 1rem; }
       
       .whatsapp-float {
         width: 50px;
@@ -384,7 +588,9 @@
       }
     }
     
-    /* ANIMAÇÕES */
+    /* -----------------------------------
+       6. ANIMAÇÕES
+    ----------------------------------- */
     @keyframes pulse-badge {
       0% { transform: scale(1); box-shadow: 0 0 5px rgba(214, 0, 255, 0.5); }
       50% { transform: scale(1.05); box-shadow: 0 0 15px rgba(214, 0, 255, 0.8); }
@@ -397,39 +603,6 @@
       100% { background-position: 0% 50%; }
     }
     
-    /* ESTILOS DO PREÇO "DE/POR" */
-    .preco-antigo {
-      font-size: 1.5rem; 
-      color: var(--text-muted); 
-      text-decoration: line-through; 
-      display: block; 
-      font-weight: 400;
-    }
-
-    .preco-novo {
-      font-size: 3.2rem; 
-      font-weight: 800;
-      color: var(--primary-color);
-      text-shadow: 0 0 8px rgba(214, 0, 255, 0.4);
-      display: block; 
-    }
-    
-    .price-small .preco-antigo {
-        font-size: 1.3rem;
-    }
-    .price-small .preco-novo {
-        font-size: 2.2rem; 
-    }
-
-    .economia-aviso {
-      font-size: 1rem; 
-      font-weight: 700;
-      color: var(--primary-hot); 
-      display: block;
-      margin-top: -0.2rem;
-      margin-bottom: 1rem;
-    }
-    
   </style>
 </head>
 <body id="top">
@@ -440,140 +613,84 @@
 
   <main class="container">
   
-    <section class="hero-section">
-      <h1 class="logo-text">Kállita Prado<br><span>Social Media</span></h1>
-      <p class="tagline">Transformando sua presença online com estratégia e design.</p>
+    <section class="hero">
+      <h1>Kállita Prado <span>Social Media</span></h1>
+      <p class="tagline">Transformando sua presença online com estratégia e design que convertem.</p>
+      <a href="#planos" class="btn btn-primary">
+        <i class="fas fa-arrow-down"></i> VER PLANOS E VALORES
+      </a>
     </section>
-    
-    <div class="scarcity-box">
+
+    <section class="about">
+      <div class="about-card">
+        
+        <div class="about-image">
+           </div>
+
+        <div class="about-text">
+          <h2>Olá! Eu sou a Kállita Prado.</h2>
+          <p>
+            Sou <span class="highlight">especialista em engajamento e identidade visual</span>, e minha missão é ajudar marcas como a sua a se destacarem no digital. 
+            Mais do que "fazer posts", eu crio conexões verdadeiras que transformam seguidores em clientes fiéis.
+          </p>
+          <a href="https://www.instagram.com/akallitaprado/" target="_blank" class="btn btn-secondary">
+            <i class="fab fa-instagram"></i> Conheça meu trabalho
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="process">
+      <h2 class="section-title">Como Funciona?</h2>
+      <div class="process-steps">
+        <div class="step">
+          <div class="step-icon"><i class="fas fa-comments"></i></div>
+          <h3>1. Alinhamento</h3>
+          <p>Você me chama no WhatsApp, me conta seu objetivo e definimos o melhor plano para sua marca.</p>
+        </div>
+        <div class="step">
+          <div class="step-icon"><i class="fas fa-lightbulb"></i></div>
+          <h3>2. Estratégia</h3>
+          <p>Eu estudo seu público, defino o tom de voz e monto um calendário de conteúdo estratégico e personalizado.</p>
+        </div>
+        <div class="step">
+          <div class="step-icon"><i class="fas fa-rocket"></i></div>
+          <h3>3. A Mágica</h3>
+          <p>Você relaxa enquanto eu cuido de tudo: da criação dos posts até o engajamento com seu público.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="planos" class="main-offer">
+      
+      <div class="scarcity-box">
         <h2>🚨 ÚLTIMOS MESES! 🚨</h2>
         <p>Esses são os <strong>ÚLTIMOS MESES</strong> para garantir seu pacote com <strong>DESCONTOS IMPERDÍVEIS</strong>.<br>Em 1º de Janeiro, os preços serão reajustados!</p>
         <p class="highlight">Não comece 2026 pagando mais caro. <strong>Trave seu desconto AGORA!</strong></p>
-    </div>
-    
-    
-    <h2 class="planos-section-title">Gerenciamento de Redes Sociais</h2>
-    <p class="payment-info-general">
-        💳 Formas de Pagamento: Pix, Boleto ou Cartão de Crédito (até 3x com juros).
-    </p>
-
-    <div class="planos-container">
-      
-      <div class="plano">
-        <h3>🚀 <span class="gradient-text">Plano Básico</span></h3>
-        <ul class="features-list">
-          <li>2 postagens por semana (8/mês)</li>
-          <li>Posts estáticos de conteúdo</li>
-          <li class="negative">Não inclui carrossel ou edição de vídeo</li>
-        </ul>
-        <div class="price-container">
-          <div class="price"> 
-            <span class="preco-antigo">DE R$ 308,00/mês</span>
-            <span class="preco-novo">POR R$ 200,00/mês</span>
-          </div>
-          <span class="economia-aviso">Aprox. 35% OFF!</span>
-        </div>
-        <p class="pag-info">Pagamento Mensal</p>
-        <p class="price-note">Ou até 3x no cartão*</p>
-        <p>⭐ Ideal para quem está começando e quer manter <strong>presença constante</strong>.</p>
-        <a class="btn-whatsapp" href="https://wa.me/5519999005784?text=Quero%20contratar%20o%20Plano%20Básico%20(R$200)!" target="_blank" aria-label="Contratar Plano Básico">
-          <i class="fab fa-whatsapp"></i> CONTRATAR AGORA
-        </a>
       </div>
 
-      <div class="plano">
-        <h3>📈 <span class="gradient-text">Plano Intermediário</span></h3>
-        <ul class="features-list">
-          <li>3 postagens por semana (12/mês)</li>
-          <li>Posts táticos e estratégicos</li>
-          <li class="negative">Não inclui carrossel ou edição de vídeo</li>
-        </ul>
-        <div class="price-container">
-          <div class="price">
-            <span class="preco-antigo">DE R$ 415,00/mês</span>
-            <span class="preco-novo">POR R$ 270,00/mês</span>
-          </div>
-          <span class="economia-aviso">Aprox. 35% OFF!</span>
-        </div>
-        <p class="pag-info">Pagamento Mensal</p>
-        <p class="price-note">Ou até 3x no cartão*</p>
-        <p>🔥 Perfeito para aumentar o <strong>engajamento e fortalecer</strong> o posicionamento.</p>
-        <a class="btn-whatsapp" href="https://wa.me/5519999005784?text=Quero%20contratar%20o%20Plano%20Intermediário%20(R$270)!" target="_blank" aria-label="Contratar Plano Intermediário">
-          <i class="fab fa-whatsapp"></i> CONTRATAR AGORA
-        </a>
-      </div>
-      
-      <div class="plano">
-        <h3>💎 <span class="gradient-text">Plano Plus</span></h3>
-        <ul class="features-list">
-          <li>4 postagens por semana (16/mês)</li>
-          <li>3 posts estáticos + 1 <strong>Carrossel</strong> por semana</li>
-          <li class="negative">Não inclui edição de vídeo</li>
-        </ul>
-        <div class="price-container">
-          <div class="price">
-            <span class="preco-antigo">DE R$ 492,00/mês</span>
-            <span class="preco-novo">POR R$ 320,00/mês</span>
-          </div>
-          <span class="economia-aviso">Aprox. 35% OFF!</span>
-        </div>
-        <p class="pag-info">Pagamento Mensal</p>
-        <p class="price-note">Ou até 3x no cartão*</p>
-        <p>🥇 Conteúdo narrativo para <strong>posicionar sua marca</strong> com consistência.</p>
-        <a class="btn-whatsapp" href="https://wa.me/5519999005784?text=Quero%20contratar%20o%20Plano%20Plus%20(R$320)!" target="_blank" aria-label="Contratar Plano Plus">
-          <i class="fab fa-whatsapp"></i> CONTRATAR AGORA
-        </a>
-      </div>
+      <h2 class="section-title">Gerenciamento de Redes Sociais</h2>
+      <p class="payment-info-general">
+          💳 Formas de Pagamento: Pix, Boleto ou Cartão de Crédito (até 3x com juros).
+      </p>
 
-      <div class="plano popular">
-        <h3>👑 <span class="gradient-text">Plano Premium</span></h3>
-        <ul class="features-list">
-          <li>4 postagens por semana (16/mês)</li>
-          <li>2 posts estáticos + 2 <strong>Carrosséis</strong> por semana</li>
-          <li>Envio de <strong>roteiros e ideias</strong> para Reels</li>
-          <li class="negative">Não inclui edição de vídeo</li>
-        </ul>
-        <div class="price-container">
-          <div class="price">
-            <span class="preco-antigo">DE R$ 598,00/mês</span>
-            <span class="preco-novo">POR R$ 389,00/mês</span>
+      <div class="planos-container">
+        
+        <div class="plano">
+          <h3>🚀 <span class="gradient-text">Plano Básico</span></h3>
+          <ul class="features-list">
+            <li>2 postagens por semana (8/mês)</li>
+            <li>Posts estáticos de conteúdo</li>
+            <li class="negative">Não inclui carrossel ou edição de vídeo</li>
+          </ul>
+          <div class="price-container">
+            <div class="price"> 
+              <span class="preco-antigo">DE R$ 308,00/mês</span>
+              <span class="preco-novo">POR R$ 200,00/mês</span>
+            </div>
+            <span class="economia-aviso">Aprox. 35% OFF!</span>
           </div>
-          <span class="economia-aviso">Aprox. 35% OFF!</span>
-        </div>
-        <p class="pag-info">Pagamento Mensal</p>
-        <p class="price-note">Ou até 3x no cartão*</p>
-        <p>✨ Conteúdo completo! Envio <strong>roteiros estratégicos</strong> para você gravar seus Reels.</p>
-        <a class="btn-whatsapp" href="https://wa.me/5519999005784?text=Quero%20contratar%20o%20Plano%20Premium%20(R$389)!" target="_blank" aria-label="Contratar Plano Premium">
-          <i class="fab fa-whatsapp"></i> CONTRATAR AGORA
-        </a>
-      </div>
-
-      <div class="plano popular">
-        <h3>🎬 <span class="gradient-text">Premium + Vídeos</span></h3>
-        <ul class="features-list">
-          <li>4 postagens por semana (16/mês)</li>
-          <li>2 posts + 2 <strong>Carrosséis</strong> por semana</li>
-          <li>Roteiro estratégico + <strong>Edição inclusa</strong></li>
-        </ul>
-        <div class="price-container">
-          <div class="price">
-            <span class="preco-antigo">DE R$ 752,00/mês</span>
-            <span class="preco-novo">POR R$ 489,00/mês</span>
-          </div>
-          <span class="economia-aviso">Aprox. 35% OFF!</span>
-        </div>
-        <p class="pag-info">Pagamento Mensal</p>
-        <p class="price-note">Ou até 3x no cartão*</p>
-        <p>🚀 Gerenciamento completo! Você envia os vídeos e recebe <strong>prontos e legendados</strong>.</p>
-        <a class="btn-whatsapp" href="https://wa.me/5519999005784?text=Quero%20contratar%20o%20Plano%20Premium%20%2B%20Vídeos%20(R$489)!" target="_blank" aria-label="Contratar Plano Premium + Vídeos">
-          <i class="fab fa-whatsapp"></i> CONTRATAR AGORA
-        </a>
-      </div>
-    </div>
-    
-    <h2 class="planos-section-title">Serviços Avulsos</h2>
-
-    <div class="planos-container">
-
-      <div class="plano">
-        <h3>🎨 <span class="gradie
+          <p class="pag-info">Pagamento Mensal</p>
+          <p class="price-note">Ou até 3x no cartão*</p>
+          <p class="description">⭐ Ideal para quem está começando e quer manter <strong>presença constante</strong>.</p>
+          <a class="btn btn-whatsapp" href="https://wa.me/5519999005784?text=Quero%20c
