@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kállita Prado | 🔥 BLACK FRIDAY - Ofertas Imperdíveis!</title>
+    <title>Kállita Prado | 🔥 BLACK FRIDAY - 20% OFF!</title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -11,8 +11,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> 
     
     <style>
-        /* --- [ CONFIGURAÇÕES GLOBAIS - TEMA "VERMELHO BLACK FRIDAY" V9.1 ] --- */
+        /* --- [ CONFIGURAÇÕES GLOBAIS - TEMA "VERMELHO BLACK FRIDAY" V9.2 ] --- */
         :root {
+            /* ATUALIZAÇÃO: Paleta Vermelha Vibrante */
             --cor-destaque: #E63946; /* Vermelho Black Friday */
             --cor-destaque-hover: #D62828; /* Vermelho mais escuro para hover */
             --cor-destaque-claro: #FF5C5C; /* Vermelho mais claro para detalhes */
@@ -470,72 +471,15 @@
             animation: bounceIn 1s ease-out forwards;
         }
 
-        /* --- [ SEÇÃO: PROCESSO (RISCO ZERO) ] --- */
-        .processo {
+        /* --- [ NOVA SEÇÃO: PAGAMENTO FACILITADO (SUBSTITUI RISCO ZERO) ] --- */
+        .pagamento-facilitado {
             background-color: var(--cor-fundo-secao);
             padding-top: 80px;
             padding-bottom: 80px;
         }
-        .processo h2 {
-            color: var(--cor-texto-claro);
-        }
-        .fases-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 40px;
-            margin-top: 50px;
-            justify-content: center;
-        }
-        .fase {
-            flex: 1;
-            min-width: 300px;
-            max-width: 45%; 
-            background-color: var(--cor-fundo-card);
-            padding: 30px;
-            border-radius: 12px;
-            border: 1px solid var(--cor-borda-card);
-            box-shadow: var(--sombra-leve);
-            transition: transform 0.3s ease;
-        }
-        .fase:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--sombra-media);
-        }
-        .fase h3 {
-            border-bottom: 3px solid var(--cor-destaque); /* Vermelho */
-            padding-bottom: 10px;
-            display: inline-block;
-            color: var(--cor-texto-claro);
-        }
-        .fase ul {
-            list-style: none; /* Remove bullet points padrão */
-            padding: 0;
-            margin-top: 20px;
-        }
-        .fase ul li {
-            position: relative;
-            padding-left: 25px;
-            margin-bottom: 10px;
-            font-size: 1rem;
-            color: var(--cor-texto-principal);
-        }
-        .fase ul li::before {
-            font-family: "Font Awesome 5 Free";
-            content: "\f058"; /* Ícone de círculo com check */
-            font-weight: 900;
-            color: var(--cor-destaque-claro); /* Vermelho Claro */
-            position: absolute;
-            left: 0;
-            top: 2px;
-            font-size: 0.95rem;
-        }
-        .fase ul strong {
-            font-weight: 700; /* Negrito nos strongs da lista */
-            color: var(--cor-texto-claro);
-        }
-        
-        .garantia-extra {
-            margin-top: 60px;
+        .pagamento-facilitado .container-interno {
+            max-width: 800px;
+            margin: 0 auto;
             background-color: var(--cor-fundo-card);
             padding: 40px;
             border-radius: 12px;
@@ -543,19 +487,40 @@
             box-shadow: var(--sombra-leve);
             text-align: center;
         }
-        .garantia-extra h3 {
-            color: var(--cor-destaque); /* Vermelho */
-            font-size: 1.6rem;
-            margin-bottom: 20px;
+        .pagamento-facilitado h2 {
+            color: var(--cor-texto-claro);
         }
-        .garantia-extra p {
+        .pagamento-facilitado h2::after {
+            background-color: var(--cor-destaque); /* Vermelho */
+        }
+        .pagamento-facilitado p {
             font-size: 1.1rem;
-            margin-bottom: 15px;
             color: var(--cor-texto-secundaria);
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
         }
-        .garantia-extra p strong { /* Strong dentro da garantia extra */
-            color: var(--cor-destaque); /* Vermelho */
+        .pagamento-facilitado p strong {
+            color: var(--cor-destaque-claro); /* Vermelho Claro */
             font-weight: 700;
+        }
+        .pagamento-facilitado .etapas-pagamento {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            margin-top: 30px;
+        }
+        .etapas-pagamento .etapa {
+            flex-basis: 45%;
+        }
+        .etapas-pagamento .etapa h3 {
+            color: var(--cor-destaque);
+            font-size: 1.3rem;
+        }
+        @media (max-width: 600px) {
+            .pagamento-facilitado .etapas-pagamento {
+                flex-direction: column;
+            }
         }
         
         /* --- [ SEÇÃO: MÉTODO DE TRABALHO ] --- */
@@ -988,7 +953,7 @@
                 </ul>
                 <div class="preco-antigo">De R$ 250,00</div>
                 <div class="preco">R$ 200,00 <span>/mês</span></div>
-                <p class="nota-blackfriday">*Valor promocional válido até Jan/26. Após, o valor retorna para R$ 250,00/mês.</p>
+                <p class="nota-blackfriday">*Valor promocional válido para os 3 primeiros meses (Dez/25 a Fev/26). Após, o valor retorna para R$ 250,00/mês.</p>
                 <a href="https://api.whatsapp.com/send?phone=5519999005784&text=Ol%C3%A1%2C%20K%C3%A1llita%2C%20quero%20o%20Plano%20Prata%20com%2020%25%20OFF%20da%20Black%20Friday!" target="_blank" class="btn btn-principal">Garantir 20% OFF!</a>
             </div>
 
@@ -1003,7 +968,7 @@
                 </ul>
                 <div class="preco-antigo">De R$ 320,00</div>
                 <div class="preco">R$ 288,00 <span>/mês</span></div>
-                <p class="nota-blackfriday">*Valor promocional válido até  Jan/26. Após, o valor retorna para R$ 320,00/mês.</p>
+                <p class="nota-blackfriday">*Valor promocional válido para os 3 primeiros meses (Dez/25 a Fev/26). Após, o valor retorna para R$ 320,00/mês.</p>
                 <a href="https://api.whatsapp.com/send?phone=5519999005784&text=Ol%C3%A1%2C%20K%C3%A1llita%2C%20quero%20o%20Plano%20Ouro%20com%2010%25%20OFF%20da%20Black%20Friday!" target="_blank" class="btn btn-principal">Garantir 10% OFF!</a>
             </div>
         </div>
@@ -1024,35 +989,24 @@
     </header>
 
     
-    <section class="processo container">
-        <h2>🔒 Sua Decisão, Sem Riscos.</h2>
-        <p style="text-align: center; max-width: 800px; margin: -20px auto 0 auto;">Transparência e segurança são a base da nossa parceria. Entenda como funciona:</p>
-
-        <div class="fases-container">
-            <div class="fase">
-                <h3>✨ Fase de Teste (Primeiro Mês)</h3>
-                <p>Conheça meu trabalho e comprove a qualidade antes de se comprometer.</p>
-                <ul>
-                    <li><i class="fas fa-check-circle"></i> <strong>Sinal (50%):</strong> Na contratação, para iniciar o planejamento e criação.</li>
-                    <li><i class="fas fa-check-circle"></i> <strong>Pagamento Restante (50%):</strong> 15 dias após o sinal, para a conclusão do mês.</li>
-                </ul>
-            </div>
-            <div class="fase">
-                <h3>🤝 Fase Contínua (Parceria Consolidada)</h3>
-                <p>Com a confiança estabelecida, seguimos a parceria para o sucesso.</p>
-                <ul>
-                    <li><i class="fas fa-check-circle"></i> <strong>Pagamento integral (100%)</strong> até o dia 5 de cada mês.</li>
-                    <li><i class="fas fa-check-circle"></i> <strong>Garante continuidade</strong> da estratégia e sua vaga prioritária.</li>
-                </ul>
-            </div>
-        </div>
-
-        <div class="garantia-extra">
-            <h3>💬 Preocupado(a) em não querer continuar?</h3>
-            <p>Sua satisfação é primordial. Se, por qualquer motivo, você decidir não prosseguir após a fase de teste, basta não realizar o segundo pagamento.</p>
-            <p style="color: var(--cor-destaque); font-weight: 700;">O serviço é interrompido automaticamente, <strong>sem multas ou burocracia.</strong> Simples assim.</p>
+    <section class="pagamento-facilitado container">
+        <div class="container-interno">
+            <h2>💳 Pagamento Facilitado (Especial Black Friday)</h2>
+            <p>Para garantir sua vaga com o desconto de Black Friday, o contrato é referente ao período de <strong>3 meses</strong> (Dezembro/25 a Fevereiro/26).</p>
+            <p>Para facilitar sua entrada imediata, o pagamento do <strong>primeiro mês</strong> será dividido:</p>
             
-            <h3 style="margin-top: 30px;">💳 Métodos de Pagamento Flexíveis</h3>
+            <div class="etapas-pagamento">
+                <div class="etapa">
+                    <h3>✨ Sinal (50%)</h3>
+                    <p>Na contratação (para garantir sua vaga limitada).</p>
+                </div>
+                <div class="etapa">
+                    <h3>✨ Restante (50%)</h3>
+                    <p>15 dias após o sinal.</p>
+                </div>
+            </div>
+            
+            <h3 style="margin-top: 30px;">💳 Métodos de Pagamento</h3>
             <p style="margin-bottom: 0;"><strong>PIX</strong> (Pagamento à vista) <br>
                <strong>Cartão de Crédito</strong> (em até 3x pelo Mercado Pago, com juros da operadora)</p>
         </div>
