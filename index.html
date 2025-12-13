@@ -13,12 +13,10 @@
 
   <style>
     :root{
-      /* Destaque (rosa vermelha / vinho) */
       --accent: #C1121F;
       --accent2: #8A0F16;
       --accentSoft: #F28B82;
 
-      /* Base (verde profundo + areia) */
       --bg: #0B1510;
       --bg2: #102018;
       --card: #16271E;
@@ -51,7 +49,6 @@
       overflow-x:hidden;
     }
 
-    /* textura sutil (sem imagem) */
     body::before{
       content:"";
       position:fixed;
@@ -75,7 +72,7 @@
       padding: 84px 22px;
     }
 
-    /* Top bar (não fixa) */
+    /* Topbar (não fixa) */
     .topbar{
       max-width: var(--max);
       margin: 22px auto 0 auto;
@@ -167,7 +164,7 @@
       color: var(--muted);
       font-size: 1.08rem;
       margin-bottom: 14px;
-      max-width: 52ch;
+      max-width: 58ch;
     }
 
     .hero-cta{
@@ -307,13 +304,14 @@
       background: linear-gradient(90deg, rgba(193,18,31,0), rgba(193,18,31,1), rgba(242,139,130,0.9), rgba(193,18,31,0));
     }
 
-    /* Plans */
+    /* sections bg */
     .section{
       background: linear-gradient(180deg, rgba(16,32,24,0.45), rgba(16,32,24,0.18));
       border-top: 1px solid rgba(43,59,49,0.5);
       border-bottom: 1px solid rgba(43,59,49,0.5);
     }
 
+    /* grids */
     .grid{
       display:grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -321,7 +319,14 @@
       align-items: stretch;
       margin-top: 28px;
     }
+    .grid3{
+      display:grid;
+      grid-template-columns: repeat(2, minmax(0,1fr));
+      gap: 22px;
+      margin-top: 28px;
+    }
 
+    /* cards */
     .card{
       background: rgba(22,39,30,0.78);
       border: 1px solid rgba(43,59,49,0.9);
@@ -343,6 +348,7 @@
       justify-content:space-between;
       gap: 12px;
       margin-bottom: 10px;
+      flex-wrap: wrap;
     }
     .pill{
       display:inline-flex;
@@ -407,7 +413,6 @@
       font-weight: 700;
       color: var(--muted);
     }
-
     .card .cta{
       margin-top: 16px;
       width: 100%;
@@ -440,17 +445,8 @@
       font-weight: 900;
       font-size: 0.92rem;
     }
-    .tag i{color: var(--white);}
 
-    /* Avulsos */
-    .grid3{
-      display:grid;
-      grid-template-columns: repeat(2, minmax(0,1fr));
-      gap: 22px;
-      margin-top: 28px;
-    }
-
-    /* Process */
+    /* Steps */
     .steps{
       display:grid;
       grid-template-columns: repeat(3, minmax(0,1fr));
@@ -464,8 +460,6 @@
       padding: 18px;
       box-shadow: var(--shadowSoft);
       transition: transform .2s ease, border-color .2s ease;
-      position:relative;
-      overflow:hidden;
     }
     .step:hover{
       transform: translateY(-3px);
@@ -521,6 +515,7 @@
       display:flex;
       align-items:center;
       gap: 10px;
+      flex-wrap: wrap;
     }
     .stars{color: #F2E8CF; opacity: .9; font-size:0.95rem;}
     .who .bubble{
@@ -529,6 +524,11 @@
       border: 1px solid rgba(214,199,168,0.18);
       display:flex;align-items:center;justify-content:center;
       color: var(--accentSoft);
+    }
+    .role{
+      color: var(--muted);
+      font-weight: 700;
+      font-size: 0.95rem;
     }
 
     /* FAQ */
@@ -587,7 +587,7 @@
       margin-bottom: 10px;
     }
     .final p{
-      max-width: 70ch;
+      max-width: 75ch;
       margin: 0 auto 18px auto;
       color: var(--muted);
     }
@@ -631,14 +631,14 @@
     /* Responsive */
     @media (max-width: 980px){
       .hero-grid{grid-template-columns: 1fr; gap: 18px;}
-      h1{font-size: 2.6rem;}
+      h1{font-size: 2.55rem;}
       .grid{grid-template-columns: 1fr;}
       .grid3{grid-template-columns: 1fr;}
       .steps{grid-template-columns: 1fr;}
       .testimonials{grid-template-columns: 1fr;}
       .btn{width: 100%;}
-      .topbar{border-radius: 20px;}
       .nav{display:none;}
+      .topbar{border-radius: 20px;}
     }
   </style>
 </head>
@@ -666,20 +666,20 @@
       <div>
         <div class="kicker">
           <i class="fa-solid fa-rose"></i>
-          <span>Conteúdo com identidade, clareza e consistência</span>
+          <span>Conteúdo com identidade, clareza e constância</span>
         </div>
 
         <h1>Seu Instagram com estética premium e comunicação que transmite valor.</h1>
 
         <p>
-          Eu transformo ideias em conteúdos visuais e legendas estratégicas,
-          com um processo organizado do início ao fim — para você postar com segurança
-          e ter uma presença que condiz com o seu serviço.
+          Eu transformo ideias em conteúdos visuais e legendas estratégicas, com um processo
+          organizado do início ao fim — para você postar com segurança e ter uma presença que
+          condiz com o seu serviço.
         </p>
 
         <p>
-          A base é simples (e poderosa): alinhamento, identidade visual, organização
-          e constância. O resultado é um perfil mais profissional, coerente e memorável.
+          A base é simples (e poderosa): alinhamento, identidade visual, organização e constância.
+          O resultado é um perfil mais profissional, coerente e memorável.
         </p>
 
         <div class="hero-cta">
@@ -727,18 +727,18 @@
       </div>
 
       <div class="grid">
-        <!-- Essência -->
+        <!-- Plano 450 -->
         <div class="card">
           <div class="topline">
-            <span class="pill"><i class="fa-solid fa-leaf"></i> Comece com consistência</span>
+            <span class="pill"><i class="fa-solid fa-seedling"></i> Base sólida</span>
             <span class="pill"><i class="fa-solid fa-folder-open"></i> Drive organizado</span>
           </div>
 
-          <h3>🌿 Plano Essência</h3>
-          <p>Para marcas que querem presença profissional, organização e constância sem exagero de volume.</p>
+          <h3>🌿 Plano Raiz</h3>
+          <p>Para marcas que querem construir presença com estética, organização e constância.</p>
 
           <div class="list">
-            <div class="item"><i class="fa-solid fa-check"></i><span><strong>8 conteúdos mensais</strong> (posts estáticos e/ou carrosséis)</span></div>
+            <div class="item"><i class="fa-solid fa-check"></i><span><strong>12 conteúdos mensais</strong> (posts estáticos e/ou carrosséis)</span></div>
             <div class="item"><i class="fa-solid fa-check"></i><span><strong>Legendas estratégicas</strong> para cada publicação</span></div>
             <div class="item"><i class="fa-solid fa-check"></i><span>Organização da <strong>biografia e destaques</strong></span></div>
             <div class="item"><i class="fa-solid fa-check"></i><span><strong>Briefing inicial</strong> para alinhamento</span></div>
@@ -751,11 +751,11 @@
           </div>
 
           <a class="btn btn-ghost cta" href="SEU_LINK_WHATSAPP" target="_blank" rel="noopener">
-            <i class="fa-brands fa-whatsapp"></i> Quero o Essência
+            <i class="fa-brands fa-whatsapp"></i> Quero o Plano Raiz
           </a>
         </div>
 
-        <!-- Autoridade (featured) -->
+        <!-- Plano 900 -->
         <div class="card featured">
           <div class="card-inner">
             <div class="topline">
@@ -763,11 +763,11 @@
               <span class="pill"><i class="fa-solid fa-wand-magic-sparkles"></i> Mais completo</span>
             </div>
 
-            <h3>🌹 Plano Autoridade</h3>
+            <h3>🌹 Plano Florescer</h3>
             <p>Para quem quer crescer, se posicionar e comunicar valor com estratégia e consistência.</p>
 
             <div class="list">
-              <div class="item"><i class="fa-solid fa-check"></i><span><strong>16 conteúdos mensais</strong> (posts estáticos e carrosséis)</span></div>
+              <div class="item"><i class="fa-solid fa-check"></i><span><strong>18 conteúdos mensais</strong> (posts estáticos e carrosséis)</span></div>
               <div class="item"><i class="fa-solid fa-check"></i><span><strong>Legendas estratégicas</strong> focadas em clareza e posicionamento</span></div>
               <div class="item"><i class="fa-solid fa-check"></i><span><strong>Planejamento mensal</strong> de conteúdo</span></div>
               <div class="item"><i class="fa-solid fa-check"></i><span>Organização da <strong>biografia e destaques</strong></span></div>
@@ -780,7 +780,7 @@
             </div>
 
             <a class="btn btn-primary cta" href="SEU_LINK_WHATSAPP" target="_blank" rel="noopener">
-              <i class="fa-brands fa-whatsapp"></i> Quero o Autoridade
+              <i class="fa-brands fa-whatsapp"></i> Quero o Plano Florescer
             </a>
           </div>
         </div>
@@ -877,37 +877,37 @@
     </div>
   </section>
 
-  <!-- DEPOIMENTOS (placeholders para você editar nomes) -->
+  <!-- DEPOIMENTOS -->
   <section>
     <div class="container">
       <div class="section-title">
         <h2>Percepção de valor na prática</h2>
-        <p>Depoimentos (você pode trocar os textos pelos seus reais quando quiser).</p>
+        <p>Alguns feedbacks (fictícios) para você já deixar a seção pronta e bonita.</p>
         <div class="divider"></div>
       </div>
 
       <div class="testimonials">
         <div class="quote">
-          <p>“Meu perfil ficou muito mais elegante e coerente. Agora eu consigo postar com confiança.”</p>
+          <p>“Meu perfil ficou mais elegante e coerente. Hoje eu sinto que minha comunicação está alinhada com a confiança que eu quero transmitir.”</p>
           <div class="who">
-            <span class="bubble"><i class="fa-solid fa-message"></i></span>
-            <span>Cliente — <span class="stars">★★★★★</span></span>
+            <span class="bubble"><i class="fa-solid fa-heart"></i></span>
+            <span>Thaís M. <span class="role">— Psicóloga Clínica</span> <span class="stars">★★★★★</span></span>
           </div>
         </div>
 
         <div class="quote">
-          <p>“As artes têm presença e as legendas são diretas. Ficou fácil manter constância.”</p>
+          <p>“A organização do conteúdo e as legendas estratégicas facilitaram meu dia a dia. Fiquei mais consistente e com presença real no Instagram.”</p>
           <div class="who">
-            <span class="bubble"><i class="fa-solid fa-message"></i></span>
-            <span>Cliente — <span class="stars">★★★★★</span></span>
+            <span class="bubble"><i class="fa-solid fa-book"></i></span>
+            <span>Renata A. <span class="role">— Coordenadora Pedagógica</span> <span class="stars">★★★★★</span></span>
           </div>
         </div>
 
         <div class="quote">
-          <p>“A organização no Drive ajuda demais. Tudo fica claro e bem separado por mês.”</p>
+          <p>“Como storymaker, eu precisava de uma estética forte e pronta para postar. A entrega veio organizada e com identidade — ficou impecável.”</p>
           <div class="who">
-            <span class="bubble"><i class="fa-solid fa-message"></i></span>
-            <span>Cliente — <span class="stars">★★★★★</span></span>
+            <span class="bubble"><i class="fa-solid fa-bolt"></i></span>
+            <span>Júlia F. <span class="role">— Storymaker</span> <span class="stars">★★★★★</span></span>
           </div>
         </div>
       </div>
@@ -929,7 +929,7 @@
             O que eu preciso enviar para começar?
             <i class="fa-solid fa-plus"></i>
           </summary>
-          <p>Você responde o briefing e fazemos um alinhamento inicial. A partir disso eu organizo bio, destaques e identidade visual para começar a produção.</p>
+          <p>Você responde o briefing e fazemos um alinhamento inicial. A partir disso eu organizo bio, destaques e identidade visual para iniciar a produção.</p>
         </details>
 
         <details>
@@ -977,8 +977,12 @@
 
   <!-- Footer -->
   <footer>
-    <p><a href="mailto:SEU_EMAIL"><i class="fa-solid fa-envelope"></i> SEU_EMAIL</a></p>
-    <p style="margin-top:10px;"><a href="https://instagram.com/SEU_INSTAGRAM" target="_blank" rel="noopener"><i class="fa-brands fa-instagram"></i> @SEU_INSTAGRAM</a></p>
+    <p><a href="mailto:akallitaprado@gmail.com"><i class="fa-solid fa-envelope"></i> akallitaprado@gmail.com</a></p>
+    <p style="margin-top:10px;">
+      <a href="https://www.instagram.com/akallitaprado/" target="_blank" rel="noopener">
+        <i class="fa-brands fa-instagram"></i> @akallitaprado
+      </a>
+    </p>
     <p style="margin-top:14px; opacity:.85;">© 2025 — Kállita Prado</p>
   </footer>
 
