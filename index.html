@@ -5,253 +5,988 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Kállita Prado | Conteúdo Estratégico para Instagram</title>
 
-  <!-- Fonte -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
-  <!-- Ícones -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
   <style>
     :root{
-      --cor-destaque: #C1121F;
-      --cor-destaque-hover: #8A0F16;
-      --cor-destaque-claro: #F28B82;
+      /* Destaque (rosa vermelha / vinho) */
+      --accent: #C1121F;
+      --accent2: #8A0F16;
+      --accentSoft: #F28B82;
 
-      --cor-fundo-principal: #0B1510;
-      --cor-fundo-secao: #102018;
-      --cor-fundo-card: #16271E;
+      /* Base (verde profundo + areia) */
+      --bg: #0B1510;
+      --bg2: #102018;
+      --card: #16271E;
 
-      --cor-texto-principal: #F2E8CF;
-      --cor-texto-secundaria: #D6C7A8;
-      --cor-texto-claro: #FFF6E6;
+      --text: #F2E8CF;
+      --muted: #D6C7A8;
+      --white: #FFF6E6;
 
-      --cor-borda-card: #2B3B31;
+      --border: #2B3B31;
 
-      --sombra: 0 10px 30px rgba(0,0,0,0.4);
+      --shadowSoft: 0 10px 30px rgba(0,0,0,0.35);
+      --shadowStrong: 0 18px 50px rgba(0,0,0,0.55);
+
+      --radius: 16px;
+      --radius2: 22px;
+
+      --max: 1120px;
     }
 
     *{margin:0;padding:0;box-sizing:border-box;}
-
+    html{scroll-behavior:smooth;}
     body{
       font-family:'Montserrat',sans-serif;
-      background:var(--cor-fundo-principal);
-      color:var(--cor-texto-principal);
+      background: radial-gradient(1200px 700px at 15% 10%, rgba(193,18,31,0.10), transparent 55%),
+                  radial-gradient(900px 600px at 85% 15%, rgba(242,139,130,0.08), transparent 55%),
+                  radial-gradient(900px 700px at 60% 80%, rgba(214,199,168,0.06), transparent 60%),
+                  var(--bg);
+      color: var(--text);
       line-height:1.6;
+      overflow-x:hidden;
     }
+
+    /* textura sutil (sem imagem) */
+    body::before{
+      content:"";
+      position:fixed;
+      inset:0;
+      pointer-events:none;
+      background:
+        radial-gradient(circle at 20% 20%, rgba(255,246,230,0.03) 0 1px, transparent 2px),
+        radial-gradient(circle at 80% 30%, rgba(255,246,230,0.02) 0 1px, transparent 2px),
+        radial-gradient(circle at 40% 80%, rgba(255,246,230,0.02) 0 1px, transparent 2px);
+      background-size: 240px 240px, 280px 280px, 320px 320px;
+      opacity: .8;
+      z-index:0;
+    }
+
+    a{color:inherit;}
+    .wrap{position:relative; z-index:1;}
 
     .container{
-      max-width:1100px;
-      margin:auto;
-      padding:80px 20px;
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 84px 22px;
     }
 
-    h1,h2,h3{
-      color:var(--cor-texto-claro);
-      margin-bottom:20px;
+    /* Top bar (não fixa) */
+    .topbar{
+      max-width: var(--max);
+      margin: 22px auto 0 auto;
+      padding: 14px 18px;
+      border: 1px solid rgba(43,59,49,0.7);
+      border-radius: 999px;
+      background: rgba(16,32,24,0.65);
+      backdrop-filter: blur(10px);
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
     }
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      font-weight:800;
+      letter-spacing:0.2px;
+      color: var(--white);
+    }
+    .brand .dot{
+      width:10px;height:10px;border-radius:50%;
+      background: linear-gradient(135deg, var(--accent), var(--accentSoft));
+      box-shadow: 0 0 0 6px rgba(193,18,31,0.12);
+    }
+    .nav{
+      display:flex;
+      gap:16px;
+      flex-wrap:wrap;
+      align-items:center;
+      font-size:0.95rem;
+      color: var(--muted);
+    }
+    .nav a{
+      text-decoration:none;
+      padding:8px 12px;
+      border-radius:999px;
+      transition: all .25s ease;
+    }
+    .nav a:hover{
+      color: var(--white);
+      background: rgba(193,18,31,0.12);
+    }
+
+    /* Hero */
+    .hero{
+      padding-top: 38px;
+      padding-bottom: 30px;
+    }
+    .hero-grid{
+      display:grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 38px;
+      align-items: center;
+    }
+
+    .kicker{
+      display:inline-flex;
+      gap:10px;
+      align-items:center;
+      padding:10px 14px;
+      border: 1px solid rgba(43,59,49,0.8);
+      background: rgba(22,39,30,0.55);
+      border-radius: 999px;
+      color: var(--muted);
+      font-weight:600;
+      font-size:0.95rem;
+      margin-bottom: 18px;
+    }
+    .kicker i{color: var(--accentSoft);}
 
     h1{
-      font-size:3rem;
-      background:linear-gradient(90deg,#F2E8CF,#C1121F,#F28B82);
-      -webkit-background-clip:text;
-      -webkit-text-fill-color:transparent;
+      font-size: 3.15rem;
+      line-height: 1.12;
+      letter-spacing: -1.2px;
+      margin-bottom: 16px;
+      color: var(--white);
+      background: linear-gradient(92deg, #FFF6E6 0%, #F2E8CF 28%, #C1121F 62%, #F28B82 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-size: 220% auto;
+      animation: shine 3.2s linear infinite;
+    }
+    @keyframes shine{to{background-position: 220% center;}}
+
+    .hero p{
+      color: var(--muted);
+      font-size: 1.08rem;
+      margin-bottom: 14px;
+      max-width: 52ch;
     }
 
-    h2{text-align:center;font-size:2.2rem;}
-    h3{font-size:1.4rem;}
-
-    p{color:var(--cor-texto-secundaria);margin-bottom:15px;}
-
-    ul{list-style:none;margin-top:20px;}
-    ul li{margin-bottom:10px;}
+    .hero-cta{
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+      margin-top: 20px;
+      align-items:center;
+    }
 
     .btn{
-      display:inline-block;
-      padding:16px 30px;
-      border-radius:8px;
-      text-decoration:none;
-      font-weight:600;
-      text-align:center;
-      transition:.3s;
-    }
-
-    .btn-principal{
-      background:var(--cor-destaque);
-      color:#fff;
-    }
-
-    .btn-principal:hover{
-      background:var(--cor-destaque-hover);
-    }
-
-    .hero{text-align:center;}
-
-    .posicionamento{
-      margin-top:30px;
-      font-style:italic;
-      text-align:center;
-    }
-
-    section{background:var(--cor-fundo-secao);}
-
-    .cards{
-      display:flex;
-      gap:30px;
-      flex-wrap:wrap;
+      display:inline-flex;
+      align-items:center;
       justify-content:center;
-      margin-top:40px;
+      gap:10px;
+      padding: 16px 18px;
+      border-radius: 14px;
+      text-decoration:none;
+      font-weight: 800;
+      transition: transform .2s ease, box-shadow .2s ease, background .2s ease, border-color .2s ease;
+      border: 1px solid rgba(43,59,49,0.9);
+      cursor:pointer;
+      min-width: 220px;
+    }
+    .btn-primary{
+      color: #fff;
+      background: linear-gradient(135deg, var(--accent2), var(--accent));
+      border-color: rgba(193,18,31,0.5);
+      box-shadow: 0 18px 45px rgba(193,18,31,0.25);
+    }
+    .btn-primary:hover{
+      transform: translateY(-2px);
+      box-shadow: 0 22px 55px rgba(193,18,31,0.32);
+    }
+    .btn-ghost{
+      color: var(--white);
+      background: rgba(16,32,24,0.5);
+    }
+    .btn-ghost:hover{
+      transform: translateY(-2px);
+      border-color: rgba(193,18,31,0.45);
+      box-shadow: var(--shadowSoft);
+    }
+
+    .hero-card{
+      background: linear-gradient(180deg, rgba(22,39,30,0.82), rgba(16,32,24,0.65));
+      border: 1px solid rgba(43,59,49,0.85);
+      border-radius: var(--radius2);
+      box-shadow: var(--shadowStrong);
+      padding: 22px;
+      position:relative;
+      overflow:hidden;
+    }
+    .hero-card::before{
+      content:"";
+      position:absolute;
+      inset:-2px;
+      background: radial-gradient(600px 260px at 30% 0%, rgba(193,18,31,0.22), transparent 50%),
+                  radial-gradient(500px 240px at 80% 35%, rgba(242,139,130,0.14), transparent 55%);
+      opacity: 1;
+      pointer-events:none;
+    }
+    .hero-card-inner{position:relative; z-index:1;}
+    .mini-title{
+      font-weight:900;
+      color: var(--white);
+      letter-spacing: -0.3px;
+      font-size:1.05rem;
+      margin-bottom: 12px;
+      display:flex;
+      align-items:center;
+      gap:10px;
+    }
+    .mini-title .badge{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding: 7px 10px;
+      border-radius: 999px;
+      background: rgba(193,18,31,0.14);
+      border: 1px solid rgba(193,18,31,0.35);
+      color: var(--white);
+      font-weight:800;
+      font-size: 0.9rem;
+    }
+
+    .checklist{
+      margin-top: 10px;
+      display:grid;
+      gap: 10px;
+    }
+    .check{
+      display:flex;
+      gap:10px;
+      align-items:flex-start;
+      color: var(--muted);
+      font-weight:500;
+    }
+    .check i{
+      margin-top: 2px;
+      color: var(--accentSoft);
+    }
+
+    .limit{
+      margin-top: 16px;
+      padding: 12px 14px;
+      border-radius: 14px;
+      background: rgba(214,199,168,0.06);
+      border: 1px solid rgba(214,199,168,0.18);
+      color: var(--muted);
+      font-size: 0.98rem;
+    }
+    .limit strong{color: var(--white);}
+
+    /* section titles */
+    .section-title{
+      text-align:center;
+      margin-bottom: 42px;
+    }
+    .section-title h2{
+      font-size: 2.2rem;
+      letter-spacing: -0.6px;
+      color: var(--white);
+      margin-bottom: 10px;
+    }
+    .section-title p{
+      max-width: 72ch;
+      margin: 0 auto;
+      color: var(--muted);
+      font-size: 1.05rem;
+    }
+    .divider{
+      width: 110px;
+      height: 4px;
+      margin: 16px auto 0 auto;
+      border-radius: 999px;
+      background: linear-gradient(90deg, rgba(193,18,31,0), rgba(193,18,31,1), rgba(242,139,130,0.9), rgba(193,18,31,0));
+    }
+
+    /* Plans */
+    .section{
+      background: linear-gradient(180deg, rgba(16,32,24,0.45), rgba(16,32,24,0.18));
+      border-top: 1px solid rgba(43,59,49,0.5);
+      border-bottom: 1px solid rgba(43,59,49,0.5);
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 22px;
+      align-items: stretch;
+      margin-top: 28px;
     }
 
     .card{
-      background:var(--cor-fundo-card);
-      border:1px solid var(--cor-borda-card);
-      border-radius:12px;
-      padding:35px;
-      width:100%;
-      max-width:450px;
-      box-shadow:var(--sombra);
+      background: rgba(22,39,30,0.78);
+      border: 1px solid rgba(43,59,49,0.9);
+      border-radius: var(--radius2);
+      box-shadow: var(--shadowSoft);
+      padding: 26px;
+      position:relative;
+      overflow:hidden;
+      transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+    }
+    .card:hover{
+      transform: translateY(-4px);
+      border-color: rgba(193,18,31,0.45);
+      box-shadow: var(--shadowStrong);
+    }
+    .card .topline{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap: 12px;
+      margin-bottom: 10px;
+    }
+    .pill{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(214,199,168,0.06);
+      border: 1px solid rgba(214,199,168,0.18);
+      color: var(--muted);
+      font-weight:700;
+      font-size:0.92rem;
+    }
+    .pill i{color: var(--accentSoft);}
+
+    .card h3{
+      font-size: 1.55rem;
+      letter-spacing: -0.4px;
+      margin-bottom: 8px;
+      color: var(--white);
+    }
+    .card p{
+      color: var(--muted);
+      margin-bottom: 14px;
     }
 
-    .preco{
-      font-size:2rem;
-      color:var(--cor-destaque-claro);
-      margin:25px 0;
+    .list{
+      margin-top: 10px;
+      display:grid;
+      gap: 10px;
+      margin-bottom: 18px;
+    }
+    .item{
+      display:flex;
+      gap: 10px;
+      color: var(--text);
+      font-weight: 500;
+    }
+    .item i{
+      color: var(--accent);
+      margin-top: 3px;
+    }
+    .item strong{color: var(--white); font-weight:800;}
+
+    .price{
+      display:flex;
+      align-items:baseline;
+      justify-content:space-between;
+      gap: 10px;
+      margin-top: 12px;
+      padding-top: 14px;
+      border-top: 1px solid rgba(43,59,49,0.75);
+    }
+    .amount{
+      font-size: 2.1rem;
+      font-weight: 900;
+      color: var(--accentSoft);
+      letter-spacing: -0.8px;
+    }
+    .amount span{
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--muted);
     }
 
-    footer{
-      background:#000;
+    .card .cta{
+      margin-top: 16px;
+      width: 100%;
+      min-width: unset;
+    }
+
+    /* Featured plan */
+    .featured{
+      border-color: rgba(193,18,31,0.65);
+      background: linear-gradient(180deg, rgba(22,39,30,0.82), rgba(22,39,30,0.65));
+    }
+    .featured::before{
+      content:"";
+      position:absolute;
+      inset:-2px;
+      background: radial-gradient(700px 300px at 20% 0%, rgba(193,18,31,0.22), transparent 55%),
+                  radial-gradient(700px 300px at 90% 20%, rgba(242,139,130,0.16), transparent 55%);
+      pointer-events:none;
+    }
+    .featured .card-inner{position:relative; z-index:1;}
+    .tag{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, rgba(193,18,31,0.22), rgba(242,139,130,0.14));
+      border: 1px solid rgba(193,18,31,0.45);
+      color: var(--white);
+      font-weight: 900;
+      font-size: 0.92rem;
+    }
+    .tag i{color: var(--white);}
+
+    /* Avulsos */
+    .grid3{
+      display:grid;
+      grid-template-columns: repeat(2, minmax(0,1fr));
+      gap: 22px;
+      margin-top: 28px;
+    }
+
+    /* Process */
+    .steps{
+      display:grid;
+      grid-template-columns: repeat(3, minmax(0,1fr));
+      gap: 18px;
+      margin-top: 28px;
+    }
+    .step{
+      background: rgba(22,39,30,0.70);
+      border: 1px solid rgba(43,59,49,0.85);
+      border-radius: var(--radius2);
+      padding: 18px;
+      box-shadow: var(--shadowSoft);
+      transition: transform .2s ease, border-color .2s ease;
+      position:relative;
+      overflow:hidden;
+    }
+    .step:hover{
+      transform: translateY(-3px);
+      border-color: rgba(214,199,168,0.35);
+    }
+    .step .num{
+      width: 40px;
+      height: 40px;
+      border-radius: 12px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      background: rgba(193,18,31,0.14);
+      border: 1px solid rgba(193,18,31,0.35);
+      color: var(--white);
+      font-weight: 900;
+      margin-bottom: 12px;
+    }
+    .step h4{
+      color: var(--white);
+      font-size: 1.05rem;
+      margin-bottom: 8px;
+      letter-spacing: -0.2px;
+    }
+    .step p{
+      color: var(--muted);
+      font-size: 0.98rem;
+      margin-bottom: 0;
+    }
+
+    /* Testimonials */
+    .testimonials{
+      display:grid;
+      grid-template-columns: repeat(3, minmax(0,1fr));
+      gap: 18px;
+      margin-top: 28px;
+    }
+    .quote{
+      background: rgba(22,39,30,0.72);
+      border: 1px solid rgba(43,59,49,0.85);
+      border-radius: var(--radius2);
+      padding: 18px;
+      box-shadow: var(--shadowSoft);
+    }
+    .quote p{
+      color: var(--muted);
+      font-style: italic;
+      margin-bottom: 12px;
+    }
+    .quote .who{
+      color: var(--white);
+      font-weight: 800;
+      display:flex;
+      align-items:center;
+      gap: 10px;
+    }
+    .stars{color: #F2E8CF; opacity: .9; font-size:0.95rem;}
+    .who .bubble{
+      width: 36px;height:36px;border-radius: 12px;
+      background: rgba(214,199,168,0.06);
+      border: 1px solid rgba(214,199,168,0.18);
+      display:flex;align-items:center;justify-content:center;
+      color: var(--accentSoft);
+    }
+
+    /* FAQ */
+    .faq{
+      margin-top: 28px;
+      display:grid;
+      gap: 12px;
+      max-width: 900px;
+      margin-left:auto;
+      margin-right:auto;
+    }
+    details{
+      background: rgba(22,39,30,0.72);
+      border: 1px solid rgba(43,59,49,0.85);
+      border-radius: var(--radius2);
+      padding: 16px 18px;
+      box-shadow: var(--shadowSoft);
+    }
+    summary{
+      cursor:pointer;
+      list-style:none;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap: 12px;
+      color: var(--white);
+      font-weight: 800;
+    }
+    summary::-webkit-details-marker{display:none;}
+    details p{margin-top: 10px; color: var(--muted);}
+
+    /* Final CTA */
+    .final{
       text-align:center;
-      padding:40px 20px;
-      font-size:.9rem;
+    }
+    .final .panel{
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 26px;
+      border-radius: var(--radius2);
+      background: linear-gradient(180deg, rgba(22,39,30,0.78), rgba(16,32,24,0.55));
+      border: 1px solid rgba(43,59,49,0.85);
+      box-shadow: var(--shadowStrong);
+      position:relative;
+      overflow:hidden;
+    }
+    .final .panel::before{
+      content:"";
+      position:absolute;
+      inset:-2px;
+      background: radial-gradient(700px 280px at 50% 0%, rgba(193,18,31,0.22), transparent 60%);
+      pointer-events:none;
+    }
+    .final .panel-inner{position:relative; z-index:1;}
+    .final h2{
+      margin-bottom: 10px;
+    }
+    .final p{
+      max-width: 70ch;
+      margin: 0 auto 18px auto;
+      color: var(--muted);
     }
 
-    footer a{color:var(--cor-texto-secundaria);text-decoration:none;}
+    /* Footer */
+    footer{
+      text-align:center;
+      padding: 44px 20px;
+      color: rgba(214,199,168,0.85);
+      border-top: 1px solid rgba(43,59,49,0.55);
+      background: rgba(0,0,0,0.35);
+    }
+    footer a{
+      color: rgba(242,232,207,0.92);
+      text-decoration:none;
+      font-weight: 700;
+    }
+    footer a:hover{color: var(--white);}
+
+    /* WhatsApp floating */
+    .wa{
+      position:fixed;
+      right: 20px;
+      bottom: 20px;
+      width: 62px;
+      height: 62px;
+      border-radius: 18px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      background: linear-gradient(135deg, #25D366, #1EBE57);
+      box-shadow: 0 18px 45px rgba(0,0,0,0.45);
+      border: 1px solid rgba(255,255,255,0.12);
+      z-index: 9999;
+      transition: transform .2s ease;
+      text-decoration:none;
+    }
+    .wa:hover{transform: translateY(-2px) scale(1.03);}
+    .wa i{color:#fff; font-size: 28px;}
+
+    /* Responsive */
+    @media (max-width: 980px){
+      .hero-grid{grid-template-columns: 1fr; gap: 18px;}
+      h1{font-size: 2.6rem;}
+      .grid{grid-template-columns: 1fr;}
+      .grid3{grid-template-columns: 1fr;}
+      .steps{grid-template-columns: 1fr;}
+      .testimonials{grid-template-columns: 1fr;}
+      .btn{width: 100%;}
+      .topbar{border-radius: 20px;}
+      .nav{display:none;}
+    }
   </style>
 </head>
 
 <body>
+<div class="wrap">
 
-<!-- HERO -->
-<header class="hero container">
-  <h1>Conteúdo estratégico para marcas que querem presença, identidade e constância.</h1>
+  <!-- Topbar (não fixa) -->
+  <div class="topbar">
+    <div class="brand">
+      <span class="dot"></span>
+      <span>Kállita Prado</span>
+    </div>
+    <nav class="nav">
+      <a href="#planos">Planos</a>
+      <a href="#avulsos">Avulsos</a>
+      <a href="#processo">Processo</a>
+      <a href="#faq">Dúvidas</a>
+    </nav>
+  </div>
 
-  <p>
-    Seu Instagram pode — e deve — refletir a qualidade do seu serviço.
-    Eu transformo ideias em conteúdos visuais e textuais com estratégia,
-    estética e organização.
-  </p>
+  <!-- HERO -->
+  <header class="container hero">
+    <div class="hero-grid">
+      <div>
+        <div class="kicker">
+          <i class="fa-solid fa-rose"></i>
+          <span>Conteúdo com identidade, clareza e consistência</span>
+        </div>
 
-  <p>
-    Cada detalhe é pensado com cuidado: do alinhamento inicial à entrega final,
-    para que você tenha clareza, consistência e segurança na sua comunicação.
-  </p>
+        <h1>Seu Instagram com estética premium e comunicação que transmite valor.</h1>
 
-  <p class="posicionamento">
-    Trabalho com vagas limitadas para garantir qualidade, atenção
-    e um processo verdadeiramente personalizado.
-  </p>
+        <p>
+          Eu transformo ideias em conteúdos visuais e legendas estratégicas,
+          com um processo organizado do início ao fim — para você postar com segurança
+          e ter uma presença que condiz com o seu serviço.
+        </p>
 
-  <a href="SEU_LINK_WHATSAPP" class="btn btn-principal">
-    Quero conversar sobre meu Instagram
+        <p>
+          A base é simples (e poderosa): alinhamento, identidade visual, organização
+          e constância. O resultado é um perfil mais profissional, coerente e memorável.
+        </p>
+
+        <div class="hero-cta">
+          <a class="btn btn-primary" href="SEU_LINK_WHATSAPP" target="_blank" rel="noopener">
+            <i class="fa-brands fa-whatsapp"></i> Quero conversar
+          </a>
+          <a class="btn btn-ghost" href="#planos">
+            <i class="fa-solid fa-arrow-down"></i> Ver planos
+          </a>
+        </div>
+      </div>
+
+      <aside class="hero-card">
+        <div class="hero-card-inner">
+          <div class="mini-title">
+            <span class="badge"><i class="fa-solid fa-sparkles"></i> O que você recebe</span>
+          </div>
+
+          <div class="checklist">
+            <div class="check"><i class="fa-solid fa-circle-check"></i><span><strong>Briefing e alinhamento</strong> antes de começar.</span></div>
+            <div class="check"><i class="fa-solid fa-circle-check"></i><span><strong>Bio e destaques</strong> organizados.</span></div>
+            <div class="check"><i class="fa-solid fa-circle-check"></i><span><strong>Identidade visual</strong> (paleta + tipografia + estilo).</span></div>
+            <div class="check"><i class="fa-solid fa-circle-check"></i><span><strong>Posts e carrosséis</strong> + legenda estratégica.</span></div>
+            <div class="check"><i class="fa-solid fa-circle-check"></i><span><strong>Arquivos organizados</strong> em Google Drive.</span></div>
+          </div>
+
+          <div class="limit">
+            <strong>Vagas limitadas</strong> para garantir qualidade, atenção e um processo realmente personalizado.
+          </div>
+        </div>
+      </aside>
+    </div>
+  </header>
+
+  <!-- PLANOS -->
+  <section id="planos" class="section">
+    <div class="container">
+      <div class="section-title">
+        <h2>Planos mensais</h2>
+        <p>
+          Dois formatos claros, com foco em identidade, constância e entrega completa:
+          conteúdo visual + legenda estratégica + organização.
+        </p>
+        <div class="divider"></div>
+      </div>
+
+      <div class="grid">
+        <!-- Essência -->
+        <div class="card">
+          <div class="topline">
+            <span class="pill"><i class="fa-solid fa-leaf"></i> Comece com consistência</span>
+            <span class="pill"><i class="fa-solid fa-folder-open"></i> Drive organizado</span>
+          </div>
+
+          <h3>🌿 Plano Essência</h3>
+          <p>Para marcas que querem presença profissional, organização e constância sem exagero de volume.</p>
+
+          <div class="list">
+            <div class="item"><i class="fa-solid fa-check"></i><span><strong>8 conteúdos mensais</strong> (posts estáticos e/ou carrosséis)</span></div>
+            <div class="item"><i class="fa-solid fa-check"></i><span><strong>Legendas estratégicas</strong> para cada publicação</span></div>
+            <div class="item"><i class="fa-solid fa-check"></i><span>Organização da <strong>biografia e destaques</strong></span></div>
+            <div class="item"><i class="fa-solid fa-check"></i><span><strong>Briefing inicial</strong> para alinhamento</span></div>
+            <div class="item"><i class="fa-solid fa-check"></i><span>Definição de <strong>paleta, tipografia e estilo visual</strong></span></div>
+            <div class="item"><i class="fa-solid fa-check"></i><span>Entrega com arquivos em <strong>Google Drive</strong></span></div>
+          </div>
+
+          <div class="price">
+            <div class="amount">R$ 450,00 <span>/mês</span></div>
+          </div>
+
+          <a class="btn btn-ghost cta" href="SEU_LINK_WHATSAPP" target="_blank" rel="noopener">
+            <i class="fa-brands fa-whatsapp"></i> Quero o Essência
+          </a>
+        </div>
+
+        <!-- Autoridade (featured) -->
+        <div class="card featured">
+          <div class="card-inner">
+            <div class="topline">
+              <span class="tag"><i class="fa-solid fa-crown"></i> Recomendado</span>
+              <span class="pill"><i class="fa-solid fa-wand-magic-sparkles"></i> Mais completo</span>
+            </div>
+
+            <h3>🌹 Plano Autoridade</h3>
+            <p>Para quem quer crescer, se posicionar e comunicar valor com estratégia e consistência.</p>
+
+            <div class="list">
+              <div class="item"><i class="fa-solid fa-check"></i><span><strong>16 conteúdos mensais</strong> (posts estáticos e carrosséis)</span></div>
+              <div class="item"><i class="fa-solid fa-check"></i><span><strong>Legendas estratégicas</strong> focadas em clareza e posicionamento</span></div>
+              <div class="item"><i class="fa-solid fa-check"></i><span><strong>Planejamento mensal</strong> de conteúdo</span></div>
+              <div class="item"><i class="fa-solid fa-check"></i><span>Organização da <strong>biografia e destaques</strong></span></div>
+              <div class="item"><i class="fa-solid fa-check"></i><span><strong>Briefing aprofundado</strong> + identidade visual completa</span></div>
+              <div class="item"><i class="fa-solid fa-check"></i><span>Entrega organizada em <strong>Google Drive</strong></span></div>
+            </div>
+
+            <div class="price">
+              <div class="amount">R$ 900,00 <span>/mês</span></div>
+            </div>
+
+            <a class="btn btn-primary cta" href="SEU_LINK_WHATSAPP" target="_blank" rel="noopener">
+              <i class="fa-brands fa-whatsapp"></i> Quero o Autoridade
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <p style="text-align:center; margin-top:18px; color: var(--muted);">
+        <em>Trabalho com vagas limitadas para manter qualidade, atenção e consistência no atendimento.</em>
+      </p>
+    </div>
+  </section>
+
+  <!-- AVULSOS -->
+  <section id="avulsos">
+    <div class="container">
+      <div class="section-title">
+        <h2>Serviços avulsos</h2>
+        <p>Para demandas pontuais, com a mesma estética e cuidado de entrega.</p>
+        <div class="divider"></div>
+      </div>
+
+      <div class="grid3">
+        <div class="card">
+          <div class="topline">
+            <span class="pill"><i class="fa-solid fa-image"></i> Arte + legenda</span>
+          </div>
+          <h3>✨ Post estático</h3>
+          <p>Arte personalizada alinhada à identidade visual, acompanhada de legenda estratégica.</p>
+          <div class="price">
+            <div class="amount">R$ 60 a R$ 80</div>
+            <div style="color:var(--muted); font-weight:700;">por post</div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="topline">
+            <span class="pill"><i class="fa-solid fa-layer-group"></i> Até 5 slides</span>
+          </div>
+          <h3>✨ Carrossel</h3>
+          <p>Conteúdo estruturado para leitura e retenção, com hierarquia visual e legenda estratégica.</p>
+          <div class="price">
+            <div class="amount">R$ 120 a R$ 180</div>
+            <div style="color:var(--muted); font-weight:700;">por carrossel</div>
+          </div>
+        </div>
+      </div>
+
+      <p style="text-align:center; margin-top:18px; color: var(--muted);">
+        <em>Clientes com plano mensal possuem prioridade de atendimento e valores diferenciados para avulsos.</em>
+      </p>
+    </div>
+  </section>
+
+  <!-- PROCESSO -->
+  <section id="processo" class="section">
+    <div class="container">
+      <div class="section-title">
+        <h2>Como funciona meu processo</h2>
+        <p>Transparente, organizado e feito para você ter clareza do início ao fim.</p>
+        <div class="divider"></div>
+      </div>
+
+      <div class="steps">
+        <div class="step">
+          <div class="num">1</div>
+          <h4>Reunião + briefing</h4>
+          <p>Alinhamos objetivos, público, estilo e necessidades do seu negócio.</p>
+        </div>
+        <div class="step">
+          <div class="num">2</div>
+          <h4>Identidade visual</h4>
+          <p>Definimos paleta, tipografia e direção de estilo para um feed coerente.</p>
+        </div>
+        <div class="step">
+          <div class="num">3</div>
+          <h4>Bio e destaques</h4>
+          <p>Organização do perfil para transmitir valor e facilitar entendimento do serviço.</p>
+        </div>
+        <div class="step">
+          <div class="num">4</div>
+          <h4>Criação do conteúdo</h4>
+          <p>Posts e carrosséis com estética premium + legendas estratégicas.</p>
+        </div>
+        <div class="step">
+          <div class="num">5</div>
+          <h4>Entrega organizada</h4>
+          <p>Arquivos e legendas organizados em Google Drive para você postar com segurança.</p>
+        </div>
+        <div class="step">
+          <div class="num">6</div>
+          <h4>Constância e evolução</h4>
+          <p>Com processo consistente, seu perfil ganha unidade, clareza e presença.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DEPOIMENTOS (placeholders para você editar nomes) -->
+  <section>
+    <div class="container">
+      <div class="section-title">
+        <h2>Percepção de valor na prática</h2>
+        <p>Depoimentos (você pode trocar os textos pelos seus reais quando quiser).</p>
+        <div class="divider"></div>
+      </div>
+
+      <div class="testimonials">
+        <div class="quote">
+          <p>“Meu perfil ficou muito mais elegante e coerente. Agora eu consigo postar com confiança.”</p>
+          <div class="who">
+            <span class="bubble"><i class="fa-solid fa-message"></i></span>
+            <span>Cliente — <span class="stars">★★★★★</span></span>
+          </div>
+        </div>
+
+        <div class="quote">
+          <p>“As artes têm presença e as legendas são diretas. Ficou fácil manter constância.”</p>
+          <div class="who">
+            <span class="bubble"><i class="fa-solid fa-message"></i></span>
+            <span>Cliente — <span class="stars">★★★★★</span></span>
+          </div>
+        </div>
+
+        <div class="quote">
+          <p>“A organização no Drive ajuda demais. Tudo fica claro e bem separado por mês.”</p>
+          <div class="who">
+            <span class="bubble"><i class="fa-solid fa-message"></i></span>
+            <span>Cliente — <span class="stars">★★★★★</span></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="section">
+    <div class="container">
+      <div class="section-title">
+        <h2>Dúvidas frequentes</h2>
+        <p>Sem burocracia: clareza e alinhamento antes de começar.</p>
+        <div class="divider"></div>
+      </div>
+
+      <div class="faq">
+        <details>
+          <summary>
+            O que eu preciso enviar para começar?
+            <i class="fa-solid fa-plus"></i>
+          </summary>
+          <p>Você responde o briefing e fazemos um alinhamento inicial. A partir disso eu organizo bio, destaques e identidade visual para começar a produção.</p>
+        </details>
+
+        <details>
+          <summary>
+            Você entrega as legendas junto com os posts?
+            <i class="fa-solid fa-plus"></i>
+          </summary>
+          <p>Sim. Cada conteúdo vai com legenda estratégica, pronta para postagem.</p>
+        </details>
+
+        <details>
+          <summary>
+            Onde ficam os arquivos?
+            <i class="fa-solid fa-plus"></i>
+          </summary>
+          <p>Em uma pasta organizada no Google Drive, com fácil acesso e histórico do conteúdo.</p>
+        </details>
+
+        <details>
+          <summary>
+            Posso pedir avulsos mesmo sem plano?
+            <i class="fa-solid fa-plus"></i>
+          </summary>
+          <p>Sim. Avulsos atendem demandas pontuais. Clientes mensais têm prioridade e condições diferenciadas.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA FINAL -->
+  <section class="container final">
+    <div class="panel">
+      <div class="panel-inner">
+        <h2>Vamos deixar seu Instagram com presença premium?</h2>
+        <p>
+          Se você busca estética, clareza e constância — com um processo organizado e acolhedor —
+          me chama no WhatsApp. Eu vou te orientar sobre o melhor plano para o seu momento.
+        </p>
+        <a class="btn btn-primary" href="SEU_LINK_WHATSAPP" target="_blank" rel="noopener">
+          <i class="fa-brands fa-whatsapp"></i> Falar comigo agora
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p><a href="mailto:SEU_EMAIL"><i class="fa-solid fa-envelope"></i> SEU_EMAIL</a></p>
+    <p style="margin-top:10px;"><a href="https://instagram.com/SEU_INSTAGRAM" target="_blank" rel="noopener"><i class="fa-brands fa-instagram"></i> @SEU_INSTAGRAM</a></p>
+    <p style="margin-top:14px; opacity:.85;">© 2025 — Kállita Prado</p>
+  </footer>
+
+  <!-- WhatsApp floating -->
+  <a class="wa" href="SEU_LINK_WHATSAPP" target="_blank" rel="noopener" aria-label="WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
   </a>
-</header>
 
-<!-- PLANOS -->
-<section class="container">
-  <h2>Planos Mensais</h2>
-
-  <div class="cards">
-    <!-- ESSÊNCIA -->
-    <div class="card">
-      <h3>🌿 Plano Essência</h3>
-      <p>Para marcas que desejam organização, estética profissional e constância.</p>
-
-      <ul>
-        <li>• 8 conteúdos mensais</li>
-        <li>• Posts estáticos e/ou carrosséis</li>
-        <li>• Legendas estratégicas</li>
-        <li>• Organização da biografia e destaques</li>
-        <li>• Briefing inicial</li>
-        <li>• Definição de identidade visual</li>
-        <li>• Arquivos organizados em Google Drive</li>
-        <li>• Conteúdo pronto para postagem</li>
-      </ul>
-
-      <div class="preco">R$ 450,00 / mês</div>
-    </div>
-
-    <!-- AUTORIDADE -->
-    <div class="card">
-      <h3>🌹 Plano Autoridade</h3>
-      <p>Para marcas que querem crescer, se posicionar e comunicar valor.</p>
-
-      <ul>
-        <li>• 16 conteúdos mensais</li>
-        <li>• Posts estáticos e carrosséis</li>
-        <li>• Legendas estratégicas</li>
-        <li>• Planejamento mensal</li>
-        <li>• Briefing aprofundado</li>
-        <li>• Identidade visual completa</li>
-        <li>• Organização em Google Drive</li>
-        <li>• Conteúdo pronto para postagem</li>
-      </ul>
-
-      <div class="preco">R$ 900,00 / mês</div>
-    </div>
-  </div>
-</section>
-
-<!-- AVULSOS -->
-<section class="container">
-  <h2>Serviços Avulsos</h2>
-
-  <div class="cards">
-    <div class="card">
-      <h3>Post Estático</h3>
-      <p>Arte personalizada + legenda estratégica.</p>
-      <div class="preco">R$ 60 a R$ 80</div>
-    </div>
-
-    <div class="card">
-      <h3>Carrossel (até 5 slides)</h3>
-      <p>Conteúdo estruturado para leitura e retenção + legenda estratégica.</p>
-      <div class="preco">R$ 120 a R$ 180</div>
-    </div>
-  </div>
-
-  <p class="posicionamento">
-    Clientes com plano mensal possuem prioridade de atendimento
-    e valores diferenciados para serviços avulsos.
-  </p>
-</section>
-
-<!-- PROCESSO -->
-<section class="container">
-  <h2>Como funciona meu processo</h2>
-
-  <ul>
-    <li>• Reunião inicial de alinhamento</li>
-    <li>• Briefing estratégico</li>
-    <li>• Organização da biografia e destaques</li>
-    <li>• Definição de identidade visual</li>
-    <li>• Criação de conteúdo visual e textual</li>
-    <li>• Arquivos organizados em Google Drive</li>
-    <li>• Conteúdo pronto para postagem</li>
-  </ul>
-</section>
-
-<!-- FOOTER -->
-<footer>
-  <p>
-    <a href="mailto:akallitaprado@gmail.com">akallitaprado@gmail.com</a>
-  </p>
-  <p>
-    <a href="https://instagram.com/akallitaprado" target="_blank">@akallitaprado</a>
-  </p>
-  <p>© 2025 — Kállita Prado</p>
-</footer>
-
+</div>
 </body>
 </html>
