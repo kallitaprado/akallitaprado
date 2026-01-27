@@ -5,6 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Kállita Prado | Design de Posts para Instagram</title>
 
+  <!-- (Opcional) Preview ao compartilhar -->
+  <meta name="description" content="Design de posts para Instagram com estética profissional e identidade visual consistente. Planos mensais e serviços avulsos." />
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -13,18 +16,17 @@
 
   <style>
     :root{
-      /* Paleta (baseada na sua referência) */
-      --accent: #C1121F;     /* vermelho queimado */
-      --accent2:#8A0F16;     /* vermelho profundo */
-      --accentSoft:#D65A3A;  /* terracota/laranja fechado */
+      --accent: #C1121F;
+      --accent2:#8A0F16;
+      --accentSoft:#D65A3A;
 
-      --bg: #0B1510;         /* verde bem escuro */
-      --bg2:#102018;         /* verde escuro */
-      --card:#16271E;        /* verde card */
+      --bg: #0B1510;
+      --bg2:#102018;
+      --card:#16271E;
 
-      --text:#F2E8CF;        /* off-white quente */
-      --muted:#D6C7A8;       /* texto secundário */
-      --white:#FFF6E6;       /* branco */
+      --text:#F2E8CF;
+      --muted:#D6C7A8;
+      --white:#FFF6E6;
 
       --border:#2B3B31;
 
@@ -73,7 +75,7 @@
       padding: 84px 22px;
     }
 
-    /* Topbar (não fixa) */
+    /* Topbar */
     .topbar{
       max-width: var(--max);
       margin: 22px auto 0 auto;
@@ -120,10 +122,7 @@
     }
 
     /* Hero */
-    .hero{
-      padding-top: 38px;
-      padding-bottom: 30px;
-    }
+    .hero{padding-top:38px;padding-bottom:30px;}
     .hero-grid{
       display:grid;
       grid-template-columns: 1.1fr 0.9fr;
@@ -225,10 +224,10 @@
       inset:-2px;
       background: radial-gradient(600px 260px at 30% 0%, rgba(193,18,31,0.22), transparent 50%),
                   radial-gradient(500px 240px at 80% 35%, rgba(214,90,58,0.14), transparent 55%);
-      opacity: 1;
       pointer-events:none;
     }
     .hero-card-inner{position:relative; z-index:1;}
+
     .mini-title{
       font-weight:900;
       color: var(--white);
@@ -252,67 +251,48 @@
       font-size: 0.9rem;
     }
 
-    .checklist{
-      margin-top: 10px;
-      display:grid;
-      gap: 10px;
-    }
-    .check{
-      display:flex;
-      gap:10px;
-      align-items:flex-start;
-      color: var(--muted);
-      font-weight:500;
-    }
-    .check i{
-      margin-top: 2px;
-      color: var(--accentSoft);
-    }
+    .checklist{margin-top:10px; display:grid; gap:10px;}
+    .check{display:flex; gap:10px; align-items:flex-start; color: var(--muted); font-weight:500;}
+    .check i{margin-top:2px; color: var(--accentSoft);}
 
     .limit{
-      margin-top: 16px;
-      padding: 12px 14px;
-      border-radius: 14px;
+      margin-top:16px;
+      padding:12px 14px;
+      border-radius:14px;
       background: rgba(214,199,168,0.06);
       border: 1px solid rgba(214,199,168,0.18);
       color: var(--muted);
-      font-size: 0.98rem;
+      font-size:0.98rem;
     }
     .limit strong{color: var(--white);}
 
-    /* section titles */
-    .section-title{
-      text-align:center;
-      margin-bottom: 42px;
-    }
+    .section-title{text-align:center; margin-bottom:42px;}
     .section-title h2{
-      font-size: 2.2rem;
-      letter-spacing: -0.6px;
+      font-size:2.2rem;
+      letter-spacing:-0.6px;
       color: var(--white);
-      margin-bottom: 10px;
+      margin-bottom:10px;
     }
     .section-title p{
-      max-width: 76ch;
-      margin: 0 auto;
+      max-width:76ch;
+      margin:0 auto;
       color: var(--muted);
-      font-size: 1.05rem;
+      font-size:1.05rem;
     }
     .divider{
-      width: 110px;
-      height: 4px;
-      margin: 16px auto 0 auto;
-      border-radius: 999px;
+      width:110px;
+      height:4px;
+      margin:16px auto 0 auto;
+      border-radius:999px;
       background: linear-gradient(90deg, rgba(193,18,31,0), rgba(193,18,31,1), rgba(214,90,58,0.9), rgba(193,18,31,0));
     }
 
-    /* sections bg */
     .section{
       background: linear-gradient(180deg, rgba(16,32,24,0.45), rgba(16,32,24,0.18));
       border-top: 1px solid rgba(43,59,49,0.5);
       border-bottom: 1px solid rgba(43,59,49,0.5);
     }
 
-    /* grids */
     .grid{
       display:grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -326,14 +306,7 @@
       gap: 22px;
       margin-top: 28px;
     }
-    .grid3{
-      display:grid;
-      grid-template-columns: repeat(3, minmax(0,1fr));
-      gap: 18px;
-      margin-top: 28px;
-    }
 
-    /* cards */
     .card{
       background: rgba(22,39,30,0.78);
       border: 1px solid rgba(43,59,49,0.9);
@@ -349,20 +322,21 @@
       border-color: rgba(193,18,31,0.45);
       box-shadow: var(--shadowStrong);
     }
-    .card .topline{
+
+    .topline{
       display:flex;
       align-items:center;
       justify-content:space-between;
-      gap: 12px;
-      margin-bottom: 10px;
-      flex-wrap: wrap;
+      gap:12px;
+      margin-bottom:10px;
+      flex-wrap:wrap;
     }
     .pill{
       display:inline-flex;
       align-items:center;
       gap:8px;
-      padding: 8px 12px;
-      border-radius: 999px;
+      padding:8px 12px;
+      border-radius:999px;
       background: rgba(214,199,168,0.06);
       border: 1px solid rgba(214,199,168,0.18);
       color: var(--muted);
@@ -372,61 +346,40 @@
     .pill i{color: var(--accentSoft);}
 
     .card h3{
-      font-size: 1.55rem;
-      letter-spacing: -0.4px;
-      margin-bottom: 8px;
+      font-size:1.55rem;
+      letter-spacing:-0.4px;
+      margin-bottom:8px;
       color: var(--white);
     }
-    .card p{
-      color: var(--muted);
-      margin-bottom: 14px;
-    }
+    .card p{color: var(--muted); margin-bottom:14px;}
 
-    .list{
-      margin-top: 10px;
-      display:grid;
-      gap: 10px;
-      margin-bottom: 18px;
-    }
-    .item{
-      display:flex;
-      gap: 10px;
-      color: var(--text);
-      font-weight: 500;
-    }
-    .item i{
-      color: var(--accent);
-      margin-top: 3px;
-    }
+    .list{margin-top:10px; display:grid; gap:10px; margin-bottom:18px;}
+    .item{display:flex; gap:10px; color: var(--text); font-weight:500;}
+    .item i{color: var(--accent); margin-top:3px;}
     .item strong{color: var(--white); font-weight:800;}
 
     .price{
       display:flex;
       align-items:baseline;
       justify-content:space-between;
-      gap: 10px;
-      margin-top: 12px;
-      padding-top: 14px;
+      gap:10px;
+      margin-top:12px;
+      padding-top:14px;
       border-top: 1px solid rgba(43,59,49,0.75);
     }
     .amount{
-      font-size: 2.1rem;
-      font-weight: 900;
+      font-size:2.1rem;
+      font-weight:900;
       color: var(--accentSoft);
-      letter-spacing: -0.8px;
+      letter-spacing:-0.8px;
     }
     .amount span{
-      font-size: 1.05rem;
-      font-weight: 700;
+      font-size:1.05rem;
+      font-weight:700;
       color: var(--muted);
     }
-    .card .cta{
-      margin-top: 16px;
-      width: 100%;
-      min-width: unset;
-    }
+    .cta{margin-top:16px; width:100%; min-width:unset;}
 
-    /* Featured plan */
     .featured{
       border-color: rgba(193,18,31,0.65);
       background: linear-gradient(180deg, rgba(22,39,30,0.82), rgba(22,39,30,0.65));
@@ -439,62 +392,18 @@
                   radial-gradient(700px 300px at 90% 20%, rgba(214,90,58,0.16), transparent 55%);
       pointer-events:none;
     }
-    .featured .card-inner{position:relative; z-index:1;}
+    .card-inner{position:relative; z-index:1;}
     .tag{
       display:inline-flex;
       align-items:center;
       gap:8px;
-      padding: 8px 12px;
-      border-radius: 999px;
+      padding:8px 12px;
+      border-radius:999px;
       background: linear-gradient(135deg, rgba(193,18,31,0.22), rgba(214,90,58,0.14));
       border: 1px solid rgba(193,18,31,0.45);
       color: var(--white);
-      font-weight: 900;
-      font-size: 0.92rem;
-    }
-
-    /* Steps */
-    .steps{
-      display:grid;
-      grid-template-columns: repeat(3, minmax(0,1fr));
-      gap: 18px;
-      margin-top: 28px;
-    }
-    .step{
-      background: rgba(22,39,30,0.70);
-      border: 1px solid rgba(43,59,49,0.85);
-      border-radius: var(--radius2);
-      padding: 18px;
-      box-shadow: var(--shadowSoft);
-      transition: transform .2s ease, border-color .2s ease;
-    }
-    .step:hover{
-      transform: translateY(-3px);
-      border-color: rgba(214,199,168,0.35);
-    }
-    .step .num{
-      width: 40px;
-      height: 40px;
-      border-radius: 12px;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      background: rgba(193,18,31,0.14);
-      border: 1px solid rgba(193,18,31,0.35);
-      color: var(--white);
-      font-weight: 900;
-      margin-bottom: 12px;
-    }
-    .step h4{
-      color: var(--white);
-      font-size: 1.05rem;
-      margin-bottom: 8px;
-      letter-spacing: -0.2px;
-    }
-    .step p{
-      color: var(--muted);
-      font-size: 0.98rem;
-      margin-bottom: 0;
+      font-weight:900;
+      font-size:0.92rem;
     }
 
     /* Testimonials */
@@ -516,8 +425,494 @@
       font-style: italic;
       margin-bottom: 12px;
     }
-    .quote .who{
+    .who{
       color: var(--white);
       font-weight: 800;
       display:flex;
-      align-items:
+      align-items:center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .stars{color:#F2E8CF; opacity:.9; font-size:.95rem;}
+    .bubble{
+      width:36px;height:36px;border-radius:12px;
+      background: rgba(214,199,168,0.06);
+      border: 1px solid rgba(214,199,168,0.18);
+      display:flex;align-items:center;justify-content:center;
+      color: var(--accentSoft);
+    }
+
+    /* Steps */
+    .steps{
+      display:grid;
+      grid-template-columns: repeat(3, minmax(0,1fr));
+      gap: 18px;
+      margin-top: 28px;
+    }
+    .step{
+      background: rgba(22,39,30,0.70);
+      border: 1px solid rgba(43,59,49,0.85);
+      border-radius: var(--radius2);
+      padding: 18px;
+      box-shadow: var(--shadowSoft);
+      transition: transform .2s ease, border-color .2s ease;
+    }
+    .step:hover{transform: translateY(-3px); border-color: rgba(214,199,168,0.35);}
+    .num{
+      width:40px;height:40px;border-radius:12px;
+      display:flex;align-items:center;justify-content:center;
+      background: rgba(193,18,31,0.14);
+      border: 1px solid rgba(193,18,31,0.35);
+      color: var(--white);
+      font-weight:900;
+      margin-bottom: 12px;
+    }
+    .step h4{color: var(--white); font-size:1.05rem; margin-bottom:8px;}
+    .step p{color: var(--muted); font-size:0.98rem; margin-bottom:0;}
+
+    /* FAQ */
+    .faq{
+      margin-top: 28px;
+      display:grid;
+      gap: 12px;
+      max-width: 900px;
+      margin-left:auto;
+      margin-right:auto;
+    }
+    details{
+      background: rgba(22,39,30,0.72);
+      border: 1px solid rgba(43,59,49,0.85);
+      border-radius: var(--radius2);
+      padding: 16px 18px;
+      box-shadow: var(--shadowSoft);
+    }
+    summary{
+      cursor:pointer;
+      list-style:none;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap: 12px;
+      color: var(--white);
+      font-weight: 800;
+    }
+    summary::-webkit-details-marker{display:none;}
+    details p{margin-top: 10px; color: var(--muted);}
+
+    /* CTA final */
+    .final{text-align:center;}
+    .panel{
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 26px;
+      border-radius: var(--radius2);
+      background: linear-gradient(180deg, rgba(22,39,30,0.78), rgba(16,32,24,0.55));
+      border: 1px solid rgba(43,59,49,0.85);
+      box-shadow: var(--shadowStrong);
+      position:relative;
+      overflow:hidden;
+    }
+    .panel::before{
+      content:"";
+      position:absolute;
+      inset:-2px;
+      background: radial-gradient(700px 280px at 50% 0%, rgba(193,18,31,0.22), transparent 60%);
+      pointer-events:none;
+    }
+    .panel-inner{position:relative; z-index:1;}
+    .panel p{
+      max-width: 78ch;
+      margin: 0 auto 18px auto;
+      color: var(--muted);
+    }
+
+    footer{
+      text-align:center;
+      padding: 44px 20px;
+      color: rgba(214,199,168,0.85);
+      border-top: 1px solid rgba(43,59,49,0.55);
+      background: rgba(0,0,0,0.35);
+    }
+    footer a{
+      color: rgba(242,232,207,0.92);
+      text-decoration:none;
+      font-weight: 700;
+    }
+    footer a:hover{color: var(--white);}
+
+    .wa{
+      position:fixed;
+      right: 20px;
+      bottom: 20px;
+      width: 62px;
+      height: 62px;
+      border-radius: 18px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      background: linear-gradient(135deg, #25D366, #1EBE57);
+      box-shadow: 0 18px 45px rgba(0,0,0,0.45);
+      border: 1px solid rgba(255,255,255,0.12);
+      z-index: 9999;
+      transition: transform .2s ease;
+      text-decoration:none;
+    }
+    .wa:hover{transform: translateY(-2px) scale(1.03);}
+    .wa i{color:#fff; font-size: 28px;}
+
+    @media (max-width: 980px){
+      .hero-grid{grid-template-columns: 1fr; gap: 18px;}
+      h1{font-size: 2.45rem;}
+      .grid{grid-template-columns: 1fr;}
+      .grid2{grid-template-columns: 1fr;}
+      .steps{grid-template-columns: 1fr;}
+      .testimonials{grid-template-columns: 1fr;}
+      .btn{width: 100%;}
+      .nav{display:none;}
+      .topbar{border-radius: 20px;}
+    }
+  </style>
+</head>
+
+<body>
+<div class="wrap">
+
+  <div class="topbar">
+    <div class="brand">
+      <span class="dot"></span>
+      <span>Kállita Prado</span>
+    </div>
+    <nav class="nav" aria-label="Navegação">
+      <a href="#planos">Planos</a>
+      <a href="#avulsos">Avulsos</a>
+      <a href="#depoimentos">Depoimentos</a>
+      <a href="#processo">Processo</a>
+      <a href="#faq">Dúvidas</a>
+    </nav>
+  </div>
+
+  <header class="container hero">
+    <div class="hero-grid">
+      <div>
+        <div class="kicker">
+          <i class="fa-solid fa-pen-nib"></i>
+          <span>Design de posts para Instagram</span>
+        </div>
+
+        <h1>Estética profissional e identidade visual consistente para o seu Instagram.</h1>
+
+        <p>
+          Criação de <strong>posts estáticos</strong> e <strong>carrosséis</strong> com design personalizado,
+          hierarquia visual e acabamento premium — para deixar seu feed mais organizado, bonito e coerente com a sua marca.
+        </p>
+
+        <p>
+          Atendo principalmente <strong>marcas pessoais</strong> e <strong>negócios liderados por mulheres</strong>
+          que valorizam estética, organização e presença visual.
+        </p>
+
+        <div class="hero-cta">
+          <a class="btn btn-primary" href="#" data-wa target="_blank" rel="noopener">
+            <i class="fa-brands fa-whatsapp"></i> Quero orçamento
+          </a>
+          <a class="btn btn-ghost" href="#planos">
+            <i class="fa-solid fa-arrow-down"></i> Ver planos
+          </a>
+        </div>
+      </div>
+
+      <aside class="hero-card">
+        <div class="hero-card-inner">
+          <div class="mini-title">
+            <span class="badge"><i class="fa-solid fa-sparkles"></i> O que você recebe</span>
+          </div>
+
+          <div class="checklist">
+            <div class="check"><i class="fa-solid fa-circle-check"></i><span><strong>Direção visual</strong> (paleta, tipografia e estilo).</span></div>
+            <div class="check"><i class="fa-solid fa-circle-check"></i><span><strong>Design de posts</strong> (estáticos e carrosséis).</span></div>
+            <div class="check"><i class="fa-solid fa-circle-check"></i><span><strong>Hierarquia e leitura fluida</strong> (principalmente nos carrosséis).</span></div>
+            <div class="check"><i class="fa-solid fa-circle-check"></i><span><strong>Entrega organizada</strong> em Google Drive.</span></div>
+          </div>
+
+          <div class="limit">
+            <strong>Vagas limitadas</strong> para manter qualidade e padrão de entrega.
+          </div>
+        </div>
+      </aside>
+    </div>
+  </header>
+
+  <section id="planos" class="section">
+    <div class="container">
+      <div class="section-title">
+        <h2>Planos mensais</h2>
+        <p>
+          Dois formatos claros para manter constância com design bem feito — com uma divisão equilibrada entre
+          posts estáticos e carrosséis.
+        </p>
+        <div class="divider"></div>
+      </div>
+
+      <div class="grid">
+        <div class="card">
+          <div class="topline">
+            <span class="pill"><i class="fa-solid fa-layer-group"></i> Equilíbrio</span>
+            <span class="pill"><i class="fa-solid fa-folder-open"></i> Entrega organizada</span>
+          </div>
+
+          <h3>Design Essencial</h3>
+          <p>Para quem quer um feed organizado, profissional e visualmente coerente.</p>
+
+          <div class="list">
+            <div class="item"><i class="fa-solid fa-check"></i><span><strong>12 peças mensais</strong></span></div>
+            <div class="item"><i class="fa-solid fa-check"></i><span><strong>8 posts estáticos</strong></span></div>
+            <div class="item"><i class="fa-solid fa-check"></i><span><strong>4 carrosséis</strong> (até <strong>5 slides</strong>)</span></div>
+            <div class="item"><i class="fa-solid fa-check"></i><span><strong>Direção visual</strong> (paleta, tipografia e estilo)</span></div>
+            <div class="item"><i class="fa-solid fa-check"></i><span><strong>1 rodada de ajustes</strong> por peça</span></div>
+            <div class="item"><i class="fa-solid fa-check"></i><span>Arquivos organizados em <strong>Google Drive</strong></span></div>
+          </div>
+
+          <div class="price">
+            <div class="amount">R$ 550,00 <span>/mês</span></div>
+          </div>
+
+          <a class="btn btn-ghost cta" href="#" data-wa target="_blank" rel="noopener">
+            <i class="fa-brands fa-whatsapp"></i> Quero o Essencial
+          </a>
+        </div>
+
+        <div class="card featured">
+          <div class="card-inner">
+            <div class="topline">
+              <span class="tag"><i class="fa-solid fa-crown"></i> Mais completo</span>
+              <span class="pill"><i class="fa-solid fa-bolt"></i> Prioridade</span>
+            </div>
+
+            <h3>Design Completo</h3>
+            <p>Para quem precisa de maior volume e acabamento visual mais robusto.</p>
+
+            <div class="list">
+              <div class="item"><i class="fa-solid fa-check"></i><span><strong>18 peças mensais</strong></span></div>
+              <div class="item"><i class="fa-solid fa-check"></i><span><strong>10 posts estáticos</strong></span></div>
+              <div class="item"><i class="fa-solid fa-check"></i><span><strong>8 carrosséis</strong> (até <strong>7 slides</strong>)</span></div>
+              <div class="item"><i class="fa-solid fa-check"></i><span><strong>Direção visual</strong> mais aprofundada</span></div>
+              <div class="item"><i class="fa-solid fa-check"></i><span><strong>2 rodadas de ajustes</strong> por peça</span></div>
+              <div class="item"><i class="fa-solid fa-check"></i><span><strong>Prioridade</strong> na entrega e suporte</span></div>
+            </div>
+
+            <div class="price">
+              <div class="amount">R$ 950,00 <span>/mês</span></div>
+            </div>
+
+            <a class="btn btn-primary cta" href="#" data-wa target="_blank" rel="noopener">
+              <i class="fa-brands fa-whatsapp"></i> Quero o Completo
+            </a>
+
+            <p style="margin-top:12px; color: var(--muted); font-size:.98rem;">
+              <em>Carrosséis acima do limite de slides são orçados à parte.</em>
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <p style="text-align:center; margin-top:18px; color: var(--muted);">
+        <em>Trabalho com vagas limitadas para manter qualidade e padrão de entrega.</em>
+      </p>
+    </div>
+  </section>
+
+  <section id="avulsos">
+    <div class="container">
+      <div class="section-title">
+        <h2>Serviços avulsos</h2>
+        <p>Para demandas pontuais, com o mesmo padrão visual e cuidado de entrega.</p>
+        <div class="divider"></div>
+      </div>
+
+      <div class="grid2">
+        <div class="card">
+          <div class="topline">
+            <span class="pill"><i class="fa-solid fa-image"></i> 1 peça</span>
+          </div>
+          <h3>Post estático</h3>
+          <p>Arte para Instagram alinhada à identidade visual do perfil.</p>
+          <div class="price">
+            <div class="amount">R$ 80 a R$ 120</div>
+            <div style="color:var(--muted); font-weight:700;">por peça</div>
+          </div>
+          <p style="margin-top:12px; color: var(--muted); font-size:.98rem;">
+            <em>Valor varia conforme complexidade da arte.</em>
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="topline">
+            <span class="pill"><i class="fa-solid fa-layer-group"></i> 5 a 10 slides</span>
+          </div>
+          <h3>Carrossel</h3>
+          <p>Carrossel com hierarquia visual e leitura fluida, pensado para ficar bonito e fácil de consumir.</p>
+          <div class="price">
+            <div class="amount">R$ 160 a R$ 320</div>
+            <div style="color:var(--muted); font-weight:700;">por carrossel</div>
+          </div>
+          <p style="margin-top:12px; color: var(--muted); font-size:.98rem;">
+            <em>O valor varia conforme a quantidade de slides e complexidade visual.</em>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="depoimentos">
+    <div class="container">
+      <div class="section-title">
+        <h2>O impacto do design na prática</h2>
+        <p>Alguns relatos sobre estética, organização e percepção profissional do perfil.</p>
+        <div class="divider"></div>
+      </div>
+
+      <div class="testimonials">
+        <div class="quote">
+          <p>“O design dos posts trouxe exatamente a imagem profissional que eu queria. O feed ficou mais organizado, coerente e com uma estética que conversa com o meu trabalho. Hoje sinto muito mais segurança ao postar.”</p>
+          <div class="who">
+            <span class="bubble"><i class="fa-solid fa-compass-drafting"></i></span>
+            <span>Arquiteta <span class="stars">★★★★★</span></span>
+          </div>
+        </div>
+
+        <div class="quote">
+          <p>“Antes, meu perfil não transmitia a seriedade e o cuidado do meu atendimento. Com o design dos posts, tudo ficou mais alinhado visualmente e mais claro para quem chega no perfil. A organização fez muita diferença.”</p>
+          <div class="who">
+            <span class="bubble"><i class="fa-solid fa-brain"></i></span>
+            <span>Psicóloga Clínica <span class="stars">★★★★★</span></span>
+          </div>
+        </div>
+
+        <div class="quote">
+          <p>“A estética dos posts mudou completamente a percepção do meu perfil. O conteúdo ficou mais leve, organizado e profissional. Hoje meu Instagram reflete muito melhor a marca que eu quero construir.”</p>
+          <div class="who">
+            <span class="bubble"><i class="fa-solid fa-graduation-cap"></i></span>
+            <span>Empreendedora <span class="stars">★★★★★</span></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="processo" class="section">
+    <div class="container">
+      <div class="section-title">
+        <h2>Como funciona meu processo</h2>
+        <p>Organizado, transparente e focado em design — para você ter clareza do início ao fim.</p>
+        <div class="divider"></div>
+      </div>
+
+      <div class="steps">
+        <div class="step"><div class="num">1</div><h4>Alinhamento visual</h4><p>Entendo referências, estilo e necessidades do seu perfil para definir o caminho visual.</p></div>
+        <div class="step"><div class="num">2</div><h4>Direção visual</h4><p>Definimos paleta, tipografia e estilo para manter consistência e identidade.</p></div>
+        <div class="step"><div class="num">3</div><h4>Criação das peças</h4><p>Posts estáticos e carrosséis com hierarquia, estética e acabamento profissional.</p></div>
+        <div class="step"><div class="num">4</div><h4>Ajustes</h4><p>Revisões conforme o plano contratado, garantindo um resultado final alinhado.</p></div>
+        <div class="step"><div class="num">5</div><h4>Entrega organizada</h4><p>Arquivos entregues em Google Drive, separados e prontos para postagem.</p></div>
+        <div class="step"><div class="num">6</div><h4>Continuidade</h4><p>Com constância e padrão, seu perfil ganha unidade, clareza e presença visual.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq" class="section">
+    <div class="container">
+      <div class="section-title">
+        <h2>Dúvidas frequentes</h2>
+        <p>Sem burocracia: clareza e alinhamento antes de começar.</p>
+        <div class="divider"></div>
+      </div>
+
+      <div class="faq">
+        <details>
+          <summary>O que eu preciso enviar para começar? <i class="fa-solid fa-plus"></i></summary>
+          <p>Após a contratação, faço um alinhamento inicial para entender referências visuais, estilo e necessidades do seu perfil. A partir disso, defino a direção visual e inicio a criação das peças.</p>
+        </details>
+
+        <details>
+          <summary>Você trabalha com estratégia, planejamento de conteúdo ou social media? <i class="fa-solid fa-plus"></i></summary>
+          <p>Não. Meu serviço é focado exclusivamente em <strong>design de posts para Instagram</strong>. Não realizo planejamento estratégico de conteúdo, gestão de redes sociais ou social media.</p>
+        </details>
+
+        <details>
+          <summary>Você faz edição de vídeo, Reels ou Stories animados? <i class="fa-solid fa-plus"></i></summary>
+          <p>Não. Não trabalho com edição de vídeo, Reels, Stories animados ou motion. Minha atuação é voltada apenas para <strong>design gráfico de posts estáticos e carrosséis</strong>.</p>
+        </details>
+
+        <details>
+          <summary>Posso pedir mais carrosséis ou aumentar o número de slides? <i class="fa-solid fa-plus"></i></summary>
+          <p>Sim. Peças adicionais e carrosséis que ultrapassem o limite de slides do plano são tratados como <strong>serviço avulso</strong>, mediante orçamento.</p>
+        </details>
+
+        <details>
+          <summary>Onde os arquivos são entregues? <i class="fa-solid fa-plus"></i></summary>
+          <p>Todos os arquivos são entregues de forma organizada em uma pasta no <strong>Google Drive</strong>, facilitando o acesso e a postagem.</p>
+        </details>
+
+        <details>
+          <summary>Quantas revisões estão inclusas? <i class="fa-solid fa-plus"></i></summary>
+          <p>Cada plano inclui a quantidade de ajustes indicada na descrição. Ajustes adicionais podem ser avaliados separadamente.</p>
+        </details>
+
+        <details>
+          <summary>Você atende qualquer tipo de negócio? <i class="fa-solid fa-plus"></i></summary>
+          <p>Atendo principalmente <strong>marcas pessoais</strong> e <strong>negócios liderados por mulheres</strong> que valorizam estética e organização visual.</p>
+        </details>
+
+        <details>
+          <summary>Como funciona o pagamento? <i class="fa-solid fa-plus"></i></summary>
+          <p>O pagamento é realizado de forma antecipada, mensalmente, para início da produção.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section class="container final">
+    <div class="panel">
+      <div class="panel-inner">
+        <h2>Vamos organizar o visual do seu Instagram?</h2>
+        <p>Se você busca design de posts com estética profissional, consistência e entrega organizada, me chama no WhatsApp. Eu te oriento sobre o melhor formato para o seu momento.</p>
+        <a class="btn btn-primary" href="#" data-wa target="_blank" rel="noopener">
+          <i class="fa-brands fa-whatsapp"></i> Falar comigo agora
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p><a href="mailto:akallitaprado@gmail.com"><i class="fa-solid fa-envelope"></i> akallitaprado@gmail.com</a></p>
+    <p style="margin-top:10px;">
+      <a href="https://www.instagram.com/akallitaprado/" target="_blank" rel="noopener">
+        <i class="fa-brands fa-instagram"></i> @akallitaprado
+      </a>
+    </p>
+    <p style="margin-top:14px; opacity:.85;">© 2025 — Kállita Prado</p>
+  </footer>
+
+  <a class="wa" href="#" data-wa target="_blank" rel="noopener" aria-label="WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
+
+</div>
+
+<script>
+  // ✅ IMPORTANTE:
+  // 1) Troque pelo seu link real do WhatsApp.
+  // Exemplo:
+  // const WHATSAPP_LINK = "https://wa.me/5599999999999?text=Oi%20K%C3%A1llita!%20Quero%20um%20or%C3%A7amento%20de%20design%20de%20posts.";
+
+  const WHATSAPP_LINK = "";
+
+  // Fallback: se você esquecer de preencher, o site NÃO quebra.
+  const fallbackLink = "https://wa.me/";
+  const linkFinal = (WHATSAPP_LINK && WHATSAPP_LINK.trim().length > 0) ? WHATSAPP_LINK : fallbackLink;
+
+  document.querySelectorAll("[data-wa]").forEach(el => {
+    el.setAttribute("href", linkFinal);
+  });
+</script>
+</body>
+</html>
