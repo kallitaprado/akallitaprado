@@ -170,31 +170,140 @@ h3{font-size:26px;margin-top:16px}.card-copy{font-size:14px;max-width:460px}.ser
 @media(max-width:360px){.nav .pill{padding:10px}.nav .pill .nav-cta-text{max-width:62px;text-align:center}.brand-name{font-size:21px}.deck{width:210px}.showcase-label{display:none}.sheet-title{font-size:40px}.hero-bottom{font-size:8px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{animation:none!important;transition:none!important}.deck{transform:none!important}}
 @media(max-width:360px){.sheet-back,.stage:hover .sheet-back{transform:translate(22px,4px) rotate(9deg)}.sheet-middle,.stage:hover .sheet-middle{transform:translate(-20px,6px) rotate(-9deg)}}
+
+/* Direção visual: verde intenso, composição gráfica e chamadas em destaque. */
+:root{--bg:#104c37;--green:#11533b;--light:#fff7d7;--butter:#f7e59b;--muted:#d0e2cc;--line:#dcefb536}
+body{background:radial-gradient(ellipse at 0 50%,#29764365,transparent 55%),linear-gradient(135deg,#104b36,#185c40 55%,#0e4935)}
+.shell{width:min(1240px,calc(100% - 80px))}
+.masthead{overflow:hidden;background:radial-gradient(ellipse at 78% 42%,#669b4e99,transparent 48%),radial-gradient(ellipse at 8% 80%,#227c4666,transparent 50%),linear-gradient(118deg,#104c36 5%,#1a613f 55%,#2a7143)}
+.masthead:after{background-image:linear-gradient(#d3eab009 1px,transparent 1px),linear-gradient(90deg,#d3eab009 1px,transparent 1px);background-size:65px 65px;mask-image:linear-gradient(to right,transparent,#000)}
+.topbar{min-height:82px;justify-content:center;border-bottom:1px solid #d8ecb738}
+.top-motto{display:flex;gap:14px;font-size:16px;letter-spacing:.2px;margin:0;color:var(--light)}
+.top-motto strong{color:var(--butter)}
+.hero{grid-template-columns:1.05fr 1fr;gap:44px;min-height:690px;padding:57px 0 58px}
+.eyebrow{display:inline-flex;padding:10px 14px;background:#d9eead12;border:1px solid #d8ecb744;border-radius:6px;font-size:10px;letter-spacing:1.1px;margin-bottom:24px}
+h1{font-weight:800;font-size:clamp(48px,4.85vw,70px);line-height:1.01;letter-spacing:-3px}
+h1 em{color:var(--butter);font-weight:800}
+h1 em:after{display:none}
+.hero-copy{font-size:16px;line-height:1.65;max-width:480px;margin:25px 0}
+.hero-copy strong{font-weight:400;color:var(--light)}
+.hero-action{border-radius:9px;font-size:14px;font-weight:700;padding:12px 21px 12px 12px;box-shadow:0 9px 0 -4px #0c482c55,0 12px 32px #123f3022;gap:12px;min-height:64px}
+.wa-symbol{width:38px;height:38px;display:inline-flex;justify-content:center;align-items:center;border-radius:50%;background:#168a4b;color:white;flex:none}
+.wa-symbol svg{display:block;width:27px!important;height:27px!important}
+.hero-action:hover{transform:translateY(-4px);box-shadow:0 12px 35px #f5e3a030}
+.hero-footnote{display:flex;flex-wrap:wrap;gap:16px;font-size:11px;line-height:1.6}
+.hero-footnote span:before{content:"✓";margin-right:7px;color:var(--butter);font-weight:bold}
+.showcase{background:linear-gradient(140deg,#e0eda90e,#d0e7a31c);border:1px solid #d5e8aa38;border-radius:24px;padding:22px 10px 18px;box-shadow:0 30px 60px #124c3b3b;isolation:isolate}
+.stage{height:432px}
+.studio-orbit{position:absolute;width:320px;height:320px;border:1px solid #f3e5a53b;border-radius:50%;background:radial-gradient(circle,#cfe59619,transparent 70%);z-index:-1}
+.studio-orbit:before,.studio-orbit:after{content:"";position:absolute;inset:-24px;border:1px solid #f3e5a528;border-radius:50%}
+.studio-orbit:after{inset:-50px}
+.studio-label{position:absolute;left:18px;top:0;font-size:10px;display:flex;align-items:center;gap:7px;color:var(--light)}
+.studio-dot{width:6px;height:6px;background:#d1ed88;border-radius:50%}
+.showcase-label{display:none}
+.deck{width:244px;height:312px;z-index:1}
+.sheet{border-radius:7px;box-shadow:0 18px 35px #104b3d50}
+.sheet-front{background:linear-gradient(140deg,#fff2b8,#e9d581);padding:24px}
+.sheet-title{font-size:45px;font-weight:800;letter-spacing:-2px;margin:29px 0 19px}
+.sheet-back{background:repeating-linear-gradient(45deg,#628d53,#628d53 12px,#769b61 12px,#769b61 24px);transform:translate(36px,5px) rotate(14deg)}
+.sheet-middle{background:linear-gradient(130deg,#e4edc0,#a6be7d)}
+.sheet-top{font-weight:700;font-size:8px}
+.floating-tag{position:absolute;right:3px;top:58px;background:#f5e7a4;color:#225339;padding:15px 20px;border-radius:7px;font-size:12px;line-height:1.4;transform:rotate(8deg);z-index:3;box-shadow:0 12px 24px #12493144}
+.floating-tag strong{font-size:16px}
+.color-panel{position:absolute;bottom:7px;left:9px;padding:14px 16px;background:#edf1cf;border:1px solid #fff7d778;border-radius:8px;color:#214d35;z-index:3;transform:rotate(-7deg);box-shadow:0 12px 24px #12493144}
+.color-panel>span{font-size:7px;font-weight:700;letter-spacing:.8px}
+.color-panel>div{display:flex;gap:5px;margin-top:8px}
+.color-panel i{width:28px;height:25px;border-radius:3px;background:#f5d77c}
+.color-panel i:nth-child(2){background:#cbd49c}.color-panel i:nth-child(3){background:#6d965a}.color-panel i:nth-child(4){background:#1a6541}
+.preview-controls{gap:5px;margin-top:14px}
+.preview-choice{font-size:11px;font-weight:700;padding:12px 17px;border-radius:6px;color:#dfebcb;border-color:#d5e8aa33;background:#164c3620}
+.preview-choice[aria-pressed="true"]{color:#205435;background:var(--butter);border-color:var(--butter)}
+.preview-hint{font-size:10px;margin-top:14px;color:#dce8c8}
+.hero-bottom{width:100%;padding:22px 25px;display:flex;align-items:center;justify-content:center;gap:30px;background:#eede9c;color:#245337;border:0;flex-wrap:wrap;font-weight:700;font-size:12px;letter-spacing:1px}
+.hero-bottom span:first-child{color:inherit}.hero-bottom b{font-size:23px;font-weight:400}
+.services{padding:66px 0}
+.overline{color:var(--butter);font-weight:700;font-size:11px}
+h2{font-size:46px;font-weight:700;letter-spacing:-1.8px}
+.section-top>p{font-size:14px;max-width:315px}
+.service-grid{gap:22px}
+.service-card{background:linear-gradient(140deg,#28764d,#165b3d);border:1px solid #cfdfaa55;border-radius:16px;padding:25px;box-shadow:0 14px 35px #104b3722}
+.service-card:before{background:radial-gradient(340px circle at var(--mx) var(--my),#f3e5a531,transparent 70%)}
+.service-card:hover,.service-card:focus-within{box-shadow:0 22px 36px #14493155;border-color:#eadb91}
+.card-top{font-size:10px;font-weight:700;color:var(--butter)}
+.card-top>span:first-child{background:#deedbd1f;border-radius:50%;width:30px;height:30px;display:grid;place-items:center}
+.card-top>span:last-child{align-self:center}
+.mini{background:radial-gradient(ellipse,#c2da8025,transparent 70%);height:135px;margin:10px -5px 8px;border-bottom:1px solid #cfdfaa26}
+.mini-slide{width:77px;height:94px}.mini-grid{grid-template-columns:repeat(2,42px)}.mini-grid i{height:42px}.mini-paper{width:79px;height:99px}
+h3{font-size:25px;font-weight:700;letter-spacing:-.8px}
+.card-copy{font-size:14px;line-height:1.7;margin-bottom:14px}
+.deliverables{list-style:none;margin:0 0 16px;padding:0;font-size:12px;line-height:1.7;color:#e2ecd2}
+.deliverables li{padding:4px 0;display:flex;gap:9px}
+.deliverables li:before{content:"✓";color:var(--butter);font-weight:700}
+details{margin-bottom:19px}
+.service-cta{border:0;background:var(--butter);color:#1c5135;border-radius:8px;font-weight:700;padding:11px;gap:10px;font-size:12px;min-height:60px;transition:background .2s,transform .2s}
+.service-cta:hover{background:#fff0b4;transform:translateY(-2px)}
+.service-cta .wa-symbol{width:34px;height:34px}
+.service-cta .wa-symbol svg{width:25px!important;height:25px!important}
+.process{padding:22px 0 62px}
+.process-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:30px;border-top:1px solid #d8e7b34d;padding-top:30px}
+.process-grid article{position:relative;padding-left:52px}
+.process-grid article>span{position:absolute;left:0;top:0;font-size:16px;font-weight:700;width:36px;height:36px;border:1px solid #e1e5a35c;border-radius:9px;display:grid;place-items:center;color:var(--butter)}
+.process-grid h3{font-size:20px;margin:4px 0 12px}
+.process-grid p{font-size:13px;line-height:1.7;color:var(--muted);margin:0}
+.contact-wrap{padding-bottom:35px}
+.contact{background:radial-gradient(ellipse at 100% 70%,#80a25877,transparent 65%),linear-gradient(110deg,#286d42,#398151);padding:43px;border-color:#cfdfaa65;border-radius:18px}
+.contact h2{font-size:45px;font-weight:700;line-height:1.08}
+.contact .overline{color:var(--butter);font-weight:700}
+.contact .pill{font-size:14px}
+.footer{border-top:1px solid #d8e7b336;padding:32px 0 38px}
+.footer-name{font-size:21px;font-weight:700}.footer-name p{font-size:11px;font-weight:400}
+.footer-links{gap:22px}.footer-links a{font-size:12px;color:#e0ebcd}
+.footer-links .wa-symbol{width:30px;height:30px}.footer-links .wa-symbol svg{width:22px!important;height:22px!important}
+@media(max-width:1100px) and (min-width:761px){.hero{gap:25px}.shell{width:calc(100% - 48px)}h1{font-size:54px}.floating-tag{right:0;top:55px;padding:10px}.deck{width:220px;height:300px}.sheet-title{font-size:42px}.color-panel{left:0}.studio-orbit{width:260px;height:260px}.hero-bottom{gap:17px;font-size:10px}.service-card{padding:20px}.service-cta{font-size:11px;gap:7px}.footer{align-items:flex-start}.footer-links{justify-content:flex-end;gap:14px}}
+@media(max-width:760px){
+.shell{width:calc(100% - 36px)}.topbar{min-height:69px}.top-motto{font-size:13px;gap:8px}
+.hero{grid-template-columns:1fr;padding:35px 0 35px;gap:32px;min-height:0}
+h1{font-size:clamp(43px,10vw,66px);letter-spacing:-2px}.eyebrow{font-size:8px;letter-spacing:.7px;padding:9px 11px;margin-bottom:20px}
+.hero-copy{font-size:14px;margin:22px 0}.hero-action{font-size:12px;min-height:61px;padding:11px 15px 11px 10px;gap:10px;max-width:100%}
+.hero-footnote{font-size:10px;gap:12px}
+.showcase{width:min(480px,100%);padding:20px 8px 16px;border-radius:18px}
+.stage{height:380px}.deck{width:214px;height:284px}.sheet-title{font-size:39px;letter-spacing:-1.6px;margin-top:24px}
+.sheet-front{padding:22px}.sheet-bottom{left:22px;right:22px;bottom:20px}
+.floating-tag{right:0;top:45px;padding:10px 12px;font-size:10px}.floating-tag strong{font-size:13px}
+.studio-label{left:9px;font-size:9px}.studio-orbit{width:230px;height:230px}
+.color-panel{bottom:0;left:2px;padding:10px 12px}.color-panel i{width:22px;height:20px}
+.preview-choice{font-size:10px;padding:12px 14px}.preview-hint{font-size:9px;line-height:1.5;padding:0 8px}
+.hero-bottom{gap:12px 17px;padding:18px 14px;font-size:9px;letter-spacing:.5px}
+.hero-bottom span:last-child{max-width:none;text-align:initial}.hero-bottom b{font-size:17px}.hero-bottom b:last-of-type{display:none}
+.services{padding:43px 0}.section-top{margin-bottom:25px}h2{font-size:35px;letter-spacing:-1px}
+.section-top>p{font-size:13px;margin-top:15px}
+.service-card{padding:25px}.service-grid{gap:20px}
+.mini{height:122px}h3{font-size:26px}.card-copy{font-size:14px}.deliverables{font-size:13px}.service-cta{font-size:13px}
+.process{padding:0 0 42px}.process-grid{grid-template-columns:1fr;gap:27px;padding-top:23px}.process-grid h3{font-size:21px}
+.contact{padding:30px 25px}.contact h2{font-size:35px}.contact .pill{font-size:12px;margin-top:22px}
+.footer{gap:18px;padding:26px 0}.footer-links{gap:9px 18px;align-items:flex-start}.footer-links a{font-size:12px}
+.showcase[data-look="templates"] .sheet-title{font-size:38px}
+}
+@media(max-width:360px){h1{font-size:40px}.top-motto{font-size:12px;gap:7px}.deck{width:195px}.sheet-title{font-size:35px}.stage{height:370px}.floating-tag{right:-1px}.studio-orbit{width:205px;height:205px}.color-panel{left:0}.preview-choice{padding:12px}.service-card{padding:21px}.service-cta{font-size:12px}.contact{padding:26px 20px}.hero-action{font-size:11px}}
+
 </style>
 </head>
 <body>
 <a class="skip" href="#conteudo">Pular para o conteúdo</a>
 <main id="conteudo">
 <div class="masthead">
-<header class="topbar shell">
- <a href="#inicio" aria-label="Kállita Prado, início"><span class="brand-name"><strong>Kállita</strong> <span>Prado</span></span><span class="brand-sub">Design com personalidade</span></a>
- <nav class="nav" aria-label="Navegação principal">
-  <a class="nav-link" href="#servicos">O que eu crio</a>
-  <a class="nav-link" href="https://www.instagram.com/akallitaprado/" target="_blank" rel="noopener noreferrer">Meu Instagram</a>
-  <a class="pill" href="https://wa.me/5519988503396?text=Oi%2C%20K%C3%A1!%20Vim%20pelo%20seu%20site%20e%20gostaria%20de%20conversar%20sobre%20uma%20ideia.%20Podemos%20falar%3F" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M20.5 3.5A11.9 11.9 0 0 0 12 .0C5.4 0 0 5.4 0 12c0 2.1.6 4.2 1.6 6L0 24l6.2-1.6A12 12 0 0 0 12 24c6.6 0 12-5.4 12-12 0-3.2-1.2-6.2-3.5-8.5ZM12 22a10 10 0 0 1-5.1-1.4l-.4-.2-3.7 1 1-3.6-.3-.4A10 10 0 1 1 12 22Zm5.5-7.5c-.3-.1-1.8-.9-2.1-1-.3-.1-.5-.1-.7.2l-1 1.2c-.2.2-.4.2-.7.1a8.2 8.2 0 0 1-2.4-1.5 9 9 0 0 1-1.7-2.1c-.2-.3 0-.5.1-.6l.5-.6.3-.5c.1-.2 0-.4 0-.6l-1-2.3c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.3 3.1c.1.2 2.1 3.3 5.1 4.6.7.3 1.3.5 1.7.6.7.2 1.4.2 2 .1.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.1-1.4-.1-.1-.3-.2-.6-.3Z"/></svg><span class="nav-cta-text">Vamos conversar</span></a>
- </nav>
-</header>
+<header class="topbar shell"><p class="top-motto"><span>Seu jeito.</span><span>Suas ideias.</span><strong>Seu visual.</strong></p></header>
 <section class="hero shell" id="inicio" aria-labelledby="titulo">
  <div class="enter">
-  <p class="eyebrow">Seu jeito. Suas ideias. Seu visual.</p>
-  <h1 id="titulo">Design de posts<br>para Instagram.<br><em>Com a sua cara.</em></h1>
-  <p class="hero-copy">Um pouco de você em cada post. Crio o visual do seu conteúdo para que ele tenha a ver com você e com o que você quer transmitir.</p>
-  <a class="pill hero-action" href="https://wa.me/5519988503396?text=Oi%2C%20K%C3%A1!%20Vim%20pelo%20seu%20site%20e%20gostaria%20de%20conversar%20sobre%20uma%20ideia.%20Podemos%20falar%3F" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M20.5 3.5A11.9 11.9 0 0 0 12 .0C5.4 0 0 5.4 0 12c0 2.1.6 4.2 1.6 6L0 24l6.2-1.6A12 12 0 0 0 12 24c6.6 0 12-5.4 12-12 0-3.2-1.2-6.2-3.5-8.5ZM12 22a10 10 0 0 1-5.1-1.4l-.4-.2-3.7 1 1-3.6-.3-.4A10 10 0 1 1 12 22Zm5.5-7.5c-.3-.1-1.8-.9-2.1-1-.3-.1-.5-.1-.7.2l-1 1.2c-.2.2-.4.2-.7.1a8.2 8.2 0 0 1-2.4-1.5 9 9 0 0 1-1.7-2.1c-.2-.3 0-.5.1-.6l.5-.6.3-.5c.1-.2 0-.4 0-.6l-1-2.3c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.3 3.1c.1.2 2.1 3.3 5.1 4.6.7.3 1.3.5 1.7.6.7.2 1.4.2 2 .1.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.1-1.4-.1-.1-.3-.2-.6-.3Z"/></svg>Vamos criar juntas?</a>
-  <p class="hero-footnote">Posts, templates e materiais gráficos feitos para você.</p>
+  <p class="eyebrow">Design personalizado para o seu negócio</p>
+  <h1 id="titulo">Seu conteúdo.<br>Uma identidade<br><em>impossível de<br>passar batido.</em></h1>
+  <p class="hero-copy"><strong>Design de posts para Instagram, templates e materiais gráficos.</strong> Transformo suas ideias em peças com personalidade, pensadas para valorizar o seu trabalho.</p>
+  <a class="pill hero-action" href="https://wa.me/5519988503396?text=Oi%2C%20K%C3%A1!%20Vim%20pelo%20seu%20site%20e%20gostaria%20de%20conversar%20sobre%20uma%20ideia.%20Podemos%20falar%3F" target="_blank" rel="noopener noreferrer"><span class="wa-symbol" aria-hidden="true"><svg viewBox="0 0 32 32" focusable="false"><path d="M26.6 5.4A14.9 14.9 0 0 0 3.1 23.2L1 31l8-2.1A15 15 0 0 0 26.6 5.4Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" transform="translate(2 1) scale(.88)"/><path d="M10 8.8c-.5-.8-1-.7-1.5-.6-1.3.3-2.3 1.8-2.1 3.4.4 4.8 6.6 11 11.6 11.8 1.7.3 3.2-.5 3.8-1.8.3-.8.3-1.3-.5-1.7l-3-1.5c-.5-.2-.8-.1-1.1.3l-1 1.2c-.3.3-.6.3-1 .1-2.4-1.2-4.3-3.1-5.5-5.5-.2-.4-.2-.7.1-1l1-1.1c.4-.4.4-.7.2-1.2Z" fill="currentColor" transform="translate(3 0) scale(.94)"/></svg></span>Quero um design para minha marca</a>
+  <p class="hero-footnote"><span>Criação personalizada</span><span>Contato direto comigo</span></p>
  </div>
  <div class="showcase enter enter-delay" data-look="posts">
   <div class="stage" aria-label="Composição ilustrativa de design">
-   <span class="showcase-label">Um visual, muitas possibilidades</span>
+   <span class="showcase-label">Identidade que aparece. Design que conecta.</span><div class="studio-orbit" aria-hidden="true"></div><div class="studio-label" aria-hidden="true"><span class="studio-dot"></span> Sua próxima identidade visual</div><div class="floating-tag" aria-hidden="true">feito para<br><strong>a sua marca.</strong></div><div class="color-panel" aria-hidden="true"><span>PALETA & PERSONALIDADE</span><div><i></i><i></i><i></i><i></i></div></div>
    <div class="deck" aria-hidden="true">
     <div class="sheet sheet-back"></div><div class="sheet sheet-middle"></div>
     <div class="sheet sheet-front">
@@ -210,50 +319,51 @@ h3{font-size:26px;margin-top:16px}.card-copy{font-size:14px;max-width:460px}.ser
    <button type="button" class="preview-choice" data-choice="templates" aria-pressed="false">Templates</button>
    <button type="button" class="preview-choice" data-choice="print" aria-pressed="false">Impressos</button>
   </div>
-  <p class="preview-hint" id="preview-status" aria-live="polite">Toque nas opções e explore o visual.</p>
+  <p class="preview-hint" id="preview-status" aria-live="polite">Escolha um formato e veja a composição mudar.</p>
  </div>
 </section>
-<div class="hero-bottom shell"><span>Um pouco de você em cada detalhe.</span><span>Do seu Instagram ao material impresso.</span></div>
+<div class="hero-bottom"><span>POSTS & CARROSSÉIS</span><b aria-hidden="true">✳</b><span>TEMPLATES NO CANVA</span><b aria-hidden="true">✳</b><span>MATERIAIS GRÁFICOS</span><b aria-hidden="true">✳</b><span>DESIGN COM IDENTIDADE</span></div>
 </div>
 <section class="services shell" id="servicos" aria-labelledby="services-title">
  <div class="section-top reveal">
-  <div><p class="overline">O que podemos criar</p><h2 id="services-title">Sua ideia começa aqui.</h2></div>
-  <p>Escolha o que você precisa.<br>O próximo passo é uma conversa.</p>
+  <div><p class="overline">O que podemos criar</p><h2 id="services-title">O que você precisa criar?</h2></div>
+  <p>Três formas de dar mais personalidade à sua marca. Escolha a sua e vamos conversar.</p>
  </div>
  <div class="service-grid">
  <article class="service-card reveal">
  <div class="card-top"><span>01</span><span>PARA O SEU FEED</span></div>
  <div class="mini" aria-hidden="true"><span class="mini-slide one"></span><span class="mini-slide two"></span><span class="mini-slide three"><i></i><i></i><i></i></span></div>
  <h3>Posts e carrosséis</h3><p class="card-copy">Seu conteúdo ganha forma em artes feitas para o seu Instagram, prontas para publicar.</p>
- <details><summary>Um pouco mais</summary><p>Um visual pensado para você, com cores, fontes e composições que conversam entre si.</p></details>
- <a class="service-cta" href="https://wa.me/5519988503396?text=Oi%2C%20K%C3%A1!%20Vim%20pelo%20seu%20site%20e%20tenho%20interesse%20em%20contratar%20posts%20e%20carross%C3%A9is%20para%20o%20meu%20Instagram.%20Podemos%20conversar%3F" target="_blank" rel="noopener noreferrer" aria-label="Quero posts e carrosséis: conversar no WhatsApp"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M20.5 3.5A11.9 11.9 0 0 0 12 .0C5.4 0 0 5.4 0 12c0 2.1.6 4.2 1.6 6L0 24l6.2-1.6A12 12 0 0 0 12 24c6.6 0 12-5.4 12-12 0-3.2-1.2-6.2-3.5-8.5ZM12 22a10 10 0 0 1-5.1-1.4l-.4-.2-3.7 1 1-3.6-.3-.4A10 10 0 1 1 12 22Zm5.5-7.5c-.3-.1-1.8-.9-2.1-1-.3-.1-.5-.1-.7.2l-1 1.2c-.2.2-.4.2-.7.1a8.2 8.2 0 0 1-2.4-1.5 9 9 0 0 1-1.7-2.1c-.2-.3 0-.5.1-.6l.5-.6.3-.5c.1-.2 0-.4 0-.6l-1-2.3c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.3 3.1c.1.2 2.1 3.3 5.1 4.6.7.3 1.3.5 1.7.6.7.2 1.4.2 2 .1.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.1-1.4-.1-.1-.3-.2-.6-.3Z"/></svg>Quero posts e carrosséis</a>
+ <ul class="deliverables"><li>Posts estáticos e carrosséis</li><li>Cores, fontes e estilo alinhados</li><li>Artes prontas para publicar</li></ul><details><summary>Sobre a criação</summary><p>Um visual pensado para você, com cores, fontes e composições que conversam entre si.</p></details>
+ <a class="service-cta" href="https://wa.me/5519988503396?text=Oi%2C%20K%C3%A1!%20Vim%20pelo%20seu%20site%20e%20tenho%20interesse%20em%20contratar%20posts%20e%20carross%C3%A9is%20para%20o%20meu%20Instagram.%20Podemos%20conversar%3F" target="_blank" rel="noopener noreferrer" aria-label="Quero posts e carrosséis: conversar no WhatsApp"><span class="wa-symbol" aria-hidden="true"><svg viewBox="0 0 32 32" focusable="false"><path d="M26.6 5.4A14.9 14.9 0 0 0 3.1 23.2L1 31l8-2.1A15 15 0 0 0 26.6 5.4Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" transform="translate(2 1) scale(.88)"/><path d="M10 8.8c-.5-.8-1-.7-1.5-.6-1.3.3-2.3 1.8-2.1 3.4.4 4.8 6.6 11 11.6 11.8 1.7.3 3.2-.5 3.8-1.8.3-.8.3-1.3-.5-1.7l-3-1.5c-.5-.2-.8-.1-1.1.3l-1 1.2c-.3.3-.6.3-1 .1-2.4-1.2-4.3-3.1-5.5-5.5-.2-.4-.2-.7.1-1l1-1.1c.4-.4.4-.7.2-1.2Z" fill="currentColor" transform="translate(3 0) scale(.94)"/></svg></span>Quero posts e carrosséis</a>
  </article>
 <article class="service-card reveal">
  <div class="card-top"><span>02</span><span>PARA EDITAR NO CANVA</span></div>
  <div class="mini" aria-hidden="true"><span class="mini-grid"><i></i><i></i><i></i><i></i></span><span class="mini-cursor"></span></div>
  <h3>Templates editáveis</h3><p class="card-copy">Seu estilo em modelos personalizados no Canva, para editar e usar de novo.</p>
- <details><summary>Um pouco mais</summary><p>Uma base visual com a sua identidade, para trocar textos e imagens no seu dia a dia.</p></details>
- <a class="service-cta" href="https://wa.me/5519988503396?text=Oi%2C%20K%C3%A1!%20Vim%20pelo%20seu%20site%20e%20tenho%20interesse%20em%20templates%20personalizados%20e%20edit%C3%A1veis%20no%20Canva.%20Podemos%20conversar%3F" target="_blank" rel="noopener noreferrer" aria-label="Quero templates: conversar no WhatsApp"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M20.5 3.5A11.9 11.9 0 0 0 12 .0C5.4 0 0 5.4 0 12c0 2.1.6 4.2 1.6 6L0 24l6.2-1.6A12 12 0 0 0 12 24c6.6 0 12-5.4 12-12 0-3.2-1.2-6.2-3.5-8.5ZM12 22a10 10 0 0 1-5.1-1.4l-.4-.2-3.7 1 1-3.6-.3-.4A10 10 0 1 1 12 22Zm5.5-7.5c-.3-.1-1.8-.9-2.1-1-.3-.1-.5-.1-.7.2l-1 1.2c-.2.2-.4.2-.7.1a8.2 8.2 0 0 1-2.4-1.5 9 9 0 0 1-1.7-2.1c-.2-.3 0-.5.1-.6l.5-.6.3-.5c.1-.2 0-.4 0-.6l-1-2.3c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.3 3.1c.1.2 2.1 3.3 5.1 4.6.7.3 1.3.5 1.7.6.7.2 1.4.2 2 .1.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.1-1.4-.1-.1-.3-.2-.6-.3Z"/></svg>Quero templates</a>
+ <ul class="deliverables"><li>Modelos personalizados no Canva</li><li>Textos e imagens editáveis</li><li>Sua identidade em novas postagens</li></ul><details><summary>Sobre a criação</summary><p>Uma base visual com a sua identidade, para trocar textos e imagens no seu dia a dia.</p></details>
+ <a class="service-cta" href="https://wa.me/5519988503396?text=Oi%2C%20K%C3%A1!%20Vim%20pelo%20seu%20site%20e%20tenho%20interesse%20em%20templates%20personalizados%20e%20edit%C3%A1veis%20no%20Canva.%20Podemos%20conversar%3F" target="_blank" rel="noopener noreferrer" aria-label="Quero templates: conversar no WhatsApp"><span class="wa-symbol" aria-hidden="true"><svg viewBox="0 0 32 32" focusable="false"><path d="M26.6 5.4A14.9 14.9 0 0 0 3.1 23.2L1 31l8-2.1A15 15 0 0 0 26.6 5.4Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" transform="translate(2 1) scale(.88)"/><path d="M10 8.8c-.5-.8-1-.7-1.5-.6-1.3.3-2.3 1.8-2.1 3.4.4 4.8 6.6 11 11.6 11.8 1.7.3 3.2-.5 3.8-1.8.3-.8.3-1.3-.5-1.7l-3-1.5c-.5-.2-.8-.1-1.1.3l-1 1.2c-.3.3-.6.3-1 .1-2.4-1.2-4.3-3.1-5.5-5.5-.2-.4-.2-.7.1-1l1-1.1c.4-.4.4-.7.2-1.2Z" fill="currentColor" transform="translate(3 0) scale(.94)"/></svg></span>Quero templates</a>
  </article>
 <article class="service-card reveal">
  <div class="card-top"><span>03</span><span>ALÉM DO DIGITAL</span></div>
  <div class="mini" aria-hidden="true"><span class="mini-paper back"></span><span class="mini-paper front"><i></i><i></i><i></i></span></div>
  <h3>Materiais gráficos</h3><p class="card-copy">Sua identidade também fora do feed. Folders, banners, cartazes, convites e outras peças.</p>
- <details><summary>Um pouco mais</summary><p>Para o seu negócio, uma divulgação especial ou um evento. Me conta o que você precisa.</p></details>
- <a class="service-cta" href="https://wa.me/5519988503396?text=Oi%2C%20K%C3%A1!%20Vim%20pelo%20seu%20site%20e%20preciso%20de%20um%20material%20gr%C3%A1fico%2C%20como%20folder%2C%20banner%2C%20cartaz%20ou%20convite.%20Posso%20te%20contar%20a%20ideia%3F" target="_blank" rel="noopener noreferrer" aria-label="Quero materiais gráficos: conversar no WhatsApp"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M20.5 3.5A11.9 11.9 0 0 0 12 .0C5.4 0 0 5.4 0 12c0 2.1.6 4.2 1.6 6L0 24l6.2-1.6A12 12 0 0 0 12 24c6.6 0 12-5.4 12-12 0-3.2-1.2-6.2-3.5-8.5ZM12 22a10 10 0 0 1-5.1-1.4l-.4-.2-3.7 1 1-3.6-.3-.4A10 10 0 1 1 12 22Zm5.5-7.5c-.3-.1-1.8-.9-2.1-1-.3-.1-.5-.1-.7.2l-1 1.2c-.2.2-.4.2-.7.1a8.2 8.2 0 0 1-2.4-1.5 9 9 0 0 1-1.7-2.1c-.2-.3 0-.5.1-.6l.5-.6.3-.5c.1-.2 0-.4 0-.6l-1-2.3c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.3 3.1c.1.2 2.1 3.3 5.1 4.6.7.3 1.3.5 1.7.6.7.2 1.4.2 2 .1.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.1-1.4-.1-.1-.3-.2-.6-.3Z"/></svg>Quero materiais gráficos</a>
+ <ul class="deliverables"><li>Folders, banners e cartazes</li><li>Convites e peças de divulgação</li><li>Criação para negócios e eventos</li></ul><details><summary>Sobre a criação</summary><p>Para o seu negócio, uma divulgação especial ou um evento. Me conta o que você precisa.</p></details>
+ <a class="service-cta" href="https://wa.me/5519988503396?text=Oi%2C%20K%C3%A1!%20Vim%20pelo%20seu%20site%20e%20preciso%20de%20um%20material%20gr%C3%A1fico%2C%20como%20folder%2C%20banner%2C%20cartaz%20ou%20convite.%20Posso%20te%20contar%20a%20ideia%3F" target="_blank" rel="noopener noreferrer" aria-label="Quero materiais gráficos: conversar no WhatsApp"><span class="wa-symbol" aria-hidden="true"><svg viewBox="0 0 32 32" focusable="false"><path d="M26.6 5.4A14.9 14.9 0 0 0 3.1 23.2L1 31l8-2.1A15 15 0 0 0 26.6 5.4Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" transform="translate(2 1) scale(.88)"/><path d="M10 8.8c-.5-.8-1-.7-1.5-.6-1.3.3-2.3 1.8-2.1 3.4.4 4.8 6.6 11 11.6 11.8 1.7.3 3.2-.5 3.8-1.8.3-.8.3-1.3-.5-1.7l-3-1.5c-.5-.2-.8-.1-1.1.3l-1 1.2c-.3.3-.6.3-1 .1-2.4-1.2-4.3-3.1-5.5-5.5-.2-.4-.2-.7.1-1l1-1.1c.4-.4.4-.7.2-1.2Z" fill="currentColor" transform="translate(3 0) scale(.94)"/></svg></span>Quero materiais gráficos</a>
  </article>
  </div>
 </section>
+<section class="process shell reveal" aria-labelledby="process-title"><div class="section-top"><div><p class="overline">Da ideia ao design</p><h2 id="process-title">A sua marca como<br>ponto de partida.</h2></div><p>O visual começa com uma conversa sobre você, suas referências e o que você precisa.</p></div><div class="process-grid"><article><span>01</span><h3>Você me conta.</h3><p>Me envie sua ideia e o tipo de material que procura. A gente alinha o projeto, o orçamento e o prazo.</p></article><article><span>02</span><h3>Eu dou forma.</h3><p>Trabalho as cores, as fontes e a composição para criar um visual que faça sentido para a sua marca.</p></article><article><span>03</span><h3>A gente finaliza.</h3><p>Alinhamos os ajustes e você recebe os arquivos no formato combinado para o seu projeto.</p></article></div></section>
 <section class="contact-wrap shell reveal" aria-labelledby="contato">
- <div class="contact"><div><p class="overline">Vamos criar juntas?</p><h2 id="contato">Me conta a sua ideia.</h2><p>Ainda não sabe qual caminho escolher?<br>A gente conversa e descobre o que faz sentido para você.</p></div>
- <a class="pill hero-action" href="https://wa.me/5519988503396?text=Oi%2C%20K%C3%A1!%20Vim%20pelo%20seu%20site%20e%20gostaria%20de%20conversar%20sobre%20uma%20ideia.%20Podemos%20falar%3F" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M20.5 3.5A11.9 11.9 0 0 0 12 .0C5.4 0 0 5.4 0 12c0 2.1.6 4.2 1.6 6L0 24l6.2-1.6A12 12 0 0 0 12 24c6.6 0 12-5.4 12-12 0-3.2-1.2-6.2-3.5-8.5ZM12 22a10 10 0 0 1-5.1-1.4l-.4-.2-3.7 1 1-3.6-.3-.4A10 10 0 1 1 12 22Zm5.5-7.5c-.3-.1-1.8-.9-2.1-1-.3-.1-.5-.1-.7.2l-1 1.2c-.2.2-.4.2-.7.1a8.2 8.2 0 0 1-2.4-1.5 9 9 0 0 1-1.7-2.1c-.2-.3 0-.5.1-.6l.5-.6.3-.5c.1-.2 0-.4 0-.6l-1-2.3c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.3 3.1c.1.2 2.1 3.3 5.1 4.6.7.3 1.3.5 1.7.6.7.2 1.4.2 2 .1.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.1-1.4-.1-.1-.3-.2-.6-.3Z"/></svg>Conversar no WhatsApp</a></div>
+ <div class="contact"><div><p class="overline">Vamos criar juntas?</p><h2 id="contato">Vamos tirar sua<br>ideia do papel?</h2><p>Ainda não sabe qual caminho escolher?<br>A gente conversa e descobre o que faz sentido para você.</p></div>
+ <a class="pill hero-action" href="https://wa.me/5519988503396?text=Oi%2C%20K%C3%A1!%20Vim%20pelo%20seu%20site%20e%20gostaria%20de%20conversar%20sobre%20uma%20ideia.%20Podemos%20falar%3F" target="_blank" rel="noopener noreferrer"><span class="wa-symbol" aria-hidden="true"><svg viewBox="0 0 32 32" focusable="false"><path d="M26.6 5.4A14.9 14.9 0 0 0 3.1 23.2L1 31l8-2.1A15 15 0 0 0 26.6 5.4Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" transform="translate(2 1) scale(.88)"/><path d="M10 8.8c-.5-.8-1-.7-1.5-.6-1.3.3-2.3 1.8-2.1 3.4.4 4.8 6.6 11 11.6 11.8 1.7.3 3.2-.5 3.8-1.8.3-.8.3-1.3-.5-1.7l-3-1.5c-.5-.2-.8-.1-1.1.3l-1 1.2c-.3.3-.6.3-1 .1-2.4-1.2-4.3-3.1-5.5-5.5-.2-.4-.2-.7.1-1l1-1.1c.4-.4.4-.7.2-1.2Z" fill="currentColor" transform="translate(3 0) scale(.94)"/></svg></span>Conversar no WhatsApp</a></div>
 </section>
 </main>
 <footer class="footer shell">
  <div class="footer-name">Kállita Prado<p>Seu jeito. Suas ideias. Seu visual.</p></div>
- <div class="footer-links">
+ <div class="footer-links"><a href="https://wa.me/5519988503396?text=Oi%2C%20K%C3%A1!%20Vim%20pelo%20seu%20site%20e%20gostaria%20de%20conversar%20sobre%20uma%20ideia.%20Podemos%20falar%3F" target="_blank" rel="noopener noreferrer"><span class="wa-symbol" aria-hidden="true"><svg viewBox="0 0 32 32" focusable="false"><path d="M26.6 5.4A14.9 14.9 0 0 0 3.1 23.2L1 31l8-2.1A15 15 0 0 0 26.6 5.4Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" transform="translate(2 1) scale(.88)"/><path d="M10 8.8c-.5-.8-1-.7-1.5-.6-1.3.3-2.3 1.8-2.1 3.4.4 4.8 6.6 11 11.6 11.8 1.7.3 3.2-.5 3.8-1.8.3-.8.3-1.3-.5-1.7l-3-1.5c-.5-.2-.8-.1-1.1.3l-1 1.2c-.3.3-.6.3-1 .1-2.4-1.2-4.3-3.1-5.5-5.5-.2-.4-.2-.7.1-1l1-1.1c.4-.4.4-.7.2-1.2Z" fill="currentColor" transform="translate(3 0) scale(.94)"/></svg></span>WhatsApp</a>
  <a href="https://www.instagram.com/akallitaprado/" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".8" fill="currentColor" stroke="none"/></svg>@akallitaprado</a>
- <a href="mailto:kallitaprado@gmail.com"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="m4 7 8 6 8-6"/></svg>kallitaprado@gmail.com</a>
+ <a href="mailto:akalitaprado@gmail.com"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="m4 7 8 6 8-6"/></svg>akalitaprado@gmail.com</a>
  </div>
 </footer>
 <script>
